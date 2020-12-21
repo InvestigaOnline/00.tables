@@ -1,0 +1,154 @@
+# Tablas especiales {#tse05}
+
+En el capítulo actual introducimos ya en la reproducción de las tablas, algunas de las características que hacen muy especial a este paquete `expss`. Iremos introduciendo cada uno de los conceptos en el punto donde corresponda, dando la explicación de caso de uso, más que su explicación técnica. El usuario que quiera conocer más sobre ello, puede acudir a la guía de referencia de [todas las opciones de este paquete](https://rdrr.io/cran/expss/man/).
+
+Aprenderemos a usar:
+
+* `tab_subgroup()`, que permite hacer la tabla con una parte de los datos;
+* `%nest%`, que permite anidar variables;
+* `total_row_label()`, escribir textos libres en filas en la secuencia que se indique;
+* `recode()`, recodificar en línea una variable (ver \@ref(recode) );
+* `var_lab()`, modificar o asignar el texto de la variable;
+* `val_lab()`, modificar o asignar los textos de los códigos;
+* `drop_rc()`, borrar columnas o filas [drop_empty_rows() y drop_empty_cols()];
+* `tab_sort_asc()`, para ordenar ascendente o descendente `tab_sort_desc()`;
+* uso de `na_if`, para eliminar valores de niveles que no se desean computar en el cálculo de estadísticos;
+* uso de criterios, para establecer sencillos mecanismos de filtro como complemento a otras funciones.
+
+
+## Subgrupos (filtros en la tabla)
+
+Una de las primeras cuestiones que nos surge en muchas ocasiones es trabajar con subgrupos de la información original, bien porque deseamos una tabla de sólo un parte de la muestra o bien porque buscamos comparar determinados elementos en una misma tabla. Veamos las posibilidades y las situaciones de uso.
+
+En la siguiente tabla, filtramos la tabla para aquellos entrevistados que han declarado tener hijos `(P34  == 1)` por un lado y los que no popr otro `(P34 == 2)`. Para ello usamos la instrucción [`tab_subgroup()`](https://rdrr.io/cran/expss/man/tables.html) e introducimos también la instrucción [`tab_row_label()`](https://rdrr.io/cran/expss/man/tables.html) donde escribimos una fila con texto libre. Puedes consultar en el capítulo \@ref(tse08) como se escriben las condiciones y cuáles son los operadores que se pueden utilizar `expss`además tiene algunos opetradores propios que en este mismo capítulo incluiremos.
+
+```{r fig.cap='Tabla con subgrupos', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+data %>%
+    tab_subgroup(P34 == 1) %>%
+    tab_row_label('Entrevistado con hijos') %>%
+    tab_cols(total(), P31) %>%
+    tab_cells(P36) %>%
+    tab_stat_cases() %>%
+    tab_subgroup(P34 == 2) %>%
+    tab_row_label('Entrevistado sin hijos') %>%
+    tab_cols(total(), P31) %>%
+    tab_cells(P36) %>%
+    tab_stat_cases() %>%
+    tab_pivot()
+```
+ 
+## Bases y/o con anidación
+
+El concepto de base, no está contemplado como tal en EXPSS - SegmentaNet, pero podemos utilizar las diferentes combinaciones de instrucciones para poder obtener el resultado deseado.
+
+Por ejemplo, si queremos trabajar con bases de la variable `P34` (entrevistado tiene hijos o no tiene hijos), y obtener réplica de la tabla para mabas categorías, lo podíamos hacer de la forma anterior, pero hay otra posibilidad y es utilizar la opción de añadir variables anidadas en filas o utilizar de forma simultánea las instrucciones `tab_rows()` y `tab_cells()`.
+
+En esta tabla hay algunas cosas a reseñar. 
+
+* En primer lugar `P34 == 1 | P34 == 2` es la condición de los casos con los que deseamos trabajar. No queremos contemplar los NC. Sí, se podría hacer también con el `na_if()`, pero creemos más clara esta opción. 
+* Por otro lado, usamos `tab_cols()`, `tab_rows()` y `tab_cells()` lo que nos va a dar una publicación curiosa.
+* Por último, los códigos de `P34`, redefinidos al principio del script, se muestran como en una primera columna, diferenciados claramente del resto. La variable en `tab_cells()`  de la que se calcula el estadístico (número de casos) se muestra como en una segunda columna. Hemos dejado fuera la opción de No contesta aunque ya anticipamos que no tenía ningún caso.
+
+La función [`var_lab()`](https://rdrr.io/cran/expss/man/var_lab.html) permite asignar a una variable (data$P34) una lista (expresa con la función base de R denminada vector `c()`vector) de etiquetas donde el texto de la etiqueta va entrecomillado y el valor va igualado a la etiqueta. Es una forma muy simple a la par que práctica de etiquetar los valores de una variable.
+
+```{r fig.cap='Tabla con bases 1', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+val_lab(data$P34) <- c('Sí' = 1, 'No' = 2) 
+data %>%
+    tab_subgroup(P34 == 1 | P34 == 2) %>%
+    tab_cols(total(), P31) %>%
+    tab_rows(P34) %>%
+    tab_cells(P36) %>%
+    tab_stat_cases() %>%
+    tab_pivot()
+```
+
+Si nos gusta esta opción, se le puede añadir un modificador llamado `%nest%` que nos va a permitir anidar esas bases de cálculo. El modificador `%nest%` nos permite anidar los niveles o categorías de las variables. Cualquiera de las tablas anteriores puede ser anidada en tantos niveles como se desee con la opción `%nest%`. Para que la tabla no se alargue horizontalmente, reasignamos el texto extra de la variable denominada `P3bis`.
+
+```{r fig.cap='Tabla con bases 2', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
+var_lab(data$P3bis) <- 'Satisfacción'
+val_lab(data$P3bis) <- c('1.Negativa' = 1, '2.Positiva' = 2)
+val_lab(data$P34) <- c('1.Sí' = 1, '2.No' = 2)
+data %>%
+    tab_subgroup(P34 == 1 | P34 == 2) %>%
+    tab_cols(total(), P31) %>%
+    tab_rows(P3bis %nest% P34) %>%
+    tab_cells(P36) %>%
+    tab_stat_cases(total_row_position = 'none') %>%
+    tab_pivot() 
+```
+
+Si añadimos la instrucción `drop_rc()`, nótese la diferencia, pues desaparecen las filas y columnas sin información.
+
+```{r fig.cap='Borrando filas y columnas vacías', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
+var_lab(data$P3bis) <- 'Satisfacción'
+val_lab(data$P3bis) <- c('1.Negativa' = 1, '2.Positiva' = 2)
+val_lab(data$P34) <- c('1.Sí' = 1, '2.No' = 2)
+data %>%
+    tab_subgroup(P34 == 1 | P34 == 2) %>%
+    tab_cols(total(), P31) %>%
+    tab_rows(P3bis %nest% P34) %>%
+    tab_cells(P36) %>%
+    tab_stat_cases(total_row_position = 'none') %>%
+    tab_pivot() %>% 
+    drop_rc()
+```
+
+## Características avanzadas
+
+Hagamos ahora lo mismo, pero combinando con un cálculo estadístico, por ejemplo nuevamente la media de P6C (atención recibida en consultas). Fíjemonos en la nueva aportación realizada. En el `tab_cells()`, se le está indicando que se trabaje con la variable P6C, pero que considere NA (valores nulos) todos aquello que sean mayores que 5. ¿Por qué? porque los códigos 8, no sabe y 9, no contesta, no queremos que entren en la media. Esto lo hacemos usando la función `na_if()`.
+
+Los criterios más básicos son:
+
+* igual -> `equals`, `eq`
+* no igual -> `not_equals`, `neq`, `ne`
+* mayor que -> `greater`, `gt`
+* mayor o igual que -> `greater_or_equal`, `gte`, `ge`
+* menor que -> `less`, `lt`
+* menor o igual que -> `less_or_equal`, `lte`, `le`
+
+Puede usarse la expresión larga o también cualquiera de las cortas. Por tanto, `na_if(P6C, gt(5))` significa trabaja con la variable `P6C` considerando `NA` los valores mayores que 5.
+ 
+```{r fig.cap='Usando criterios', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+var_lab(data$P6C) <- 'Valoración de la atención recibida'
+data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
+val_lab(data$P3bis) <- c('1.Negativa' = 1, '2.Positiva' = 2)
+val_lab(data$P34) <- c('1.Sí' = 1, '2.No' = 2)
+data %>%
+    tab_subgroup(P34 == 1 | P34 == 2) %>%
+    tab_cols(total(), P31) %>%
+    tab_rows(P3bis %nest% P34) %>%
+    tab_cells(P6C= na_if(P6C, gt(5))) %>%
+    tab_stat_mean() %>%
+    tab_pivot()
+```
+
+Se puede anidar también en filas y columnas. Vamos a reducir a dos el nivel de anidación para que se lea bien la tabla.
+
+```{r fig.cap='Anidando filas y columnas', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
+var_lab(data$P3bis) <- 'Satisfacción'
+val_lab(data$P3bis) <- c('1.Negativa' = 1, '2.Positiva' = 2)
+val_lab(data$P34) <- c('1.Sí' = 1, '2.No' = 2)
+data %>%
+    tab_cols(P31 %nest% P34) %>% 
+    tab_rows(P3bis %nest% P33) %>%
+    tab_stat_cases(total_row_position='none') %>%
+    tab_pivot()
+```
+
+Como caso particular en muchos casos se requieren los subtotales de los niveles de anidación. Fíjate esta tabla y trata de ver las diferencias con la anterior.
+
+```{r fig.cap='Anidando con subtotales', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+data %>%
+    tab_cols(P31 %nest%  list(total(),P34)) %>% 
+    tab_rows(P36 %nest% P33) %>%
+    tab_stat_cases() %>%
+	tab_sort_desc() %>%
+    tab_pivot()
+```
+ 
+Efectivamente, han aparecido más columnas porque hemos anidado la columna de totales a la primera variable en lugar de usar el campo, hemos usado una lista de campos y además hemos ordenado de forma descendente respecto de la columna de total.
+
+Pues hasta aquí una nueva sección completada. Continuamos en la siguiente sección.

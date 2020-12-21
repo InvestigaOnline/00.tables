@@ -1,0 +1,5 @@
+book_filename: "Análisis de datos con tablas y gráficos en SegmentaNet con R"
+delete_merged_file: true
+language:
+  ui:
+    chapter_name: "Capítulo "

@@ -1,0 +1,74 @@
+--- 
+title: "Análisis de datos con tablas y gráficos en SegmentaNet con R"
+author: "Roberto Gil-Saura"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete **expss** y visualizaciones de resultados con paquete **highcharter**. Introducción al uso de scripts con R."
+---
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown', 'knitr', 'kableExtra', 'DT', 'expss', 'formattable', 'flextable', 'fontawesome', 'sparkline', 'dplyr', 'stringr', 'purrr', 'lubridate', 'readr', 'igraph', 'highcharter', 'plotly' ), 'packages.bib')
+suppressMessages(library(dplyr, quietly=TRUE))
+suppressMessages(library(stringr, quietly=TRUE))
+suppressMessages(library(purrr, quietly=TRUE))
+suppressMessages(library(lubridate, quietly=TRUE))
+suppressMessages(library(readr, quietly=TRUE))
+suppressMessages(library(expss, quietly=TRUE))
+suppressMessages(library(DT, quietly=TRUE))
+suppressMessages(library(igraph, quietly=TRUE))
+suppressMessages(library(highcharter, quietly=TRUE))
+suppressMessages(library(plotly, quietly=TRUE))
+suppressMessages(library(knitr, quietly=TRUE))
+suppressMessages(library(kableExtra, quietly=TRUE))
+suppressMessages(library(fontawesome, quietly=TRUE))
+suppressMessages(library(sparkline, quietly=TRUE))
+
+options(highcharter.theme = hc_theme_hcrt(tooltip = list(valueDecimals = 2)))
+
+#=============carga de datos
+data <- suppressMessages(read_spss("~/R/r-data/00.tables/data/3192.sav"))
+df <- suppressMessages(read_csv('~/R/r-data/00.tables/data/df.csv', col_names=TRUE))
+edges <- suppressMessages(read_csv("https://download.tesigandia.com/test/edges.csv",locale = locale(encoding = "ISO-8859-1")))
+names <- suppressMessages(read_csv("https://download.tesigandia.com/test/names.csv",locale = locale(encoding = "ISO-8859-1")))
+#=============carga de datos
+```
+
+# Prefacio
+
+## Requisitos
+
+El presente manual o guía de usuario focaliza e introduce al usuario de **SegmentaNet** en la creación de análisis utilizando scripting avanzado de tipo **RMarkdown** que permitan obtener cualquier tipo de tabla resumen de datos o cualquier análisis que pueda hacer utilizando código **R** [@R-base]. Este manual ha sido redactado pensando en los usuarios de la plataforma **SegmentaNet**. Por tanto, se asume que el usuario estará registrado en alguna plataforma de SegmentaNet y se le supone conocimiento básico de cómo:
+
+* [Crear un proyecto](https://youtu.be/Wv3em6D1lkc)
+* [Añadir un fuente de datos a un proyecto](https://youtu.be/rhCcsk4Pe_k)
+* [Crear un análisis scripting avanzado](https://youtu.be/Z-lAx5Mq-ek)
+
+Te dejamos el acceso a los tutoriales genéricos y básicos, por si quieres visualizarlos antes de continuar. 
+
+Si el usuario quisiera seguir esta documentación trabajando con **RStudio**, deberá obviar los comentarios acerca de **SegmentaNet** y utilizar sólo los scripts indicados creando archivos del tipo **RMarkdown** [@R-rmarkdown] y estableciendo lo scripts como _chunks_ o como _r inline coding_ dentro del texto.
+
+## Estructura del documento
+
+En investigación de mercados, las tablas de contingencia o cruzadas probablemente sean el análisis de datos más predominante de todos los utilizados complementado por una potente visualización en forma de gráfico de esos datos. Se pretende dotar al usuario de SegmentaNet de las herramientas básicas que le permitan reproducir cualquier tipo de cuadro o tabla, de tipos marginal o cruzada, con medidas estadísticas, combinando estadísticos y frecuencias y/o porcentajes o realizar pruebas de significación, asi como la reproducción de los gráficos que se adaptarían a esas tablas. La estructura del manual se adapta por tanto a este objetivo, organizándose de la siguiente forma:
+
+* una introducción al manual
+* un capítulo que dedicamos a introducir al lector en el lenguaje R; no se pretende hacer un revisión exhaustiva del lenguaje, sino simplemente enumerar los términos y conceptos que serán necesarios para entender el funcionamiento de las tablas y el manejo y gestión de las mismas;
+* un capítulo donde se introduce al usuario en la escritura de sencillas órdenes que como resultado obtendrán un cuadro o tabla;
+* un capítulo dedicado a la creación de las tablas cruzadas;
+* un capítulo dedicado a tablas más especiales, que denominaremos multi-dimensionales;
+* un epígrafe dedicado a la generación de otras tablas auxiliares: cuadros, escalas, etc.;
+* un epígrafe que describirá las pruebas básicas de significación que se utilizan en las tablas de contingencia;
+* un capitulo dedicado a los gráficos;
+* un epígrafe dedicado a operaciones con tablas, entre filas y/o columnas y a mejorar la visualización de las tablas y obtener gráficos a partir de estas operaciones especiales, ampliando el conjunto de paquetes a utilizar y combinando sus funcionalidades;
+* por último, un capítulo más de lenguaje R para saber como se incluyen las condiciones para cualquier tipo de selección de datos.
+
+Para seguir este manual, como hemos comentado anteriormente, asumimos que el usuario conoce SegmentaNet y que ha constatado su necesidad de reproducir tipos de tabla que ha visto que son posibles de obtener en Quantum, Minitab, Systat, Star, SPSS o BarbWin y que SegmentaNet en su interfaz básica de usuario no alcanza a reproducir. Explicaremos los rudimentos básicos de trabajo en R, pero adecuados a su uso en SegmentaNet, con una primera introducción a SegmentaNet y cómo integramos R en su flujo de trabajo.
+
+Si no fuera así, recomendamos una primera lectura de la [documentación online de SegmentaNet](https://doc.segmentanet.com).
+
+Agradecemos expresamente a Gregory @expss, desarrollador del paquete **`expss`** de R por su desinteresado trabajo en código abierto que permite reproducir e ir más allá de los cuadros resumen creados.

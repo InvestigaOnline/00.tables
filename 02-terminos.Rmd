@@ -1,0 +1,39 @@
+# Términos {#tse02}
+
+En el presente capítulo mostramos un conjunto de términos que serán habitualmente utilizados en los sucesivos capítulos que se presentan en este documento. estos son los más relevantes y los hemos separado en dos grupos. un grupo hace referencia a términos básicos de R y otro grupo a términos básicos del manejo de tablas o del proceso de tabulación. Cada término tiene une breve reseña, y posteriormente algunos de ellos serán más tratados en sus respectivas funcionalidades.
+
+## Básicos de R y/o proceso de datos
+
+1. **R** es un entorno y lenguaje de programación con un enfoque al análisis estadístico. R nació como una implementación de software libre del lenguaje S, adicionado con soporte para alcance estático. Se trata de uno de los lenguajes de programación más utilizados en investigación científica, siendo además muy popular en los campos de aprendizaje automático (machine learning), minería de datos, investigación biomédica, bioinformática y matemáticas financieras. A esto contribuye la posibilidad de cargar diferentes bibliotecas o paquetes con funcionalidades de cálculo y graficación. R es parte del sistema GNU y se distribuye bajo la licencia GNU GPL. Está disponible para los sistemas operativos Windows, Macintosh, Unix y GNU/Linux.
+
+1. **objeto**, elemento creado desde comandos R y que puede ser reutilizado dentro de la programación del script. En este manual se usará como sinónimo de tabla en muchos casos, pues la mayoría de los objetos que crearemos serán tablas.
+1. **dataframe**, fichero de datos, banco de datos; término con el que se conoce en R a la estructura tabular (filas y columnas) de una matriz de datos, donde las columnas son variables y las filas son registros.
+1. **variable**, elemento de tipo vector que contiene los valores de una determinada observación, un valor en cada fila; debe entenderse en el contexto de la estructura tabular o dataframe.
+1. **valores**, cada una de las diferentes celdas que componen un dataframe. Una variable toma un valor en cada fila y se representa en la celda.
+1. **medidas**, valores de los que se pretende calcular estadísticos como la media, la desviación típica o la mediana entre otras. Suelen responder a escalas de tipo numérico (ordinal o métrico).
+1. **dimensiones**, valores de los que se pretende calcular frecuencias y/o porcentajes.
+1. **factores**, niveles, códigos, etiquetas de variable.
+1. **NA**, es como R representa los valores nulos o ausentes; SegmentaNet traduce todos los valores especiales (no contesta, no sabe, no definido o filtrado) a esta representación cuando se crea el dataframe de datos.
+1. **valores** perdidos, missing values, valores ausentes; tal como hemos indicado en el término NA, así es como R representa este tipo de valores.
+1. **paquete**, conjunto de funciones de las que el usuario hace uso para obtener un resultado en R; en nuestro caso particular principalmente usaremos el paquete EXPSS de R; 1. comando, instrucciones que se integran dentro de un chunk
+1. **chunk**, conjunto de comandos que se escriben entre los símbolos ````{r} y ```` y que se ejecutan mostrando los resultados.
+
+## Básicos de tabulación
+
+En nuestro trabajo vamos a crear objetos de tipo tabla; una tabla es una estructura tabular, igual que un dataframe. De hecho, con nuestro trabajo utilizando el paquete EXPSS, vamos a generar tablas que serán dataframes de tipo (clase) `etable`. Al ser un dataframe, podremos operar entre filas, columnas y celdas de forma lógica o aritmética utilizando funciones y comandos de R.
+
+Dejamos este glosario de términos relacionados con las tablas que utilizaremos en esta guía.
+
+1. **título** (caption), texto que se publicará sobre la tabla;
+1. **pie** (footer), texto que se publicará bajo la tabla;
+1. **fila**, cada una de las líneas de información dentro de una tabla; se suele asimilar a un nivel (código) de una variable y/o a un resultados estadístico de una variable;
+1. **columna**, cada una de las variables que conforman el dataframe de una tabla (estructura tabular); en un cuadro o tabla de contingencia suele equivaler a un nivel de la variable que originalmente se diseñó para ser usada en columnas (si por ejemplo SEXO, una columna sería hombre y otra mujer);
+1. **celda**, cada una de las unidades de información del cuadro o tabla;
+1. **row_labels**, primera columna donde se escriben los textos de las filas y que sirven para identificar el contenido de las mismas;
+1. **etiqueta de variable**, texto extra identificativo de la variable usada en filas o columnas;
+1. **etiqueta de valor**, texto del código identificativo de la variable usada;
+1. **estadístico**, medida calculada;
+1. **frecuencia**, tipo específico de medida calculada que significa número de veces en términos absolutos;
+1. **porcentaje**, tipo específico de medida calculada que significa número de veces en términos relativos;
+1. **`|`**, símbolo denominado `pipe` que en el paquete `expss` se utilizará para separar conjuntos de texto en una celda (o columna o fila);
+1. **significación**, prueba estadística de contraste.
