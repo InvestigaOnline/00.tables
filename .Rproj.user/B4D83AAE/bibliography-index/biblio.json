@@ -1,0 +1,869 @@
+{
+    "sources": [
+        {
+            "author": [
+                {
+                    "family": "Manzano Arrondo",
+                    "given": "Vicente"
+                }
+            ],
+            "id": "manzano1995",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "title": "Inferencia estadística: Aplicaciones con SPSS/PC+",
+            "title-short": "Inferencia estadística",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=expss",
+            "author": [
+                {
+                    "family": "Demin",
+                    "given": "Gregory"
+                }
+            ],
+            "id": "expss",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 0.10.2",
+            "title": "Expss: Tables, labels and some useful functions from spreadsheets and ’SPSS’ statistics",
+            "title-short": "Expss",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "family": "Team",
+                    "given": "R Core"
+                }
+            ],
+            "id": "R",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "URL": "https://jkunst.com/highcharter/index.html",
+            "author": [
+                {
+                    "family": "Kunst",
+                    "given": "Joshua"
+                }
+            ],
+            "id": "highcharter",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "https://jkunst.com/",
+            "title": "Highcharter: A wrapper for the highcharts library",
+            "title-short": "Highcharter",
+            "type": "book"
+        },
+        {
+            "ISBN": "978-3-319-24277-4",
+            "URL": "https://ggplot2.tidyverse.org",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "ggplot2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "publisher": "Springer-Verlag New York",
+            "title": "ggplot2: Elegant graphics for data analysis",
+            "title-short": "ggplot2",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=dplyr",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "François",
+                    "given": "Romain"
+                },
+                {
+                    "family": "Henry",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Müller",
+                    "given": "Kirill"
+                }
+            ],
+            "id": "dplyr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 1.0.0",
+            "title": "Dplyr: A grammar of data manipulation",
+            "title-short": "Dplyr",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.R-project.org/",
+            "author": [
+                {
+                    "literal": "R Core Team"
+                }
+            ],
+            "id": "R-base",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "R Foundation for Statistical Computing",
+            "publisher-place": "Vienna, Austria",
+            "title": "R: A language and environment for statistical computing",
+            "title-short": "R",
+            "type": "book"
+        },
+        {
+            "URL": "https://github.com/rstudio/bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-bookdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 0.21",
+            "title": "Bookdown: Authoring books and technical documents with r markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=dplyr",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "François",
+                    "given": "Romain"
+                },
+                {
+                    "family": "Henry",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Müller",
+                    "given": "Kirill"
+                }
+            ],
+            "id": "R-dplyr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 1.0.3",
+            "title": "Dplyr: A grammar of data manipulation",
+            "title-short": "Dplyr",
+            "type": "book"
+        },
+        {
+            "URL": "https://github.com/rstudio/DT",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Cheng",
+                    "given": "Joe"
+                },
+                {
+                    "family": "Tan",
+                    "given": "Xianying"
+                }
+            ],
+            "id": "R-DT",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 0.17",
+            "title": "DT: A wrapper of the JavaScript library DataTables",
+            "title-short": "DT",
+            "type": "book"
+        },
+        {
+            "URL": "https://gdemin.github.io/expss/",
+            "author": [
+                {
+                    "family": "Demin",
+                    "given": "Gregory"
+                }
+            ],
+            "id": "R-expss",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 0.10.7",
+            "title": "Expss: Tables, labels and some useful functions from spreadsheets and SPSS statistics",
+            "title-short": "Expss",
+            "type": "book"
+        },
+        {
+            "URL": "https://davidgohel.github.io/flextable/",
+            "author": [
+                {
+                    "family": "Gohel",
+                    "given": "David"
+                }
+            ],
+            "id": "R-flextable",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 0.6.1",
+            "title": "Flextable: Functions for tabular reporting",
+            "title-short": "Flextable",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Iannone",
+                    "given": "Richard"
+                }
+            ],
+            "id": "R-fontawesome",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 0.1.0",
+            "title": "Fontawesome: Easily insert FontAwesome icons into documents",
+            "title-short": "Fontawesome",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=formattable",
+            "author": [
+                {
+                    "family": "Ren",
+                    "given": "Kun"
+                },
+                {
+                    "family": "Russell",
+                    "given": "Kenton"
+                }
+            ],
+            "id": "R-formattable",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 0.2.1",
+            "title": "Formattable: Create formattable data structures",
+            "title-short": "Formattable",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kunst",
+                    "given": "Joshua"
+                }
+            ],
+            "id": "R-highcharter",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "http://jkunst.com/highcharter, https://github.com/jbkunst/highcharter",
+            "title": "Highcharter: A wrapper for the highcharts library",
+            "title-short": "Highcharter",
+            "type": "book"
+        },
+        {
+            "URL": "https://igraph.org",
+            "author": [
+                {
+                    "family": "file.",
+                    "given": "See AUTHORS"
+                }
+            ],
+            "id": "R-igraph",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 1.2.6",
+            "title": "Igraph: Network analysis and visualization",
+            "title-short": "Igraph",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=kableExtra",
+            "author": [
+                {
+                    "family": "Zhu",
+                    "given": "Hao"
+                }
+            ],
+            "id": "R-kableExtra",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 1.3.1",
+            "title": "kableExtra: Construct complex table with kable and pipe syntax",
+            "title-short": "kableExtra",
+            "type": "book"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-knitr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 1.30",
+            "title": "Knitr: A general-purpose package for dynamic report generation in r",
+            "title-short": "Knitr",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=lubridate",
+            "author": [
+                {
+                    "family": "Spinu",
+                    "given": "Vitalie"
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "R-lubridate",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 1.7.9.2",
+            "title": "Lubridate: Make dealing with dates a little easier",
+            "title-short": "Lubridate",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=plotly",
+            "author": [
+                {
+                    "family": "Sievert",
+                    "given": "Carson"
+                },
+                {
+                    "family": "Parmer",
+                    "given": "Chris"
+                },
+                {
+                    "family": "Hocking",
+                    "given": "Toby"
+                },
+                {
+                    "family": "Chamberlain",
+                    "given": "Scott"
+                },
+                {
+                    "family": "Ram",
+                    "given": "Karthik"
+                },
+                {
+                    "family": "Corvellec",
+                    "given": "Marianne"
+                },
+                {
+                    "family": "Despouy",
+                    "given": "Pedro"
+                }
+            ],
+            "id": "R-plotly",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 4.9.2.2",
+            "title": "Plotly: Create interactive web graphics via plotly.js",
+            "title-short": "Plotly",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=purrr",
+            "author": [
+                {
+                    "family": "Henry",
+                    "given": "Lionel"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "R-purrr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 0.3.4",
+            "title": "Purrr: Functional programming tools",
+            "title-short": "Purrr",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=readr",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Hester",
+                    "given": "Jim"
+                }
+            ],
+            "id": "R-readr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 1.4.0",
+            "title": "Readr: Read rectangular text data",
+            "title-short": "Readr",
+            "type": "book"
+        },
+        {
+            "URL": "https://github.com/rstudio/rmarkdown",
+            "author": [
+                {
+                    "family": "Allaire",
+                    "given": "JJ"
+                },
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "McPherson",
+                    "given": "Jonathan"
+                },
+                {
+                    "family": "Luraschi",
+                    "given": "Javier"
+                },
+                {
+                    "family": "Ushey",
+                    "given": "Kevin"
+                },
+                {
+                    "family": "Atkins",
+                    "given": "Aron"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                },
+                {
+                    "family": "Cheng",
+                    "given": "Joe"
+                },
+                {
+                    "family": "Chang",
+                    "given": "Winston"
+                },
+                {
+                    "family": "Iannone",
+                    "given": "Richard"
+                }
+            ],
+            "id": "R-rmarkdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "R package version 2.6",
+            "title": "Rmarkdown: Dynamic documents for r",
+            "title-short": "Rmarkdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=sparkline",
+            "author": [
+                {
+                    "family": "Vaidyanathan",
+                    "given": "Ramnath"
+                },
+                {
+                    "family": "Russell",
+                    "given": "Kent"
+                },
+                {
+                    "family": "Watts",
+                    "given": "Gareth"
+                }
+            ],
+            "id": "R-sparkline",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "R package version 2.0",
+            "title": "Sparkline: jQuery sparkline htmlwidget",
+            "title-short": "Sparkline",
+            "type": "book"
+        },
+        {
+            "URL": "https://CRAN.R-project.org/package=stringr",
+            "author": [
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "id": "R-stringr",
+            "issued": {
+                "date-parts": [
+                    [
+                        2019
+                    ]
+                ]
+            },
+            "note": "R package version 1.4.0",
+            "title": "Stringr: Simple, consistent wrappers for common string operations",
+            "title-short": "Stringr",
+            "type": "book"
+        },
+        {
+            "URL": "https://github.com/rstudio/bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "bookdown2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1138700109",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Bookdown: Authoring books and technical documents with R markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://igraph.org",
+            "author": [
+                {
+                    "family": "Csardi",
+                    "given": "Gabor"
+                },
+                {
+                    "family": "Nepusz",
+                    "given": "Tamas"
+                }
+            ],
+            "container-title": "InterJournal",
+            "id": "igraph2006",
+            "issued": {
+                "date-parts": [
+                    [
+                        2006
+                    ]
+                ]
+            },
+            "page": "1695",
+            "title": "The igraph software package for complex network research",
+            "type": "article-journal",
+            "volume": "Complex Systems"
+        },
+        {
+            "URL": "https://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "knitr2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "URL": "http://www.crcpress.com/product/isbn/9781466561595",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "container-title": "Implementing reproducible computational research",
+            "editor": [
+                {
+                    "family": "Stodden",
+                    "given": "Victoria"
+                },
+                {
+                    "family": "Leisch",
+                    "given": "Friedrich"
+                },
+                {
+                    "family": "Peng",
+                    "given": "Roger D."
+                }
+            ],
+            "id": "knitr2014",
+            "issued": {
+                "date-parts": [
+                    [
+                        2014
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1466561595",
+            "publisher": "Chapman; Hall/CRC",
+            "title": "Knitr: A comprehensive tool for reproducible research in R",
+            "title-short": "Knitr",
+            "type": "chapter"
+        },
+        {
+            "URL": "https://www.jstatsoft.org/v40/i03/",
+            "author": [
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                },
+                {
+                    "family": "Wickham",
+                    "given": "Hadley"
+                }
+            ],
+            "container-title": "Journal of Statistical Software",
+            "id": "lubridate2011",
+            "issue": "3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2011
+                    ]
+                ]
+            },
+            "page": "1-25",
+            "title": "Dates and times made easy with lubridate",
+            "type": "article-journal",
+            "volume": "40"
+        },
+        {
+            "ISBN": "9781138331457",
+            "URL": "https://plotly-r.com",
+            "author": [
+                {
+                    "family": "Sievert",
+                    "given": "Carson"
+                }
+            ],
+            "id": "plotly2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "publisher": "Chapman; Hall/CRC",
+            "title": "Interactive web-based data visualization with r, plotly, and shiny",
+            "type": "book"
+        },
+        {
+            "URL": "https://bookdown.org/yihui/rmarkdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Allaire",
+                    "given": "J. J."
+                },
+                {
+                    "family": "Grolemund",
+                    "given": "Garrett"
+                }
+            ],
+            "id": "rmarkdown2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "ISBN 9781138359338",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown: The definitive guide",
+            "title-short": "R markdown",
+            "type": "book"
+        },
+        {
+            "URL": "https://bookdown.org/yihui/rmarkdown-cookbook",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                },
+                {
+                    "family": "Dervieux",
+                    "given": "Christophe"
+                },
+                {
+                    "family": "Riederer",
+                    "given": "Emily"
+                }
+            ],
+            "id": "rmarkdown2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "ISBN 9780367563837",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "R markdown cookbook",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "book.bib",
+        "packages.bib"
+    ]
+}

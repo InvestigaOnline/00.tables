@@ -19,12 +19,47 @@ Imaginemos que disponemos datos sobre las cifras de ventas anuales de cinco empr
 
 
 ```{r fig.cap='Datos de trabajo', out.width='95%', fig.asp=.75, fig.align='center', echo=TRUE}
-data <- data.frame(emp=c('Apple','Apple', 'Microsoft','Microsoft', 'Amazon','Amazon', 'Google','Google', 'Facebook','Facebook'),
-                ing=c(84310,91819,32471,36906,72400,87400, 39276,46075,16914,21082),
-                bfo=c(23346,25569,10258,13891,3786,3879,8221,9266,7820,8858),
-                bfn=c(19965,22236,8420,11649,3027,3268,8948,10671,6882,7349),
-                per=c('IV-2018','I-2019','IV-2018','I-2019','IV-2018','I-2019','IV-2018','I-2019','IV-2018','I-2019')
-                )
+data <-
+  data.frame(
+    emp = c(
+      'Apple',
+      'Apple',
+      'Microsoft',
+      'Microsoft',
+      'Amazon',
+      'Amazon',
+      'Google',
+      'Google',
+      'Facebook',
+      'Facebook'
+    ),
+    ing = c(
+      84310,
+      91819,
+      32471,
+      36906,
+      72400,
+      87400,
+      39276,
+      46075,
+      16914,
+      21082
+    ),
+    bfo = c(23346, 25569, 10258, 13891, 3786, 3879, 8221, 9266, 7820, 8858),
+    bfn = c(19965, 22236, 8420, 11649, 3027, 3268, 8948, 10671, 6882, 7349),
+    per = c(
+      'IV-2018',
+      'I-2019',
+      'IV-2018',
+      'I-2019',
+      'IV-2018',
+      'I-2019',
+      'IV-2018',
+      'I-2019',
+      'IV-2018',
+      'I-2019'
+    )
+  )
 data
 ```
 
@@ -74,13 +109,28 @@ Esta información puede ser presentada en un gráfico tal como veíamos en el ca
 ```{r fig.cap='Gráfico del dataframe', out.width='95%', fig.asp=.75, fig.align='center', echo=TRUE}
 colnames(tab01) <- c('empresa', '2019 (1º)', '2018 (4º)', 'dif')
 highchart() %>%
-    hc_chart(type='column') %>% 
-    hc_title(text='Cifra de negocio de las 5 mayores tecnológicas') %>% 
-    hc_xAxis(categories=tab01[,1]) %>% 
-    hc_yAxis(min=0, max=100000) %>% 
-    hc_add_series(data=tab01[,2], name='IV de 2018',dataLabels=list(enabled=TRUE), color='salmon') %>% 
-    hc_add_series(data=tab01[,3], name='I de 2019',dataLabels=list(enabled=TRUE), color='darksalmon') %>% 
-    hc_add_series(data=tab01[,4], name='Diferencia',dataLabels=list(enabled=TRUE), color='teal')
+  hc_chart(type = 'column') %>%
+  hc_title(text = 'Cifra de negocio de las 5 mayores tecnológicas') %>%
+  hc_xAxis(categories = tab01[, 1]) %>%
+  hc_yAxis(min = 0, max = 100000) %>%
+  hc_add_series(
+    data = tab01[, 2],
+    name = 'IV de 2018',
+    dataLabels = list(enabled = TRUE),
+    color = 'salmon'
+  ) %>%
+  hc_add_series(
+    data = tab01[, 3],
+    name = 'I de 2019',
+    dataLabels = list(enabled = TRUE),
+    color = 'darksalmon'
+  ) %>%
+  hc_add_series(
+    data = tab01[, 4],
+    name = 'Diferencia',
+    dataLabels = list(enabled = TRUE),
+    color = 'teal'
+  )
 ```
 
 Añadamos más información a la tabla. Vamos a calcular el porcentaje de incremento. Habrían muchas formas de hacerlo, pero vamos a tratar de hacerlo de la forma más simple.
@@ -96,14 +146,47 @@ Esto nos va a permitir probar algo que no vimos en el anterior capítulo, presen
 
 ```{r fig.cap='gráfic del dataframe', out.width='95%', fig.asp=.75, fig.align='center', echo=TRUE}
 highchart() %>%
-    hc_chart(type='column') %>% 
-    hc_title(text='Cifra de negocio de las 5 mayores tecnológicas') %>% 
-    hc_xAxis(categories=tab01[,1]) %>% 
-    hc_yAxis_multiples(list(title = list(text = 'Millones de dólares'), min=0, max=100000),list(title = list(text = 'Porcentaje'), min=0,max=100, opposite = TRUE))%>%
-    hc_add_series(data=tab01[,2], name='IV de 2018',dataLabels=list(enabled=TRUE), color='salmon') %>% 
-    hc_add_series(data=tab01[,3], name='I de 2019',dataLabels=list(enabled=TRUE), color='darksalmon') %>% 
-    hc_add_series(data=tab01[,4], name='Diferencia',dataLabels=list(enabled=TRUE), color='teal') %>% 
-    hc_add_series(data=tab01[,5], name='Diferencia porcentual',dataLabels=list(enabled=TRUE, format='{point.y} %'), color='darkblue', yAxis=1)
+  hc_chart(type = 'column') %>%
+  hc_title(text = 'Cifra de negocio de las 5 mayores tecnológicas') %>%
+  hc_xAxis(categories = tab01[, 1]) %>%
+  hc_yAxis_multiples(
+    list(
+      title = list(text = 'Millones de dólares'),
+      min = 0,
+      max = 100000
+    ),
+    list(
+      title = list(text = 'Porcentaje'),
+      min = 0,
+      max = 100,
+      opposite = TRUE
+    )
+  ) %>%
+  hc_add_series(
+    data = tab01[, 2],
+    name = 'IV de 2018',
+    dataLabels = list(enabled = TRUE),
+    color = 'salmon'
+  ) %>%
+  hc_add_series(
+    data = tab01[, 3],
+    name = 'I de 2019',
+    dataLabels = list(enabled = TRUE),
+    color = 'darksalmon'
+  ) %>%
+  hc_add_series(
+    data = tab01[, 4],
+    name = 'Diferencia',
+    dataLabels = list(enabled = TRUE),
+    color = 'teal'
+  ) %>%
+  hc_add_series(
+    data = tab01[, 5],
+    name = 'Diferencia porcentual',
+    dataLabels = list(enabled = TRUE, format = '{point.y} %'),
+    color = 'darkblue',
+    yAxis = 1
+  )
 ```
 
 ## Estilo de las tablas
@@ -183,26 +266,47 @@ En nuestro caso nuestro resultado es la aplicación de un color verde o rojo seg
 
 ```{r}
 kbl(tab01) %>%
-    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'), full_width = F) %>%
-    column_spec(2, color = 'teal', bold = TRUE) %>%
-    column_spec(5, color = 'white', background = ifelse(tab01$difpct>mean(tab01$difpct), 'green', 'salmon'),popover = paste(tab01[,1]))
+  kable_styling(
+    bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'),
+    full_width = F
+  ) %>%
+  column_spec(2, color = 'teal', bold = TRUE) %>%
+  column_spec(
+    5,
+    color = 'white',
+    background = ifelse(tab01$difpct > mean(tab01$difpct), 'green', 'salmon'),
+    popover = paste(tab01[, 1])
+  )
 ```
 
 Otra posibilidad es la de poder marcar celdas cell_spec() o filas con `row_spec()`en particular ...
 
 ```{r}
 kbl(tab01) %>%
-    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'), full_width = F) %>%
-    row_spec(3:5, bold = T, color = 'white', background = 'teal')
+  kable_styling(
+    bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'),
+    full_width = F
+  ) %>%
+  row_spec(3:5,
+           bold = T,
+           color = 'white',
+           background = 'teal')
 ```
 
 Un caso particular para la fila 0, la de encabezado.
 
 ```{r}
 kbl(tab01) %>%
-    kable_styling(c('striped','hovered'), full_width = F) %>%
-    row_spec(0, angle = -20, align = 'left', background = 'teal', color = 'white', bold = TRUE) %>% 
-    row_spec(1:5, align = 'center', background = 'lightsalmon')
+  kable_styling(c('striped', 'hovered'), full_width = F) %>%
+  row_spec(
+    0,
+    angle = -20,
+    align = 'left',
+    background = 'teal',
+    color = 'white',
+    bold = TRUE
+  ) %>%
+  row_spec(1:5, align = 'center', background = 'lightsalmon')
 
 ```
 
@@ -214,16 +318,22 @@ Ya para finalizar, es muy habitual querer utilizar imágenes para ilustrar la ta
 ```{r}
 tab02 <- tab01
 tab02$empresa <- ''
-vector.img <- c('https://download.tesigandia.com/test/20201112113121.png',
-         'https://download.tesigandia.com/test/20201112112927.png',
-         'https://download.tesigandia.com/test/20201112113240.png',
-         'https://download.tesigandia.com/test/20201112113259.png',
-         'https://download.tesigandia.com/test/20201112113048.png')
-kbl(tab02) %>% 
-    kable_styling(bootstrap_options = c('hover'), full_width = FALSE) %>%
-    column_spec(1, image = vector.img) %>% 
-    column_spec(2, color = 'teal', bold = TRUE) %>%
-    column_spec(5, color = 'white', background = ifelse(tab02$difpct>mean(tab02$difpct), 'green', 'salmon'))
+vector.img <-
+  c(
+    'https://download.tesigandia.com/test/20201112113121.png',
+    'https://download.tesigandia.com/test/20201112112927.png',
+    'https://download.tesigandia.com/test/20201112113240.png',
+    'https://download.tesigandia.com/test/20201112113259.png',
+    'https://download.tesigandia.com/test/20201112113048.png'
+  )
+kbl(tab02) %>%
+  kable_styling(bootstrap_options = c('hover'),
+                full_width = FALSE) %>%
+  column_spec(1, image = vector.img) %>%
+  column_spec(2, color = 'teal', bold = TRUE) %>%
+  column_spec(5,
+              color = 'white',
+              background = ifelse(tab02$difpct > mean(tab02$difpct), 'green', 'salmon'))
 ```
 
 ### Adición de iconos de FontAwesome
@@ -232,12 +342,21 @@ En la siguiente tabla, vamos a añadir las marcas de icono llamadas [`fontawesom
 
 ```{r}
 tab02 <- tab01
-tab02[,2] <- ifelse(tab02[,2]>mean(tab02[,2]), paste(tab02[,2], fa('arrow-circle-up', fill='green')), paste(tab02[,2], fa('arrow-circle-down', fill='red')))
-kbl(tab02, escape=FALSE) %>%
-    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'), full_width = F) %>%
-    column_spec(2, color = 'teal', bold = TRUE) %>%
-    column_spec(5, color = 'white', background = ifelse(tab02$difpct>mean(tab01$difpct), 'green', 'salmon'),popover = paste(tab02[,1]))
-
+tab02[, 2] <-
+  ifelse(tab02[, 2] > mean(tab02[, 2]), paste(tab02[, 2], fa('arrow-circle-up', fill =
+                                                               'green')), paste(tab02[, 2], fa('arrow-circle-down', fill = 'red')))
+kbl(tab02, escape = FALSE) %>%
+  kable_styling(
+    bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'),
+    full_width = F
+  ) %>%
+  column_spec(2, color = 'teal', bold = TRUE) %>%
+  column_spec(
+    5,
+    color = 'white',
+    background = ifelse(tab02$difpct > mean(tab01$difpct), 'green', 'salmon'),
+    popover = paste(tab02[, 1])
+  )
 ```
 
 ### Adición de gráficos de tipo sparkline
@@ -253,7 +372,8 @@ app <- sample(1:100, 15, replace = TRUE)
 fac <- sample(1:100, 15, replace = TRUE)
 goo <- sample(1:100, 15, replace = TRUE)
 mic <- sample(1:100, 15, replace = TRUE)
-df <- data.frame(amz,app,fac,goo,mic) # los unimos para mostrarlos en forma de tabla, aunque no sería necesario.
+df <-
+  data.frame(amz, app, fac, goo, mic) # los unimos para mostrarlos en forma de tabla, aunque no sería necesario.
 df
 ```
 
@@ -261,9 +381,13 @@ Una vez tenemos esto Lo hemos juntado en un _dataframe para que se vea mejor, va
 
 ```{r}
 tab03 <- tab01
-tab03$sparkline = c(spk_chr(amz), spk_chr(app), spk_chr(fac), spk_chr(goo), spk_chr(mic))
-kbl(tab03, escape = F) %>% 
-  kable_styling(full_width=TRUE)
+tab03$sparkline = c(spk_chr(amz),
+                    spk_chr(app),
+                    spk_chr(fac),
+                    spk_chr(goo),
+                    spk_chr(mic))
+kbl(tab03, escape = F) %>%
+  kable_styling(full_width = TRUE)
 ```
 
 La última columna de la tabla muestra los gráficos obtenidos. Nótese que los datos de la última columna han sido calculados con una fuente de datos diferente, por lo que esta tabla está presentando inputs obtenidos de dos fuentes. Por una lado nuestra vieja tabla y por otro lado la nueva información que le incorporamos. 
@@ -272,13 +396,18 @@ Y finalmente, mostramos casi todo lo que hemos hecho junto, no son cosas separad
 
 ```{r}
 tab02 <- tab03
-tab02[,2] <- ifelse(tab02[,2]>mean(tab02[,2]), paste(tab02[,2], fa('arrow-circle-up', fill='green')), paste(tab02[,2], fa('arrow-circle-down', fill='red')))
-kbl(tab02, escape=FALSE) %>%
-    kable_styling(bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'), full_width = F) %>%
-    column_spec(2, color = 'teal', bold = TRUE) %>%
-    column_spec(5, color = 'white', background = ifelse(tab02$difpct>mean(tab01$difpct), 'green', 'salmon'))
-
+tab02[, 2] <-
+  ifelse(tab02[, 2] > mean(tab02[, 2]), paste(tab02[, 2], fa('arrow-circle-up', fill =
+                                                               'green')), paste(tab02[, 2], fa('arrow-circle-down', fill = 'red')))
+kbl(tab02, escape = FALSE) %>%
+  kable_styling(
+    bootstrap_options = c('striped', 'hover', 'condensed', 'responsive'),
+    full_width = F
+  ) %>%
+  column_spec(2, color = 'teal', bold = TRUE) %>%
+  column_spec(5,
+              color = 'white',
+              background = ifelse(tab02$difpct > mean(tab01$difpct), 'green', 'salmon'))
 ```
 
 Si deseas consultar más información sobre la librería `jQuery Sparklines` accede al [enlace](https://omnipotent.net/jquery.sparkline/#s-about). Enlace antiguo, pero con muchísima utilidad.
-

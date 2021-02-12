@@ -1,0 +1,38 @@
+h1:tse08 Visualización gráfica
+h2:highcharter-introducción highcharteR, introducción
+h3:highchart highchart()
+h3:hchart hchart()
+h2:mi-primer-gráfico Mi primer gráfico
+h2:gráfico-de-barras Gráfico de barras
+h3:cambiar-el-nombre-de-la-serie-de-datos Cambiar el nombre de la serie de datos
+h3:añadir-créditos-al-gráfico Añadir créditos al gráfico
+h3:añadir-el-valor-del-dato-al-elemento-datalabels Añadir el valor del dato al elemento (datalabels)
+h3:guardar-y-exportar-el-gráfico Guardar y exportar el gráfico
+h3:api-de-highcharts-toda-la-potencia-de-los-gráficos API de Highcharts, toda la potencia de los gráficos
+h2:gráfico-de-columna Gráfico de columna
+h3:variación-de-columna-a-pirámide Variación de columna a pirámide
+h3:variación-de-columna-a-lollipop Variación de columna a 
+h3:gráficos-polares Gráficos polares
+h2:diagramas-de-secciones Diagramas de secciones
+h3:tarta-pie-chart Tarta / 
+h3:anillo-doughnut Anillo / 
+h3:funnel 
+h3:pirámide Pirámide
+h2:gráfico-de-línea Gráfico de línea
+h4:suavizado-de-la-línea Suavizado de la línea
+h2:gráficos-de-columnas-barras-con-apilamiento Gráficos de columnas / barras con apilamiento
+h2:gráfico-de-área Gráfico de área
+h2:gráfico-de-puntos-scatterplot Gráfico de puntos / 
+h2:histograma-o-gráfico-de-densidad Histograma o gráfico de densidad
+h2:gráficos-indicadores Gráficos indicadores
+h3:gauge Gauge
+h3:bullet Bullet
+h2:gráfico-boxplot Gráfico / 
+h2:gráfico-de-barras-de-error Gráfico de barras de error
+h2:gráficos-de-transiciones Gráficos de transiciones
+h3:diagrama-de-sankey Diagrama de Sankey
+h3:diagrama-de-rueda Diagrama de rueda
+h3:diagrama-streamgraph Diagrama 
+h3:diagrama-de-redes Diagrama de redes
+h2:conclusión Conclusión
+

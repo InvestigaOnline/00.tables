@@ -88,6 +88,8 @@ añadir-el-valor-del-dato-al-elemento-datalabels
 guardar-y-exportar-el-gráfico
 api-de-highcharts-toda-la-potencia-de-los-gráficos
 gráfico-de-columna
+variación-de-columna-a-pirámide
+variación-de-columna-a-lollipop
 gráficos-polares
 diagramas-de-secciones
 tarta-pie-chart
