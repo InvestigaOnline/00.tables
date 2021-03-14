@@ -162,6 +162,48 @@
             "type": "book"
         },
         {
+            "author": [
+                {
+                    "family": "Sánchez Carrión",
+                    "given": "Juan Javier"
+                }
+            ],
+            "container-title": "Centro de Investigaciones Sociológicas, Madrid",
+            "id": "sanchez1989analisis",
+            "issued": {
+                "date-parts": [
+                    [
+                        1989
+                    ]
+                ]
+            },
+            "title": "Análisis de tablas de contingencia",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Albiol",
+                    "given": "Josep Múria"
+                },
+                {
+                    "family": "Saura",
+                    "given": "Roberto Gil"
+                }
+            ],
+            "id": "albiol1998preparacion",
+            "issued": {
+                "date-parts": [
+                    [
+                        1998
+                    ]
+                ]
+            },
+            "publisher": "Esic Editorial",
+            "title": "Preparación, tabulación y análisis de encuestas para directivos",
+            "type": "book"
+        },
+        {
             "URL": "https://www.R-project.org/",
             "author": [
                 {

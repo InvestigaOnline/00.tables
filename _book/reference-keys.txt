@@ -142,7 +142,7 @@ fig:unnamed-chunk-166
 fig:unnamed-chunk-179
 introducción
 por-qué-este-libro
-para-quién-es-este-libro
+para-quién-este-libro
 estructura-del-documento
 tse01
 instalación-de-r-en-windows
