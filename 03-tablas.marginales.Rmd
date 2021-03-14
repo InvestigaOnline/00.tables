@@ -13,7 +13,7 @@ if(!knitr:::is_html_output())
 
 `expss` es un paquete desarrollado por @expss que calcula y muestra tablas con soporte para etiquetas de estilo `SPSS`, cabeceras múltiples y anidadas, pesos, variables de respuesta múltiple y pruebas de significación de tabla y celda. Ofrece facilidades para una salida formateada de tablas. Los métodos para variables etiquetadas agregan soporte de etiquetas de valor a las funciones de R base y a algunas funciones de otros paquetes. Es un paquete destinado a ayudar a las personas a cambiar el proceso de datos desde `EXCEL` y `SPSS` hasta R.
 
-Vamos a crear nuestra primera tabla utilizando una instrucción muy básica de `expss`, que evolucionará en posteriores secciones. Aquí dejo algunos enlaces para que puedas leer acerca de este paquete y las posibilidades que te ofrece de modo combinado con RStudio:
+Vamos a crear nuestra primera tabla utilizando una instrucción muy básica de `expss`, que evolucionará en posteriores secciones. Aquí dejo algunos enlaces para que puedas leer acerca de este paquete y las posibilidades que te ofrece de modo combinado con R Studio:
 
 * [manual PDF de EXPSS](https://cran.r-project.org/web/packages/expss/expss.pdf)
 * [material de ayuda, ejemplos](https://cran.r-project.org/web/packages/expss/vignettes/tables-with-labels.html)
@@ -66,7 +66,7 @@ as.datatable_widget(data %>%
   calculate(fre(P31)))
 ```
 
-Veamos ahora cómo solicitaremos tablas de frecuencias, porcentajes y estadísticos simples con SegmentaNet y R.
+Veamos ahora cómo solicitaremos tablas de frecuencias, porcentajes y estadísticos simples con R.
 
 #### Tablas de frecuencias (absolutos)
 
@@ -78,9 +78,9 @@ La segunda tabla que vamos a hacer, ya responde a la típica presentación de un
 
 Estos elementos básicos pueden completarse con campos de columnas, campos de filas, pruebas de significación, etc. Iremos desarrollando estos conceptos a lo largo de este documento. ¡Vamos a por el cuadro!
 
-La que ahora entregamos, es la estructura básica de un script de R con el paquete expss. A lo largo del documento veremos cómo ir introduciendo mínimas variaciones a esta estructura que te permitirán descubrir un sinnúmero de posibilidades que ofrece este paquete de R. Por ejemplo, podemos modificar la etiqueta de TOTAL o indicar donde debe situarse la fila que contiene el cálculo TOTAL. Todas estas posibilidades las puedes conocer en la documentación original del package, aunque en este manual trataremos de ir desgranado las más relevantes para nuestro objetivo. Inicialmente iremos añadiendo tras el operador ` %>% ` comentarios precedidos por el simbolo `#`. Estos comentarios irán desapareciendo a medida que avancemos en el manual, y sólo se recurrirá a ellos cuando se aporte alguna nueva funcionalidad.
+La que ahora entregamos, es la estructura básica de un script de R con el paquete `expss`. A lo largo del documento veremos cómo ir introduciendo mínimas variaciones a esta estructura que te permitirán descubrir un sinnúmero de posibilidades que ofrece este paquete de R. Por ejemplo, podemos modificar la etiqueta de TOTAL o indicar donde debe situarse la fila que contiene el cálculo TOTAL. Todas estas posibilidades las puedes conocer en la documentación original del _package_, aunque en este manual trataremos de ir desgranado las más relevantes para nuestro objetivo. Inicialmente iremos añadiendo tras el operador ` %>% ` comentarios precedidos por el símbolo `#`. Estos comentarios irán desapareciendo a medida que avancemos en el manual, y sólo se recurrirá a ellos cuando se aporte alguna nueva funcionalidad.
 
-Para este primer script, indicaremos que usamos la fuente de datos (_dataframe_) cargado en el análisis. En SegmentaNet siempre se llama `data` a este _dataframe_ cargada en el análisis. Si estamos en RSTudio, el _dataframe_ tendrá el nombre que le hayas indicado en la carga. Redactamos pues nuestro script, donde identificamos el _dataframe_, el campo `P31` del cual vamos a calcular el número de casos:
+Para este primer script, indicaremos que usamos la fuente de datos (_dataframe_) cargado en el análisis. En R Studio, el _dataframe_ tendrá el nombre que le hayas indicado en la carga -en nuesstro caso _data_-. Redactamos pues nuestro script, donde identificamos el _dataframe_, el campo `P31` del cual vamos a calcular el número de casos:
 
 ```{r fig.cap='Frecuencias de P31', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
 as.datatable_widget(data %>%
@@ -340,4 +340,4 @@ as.datatable_widget(data %>%
 
 Creo que esta primera muestra de cómo procesar nuestra tabla de una única variable, es más que suficiente para colmar las expectativas más exigentes. Para aquellos que conozcan un poco más el funcionamiento de R, indicar que cada una de estas tablas, se puede almacenar como objeto sobre el que se puede trabajar. Este objeto es del tipo `etable` pero en el fondo es un objeto de tipo `_dataframe_` que por tanto puedes ser trabajado con comandos R estándar. 
 
-Es de esta posibilidad de ser un _dataframe_ de donde deriva su capacidad de integración con otros paquetes como por ejemplo `highcharter` @highcharter que será uno de nuestros paquetes de referencia para gráficos y que también lo es para SegmentaNet que utiliza esta librería de gráficos como estándar. Para una presentación completa, véase la [sección 9](#tse08) para una presentación de gráficos a partir de `_dataframe_` o de `crosstab`.
+Es de esta posibilidad de ser un _dataframe_ de donde deriva su capacidad de integración con otros paquetes como por ejemplo `highcharter` @highcharter que será uno de nuestros paquetes de referencia para gráficos. Para una presentación completa, véase la [sección 8](#tse08) para una presentación de gráficos a partir de `_dataframe_` o de tablas cruzadas -`_crosstab_`-.

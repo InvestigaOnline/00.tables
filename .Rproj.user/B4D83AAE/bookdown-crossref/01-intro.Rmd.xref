@@ -1,6 +1,10 @@
-h1:tse01 Instalación de R y Rstudio
-h2:instalación-de-r-en-windows Instalación de R en Windows
-h2:instalación-de-rstudio-en-windows Instalación de RStudio en Windows
-h2:uso-básico-de-rstudio-y-de-r Uso básico de RStudio y de R
-h3:qué-es-rstudio-una-interfaz-para-usar-r ¿Qué es RStudio?: una interfaz para usar R
+h1:introducción Introducción
+h2:por-qué-este-libro ¿Por qué este libro?
+h2:para-quién-es-este-libro ¿Para quién es este libro?
+h2:estructura-del-documento Estructura del documento
+h2:tse01 Instalación de R y R Studio
+h3:instalación-de-r-en-windows Instalación de R en Windows
+h3:instalación-de-r-studio-en-windows Instalación de R Studio en Windows
+h2:uso-básico-de-r-studio-y-de-r Uso básico de R Studio y de R
+h3:qué-es-r-studio-una-interfaz-para-usar-r ¿Qué es R Studio?: una interfaz para usar R
 

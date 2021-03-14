@@ -1,23 +1,34 @@
 --- 
-title: "Tablas y gráficos con R y RStudio"
-author: "<h2>Roberto Gil-Saura</h2>"
-date: "`r Sys.Date()`<br><br><br>![](data/portada.png)"
+title: "Tablas y gráficos con R y R Studio"
+author: "Roberto Gil-Saura<br>![](data/88x31.png)"
+date: "Última actualización: `r Sys.Date()`<br><br><br>![](data/portada.png)"
 site: bookdown::bookdown_site
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete **expss** y visualizaciones de resultados con el paquete **highcharter**. Introducción al uso de scripts con R en el entorno de RStudio."
+description: "Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo `SPSS` o `BarbWin` usando el paquete `expss` y visualizaciones de resultados con el paquete `highcharter`. Introducción al uso de scripts con `R` en el entorno de `R Studio`."
 ---
 
-```{r include=FALSE}
+# Prefacio {-}
+
+Todavía recuerdo cuando hace unos años descubrí R  [@R-base] -lejos queda ya aquel 2000- y me pareció una herramienta valiosa para mi trabajo, pero que no era para mí. La percibí para usuarios programadores y no para analistas o científicos de datos como se gusta de llamar hoy en día a estos trabajadores del dato. Sin embargo, hace tres años (2018)y tras una etapa en la que centré mis energías y esfuerzos en mi PhD, redescubrí esta herramienta y no sólo ella, también R Studio y todo el trabajo que se había realizado. Quedé gratamente impresionado y me puse manos a la obra porque vi un enorme potencial en la misma para lo que era mi trabajo. Una de las cuestiones fundamentales que aprecié es que las dos herramientas ya no sólo se enfocaban (probablemente nunca lo habían hecho) sólo a los programadores, sino que se apreciaba mucho el enfoque a analistas con todo tipo de formación y con escasos conocimientos de programación, pero que no temían enfrentarse a algo que les iba a reportar eficiencia en su trabajo y un enorme potencial de evolución. Con el paso del tiempo fui descubriendo todo lo que R y R Studio podrían hacer por mí, y lo que ganaba / ahorraba en mi trabajo y en las soluciones que podía ofrecer a mis colegas y/o clientes.
+
+Y ahí empezó todo. En este documento, sólo pongo el foco en dos aspectos fundamentales en el mundo de la investigación de mercados cuantitativa: las tablas de contingencia y los gráficos, en sus diferentes modalidades y con sus diferentes sabores, básico y avanzados, visuales y no tan visuales; todo ello condimentado y aderezado con una cantidad de paquetes suplementarios y la inestimable ayuda de esos programadores que desinteresadamente ceden su trabajo a la comunidad. En especial aquí debo agradecer a Gregory Demin, Joshua Kunst y a Yihui Xie su desinteresada colaboración en la creación de diferentes paquetes y utilidades que han servidor para poder plasmar toda la información que aquí se desarrolla.
+
+<hr>
+<br>![](data/88x31.png)
+<br>
+This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported License (CC BY-NC-SA 4.0) http://creativecommons.org/licenses/by-nc/4.0/ In short: Roberto Gil-Saura retains the Copyright but you are free to reproduce, reblog, remix and modify the content only under the same license to this one. You may not use this work for commercial purposes
+but permission to use this material in nonprofit teaching is still granted, provided the authorship and licensing information here is displayed.
+
+```{r warning = FALSE, messages=FALSE, include=FALSE}
 if(!knitr:::is_html_output())
 {
   options("width"=56)
   knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
   knitr::opts_chunk$set(fig.pos = 'H')
 }
-# automatically create a bib database for R packages
 knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown', 'knitr', 'kableExtra', 'DT', 'expss', 'formattable', 'flextable', 'fontawesome', 'sparkline', 'dplyr', 'stringr', 'purrr', 'lubridate', 'readr', 'igraph', 'highcharter', 'plotly', 'formatR' ), 'packages.bib')
 suppressMessages(library(dplyr, quietly=TRUE))
 suppressMessages(library(stringr, quietly=TRUE))
@@ -35,70 +46,9 @@ suppressMessages(library(fontawesome, quietly=TRUE))
 suppressMessages(library(sparkline, quietly=TRUE))
 suppressMessages(library(formatR, quietly=TRUE))
 options(highcharter.theme = hc_theme_hcrt(tooltip = list(valueDecimals = 2)))
+data <- suppressMessages(read_spss("~/R/r-data/00.tables/data/3192.sav"))
+df <-suppressMessages(read_csv('~/R/r-data/00.tables/data/df.csv', col_names =TRUE))
+edges <-suppressMessages(read_csv("https://download.tesigandia.com/test/edges.csv",locale = locale(encoding = "ISO-8859-1")))
+names <-suppressMessages(read_csv("https://download.tesigandia.com/test/names.csv",locale = locale(encoding = "ISO-8859-1")))
 
-#=============carga de datos
-data <-
-    suppressMessages(read_spss("~/R/r-data/00.tables/data/3192.sav"))
-df <-
-    suppressMessages(read_csv('~/R/r-data/00.tables/data/df.csv', col_names =
-                                  TRUE))
-edges <-
-    suppressMessages(read_csv(
-        "https://download.tesigandia.com/test/edges.csv",
-        locale = locale(encoding = "ISO-8859-1")
-    ))
-names <-
-    suppressMessages(read_csv(
-        "https://download.tesigandia.com/test/names.csv",
-        locale = locale(encoding = "ISO-8859-1")
-    ))
-#=============carga de datos
 ```
-
-# Prefacio
-
-Todavía recuerdo cuando hace unos años descubrí R  [@R-base] -lejos queda ya aquel 2000- y me pareció una herramienta valiosa para mi trabajo, pero que no era para mí. La percibí para usuarios programadores y no para analistas o científicos de datos como se gusta de llamar hoy en día a estos trabajadores del dato. Sin embargo, hace tres años (2018)y tras una etapa en la que centré mis energías y esfuerzos en mi PhD, redescubrí esta herramienta y no sólo ella, también RStudio y todo el trabajo que se había realizado. Quedé gratamente impresionado y me puse manos a la obra porque vi un enorme potencial en la misma para lo que era mi trabajo. 
-
-Una de las cuestiones fundamentales que aprecié es que las dos herramientas ya no sólo se enfocaban (probablemente nunca lo habían hecho) sólo a los programadores, sino que se apreciaba mucho el enfoque a analistas con todo tipo de formación y con escasos conocimientos de programación, pero que no temían enfrentarse a algo que les iba a reportar eficiencia en su trabajo y un enorme potencial de evolución. Con el paso del tiempo fui descubriendo todo lo que R y RStudio podrían hacer por mí, y lo que ganaba / ahorraba en mi trabajo y en las soluciones que podía ofrecer a mis colegas y/o clientes.
-
-Y ahí empezó todo. En este documento, sólo pongo el foco en dos aspectos fundamentales en el mundo de la investigación de mercados cuantitativa: las tablas de contingencia y los gráficos, en sus diferentes modalidades y con sus diferentes sabores, básico y avanzados, visuales y no tan visuales; todo ello condimentado y aderezado con una cantidad de paquetes suplementarios y la inestimable ayuda de esos programadores que desinteresadamente ceden su trabajo a la comunidad. En especial aquí debo agradecer a Gregory Demin, Joshua Kunst y a Yihui Xie su desintersada colaboración en la creación de diferentes paquetes y utilidades que han servidor para poder plasmar toda la información que aquí se desarrolla.
-
-
-## ¿Por qué este libro?
-
-La respuesta más simple a la pregunta ¿Por qué este libro? es que no hay libros dedicados a ilustrar y mostrar cómo hacer tablas de contingencia, y gráficos a partir de esas tablas usando R; más específicamente usando `expss` y `highcharter`. Por otro lado, a partir de mi experiencia y de muchos años dedicado al mundo de la investigación y la docencia (mi hobbie personal) encontré el tiempo y la motivación para escribirlo. Quería crear un recurso que fuera diferente del resto de textos con el mismo contenido aproximado y porque creo que para que las ideas se difundan y adopten ampliamente, deben percibirse de manera amigable y fácil de entender, lo que tiene por qué estar reñido con una baja calidad científica y teórica. Si algo se percibe como complejo e intimidante, solo pocos creerán que ese recurso es apropiado para ellos. Así pues, y aunque todos los análisis requieren las habilidades propias de una persona acostumbrada a manejar fuentes de datos variadas, creo realmente que el recurso es extremadamente sencillo, funcional, comprensible y válido para todos.
-
-¿No es acaso necesario y nos viene muy bien el poder utilizar macros en software como Microsoft Office o sintaxis en SPSS? Pues esta es la respuesta, mostrar de una forma sencilla la posibilidad de que el usuario pueda utilizar código R [@R] en sus análisis de datos, que le permitan ir mucho más allá de lo que ofrecen las herramientas básicas comerciales. Además, la elección de R no es casual: 
-
-* La primera razón para elegir R es que es un programa extremadamente potente para manipular y analizar datos. Su popularidad en alza lo ha convertido en el software de referencia para estadísticas y análisis en muchas disciplinas, y se enseña cada vez más en muchas universidades. R se ha convertido en uno los de los estándares de facto de la industria del proceso, análisis y visualización de datos, dentro de ese nuevo ámbito que es al analítica o ciencia de datos, que está dando cabida a muchos profesionales de nueva creación y en la que nos estamos integrando muchos otros que provenimos de ámbitos diferentes. 
-
-* La segunda razón para seleccionar R es que es independiente de la plataforma (puede usarla en Windows, Mac o Unix) y es gratis y por ello no se deb invertir un euro en licencias, mantenimientos o actualizaciones. Los proveedores de software comercial pueden brindar soporte y ofrecer algún tipo de garantía, pero eso es secundario. No se puede superar el precio y la funcionalidad de R. R se enriquece por el hecho de que muchas personas de todo el mundo contribuyen y comparten su propio trabajo en forma de funcionalidades incluidas en paquetes de lo más variado y que llegan al mercado con una celeridad imposible para cualquier otro software comercial. Asimismo, R tiene recursos de ayuda inigualables, tanto en línea como físicos. Hay muchos foros en línea, listas de correo electrónico, grupos de interés, foros, blogs y sitios web llenos de información rica sobre R. Además, cada año se publican cada vez más muchos libros de R de excelente calidad. Lo que realmente se valora de R, es su carácter de código abierto, lo que permite (si sabes) ver el código por dentro alejándose de ser una caja negra. 
-
-## ¿Para quién es este libro?
-
-El presente documento enfoca e introduce al usuario de investigación (fundamentalmente de Investigación de Mercados) en la creación de información analítica y reproducible utilizando scripting con _Markdown_, que permita obtener cualquier tipo de tabla resumen de datos o cualquier análisis que pueda hacer utilizando código R. 
-
-Este manual ha sido redactado pensando en los usuarios que trabajan de forma conjunta con RStudio<sup>(c)</sup> y R. Por tanto, se asume que el usuario estará familiarizado con el uso de ambas aplicaciones y se le supone conocimiento básico de cómo funcionar con ellas. No obstante, al inicio de la sección 3, el usuario puede encontrar unos sencillos rudimentos de como trabajar para iniciarse con el trabajo de Rstudio y por extensión de R.
-
-## Estructura del documento
-
-En investigación de mercados, las tablas de contingencia o cruzadas probablemente sean el análisis de datos más predominante de todos los utilizados complementado por una potente visualización en forma de gráfico de esos datos. Se pretende dotar al usuario de de las herramientas básicas que le permitan reproducir cualquier tipo de cuadro o tabla, de tipos marginal o cruzada, con medidas estadísticas, combinando estadísticos y frecuencias y/o porcentajes o realizar pruebas de significación, así como la reproducción de los gráficos que se adaptarían a esas tablas. La estructura del manual se adapta por tanto a este objetivo, organizándose de la siguiente forma:
-
-* una introducción al manual
-* una sección que dedicamos a introducir al lector en el lenguaje R; no se pretende hacer un revisión exhaustiva del lenguaje, sino simplemente enumerar los términos y conceptos que serán necesarios para entender el funcionamiento de las tablas y el manejo y gestión de las mismas;
-* una sección donde se introduce al usuario en la escritura de sencillas órdenes que como resultado obtendrán un cuadro o tabla;
-* una sección dedicada a la creación de las tablas cruzadas;
-* una sección dedicada a tablas más especiales, que denominaremos multi dimensionales;
-* una sección dedicada a la generación de otras tablas auxiliares: cuadros, escalas, etc.;
-* un epígrafe que describirá las pruebas básicas de significación que se utilizan en las tablas de contingencia;
-* una sección dedicada a los gráficos;
-* un epígrafe dedicado a operaciones con tablas, entre filas y/o columnas y a mejorar la visualización de las tablas y obtener gráficos a partir de estas operaciones especiales, ampliando el conjunto de paquetes a utilizar y combinando sus funcionalidades;
-* por último, una sección complementaria más de lenguaje R para saber como se incluyen las condiciones para cualquier tipo de selección de datos.
-
-Para seguir este manual, como hemos comentado anteriormente, asumimos que el usuario conoce RStudio y que ha constatado su necesidad de reproducir tipos de tabla que ha visto que son posibles de obtener en Quantum, Minitab, Systat, Star, SPSS o BarbWin entre otros. Explicaremos los rudimentos básicos de trabajo en R, pero adecuados a su uso en RStudio, con una primera introducción a cómo integramos R en su flujo de trabajo.
-
-Agradecemos expresamente a Gregory @expss, desarrollador del paquete **`expss`** de R por su desinteresado trabajo en código abierto que permite reproducir e ir más allá de los cuadros resumen creados; al igual que a Joshua @highcharter, desarrollador del paquete **`highcharter`** por su excelente aportación en el mundo de la graficación con la creación del _wrapper_ para la librería Highchart, renombrada y conocida librería de gráficos JavaScipt que permite su uso en R. Y no puedo acabar esta sección sin mencionar al equipo de Rstudio y en particular a Yihui @bookdown, que con sus diferentes aportaciones, permite que esta obra llegue a vuestros ojos en las condiciones que lo hace usando el paquete **`bookdown`** desde RStudio.
-
-<hr>
-This work is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Unported License (CC BY-NC-SA 4.0) http://creativecommons.org/licenses/by-nc/4.0/ In short: Roberto Gil-Saura retains the Copyright but you are free to reproduce, reblog, remix and modify the content only under the same license to this one. You may not use this work for commercial purposes
-but permission to use this material in nonprofit teaching is still granted, provided the authorship and licensing information here is displayed.

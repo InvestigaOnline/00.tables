@@ -15,7 +15,7 @@ Te explicamos brevemente las dos formas de trabajar.
 
 ### Scripting en consola
 
-El scripting avanzado con consola está pensado para obtener tablas u otros objetos manipulados sobre los que realizar una publicación en modo tabla o en modo gráfico. Se da la oportunidad al usuario de elegir qué objeto y en qué formato se debe procesar. Tanto tabla como gráfico adquieren el aspecto estándar de SegmentaNet. Para ello usaremos archivos de texto con extensión .R que crearemos desde la entrada _File > New File > R Script_. Estos ficheros darán como resultado salidas a la denominada consola.
+El scripting con consola está pensado para obtener tablas u otros objetos en la consola de la interza de trabajo de R Studio. Para ello usaremos archivos de texto con extensión .R que crearemos desde la entrada _File > New File > R Script_. Estos ficheros darán como resultado salidas a la denominada consola.
 
 ### Scripting con _markdown_
 
@@ -23,14 +23,14 @@ El scripting con _markdown_ está pensado para generar páginas completas o docu
 
 ## Primeros pasos
 
-Si ya tienes experiencia con RStudio, da un vistazo, pero es posible que mucho de lo aquí indicado sea irrelevante para ti y todo ello ya sea habitual y conocido por ti. Pasa a la siguiente sección, donde comenzamos a trabajar los scripts.
+Si ya tienes experiencia con R Studio, da un vistazo, pero es posible que mucho de lo aquí indicado sea irrelevante para ti y todo ello ya sea habitual y conocido por ti. Pasa a la siguiente sección, donde comenzamos a trabajar los scripts.
 
 ### Carga de datos 
 
 Vamos a trabajar con ello y verás que sencillo. Para comenzar, en [este enlace](https://drive.google.com/a/investigaonline.com/file/d/1JjevbQjzGc1NMyR7qf7bbvtbMyK8Pvhr/view?usp=drive_web) tienes un archivo de datos con el que haremos todos nuestros ejemplos. Esta fuente de datos está en formato SPSS (sav) y se corresponde con la tercera oleada de un estudio del CIS (Centro de Investigaciones Sociológics de España) de 2017, el barómetro sanitario. 
 La fuente de datos tiene 2557 registros y tiene 190 campos. Si deseas ver el cuestionario que originalmente se utilizó para recoger los datos, [lo puedes descargar aquí](https://drive.google.com/a/investigaonline.com/file/d/1AUUI-1isOmKB1ovR4MRoqMj2Fp7Re2f2/view?usp=drive_web). En él puedes ver todo lo referente a como se ha realizado la entrevista.
 
-Si has seguido las instrucciones de instalación, se habrá creado una carpeta denominada R dentro de Mis Documentos (que Rstudio denomina Home como podás observar en e panel de la ventana 4, opción FILES)
+Si has seguido las instrucciones de instalación, se habrá creado una carpeta denominada R dentro de Mis Documentos (que R Studio denomina Home como podás observar en e panel de la ventana 4, opción FILES)
 
 A partir de ahí,impera tu orden, agrega carpetas en la forma en que esté habituado y organiza tu trabajo como si de cualquier aplicación Windows se tratara. Si te gusta ser ordenado en tu trabajo, lo harás también; si no te gusta, ...
 
@@ -62,7 +62,7 @@ Cuando hagas clic en _install_ comenzarán a instalarse esos paquetes.
 
 ## Crear un fichero R Markdown
 
-Vamos a crear un nuevo script, pero ahora ya lo vamos a hacer del modo que seguiremos trabajando durante todo el manual. Desde el menú de RStudio **_Files > New File > R Markdown_**. Elige entre las opciones proporcionadas, la creación de un documento HTML. Dale nombre y pon tu nombre como autor. Verás lo que escribas reflejado en el archivo.
+Vamos a crear un nuevo script, pero ahora ya lo vamos a hacer del modo que seguiremos trabajando durante todo el manual. Desde el menú de R Studio **_Files > New File > R Markdown_**. Elige entre las opciones proporcionadas, la creación de un documento HTML. Dale nombre y pon tu nombre como autor. Verás lo que escribas reflejado en el archivo.
 
 ![](data/RS07.png)
 

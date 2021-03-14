@@ -3,9 +3,11 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <br><a href="./">Tablas y gráficos con R y RStudio</a><br>
+        <li><br><a href="./">Tablas y gráficos con R y RStudio</a><br></li>
       collapse: subsection
       scroll_highlight: yes
+      after: |
+        <li><a href="https://www.investigaonline.com/book001" target="blank">Roberto Gil-Saura (c) 2021</a></li>
     toolbar:
       position: fixed
     edit : null
