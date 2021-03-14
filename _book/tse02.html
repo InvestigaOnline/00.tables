@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 3 Términos | Análisis de datos con tablas y gráficos en SegmentaNet con R</title>
-  <meta name="description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <title>Sección 3 Primeros pasos y términos a conocer | Tablas y gráficos con R y RStudio</title>
+  <meta name="description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 3 Términos | Análisis de datos con tablas y gráficos en SegmentaNet con R" />
+  <meta property="og:title" content="Sección 3 Primeros pasos y términos a conocer | Tablas y gráficos con R y RStudio" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <meta property="og:description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 3 Términos | Análisis de datos con tablas y gráficos en SegmentaNet con R" />
+  <meta name="twitter:title" content="Sección 3 Primeros pasos y términos a conocer | Tablas y gráficos con R y RStudio" />
   
-  <meta name="twitter:description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <meta name="twitter:description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   
 
 <meta name="author" content="Roberto Gil-Saura" />
 
 
-<meta name="date" content="2021-02-12" />
+<meta name="date" content="2021-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,8 @@
   
 <link rel="prev" href="tse01.html"/>
 <link rel="next" href="tse03.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-3.5.0/jquery.min.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -52,53 +52,58 @@
 
 
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script src="libs/proj4js-2.3.15/proj4.js"></script>
-<link href="libs/highcharts-8.2.2/css/motion.css" rel="stylesheet" />
-<script src="libs/highcharts-8.2.2/highcharts.js"></script>
-<script src="libs/highcharts-8.2.2/highcharts-3d.js"></script>
-<script src="libs/highcharts-8.2.2/highcharts-more.js"></script>
-<script src="libs/highcharts-8.2.2/modules/stock.js"></script>
-<script src="libs/highcharts-8.2.2/modules/map.js"></script>
-<script src="libs/highcharts-8.2.2/modules/annotations.js"></script>
-<script src="libs/highcharts-8.2.2/modules/data.js"></script>
-<script src="libs/highcharts-8.2.2/modules/drilldown.js"></script>
-<script src="libs/highcharts-8.2.2/modules/item-series.js"></script>
-<script src="libs/highcharts-8.2.2/modules/offline-exporting.js"></script>
-<script src="libs/highcharts-8.2.2/modules/overlapping-datalabels.js"></script>
-<script src="libs/highcharts-8.2.2/modules/exporting.js"></script>
-<script src="libs/highcharts-8.2.2/modules/export-data.js"></script>
-<script src="libs/highcharts-8.2.2/modules/funnel.js"></script>
-<script src="libs/highcharts-8.2.2/modules/heatmap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/treemap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/sankey.js"></script>
-<script src="libs/highcharts-8.2.2/modules/dependency-wheel.js"></script>
-<script src="libs/highcharts-8.2.2/modules/organization.js"></script>
-<script src="libs/highcharts-8.2.2/modules/solid-gauge.js"></script>
-<script src="libs/highcharts-8.2.2/modules/streamgraph.js"></script>
-<script src="libs/highcharts-8.2.2/modules/sunburst.js"></script>
-<script src="libs/highcharts-8.2.2/modules/vector.js"></script>
-<script src="libs/highcharts-8.2.2/modules/wordcloud.js"></script>
-<script src="libs/highcharts-8.2.2/modules/xrange.js"></script>
-<script src="libs/highcharts-8.2.2/modules/tilemap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/venn.js"></script>
-<script src="libs/highcharts-8.2.2/modules/gantt.js"></script>
-<script src="libs/highcharts-8.2.2/modules/timeline.js"></script>
-<script src="libs/highcharts-8.2.2/modules/parallel-coordinates.js"></script>
-<script src="libs/highcharts-8.2.2/modules/bullet.js"></script>
-<script src="libs/highcharts-8.2.2/modules/coloraxis.js"></script>
-<script src="libs/highcharts-8.2.2/modules/dumbbell.js"></script>
-<script src="libs/highcharts-8.2.2/modules/lollipop.js"></script>
-<script src="libs/highcharts-8.2.2/modules/series-label.js"></script>
-<script src="libs/highcharts-8.2.2/plugins/motion.js"></script>
-<script src="libs/highcharts-8.2.2/custom/reset.js"></script>
-<script src="libs/highcharts-8.2.2/modules/boost.js"></script>
-<script src="libs/highchart-binding-0.8.2.9000/highchart.js"></script>
-<script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
+<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
@@ -183,53 +188,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<a href="./">Análisis de datos con tablas y gráficos en SegmentaNet con R</a>
+<a href="./">Tablas y gráficos con R y RStudio</a>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.2</b> Estructura del documento</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#por-qué-este-libro"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué este libro?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#para-quién-es-este-libro"><i class="fa fa-check"></i><b>1.2</b> ¿Para quién es este libro?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.3</b> Estructura del documento</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tse01.html"><a href="tse01.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
+<li class="chapter" data-level="2" data-path="tse01.html"><a href="tse01.html"><i class="fa fa-check"></i><b>2</b> Instalación de R y Rstudio</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="tse01.html"><a href="tse01.html#preparar-nuestro-entorno"><i class="fa fa-check"></i><b>2.1</b> Preparar nuestro entorno</a>
+<li class="chapter" data-level="2.1" data-path="tse01.html"><a href="tse01.html#instalación-de-r-en-windows"><i class="fa fa-check"></i><b>2.1</b> Instalación de R en Windows</a></li>
+<li class="chapter" data-level="2.2" data-path="tse01.html"><a href="tse01.html#instalación-de-rstudio-en-windows"><i class="fa fa-check"></i><b>2.2</b> Instalación de RStudio en Windows</a></li>
+<li class="chapter" data-level="2.3" data-path="tse01.html"><a href="tse01.html#uso-básico-de-rstudio-y-de-r"><i class="fa fa-check"></i><b>2.3</b> Uso básico de RStudio y de R</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="tse01.html"><a href="tse01.html#crear-proyecto"><i class="fa fa-check"></i><b>2.1.1</b> Crear proyecto</a></li>
-<li class="chapter" data-level="2.1.2" data-path="tse01.html"><a href="tse01.html#crear-fuente-de-datos"><i class="fa fa-check"></i><b>2.1.2</b> Crear fuente de datos</a></li>
+<li class="chapter" data-level="2.3.1" data-path="tse01.html"><a href="tse01.html#qué-es-rstudio-una-interfaz-para-usar-r"><i class="fa fa-check"></i><b>2.3.1</b> ¿Qué es RStudio?: una interfaz para usar R</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="tse01.html"><a href="tse01.html#mi-primer-análisis-con-scripting"><i class="fa fa-check"></i><b>2.2</b> Mi primer análisis con scripting</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="tse01.html"><a href="tse01.html#crear-análisis"><i class="fa fa-check"></i><b>2.2.1</b> Crear análisis</a></li>
-<li class="chapter" data-level="2.2.2" data-path="tse01.html"><a href="tse01.html#conclusión"><i class="fa fa-check"></i><b>2.2.2</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="tse01.html"><a href="tse01.html#mi-primera-tabla-con-scripting"><i class="fa fa-check"></i><b>2.3</b> Mi primera tabla con scripting</a></li>
-<li class="chapter" data-level="2.4" data-path="tse01.html"><a href="tse01.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>2.4</b> ¿Desde dónde creo mis scripts?</a>
+<li class="chapter" data-level="3" data-path="tse02.html"><a href="tse02.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos y términos a conocer</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="tse01.html"><a href="tse01.html#análisis"><i class="fa fa-check"></i><b>2.4.1</b> Análisis</a></li>
-<li class="chapter" data-level="2.4.2" data-path="tse01.html"><a href="tse01.html#procesos"><i class="fa fa-check"></i><b>2.4.2</b> Procesos</a></li>
-</ul></li>
-<li class="chapter" data-level="2.5" data-path="tse01.html"><a href="tse01.html#conclusión-1"><i class="fa fa-check"></i><b>2.5</b> Conclusión</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="tse02.html"><a href="tse02.html"><i class="fa fa-check"></i><b>3</b> Términos</a>
+<li class="chapter" data-level="3.1" data-path="tse02.html"><a href="tse02.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>3.1</b> ¿Desde dónde creo mis scripts?</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="tse02.html"><a href="tse02.html#básicos-de-r-yo-proceso-de-datos"><i class="fa fa-check"></i><b>3.1</b> Básicos de R y/o proceso de datos</a></li>
-<li class="chapter" data-level="3.2" data-path="tse02.html"><a href="tse02.html#básicos-de-tabulación"><i class="fa fa-check"></i><b>3.2</b> Básicos de tabulación</a></li>
+<li class="chapter" data-level="3.1.1" data-path="tse02.html"><a href="tse02.html#scripting-en-consola"><i class="fa fa-check"></i><b>3.1.1</b> Scripting en consola</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tse02.html"><a href="tse02.html#scripting-con-markdown"><i class="fa fa-check"></i><b>3.1.2</b> Scripting con markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="tse02.html"><a href="tse02.html#primeros-pasos"><i class="fa fa-check"></i><b>3.2</b> Primeros pasos</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="tse02.html"><a href="tse02.html#carga-de-datos"><i class="fa fa-check"></i><b>3.2.1</b> Carga de datos</a></li>
+<li class="chapter" data-level="3.2.2" data-path="tse02.html"><a href="tse02.html#instalación-de-paquetes"><i class="fa fa-check"></i><b>3.2.2</b> Instalación de paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tse02.html"><a href="tse02.html#crear-un-fichero-r-markdown"><i class="fa fa-check"></i><b>3.3</b> Crear un fichero R Markdown</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tse02.html"><a href="tse02.html#conclusión"><i class="fa fa-check"></i><b>3.3.1</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="tse02.html"><a href="tse02.html#básicos-de-r-yo-proceso-de-datos"><i class="fa fa-check"></i><b>3.4</b> Básicos de R y/o proceso de datos</a></li>
+<li class="chapter" data-level="3.5" data-path="tse02.html"><a href="tse02.html#básicos-de-tabulación"><i class="fa fa-check"></i><b>3.5</b> Básicos de tabulación</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="tse03.html"><a href="tse03.html"><i class="fa fa-check"></i><b>4</b> Tablas marginales</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="tse03.html"><a href="tse03.html#frecuencias"><i class="fa fa-check"></i><b>4.1</b> Frecuencias</a>
+<li class="chapter" data-level="4.1" data-path="tse03.html"><a href="tse03.html#una-pequeña-introducción"><i class="fa fa-check"></i><b>4.1</b> Una pequeña introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="tse03.html"><a href="tse03.html#frecuencias"><i class="fa fa-check"></i><b>4.2</b> Frecuencias</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="tse03.html"><a href="tse03.html#variables-de-respuesta-simple"><i class="fa fa-check"></i><b>4.1.1</b> Variables de respuesta simple</a></li>
-<li class="chapter" data-level="4.1.2" data-path="tse03.html"><a href="tse03.html#variable-de-respuesta-múltiple"><i class="fa fa-check"></i><b>4.1.2</b> Variable de respuesta múltiple</a></li>
-<li class="chapter" data-level="4.1.3" data-path="tse03.html"><a href="tse03.html#tablas-combinadas"><i class="fa fa-check"></i><b>4.1.3</b> Tablas combinadas</a></li>
+<li class="chapter" data-level="4.2.1" data-path="tse03.html"><a href="tse03.html#variables-de-respuesta-simple"><i class="fa fa-check"></i><b>4.2.1</b> Variables de respuesta simple</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tse03.html"><a href="tse03.html#variable-de-respuesta-múltiple"><i class="fa fa-check"></i><b>4.2.2</b> Variable de respuesta múltiple</a></li>
+<li class="chapter" data-level="4.2.3" data-path="tse03.html"><a href="tse03.html#tablas-combinadas"><i class="fa fa-check"></i><b>4.2.3</b> Tablas combinadas</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="tse03.html"><a href="tse03.html#estadísticos"><i class="fa fa-check"></i><b>4.2</b> Estadísticos</a>
+<li class="chapter" data-level="4.3" data-path="tse03.html"><a href="tse03.html#estadísticos"><i class="fa fa-check"></i><b>4.3</b> Estadísticos</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="tse03.html"><a href="tse03.html#estadísticos-básicos"><i class="fa fa-check"></i><b>4.2.1</b> Estadísticos básicos</a></li>
-<li class="chapter" data-level="4.2.2" data-path="tse03.html"><a href="tse03.html#otros-estadísticos"><i class="fa fa-check"></i><b>4.2.2</b> Otros estadísticos</a></li>
+<li class="chapter" data-level="4.3.1" data-path="tse03.html"><a href="tse03.html#estadísticos-básicos"><i class="fa fa-check"></i><b>4.3.1</b> Estadísticos básicos</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tse03.html"><a href="tse03.html#otros-estadísticos"><i class="fa fa-check"></i><b>4.3.2</b> Otros estadísticos</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="tse03.html"><a href="tse03.html#conclusión-2"><i class="fa fa-check"></i><b>4.3</b> Conclusión</a></li>
+<li class="chapter" data-level="4.4" data-path="tse03.html"><a href="tse03.html#conclusión-1"><i class="fa fa-check"></i><b>4.4</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tse04.html"><a href="tse04.html"><i class="fa fa-check"></i><b>5</b> Tablas cruzadas</a>
 <ul>
@@ -291,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.3.1" data-path="tse07.html"><a href="tse07.html#algunos-ejemplos-de-uso-de-los-parámetros"><i class="fa fa-check"></i><b>8.3.1</b> Algunos ejemplos de uso de los parámetros</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="tse07.html"><a href="tse07.html#conclusión-3"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
+<li class="chapter" data-level="8.4" data-path="tse07.html"><a href="tse07.html#conclusión-2"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="tse08.html"><a href="tse08.html"><i class="fa fa-check"></i><b>9</b> Visualización gráfica</a>
 <ul>
@@ -341,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.14.3" data-path="tse08.html"><a href="tse08.html#diagrama-streamgraph"><i class="fa fa-check"></i><b>9.14.3</b> Diagrama <em>streamgraph</em></a></li>
 <li class="chapter" data-level="9.14.4" data-path="tse08.html"><a href="tse08.html#diagrama-de-redes"><i class="fa fa-check"></i><b>9.14.4</b> Diagrama de redes</a></li>
 </ul></li>
-<li class="chapter" data-level="9.15" data-path="tse08.html"><a href="tse08.html#conclusión-4"><i class="fa fa-check"></i><b>9.15</b> Conclusión</a></li>
+<li class="chapter" data-level="9.15" data-path="tse08.html"><a href="tse08.html#conclusión-3"><i class="fa fa-check"></i><b>9.15</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tse-formateo.html"><a href="tse-formateo.html"><i class="fa fa-check"></i><b>10</b> Estilos y formatos de tabla</a>
 <ul>
@@ -367,9 +377,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="tse09.html"><a href="tse09.html#criteria"><i class="fa fa-check"></i><b>11.5</b> Operadores específicos (criterios) en expss</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -379,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis de datos con tablas y gráficos en SegmentaNet con R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tablas y gráficos con R y RStudio</a>
           </h1>
         </div>
 
@@ -388,10 +395,85 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="tse02" class="section level1" number="3">
-<h1><span class="header-section-number">Capítulo 3</span> Términos</h1>
-<p>En el presente capítulo mostramos un conjunto de términos que serán habitualmente utilizados en los sucesivos capítulos que se presentan en este documento. estos son los más relevantes y los hemos separado en dos grupos. un grupo hace referencia a términos básicos de R y otro grupo a términos básicos del manejo de tablas o del proceso de tabulación. Cada término tiene une breve reseña, y posteriormente algunos de ellos serán más tratados en sus respectivas funcionalidades.</p>
-<div id="básicos-de-r-yo-proceso-de-datos" class="section level2" number="3.1">
-<h2><span class="header-section-number">3.1</span> Básicos de R y/o proceso de datos</h2>
+<h1><span class="header-section-number">Sección 3</span> Primeros pasos y términos a conocer</h1>
+<div id="desde-dónde-creo-mis-scripts" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> ¿Desde dónde creo mis scripts?</h2>
+<p>Te explicamos brevemente las dos formas de trabajar.</p>
+<div id="scripting-en-consola" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Scripting en consola</h3>
+<p>El scripting avanzado con consola está pensado para obtener tablas u otros objetos manipulados sobre los que realizar una publicación en modo tabla o en modo gráfico. Se da la oportunidad al usuario de elegir qué objeto y en qué formato se debe procesar. Tanto tabla como gráfico adquieren el aspecto estándar de SegmentaNet. Para ello usaremos archivos de texto con extensión .R que crearemos desde la entrada <em>File &gt; New File &gt; R Script</em>. Estos ficheros darán como resultado salidas a la denominada consola.</p>
+</div>
+<div id="scripting-con-markdown" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Scripting con markdown</h3>
+<p>El scripting con markdown está pensado para generar páginas completas o documentos completos con texto, tablas, gráficos, etc. Se pueden utilizar paquetes como <code>flexdashboard</code> o generar salidas de tipo diapositiva utilizando las opciones de configuración que ofrece el paquete <code>rmarkdown</code>. No aseguramos una compatibilidad al 100%, pues eso sería imposible, pero gran parte de las características estarían funcionales. La idea es generar un documento HTML, de forma totalmente transparente para el usuario que se guarda en la base de datos y se presenta como resultado del análisis. Ese HTML puede contener texto, gráficos, tablas y cualquier elemento que se te ocurra. El código R se ubica en lo que se denomina <code>chunks</code> que luego veremos y se puede incluir también código R <code>inline</code> en el texto. Para ello usaremos archivos de texto con extensión .Rmd que crearemos desde la entrada <em>File &gt; New File &gt; R Markdown</em>. Estos ficheros darán como resultado archivos con extensiones .html, .docx, .pdf .</p>
+</div>
+</div>
+<div id="primeros-pasos" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> Primeros pasos</h2>
+<p>Si ya tienes experiencia con RStudio, da un vistazo, pero es posible que mucho de lo aquí indicado sea irrelevante para ti y todo ello ya sea habitual y conocido por ti. Pasa a la siguiente sección, donde comenzamos a trabajar los scripts.</p>
+<div id="carga-de-datos" class="section level3" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Carga de datos</h3>
+<p>Vamos a trabajar con ello y verás que sencillo. Para comenzar, en <a href="https://drive.google.com/a/investigaonline.com/file/d/1JjevbQjzGc1NMyR7qf7bbvtbMyK8Pvhr/view?usp=drive_web">este enlace</a> tienes un archivo de datos con el que haremos todos nuestros ejemplos. Esta fuente de datos está en formato SPSS (sav) y se corresponde con la tercera oleada de un estudio del CIS (Centro de Investigaciones Sociológics de España) de 2017, el barómetro sanitario.
+La fuente de datos tiene 2557 registros y tiene 190 campos. Si deseas ver el cuestionario que originalmente se utilizó para recoger los datos, <a href="https://drive.google.com/a/investigaonline.com/file/d/1AUUI-1isOmKB1ovR4MRoqMj2Fp7Re2f2/view?usp=drive_web">lo puedes descargar aquí</a>. En él puedes ver todo lo referente a como se ha realizado la entrevista.</p>
+<p>Si has seguido las instrucciones de instalación, se habrá creado una carpeta denominada R dentro de Mis Documentos (que Rstudio denomina Home como podás observar en e panel de la ventana 4, opción FILES)</p>
+<p>A partir de ahí,impera tu orden, agrega carpetas en la forma en que esté habituado y organiza tu trabajo como si de cualquier aplicación Windows se tratara. Si te gusta ser ordenado en tu trabajo, lo harás también; si no te gusta, …</p>
+<p>Nuestro primer paso será iniciar una sintaxis o script. Para ello desde el menú de <strong><em>File &gt; New File &gt; R Script</em></strong> abriremos un espacio para escribir. En la ventana creada como <em>Untitled1</em>, puedes escribir.</p>
+<p><img src="data/RS04.png" /></p>
+<p>escribe 2+2 y haz clic en <em>Run</em> teniendo el cursor sobre la línea en la que has escrito …</p>
+<p><img src="data/RS05.png" /></p>
+<p>y obtendrás el resultado en la consola (ventana 2)</p>
+<p><img src="data/RS06.png" /></p>
+<p>Ahora podrías guardar tu script, y ya tendríamos cerrado el primer paso del camino. El archivo puede editarse y volver a ejecutarse tantas veces quieras.</p>
+</div>
+<div id="instalación-de-paquetes" class="section level3" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Instalación de paquetes</h3>
+<p>Una de las cuestiones básicas de R es que se trabaja con paquetes que la comunidad de desarrollo aporta para los análisis más variados. Nosotros vamos a trabajar con algunos que no están en a instalación base, asi que deberemos instalarlos. Aunque existe opción de instalar paquetes por comandos, ilustramos el camino para hacerlo desde el menú. <strong><em>Tools &gt; Install packages</em></strong>.</p>
+<p><img src="data/install_packages.png" /></p>
+<p>Utiliza la opción arriba indicada y siguiendo las indicaciones descritas escribiríamos:</p>
+<p>expss, highcharter, kableExtra</p>
+<p>Cuando hagas clic en <em>install</em> comenzarán a instalarse esos paquetes.</p>
+</div>
+</div>
+<div id="crear-un-fichero-r-markdown" class="section level2" number="3.3">
+<h2><span class="header-section-number">3.3</span> Crear un fichero R Markdown</h2>
+<p>Vamos a crear un nuevo script, pero ahora ya lo vamos a hacer del modo que seguiremos trabajando durante todo el manual. Desde el menú de RStudio <strong><em>Files &gt; New File &gt; R Markdown</em></strong>. Elige entre las opciones proporcionadas, la creación de un documento HTML. Dale nombre y pon tu nombre como autor. Verás lo que escribas reflejado en el archivo.</p>
+<p><img src="data/RS07.png" /></p>
+<p>Se creará un archivo como este …</p>
+<p><img src="data/RS08.png" />
+Este es un fichero de ejemplo, borra desde donde pone ## R Markdown hasta abajo y que quede así.</p>
+<p><img src="data/RS09.png" /></p>
+<p>Aquí escribimos el script de R, que como puedes ver en línea 1 y 3 comienza y acaba con una simbología determinada. Estos son los caracteres indicadores de que todo lo que queda entre <code>```{r echo=TRUE}</code> y <code>```</code> es scripting. A partir de ahora, nuestras instrucciones irán siempre entre estos símbolos de inicio y final. Nótese que se añade la instrucción <code>echo=TRUE</code>. Esta instrucción provocará que se imprima en el resultado los comandos del script, si en lugar de eso se escribe <code>echo=FALSE</code>, no se imprimiría ese código.</p>
+<p>Nuestro código dice secuencialmente …</p>
+<ul>
+<li>carga el paquete expss;</li>
+<li>lee el archivo que está en esa URL (un archivo SAV - SPSS en Google Drive) y asígnalo a un objeto de R que lo contendrá llamado data;</li>
+<li>se calcula la media (mean);</li>
+<li>de una variable que está en el marco de datos denominado <code>data</code>;</li>
+<li>y que se llama PESO (<code>data$PESO</code>);</li>
+<li>no teniendo en cuenta los valores NA (nulos, no definidos, que no sean número: <code>na.rm=TRUE</code>)</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tse02.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(expss)</span>
+<span id="cb1-2"><a href="tse02.html#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;https://drive.google.com/uc?export=download&amp;id=1JjevbQjzGc1NMyR7qf7bbvtbMyK8Pvhr&quot;</span>)</span></code></pre></div>
+<pre><code>## re-encoding from UTF-8</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tse02.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>PESO, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9999273</code></pre>
+<p>Quedará así:</p>
+<p><img src="data/RS10.png" /></p>
+<p>Para ver el resultado, haz clic en el botón KNITR (publicar). Como es la primera vez y no hemos guardado nuestro script, nos indica que le pongamos nombre, por ejemplo SCRIPT_001.</p>
+<p><img src="data/RS11.png" /></p>
+<p>Y el resultado, ya puedes verlo, 0,9999273; sale en una nueva ventana que es onde se muestra el resultado. Reconocerás también aquello que se ha escrito cuando creamos el archivo y que puede editar sobre el fichero.</p>
+<p><img src="data/RS12.png" /></p>
+<p>Fíjate que se ha publicado el código R de programación eso lo podemos evitar si cambiamos el echo = TRUE por echo = FALSE. Prueba a hacer el cambio y haz de nuevo <em><code>knitr</code></em>.</p>
+<p><img src="data/RS13.png" /></p>
+<p>Terminamos con el primer script de análisis. Este script aparece ahora en el listado de fichero como SCRIPT_001.Rmd (Rmd es la extensión de los archivos Rmarkdown, mientras que R es la de los scripts de consola). Del mismo modo, podrás ver ahora un archivo denominado SCRIPT_001.html que contiene tu resultado y que podrías copiar o enviar a cualquiera porque contiene todo lo necesario para que se muestre como a ti. Una de las grandes ventajas.</p>
+<div id="conclusión" class="section level3" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Conclusión</h3>
+<p>Así, hemos finalizado con nuestro primer <em>scripting</em>. No volveremos a ser tan explicativos en este documento acerca de como crear y editar los scripts. En la siguiente sección comenzamos con las tablas más básicas.</p>
+</div>
+</div>
+<div id="básicos-de-r-yo-proceso-de-datos" class="section level2" number="3.4">
+<h2><span class="header-section-number">3.4</span> Básicos de R y/o proceso de datos</h2>
+<p>En el presente epígrafe, mostramos un conjunto de términos que serán habitualmente utilizados en las sucesivas secciones que se presentan en este documento. Estos son los más relevantes y los hemos separado en dos grupos. Un grupo hace referencia a términos básicos de R y otro grupo a términos básicos del manejo de tablas o del proceso de tabulación. Cada término tiene une breve reseña, y posteriormente algunos de ellos serán más tratados en sus respectivas funcionalidades.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>R</strong> es un entorno y lenguaje de programación con un enfoque al análisis estadístico. R nació como una implementación de software libre del lenguaje S, adicionado con soporte para alcance estático. Se trata de uno de los lenguajes de programación más utilizados en investigación científica, siendo además muy popular en los campos de aprendizaje automático (machine learning), minería de datos, investigación biomédica, bioinformática y matemáticas financieras. A esto contribuye la posibilidad de cargar diferentes bibliotecas o paquetes con funcionalidades de cálculo y graficación. R es parte del sistema GNU y se distribuye bajo la licencia GNU GPL. Está disponible para los sistemas operativos Windows, Macintosh, Unix y GNU/Linux.</p></li>
 <li><p><strong>objeto</strong>, elemento creado desde comandos R y que puede ser reutilizado dentro de la programación del script. En este manual se usará como sinónimo de tabla en muchos casos, pues la mayoría de los objetos que crearemos serán tablas.</p></li>
@@ -401,14 +483,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p><strong>medidas</strong>, valores de los que se pretende calcular estadísticos como la media, la desviación típica o la mediana entre otras. Suelen responder a escalas de tipo numérico (ordinal o métrico).</p></li>
 <li><p><strong>dimensiones</strong>, valores de los que se pretende calcular frecuencias y/o porcentajes.</p></li>
 <li><p><strong>factores</strong>, niveles, códigos, etiquetas de variable.</p></li>
-<li><p><strong>NA</strong>, es como R representa los valores nulos o ausentes; SegmentaNet traduce todos los valores especiales (no contesta, no sabe, no definido o filtrado) a esta representación cuando se crea el dataframe de datos.</p></li>
+<li><p><strong>NA</strong>, es como R representa los valores nulos o ausentes.</p></li>
 <li><p><strong>valores</strong> perdidos, missing values, valores ausentes; tal como hemos indicado en el término NA, así es como R representa este tipo de valores.</p></li>
 <li><p><strong>paquete</strong>, conjunto de funciones de las que el usuario hace uso para obtener un resultado en R; en nuestro caso particular principalmente usaremos el paquete EXPSS de R; 1. comando, instrucciones que se integran dentro de un chunk</p></li>
 <li><p><strong>chunk</strong>, conjunto de comandos que se escriben entre los símbolos <code>{r} y</code> y que se ejecutan mostrando los resultados.</p></li>
 </ol>
 </div>
-<div id="básicos-de-tabulación" class="section level2" number="3.2">
-<h2><span class="header-section-number">3.2</span> Básicos de tabulación</h2>
+<div id="básicos-de-tabulación" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Básicos de tabulación</h2>
 <p>En nuestro trabajo vamos a crear objetos de tipo tabla; una tabla es una estructura tabular, igual que un dataframe. De hecho, con nuestro trabajo utilizando el paquete EXPSS, vamos a generar tablas que serán dataframes de tipo (clase) <code>etable</code>. Al ser un dataframe, podremos operar entre filas, columnas y celdas de forma lógica o aritmética utilizando funciones y comandos de R.</p>
 <p>Dejamos este glosario de términos relacionados con las tablas que utilizaremos en esta guía.</p>
 <ol style="list-style-type: decimal">
@@ -483,7 +565,10 @@ gitbook.start({
 "position": "fixed"
 },
 "search": true,
-"info": true
+"info": true,
+"bibliography": ["packages.bib", "book.bib"],
+"biblio-style": "apalike",
+"link-citations": true
 });
 });
 </script>

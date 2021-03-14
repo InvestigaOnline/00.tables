@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 8 Pruebas inferenciales | Análisis de datos con tablas y gráficos en SegmentaNet con R</title>
-  <meta name="description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <title>Sección 8 Pruebas inferenciales | Tablas y gráficos con R y RStudio</title>
+  <meta name="description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 8 Pruebas inferenciales | Análisis de datos con tablas y gráficos en SegmentaNet con R" />
+  <meta property="og:title" content="Sección 8 Pruebas inferenciales | Tablas y gráficos con R y RStudio" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <meta property="og:description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 8 Pruebas inferenciales | Análisis de datos con tablas y gráficos en SegmentaNet con R" />
+  <meta name="twitter:title" content="Sección 8 Pruebas inferenciales | Tablas y gráficos con R y RStudio" />
   
-  <meta name="twitter:description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <meta name="twitter:description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   
 
 <meta name="author" content="Roberto Gil-Saura" />
 
 
-<meta name="date" content="2021-02-12" />
+<meta name="date" content="2021-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,8 @@
   
 <link rel="prev" href="tse06.html"/>
 <link rel="next" href="tse08.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-3.5.0/jquery.min.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -52,53 +52,58 @@
 
 
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script src="libs/proj4js-2.3.15/proj4.js"></script>
-<link href="libs/highcharts-8.2.2/css/motion.css" rel="stylesheet" />
-<script src="libs/highcharts-8.2.2/highcharts.js"></script>
-<script src="libs/highcharts-8.2.2/highcharts-3d.js"></script>
-<script src="libs/highcharts-8.2.2/highcharts-more.js"></script>
-<script src="libs/highcharts-8.2.2/modules/stock.js"></script>
-<script src="libs/highcharts-8.2.2/modules/map.js"></script>
-<script src="libs/highcharts-8.2.2/modules/annotations.js"></script>
-<script src="libs/highcharts-8.2.2/modules/data.js"></script>
-<script src="libs/highcharts-8.2.2/modules/drilldown.js"></script>
-<script src="libs/highcharts-8.2.2/modules/item-series.js"></script>
-<script src="libs/highcharts-8.2.2/modules/offline-exporting.js"></script>
-<script src="libs/highcharts-8.2.2/modules/overlapping-datalabels.js"></script>
-<script src="libs/highcharts-8.2.2/modules/exporting.js"></script>
-<script src="libs/highcharts-8.2.2/modules/export-data.js"></script>
-<script src="libs/highcharts-8.2.2/modules/funnel.js"></script>
-<script src="libs/highcharts-8.2.2/modules/heatmap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/treemap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/sankey.js"></script>
-<script src="libs/highcharts-8.2.2/modules/dependency-wheel.js"></script>
-<script src="libs/highcharts-8.2.2/modules/organization.js"></script>
-<script src="libs/highcharts-8.2.2/modules/solid-gauge.js"></script>
-<script src="libs/highcharts-8.2.2/modules/streamgraph.js"></script>
-<script src="libs/highcharts-8.2.2/modules/sunburst.js"></script>
-<script src="libs/highcharts-8.2.2/modules/vector.js"></script>
-<script src="libs/highcharts-8.2.2/modules/wordcloud.js"></script>
-<script src="libs/highcharts-8.2.2/modules/xrange.js"></script>
-<script src="libs/highcharts-8.2.2/modules/tilemap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/venn.js"></script>
-<script src="libs/highcharts-8.2.2/modules/gantt.js"></script>
-<script src="libs/highcharts-8.2.2/modules/timeline.js"></script>
-<script src="libs/highcharts-8.2.2/modules/parallel-coordinates.js"></script>
-<script src="libs/highcharts-8.2.2/modules/bullet.js"></script>
-<script src="libs/highcharts-8.2.2/modules/coloraxis.js"></script>
-<script src="libs/highcharts-8.2.2/modules/dumbbell.js"></script>
-<script src="libs/highcharts-8.2.2/modules/lollipop.js"></script>
-<script src="libs/highcharts-8.2.2/modules/series-label.js"></script>
-<script src="libs/highcharts-8.2.2/plugins/motion.js"></script>
-<script src="libs/highcharts-8.2.2/custom/reset.js"></script>
-<script src="libs/highcharts-8.2.2/modules/boost.js"></script>
-<script src="libs/highchart-binding-0.8.2.9000/highchart.js"></script>
-<script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
+<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
@@ -183,53 +188,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<a href="./">Análisis de datos con tablas y gráficos en SegmentaNet con R</a>
+<a href="./">Tablas y gráficos con R y RStudio</a>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.2</b> Estructura del documento</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#por-qué-este-libro"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué este libro?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#para-quién-es-este-libro"><i class="fa fa-check"></i><b>1.2</b> ¿Para quién es este libro?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.3</b> Estructura del documento</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tse01.html"><a href="tse01.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
+<li class="chapter" data-level="2" data-path="tse01.html"><a href="tse01.html"><i class="fa fa-check"></i><b>2</b> Instalación de R y Rstudio</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="tse01.html"><a href="tse01.html#preparar-nuestro-entorno"><i class="fa fa-check"></i><b>2.1</b> Preparar nuestro entorno</a>
+<li class="chapter" data-level="2.1" data-path="tse01.html"><a href="tse01.html#instalación-de-r-en-windows"><i class="fa fa-check"></i><b>2.1</b> Instalación de R en Windows</a></li>
+<li class="chapter" data-level="2.2" data-path="tse01.html"><a href="tse01.html#instalación-de-rstudio-en-windows"><i class="fa fa-check"></i><b>2.2</b> Instalación de RStudio en Windows</a></li>
+<li class="chapter" data-level="2.3" data-path="tse01.html"><a href="tse01.html#uso-básico-de-rstudio-y-de-r"><i class="fa fa-check"></i><b>2.3</b> Uso básico de RStudio y de R</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="tse01.html"><a href="tse01.html#crear-proyecto"><i class="fa fa-check"></i><b>2.1.1</b> Crear proyecto</a></li>
-<li class="chapter" data-level="2.1.2" data-path="tse01.html"><a href="tse01.html#crear-fuente-de-datos"><i class="fa fa-check"></i><b>2.1.2</b> Crear fuente de datos</a></li>
+<li class="chapter" data-level="2.3.1" data-path="tse01.html"><a href="tse01.html#qué-es-rstudio-una-interfaz-para-usar-r"><i class="fa fa-check"></i><b>2.3.1</b> ¿Qué es RStudio?: una interfaz para usar R</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="tse01.html"><a href="tse01.html#mi-primer-análisis-con-scripting"><i class="fa fa-check"></i><b>2.2</b> Mi primer análisis con scripting</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="tse01.html"><a href="tse01.html#crear-análisis"><i class="fa fa-check"></i><b>2.2.1</b> Crear análisis</a></li>
-<li class="chapter" data-level="2.2.2" data-path="tse01.html"><a href="tse01.html#conclusión"><i class="fa fa-check"></i><b>2.2.2</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="tse01.html"><a href="tse01.html#mi-primera-tabla-con-scripting"><i class="fa fa-check"></i><b>2.3</b> Mi primera tabla con scripting</a></li>
-<li class="chapter" data-level="2.4" data-path="tse01.html"><a href="tse01.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>2.4</b> ¿Desde dónde creo mis scripts?</a>
+<li class="chapter" data-level="3" data-path="tse02.html"><a href="tse02.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos y términos a conocer</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="tse01.html"><a href="tse01.html#análisis"><i class="fa fa-check"></i><b>2.4.1</b> Análisis</a></li>
-<li class="chapter" data-level="2.4.2" data-path="tse01.html"><a href="tse01.html#procesos"><i class="fa fa-check"></i><b>2.4.2</b> Procesos</a></li>
-</ul></li>
-<li class="chapter" data-level="2.5" data-path="tse01.html"><a href="tse01.html#conclusión-1"><i class="fa fa-check"></i><b>2.5</b> Conclusión</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="tse02.html"><a href="tse02.html"><i class="fa fa-check"></i><b>3</b> Términos</a>
+<li class="chapter" data-level="3.1" data-path="tse02.html"><a href="tse02.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>3.1</b> ¿Desde dónde creo mis scripts?</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="tse02.html"><a href="tse02.html#básicos-de-r-yo-proceso-de-datos"><i class="fa fa-check"></i><b>3.1</b> Básicos de R y/o proceso de datos</a></li>
-<li class="chapter" data-level="3.2" data-path="tse02.html"><a href="tse02.html#básicos-de-tabulación"><i class="fa fa-check"></i><b>3.2</b> Básicos de tabulación</a></li>
+<li class="chapter" data-level="3.1.1" data-path="tse02.html"><a href="tse02.html#scripting-en-consola"><i class="fa fa-check"></i><b>3.1.1</b> Scripting en consola</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tse02.html"><a href="tse02.html#scripting-con-markdown"><i class="fa fa-check"></i><b>3.1.2</b> Scripting con markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="tse02.html"><a href="tse02.html#primeros-pasos"><i class="fa fa-check"></i><b>3.2</b> Primeros pasos</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="tse02.html"><a href="tse02.html#carga-de-datos"><i class="fa fa-check"></i><b>3.2.1</b> Carga de datos</a></li>
+<li class="chapter" data-level="3.2.2" data-path="tse02.html"><a href="tse02.html#instalación-de-paquetes"><i class="fa fa-check"></i><b>3.2.2</b> Instalación de paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tse02.html"><a href="tse02.html#crear-un-fichero-r-markdown"><i class="fa fa-check"></i><b>3.3</b> Crear un fichero R Markdown</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tse02.html"><a href="tse02.html#conclusión"><i class="fa fa-check"></i><b>3.3.1</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="tse02.html"><a href="tse02.html#básicos-de-r-yo-proceso-de-datos"><i class="fa fa-check"></i><b>3.4</b> Básicos de R y/o proceso de datos</a></li>
+<li class="chapter" data-level="3.5" data-path="tse02.html"><a href="tse02.html#básicos-de-tabulación"><i class="fa fa-check"></i><b>3.5</b> Básicos de tabulación</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="tse03.html"><a href="tse03.html"><i class="fa fa-check"></i><b>4</b> Tablas marginales</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="tse03.html"><a href="tse03.html#frecuencias"><i class="fa fa-check"></i><b>4.1</b> Frecuencias</a>
+<li class="chapter" data-level="4.1" data-path="tse03.html"><a href="tse03.html#una-pequeña-introducción"><i class="fa fa-check"></i><b>4.1</b> Una pequeña introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="tse03.html"><a href="tse03.html#frecuencias"><i class="fa fa-check"></i><b>4.2</b> Frecuencias</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="tse03.html"><a href="tse03.html#variables-de-respuesta-simple"><i class="fa fa-check"></i><b>4.1.1</b> Variables de respuesta simple</a></li>
-<li class="chapter" data-level="4.1.2" data-path="tse03.html"><a href="tse03.html#variable-de-respuesta-múltiple"><i class="fa fa-check"></i><b>4.1.2</b> Variable de respuesta múltiple</a></li>
-<li class="chapter" data-level="4.1.3" data-path="tse03.html"><a href="tse03.html#tablas-combinadas"><i class="fa fa-check"></i><b>4.1.3</b> Tablas combinadas</a></li>
+<li class="chapter" data-level="4.2.1" data-path="tse03.html"><a href="tse03.html#variables-de-respuesta-simple"><i class="fa fa-check"></i><b>4.2.1</b> Variables de respuesta simple</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tse03.html"><a href="tse03.html#variable-de-respuesta-múltiple"><i class="fa fa-check"></i><b>4.2.2</b> Variable de respuesta múltiple</a></li>
+<li class="chapter" data-level="4.2.3" data-path="tse03.html"><a href="tse03.html#tablas-combinadas"><i class="fa fa-check"></i><b>4.2.3</b> Tablas combinadas</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="tse03.html"><a href="tse03.html#estadísticos"><i class="fa fa-check"></i><b>4.2</b> Estadísticos</a>
+<li class="chapter" data-level="4.3" data-path="tse03.html"><a href="tse03.html#estadísticos"><i class="fa fa-check"></i><b>4.3</b> Estadísticos</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="tse03.html"><a href="tse03.html#estadísticos-básicos"><i class="fa fa-check"></i><b>4.2.1</b> Estadísticos básicos</a></li>
-<li class="chapter" data-level="4.2.2" data-path="tse03.html"><a href="tse03.html#otros-estadísticos"><i class="fa fa-check"></i><b>4.2.2</b> Otros estadísticos</a></li>
+<li class="chapter" data-level="4.3.1" data-path="tse03.html"><a href="tse03.html#estadísticos-básicos"><i class="fa fa-check"></i><b>4.3.1</b> Estadísticos básicos</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tse03.html"><a href="tse03.html#otros-estadísticos"><i class="fa fa-check"></i><b>4.3.2</b> Otros estadísticos</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="tse03.html"><a href="tse03.html#conclusión-2"><i class="fa fa-check"></i><b>4.3</b> Conclusión</a></li>
+<li class="chapter" data-level="4.4" data-path="tse03.html"><a href="tse03.html#conclusión-1"><i class="fa fa-check"></i><b>4.4</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tse04.html"><a href="tse04.html"><i class="fa fa-check"></i><b>5</b> Tablas cruzadas</a>
 <ul>
@@ -291,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.3.1" data-path="tse07.html"><a href="tse07.html#algunos-ejemplos-de-uso-de-los-parámetros"><i class="fa fa-check"></i><b>8.3.1</b> Algunos ejemplos de uso de los parámetros</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="tse07.html"><a href="tse07.html#conclusión-3"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
+<li class="chapter" data-level="8.4" data-path="tse07.html"><a href="tse07.html#conclusión-2"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="tse08.html"><a href="tse08.html"><i class="fa fa-check"></i><b>9</b> Visualización gráfica</a>
 <ul>
@@ -341,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.14.3" data-path="tse08.html"><a href="tse08.html#diagrama-streamgraph"><i class="fa fa-check"></i><b>9.14.3</b> Diagrama <em>streamgraph</em></a></li>
 <li class="chapter" data-level="9.14.4" data-path="tse08.html"><a href="tse08.html#diagrama-de-redes"><i class="fa fa-check"></i><b>9.14.4</b> Diagrama de redes</a></li>
 </ul></li>
-<li class="chapter" data-level="9.15" data-path="tse08.html"><a href="tse08.html#conclusión-4"><i class="fa fa-check"></i><b>9.15</b> Conclusión</a></li>
+<li class="chapter" data-level="9.15" data-path="tse08.html"><a href="tse08.html#conclusión-3"><i class="fa fa-check"></i><b>9.15</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tse-formateo.html"><a href="tse-formateo.html"><i class="fa fa-check"></i><b>10</b> Estilos y formatos de tabla</a>
 <ul>
@@ -367,9 +377,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="tse09.html"><a href="tse09.html#criteria"><i class="fa fa-check"></i><b>11.5</b> Operadores específicos (criterios) en expss</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -379,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis de datos con tablas y gráficos en SegmentaNet con R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tablas y gráficos con R y RStudio</a>
           </h1>
         </div>
 
@@ -388,7 +395,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="tse07" class="section level1" number="8">
-<h1><span class="header-section-number">Capítulo 8</span> Pruebas inferenciales</h1>
+<h1><span class="header-section-number">Sección 8</span> Pruebas inferenciales</h1>
 <p>Cuando trabajamos con tablas de contingencia es muy frecuente que sintamos la necesidad de tener que inferir acerca de la dependencia de las categorías analizadas o de las diferencias entre los grupos analizados. Siempre que nuestras variables cumplan con los requisitos que para ellas cada prueba establece (normalidad, homoscedasticidad, linealidad y en algunos casos independencia), podremos aplicar las pruebas inferenciales típicas con tablas de contingencia en la investigación básica:</p>
 <ul>
 <li>Chi<sup>2</sup> en su variantes de tabla y celda;</li>
@@ -401,7 +408,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>El contraste Chi<sup>2</sup> de Pearson es una prueba estadística no paramétrica, que compara las frecuencias realmente obtenidas con las frecuencias esperadas que son las que corresponderían a cada celda o casilla de la tabla si su valor se ajustase a cualquier norma teórica previamente adoptada; en nuestro caso, una distribución proporcional de frecuencias normales. En definitiva, “se está calculando un índice acerca de la distancia entre lo real y lo esperado” <span class="citation"><a href="bibliografía.html#ref-manzano1995" role="doc-biblioref">Manzano Arrondo</a> (<a href="bibliografía.html#ref-manzano1995" role="doc-biblioref">1995</a>)</span>.</p>
 <p>El valor numérico de esta prueba se obtiene como:</p>
 <div style="text-align: center">
-<img src="https://www.tesintegra.net/helpgbw/embim12.png" />
+<img src="embim12.png" />
 </div>
 <ul>
 <li>f<sub>o</sub>, serán las frecuencias observadas en el experimento o muestra</li>
@@ -409,7 +416,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Las frecuencias esperadas se calculan con …</p>
 <div style="text-align: center">
-<img src="https://www.tesintegra.net/helpgbw/embim13.png" />
+<img src="embim13.png" />
 </div>
 <ul>
 <li>f<sub>o</sub>, serán las frecuencias observadas en el experimento o muestra</li>
@@ -421,278 +428,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.1.1</span> De una tabla</h3>
 <p>La prueba Chi<sup>2</sup> puede hacerse a nivel de tabla, lo que muestra la relación de dependencia entre las categorías. Hagamos una primera aproximación con dos tablas de contingencia muy sencillas, pero que nos mostrarán como se indica que la relación de dependencia existe o no existe. La función <a href="https://www.rdocumentation.org/packages/expss/versions/0.10.5/topics/tab_significance_options"><code>tab_last_sig_cases</code></a> realiza la prueba base de R denominada <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/chisq.test"><code>chisq.test</code></a>.</p>
 <p>Nótese el uso de ‘|’=unvr() para utilizar la variable sin que se publiquen los texto extra de la misma.</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="tse07.html#cb143-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb143-2"><a href="tse07.html#cb143-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
-<span id="cb143-3"><a href="tse07.html#cb143-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P2)) <span class="sc">%&gt;%</span> </span>
-<span id="cb143-4"><a href="tse07.html#cb143-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb143-5"><a href="tse07.html#cb143-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cases</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb143-6"><a href="tse07.html#cb143-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; border-top: 2px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Hombre 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Mujer 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">
- En general, el sistema sanitario funciona bastante bien 
-</td>
-<td style="text-align: right;">
-538.0 
-</td>
-<td style="text-align: right;">
-277.0 
-</td>
-<td style="text-align: right;">
-261.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- El sistema sanitario funciona bien, aunque son necesarios al 
-</td>
-<td style="text-align: right;">
-1247.0 
-</td>
-<td style="text-align: right;">
-620.0 
-</td>
-<td style="text-align: right;">
-627.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- El sistema sanitario necesita cambios fundamentales, aunque  
-</td>
-<td style="text-align: right;">
-637.0 
-</td>
-<td style="text-align: right;">
-288.0 
-</td>
-<td style="text-align: right;">
-349.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Nuestro sistema sanitario está tan mal que necesitaríamos re 
-</td>
-<td style="text-align: right;">
-120.0 
-</td>
-<td style="text-align: right;">
-61.0 
-</td>
-<td style="text-align: right;">
-59.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.S. 
-</td>
-<td style="text-align: right;">
-9.0 
-</td>
-<td style="text-align: right;">
-6.0 
-</td>
-<td style="text-align: right;">
-3.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.C. 
-</td>
-<td style="text-align: right;">
-6.0 
-</td>
-<td style="text-align: right;">
-4.0 
-</td>
-<td style="text-align: right;">
-2.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- #Chi-squared p-value 
-</td>
-<td style="text-align: right;">
-(warn.)
-</td>
-<td style="text-align: right;">
-</td>
-<td style="text-align: right;">
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- #Total cases 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-2557.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1256.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1301.0 
-</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="tse07.html#cb144-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="tse07.html#cb144-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
 <span id="cb144-2"><a href="tse07.html#cb144-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
-<span id="cb144-3"><a href="tse07.html#cb144-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P33)) <span class="sc">%&gt;%</span> </span>
+<span id="cb144-3"><a href="tse07.html#cb144-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P2)) <span class="sc">%&gt;%</span> </span>
 <span id="cb144-4"><a href="tse07.html#cb144-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb144-5"><a href="tse07.html#cb144-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cases</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb144-6"><a href="tse07.html#cb144-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; border-top: 2px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Hombre 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Mujer 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">
- Casado/a 
-</td>
-<td style="text-align: right;">
-1388.0 
-</td>
-<td style="text-align: right;">
-677.0 
-</td>
-<td style="text-align: right;">
-711.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Soltero/a 
-</td>
-<td style="text-align: right;">
-817.0 
-</td>
-<td style="text-align: right;">
-455.0 
-</td>
-<td style="text-align: right;">
-362.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Viudo/a 
-</td>
-<td style="text-align: right;">
-190.0 
-</td>
-<td style="text-align: right;">
-41.0 
-</td>
-<td style="text-align: right;">
-149.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Separado/a 
-</td>
-<td style="text-align: right;">
-57.0 
-</td>
-<td style="text-align: right;">
-24.0 
-</td>
-<td style="text-align: right;">
-33.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Divorciado/a 
-</td>
-<td style="text-align: right;">
-97.0 
-</td>
-<td style="text-align: right;">
-55.0 
-</td>
-<td style="text-align: right;">
-42.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.C. 
-</td>
-<td style="text-align: right;">
-8.0 
-</td>
-<td style="text-align: right;">
-4.0 
-</td>
-<td style="text-align: right;">
-4.0 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- #Chi-squared p-value 
-</td>
-<td style="text-align: right;">
-&lt;0.05 (warn.)
-</td>
-<td style="text-align: right;">
-</td>
-<td style="text-align: right;">
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- #Total cases 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-2557.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1256.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1301.0 
-</td>
-</tr>
-</tbody>
-</table>
+<span id="cb144-6"><a href="tse07.html#cb144-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-89"></span>
+<div id="htmlwidget-10741e44dd3e0d6ff8d2" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-10741e44dd3e0d6ff8d2">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["En general, el sistema sanitario funciona bastante bien","El sistema sanitario funciona bien, aunque son necesarios al","El sistema sanitario necesita cambios fundamentales, aunque ","Nuestro sistema sanitario está tan mal que necesitaríamos re","N.S.","N.C.","#Chi-squared p-value","#Total cases"],[" 538.0","1247.0"," 637.0"," 120.0","   9.0","   6.0"," (warn.)","2557.0"],["277.0","620.0","288.0"," 61.0","  6.0","  4.0","","1256.0"],["261.0","627.0","349.0"," 59.0","  3.0","  2.0","","1301.0"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.1: Prueba Chi<sup>2</sup> en tabla
+</p>
+</div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="tse07.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb145-2"><a href="tse07.html#cb145-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
+<span id="cb145-3"><a href="tse07.html#cb145-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P33)) <span class="sc">%&gt;%</span> </span>
+<span id="cb145-4"><a href="tse07.html#cb145-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb145-5"><a href="tse07.html#cb145-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cases</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb145-6"><a href="tse07.html#cb145-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-89"></span>
+<div id="htmlwidget-1866bf0fb4de7ac14f52" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-1866bf0fb4de7ac14f52">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Casado/a","Soltero/a","Viudo/a","Separado/a","Divorciado/a","N.C.","#Chi-squared p-value","#Total cases"],["1388.0"," 817.0"," 190.0","  57.0","  97.0","   8.0","&lt;0.05 (warn.)","2557.0"],["677.0","455.0"," 41.0"," 24.0"," 55.0","  4.0","","1256.0"],["711.0","362.0","149.0"," 33.0"," 42.0","  4.0","","1301.0"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.1: Prueba Chi<sup>2</sup> en tabla
+</p>
+</div>
 <p>En la primera tabla se muestra la relación entre la variable P31 (sexo) y la P2 (valoración del sistema sanitario). Nótese que en la tabla se ha usado una línea tras el cálculo de los casos con la función <code>tab_last_sig_cases()</code> que indica que se debe realizar la prueba Chi<sup>2</sup> a la relación. Esta línea provoca que en la tabla surja una nueva fila sobre el <code>#Total</code> con el texto <code>#Chi-squared p-value</code> que indica que se realiza la prueba al 5% (0,05). Si el resultado es el rechazo de la hipótesis nula de independencia se muestra un <code>&lt;0,05 (warn.)</code>, pero si no se puede rechazar la hipótesis nula de independencia sale sólo <code>(warn.)</code> En la tabla no se publica el resultado de la prueba, pero podemos hacerlo siguiendo el formato estándar.</p>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="tse07.html#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>P2, data<span class="sc">$</span>P31)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="tse07.html#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>P2, data<span class="sc">$</span>P31)</span></code></pre></div>
 <pre><code>##                                                               
 ##                                                                Hombre Mujer
 ##   En general, el sistema sanitario funciona bastante bien         277   261
@@ -701,13 +464,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   Nuestro sistema sanitario está tan mal que necesitaríamos re     61    59
 ##   N.S.                                                              6     3
 ##   N.C.                                                              4     2</code></pre>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="tse07.html#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">table</span>(data<span class="sc">$</span>P2, data<span class="sc">$</span>P31))</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="tse07.html#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">table</span>(data<span class="sc">$</span>P2, data<span class="sc">$</span>P31))</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  table(data$P2, data$P31)
 ## X-squared = 7.2669, df = 5, p-value = 0.2015</code></pre>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="tse07.html#cb149-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>P33, data<span class="sc">$</span>P31)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="tse07.html#cb150-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(data<span class="sc">$</span>P33, data<span class="sc">$</span>P31)</span></code></pre></div>
 <pre><code>##               
 ##                Hombre Mujer
 ##   Casado/a        677   711
@@ -716,7 +479,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   Separado/a       24    33
 ##   Divorciado/a     55    42
 ##   N.C.              4     4</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="tse07.html#cb151-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">table</span>(data<span class="sc">$</span>P33, data<span class="sc">$</span>P31))</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="tse07.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">chisq.test</span>(<span class="fu">table</span>(data<span class="sc">$</span>P33, data<span class="sc">$</span>P31))</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
@@ -728,252 +491,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">8.1.2</span> De una celda de una tabla</h3>
 <p>Particularmente de interés es la prueba Chi<sup>2</sup> de celda. A diferencia de la anterior, en este caso se realiza la prueba para cada celda de la tabla en particular. La lógica de la misma sería comparar un valor de la tabla (una celda), con el resto de su fila, el resto de su columna, y el resto de la muestra. De este forma, indicamos que valores son significativos en la tabla, aquellos que cabría contemplar con un interés especial.</p>
 <p>Para obtener la tabla y la subsiguiente prueba se utilizará una nueva función denominada <code>tab_last_sig_cell_chisq()</code> sobre la misma estructura ya conocida de tabla. Nótese que en este caso, para la prueba se requiere utilizar los porcentajes en lugar de los casos, para que el cálculo sea el oportuno. Chi<sup>2</sup> es una prueba muy sensible al tamaño de la muestra.</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="tse07.html#cb153-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb153-2"><a href="tse07.html#cb153-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
-<span id="cb153-3"><a href="tse07.html#cb153-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P2)) <span class="sc">%&gt;%</span> </span>
-<span id="cb153-4"><a href="tse07.html#cb153-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cpct</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb153-5"><a href="tse07.html#cb153-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cell_chisq</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb153-6"><a href="tse07.html#cb153-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; border-top: 2px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Hombre 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Mujer 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">
- En general, el sistema sanitario funciona bastante bien 
-</td>
-<td style="text-align: right;">
-21.0 
-</td>
-<td style="text-align: right;">
-22.1  
-</td>
-<td style="text-align: right;">
-20.1  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- El sistema sanitario funciona bien, aunque son necesarios al 
-</td>
-<td style="text-align: right;">
-48.8 
-</td>
-<td style="text-align: right;">
-49.4  
-</td>
-<td style="text-align: right;">
-48.2  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- El sistema sanitario necesita cambios fundamentales, aunque  
-</td>
-<td style="text-align: right;">
-24.9 
-</td>
-<td style="text-align: right;">
-22.9 &lt;
-</td>
-<td style="text-align: right;">
-26.8 &gt;
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Nuestro sistema sanitario está tan mal que necesitaríamos re 
-</td>
-<td style="text-align: right;">
-4.7 
-</td>
-<td style="text-align: right;">
-4.9  
-</td>
-<td style="text-align: right;">
-4.5  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.S. 
-</td>
-<td style="text-align: right;">
-0.4 
-</td>
-<td style="text-align: right;">
-0.5  
-</td>
-<td style="text-align: right;">
-0.2  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.C. 
-</td>
-<td style="text-align: right;">
-0.2 
-</td>
-<td style="text-align: right;">
-0.3  
-</td>
-<td style="text-align: right;">
-0.2  
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- #Total cases 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-2557 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1256  
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1301  
-</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="tse07.html#cb154-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="tse07.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
 <span id="cb154-2"><a href="tse07.html#cb154-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
-<span id="cb154-3"><a href="tse07.html#cb154-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P33)) <span class="sc">%&gt;%</span> </span>
+<span id="cb154-3"><a href="tse07.html#cb154-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P2)) <span class="sc">%&gt;%</span> </span>
 <span id="cb154-4"><a href="tse07.html#cb154-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cpct</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb154-5"><a href="tse07.html#cb154-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cell_chisq</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb154-6"><a href="tse07.html#cb154-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; border-top: 2px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Hombre 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Mujer 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">
- Casado/a 
-</td>
-<td style="text-align: right;">
-54.3 
-</td>
-<td style="text-align: right;">
-53.9  
-</td>
-<td style="text-align: right;">
-54.7  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Soltero/a 
-</td>
-<td style="text-align: right;">
-32.0 
-</td>
-<td style="text-align: right;">
-36.2 &gt;
-</td>
-<td style="text-align: right;">
-27.8 &lt;
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Viudo/a 
-</td>
-<td style="text-align: right;">
-7.4 
-</td>
-<td style="text-align: right;">
-3.3 &lt;
-</td>
-<td style="text-align: right;">
-11.5 &gt;
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Separado/a 
-</td>
-<td style="text-align: right;">
-2.2 
-</td>
-<td style="text-align: right;">
-1.9  
-</td>
-<td style="text-align: right;">
-2.5  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Divorciado/a 
-</td>
-<td style="text-align: right;">
-3.8 
-</td>
-<td style="text-align: right;">
-4.4  
-</td>
-<td style="text-align: right;">
-3.2  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.C. 
-</td>
-<td style="text-align: right;">
-0.3 
-</td>
-<td style="text-align: right;">
-0.3  
-</td>
-<td style="text-align: right;">
-0.3  
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- #Total cases 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-2557 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1256  
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1301  
-</td>
-</tr>
-</tbody>
-</table>
+<span id="cb154-6"><a href="tse07.html#cb154-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-91"></span>
+<div id="htmlwidget-38ad1fee73907301e9bd" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-38ad1fee73907301e9bd">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["En general, el sistema sanitario funciona bastante bien","El sistema sanitario funciona bien, aunque son necesarios al","El sistema sanitario necesita cambios fundamentales, aunque ","Nuestro sistema sanitario está tan mal que necesitaríamos re","N.S.","N.C.","#Total cases"],["21.0","48.8","24.9"," 4.7"," 0.4"," 0.2","2557"],["22.1  ","49.4  ","22.9 &lt;"," 4.9  "," 0.5  "," 0.3  ","1256  "],["20.1  ","48.2  ","26.8 &gt;"," 4.5  "," 0.2  "," 0.2  ","1301  "]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.2: Prueba Chi<sup>2</sup> de celda
+</p>
+</div>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="tse07.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb155-2"><a href="tse07.html#cb155-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
+<span id="cb155-3"><a href="tse07.html#cb155-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P33)) <span class="sc">%&gt;%</span> </span>
+<span id="cb155-4"><a href="tse07.html#cb155-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cpct</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb155-5"><a href="tse07.html#cb155-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cell_chisq</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb155-6"><a href="tse07.html#cb155-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-91"></span>
+<div id="htmlwidget-05cd67ad9cd23287df30" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-05cd67ad9cd23287df30">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Casado/a","Soltero/a","Viudo/a","Separado/a","Divorciado/a","N.C.","#Total cases"],["54.3","32.0"," 7.4"," 2.2"," 3.8"," 0.3","2557"],["53.9  ","36.2 &gt;"," 3.3 &lt;"," 1.9  "," 4.4  "," 0.3  ","1256  "],["54.7  ","27.8 &lt;","11.5 &gt;"," 2.5  "," 3.2  "," 0.3  ","1301  "]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.2: Prueba Chi<sup>2</sup> de celda
+</p>
+</div>
 <p>La salida es muy clara. Con los símbolos mayor y menor, se marcan aquellas celdas que son significativamente mayores (&gt;) o menores (&lt;) que lo esperado y por tanto son las que direccionan las relaciones de dependencia que en la tabla se producen.</p>
 </div>
 </div>
@@ -985,408 +528,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Asumiendo las hipótesis necesarias para poder trabajar con estadística paramétrica (normalidad, homoscedasticidad, linealidad y en algunos casos independencia), la función <code>tab_last_sig_cpct</code> realiza z-test entre columnas de porcentajes derivadas de la aplicación de <code>tab_stat_cpct</code>. Los resultados son calculados con la misma fórmula que con la función base de R <a href="https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/prop.test"><code>prop.test</code></a> y sin la corrección de continuidad.</p>
 <p>Obsérvese la diferencia de concepto; mientras que la prueba Chi<sup>2</sup> de celda realiza la prueba comparando con el marginal total, la <code>prueba z</code> realiza esa comparación entre los grupos formados por las columnas, a los que se suele llamar perfiles. De esta forma considera la independencia de los grupos muestrales entre sí.</p>
 <p>Para utilizar esta funcionalidad el script sería el siguiente:</p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="tse07.html#cb155-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb155-2"><a href="tse07.html#cb155-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;SEXO&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
-<span id="cb155-3"><a href="tse07.html#cb155-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P2)) <span class="sc">%&gt;%</span> </span>
-<span id="cb155-4"><a href="tse07.html#cb155-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cpct</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb155-5"><a href="tse07.html#cb155-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cpct</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb155-6"><a href="tse07.html#cb155-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-top: 2px solid grey;">
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
- 
-</th>
-<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- SEXO 
-</th>
-</tr>
-<tr>
-<th style>
-</th>
-<th colspan="1" style="font-weight: 900; text-align: center;">
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Hombre 
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Mujer 
-</th>
-</tr>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- A 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- B 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">
- En general, el sistema sanitario funciona bastante bien 
-</td>
-<td style="text-align: right;">
-21.0 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-22.1 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-20.1  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- El sistema sanitario funciona bien, aunque son necesarios al 
-</td>
-<td style="text-align: right;">
-48.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-49.4 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-48.2  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- El sistema sanitario necesita cambios fundamentales, aunque  
-</td>
-<td style="text-align: right;">
-24.9 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-22.9 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-26.8 A
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Nuestro sistema sanitario está tan mal que necesitaríamos re 
-</td>
-<td style="text-align: right;">
-4.7 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-4.9 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-4.5  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.S. 
-</td>
-<td style="text-align: right;">
-0.4 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-0.5 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-0.2  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.C. 
-</td>
-<td style="text-align: right;">
-0.2 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-0.3 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-0.2  
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- #Total cases 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-2557 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1256 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1301  
-</td>
-</tr>
-</tbody>
-</table>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="tse07.html#cb156-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="tse07.html#cb156-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
 <span id="cb156-2"><a href="tse07.html#cb156-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;SEXO&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
-<span id="cb156-3"><a href="tse07.html#cb156-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P33)) <span class="sc">%&gt;%</span> </span>
+<span id="cb156-3"><a href="tse07.html#cb156-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P2)) <span class="sc">%&gt;%</span> </span>
 <span id="cb156-4"><a href="tse07.html#cb156-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cpct</span>() <span class="sc">%&gt;%</span> </span>
 <span id="cb156-5"><a href="tse07.html#cb156-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cpct</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb156-6"><a href="tse07.html#cb156-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-top: 2px solid grey;">
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
- 
-</th>
-<th colspan="3" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- SEXO 
-</th>
-</tr>
-<tr>
-<th style>
-</th>
-<th colspan="1" style="font-weight: 900; text-align: center;">
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Hombre 
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Mujer 
-</th>
-</tr>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- A 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- B 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">
- Casado/a 
-</td>
-<td style="text-align: right;">
-54.3 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-53.9  
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-54.7  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Soltero/a 
-</td>
-<td style="text-align: right;">
-32.0 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-36.2 B
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-27.8  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Viudo/a 
-</td>
-<td style="text-align: right;">
-7.4 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-3.3  
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-11.5 A
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Separado/a 
-</td>
-<td style="text-align: right;">
-2.2 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-1.9  
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-2.5  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Divorciado/a 
-</td>
-<td style="text-align: right;">
-3.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-4.4  
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-3.2  
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- N.C. 
-</td>
-<td style="text-align: right;">
-0.3 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-0.3  
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-0.3  
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- #Total cases 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-2557 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1256  
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1301  
-</td>
-</tr>
-</tbody>
-</table>
+<span id="cb156-6"><a href="tse07.html#cb156-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-92"></span>
+<div id="htmlwidget-f2c908cd9845c8d05c53" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f2c908cd9845c8d05c53">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["En general, el sistema sanitario funciona bastante bien","El sistema sanitario funciona bien, aunque son necesarios al","El sistema sanitario necesita cambios fundamentales, aunque ","Nuestro sistema sanitario está tan mal que necesitaríamos re","N.S.","N.C.","#Total cases"],["21.0","48.8","24.9"," 4.7"," 0.4"," 0.2","2557"],["22.1","49.4","22.9"," 4.9"," 0.5"," 0.3","1256"],["20.1  ","48.2  ","26.8 A"," 4.5  "," 0.2  "," 0.2  ","1301  "]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"3\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"3\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        SEXO\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        A\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        B\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.3: Prueba Z en tabla
+</p>
+</div>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tse07.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb157-2"><a href="tse07.html#cb157-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;SEXO&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
+<span id="cb157-3"><a href="tse07.html#cb157-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P33)) <span class="sc">%&gt;%</span> </span>
+<span id="cb157-4"><a href="tse07.html#cb157-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cpct</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb157-5"><a href="tse07.html#cb157-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cpct</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb157-6"><a href="tse07.html#cb157-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-92"></span>
+<div id="htmlwidget-611b4ff556e25176d8e1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-611b4ff556e25176d8e1">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Casado/a","Soltero/a","Viudo/a","Separado/a","Divorciado/a","N.C.","#Total cases"],["54.3","32.0"," 7.4"," 2.2"," 3.8"," 0.3","2557"],["53.9  ","36.2 B"," 3.3  "," 1.9  "," 4.4  "," 0.3  ","1256  "],["54.7  ","27.8  ","11.5 A"," 2.5  "," 3.2  "," 0.3  ","1301  "]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"3\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"3\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        SEXO\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        A\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        B\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.3: Prueba Z en tabla
+</p>
+</div>
 <p>En nuestro caso, los resultados son muy semejantes a los vistos con Chi<sup>2</sup> de celda, porque la variable elegida para las columnas es dicotómica, es decir, con sólo dos opciones de respuesta, exhaustivas y mutuamente excluyentes. No sería así si la variable de columnas presentara más de 2 perfiles.</p>
 <p>La lectura de esta prueba es la siguiente. El porcentaje de casos en en el grupo B (mujeres) de la tabla 1, es significativamente más elevado que el de hombres, determinándose esta diferencia con una significación del 5%. En el caso de la tabla 2, el porcentaje de hombres solteros es significativamente diferente del porcentaje de mujeres solteras. Del mismo modo y a la inversa el porcentaje de mujeres viudas entrevistadas en la muestra es significativamente mayor que el de hombres.</p>
 <p>Por tanto, creemos que queda claro el funcionamiento de la prueba. Se etiquetan las columnas y se muestra la letra de la columna con la que se presentan diferencias positivas junto al valor porcentual. La prueba se realiza para cada celda, pero siempre comparando con las celdas que tiene a su derecha o izquierda en la misma fila (no con el total).</p>
@@ -1394,472 +561,52 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="medias-prueba-t" class="section level3" number="8.2.2">
 <h3><span class="header-section-number">8.2.2</span> Medias (prueba t)</h3>
 <p>Al igual que en el apartado anterior el objetivo es determinar si existen o no diferencias entre los grupos que se están testando, teniendo como hipótesis nula que las medias de los grupos son iguales. En nuestro ejemplo, hemos tomado la de auto clasificación ideológica (recodificando las posiciones de 1 a 10, izquierda a derecha respectivamente) creando grupos de izquierda, centro y derecha. Sobre esta tabla que calcula las medias, se aplica el estadístico <code>tab_stat_mean_sd_n()</code>que contiene todos los datos requeridos para el cálculo del valor t y se le indica que requerimos el test con <code>tab_last_sig_means()</code>. Se asume que los grupos son independientes, que existe normalidad y que las varianzas de los grupos son iguales.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="tse07.html#cb157-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb157-2"><a href="tse07.html#cb157-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="at">P29=</span><span class="fu">recode</span>(P29, <span class="st">&#39;Izquierda&#39;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">~</span><span class="dv">1</span>, <span class="st">&#39;Centro&#39;</span> <span class="ot">=</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">~</span><span class="dv">2</span>, <span class="st">&#39;Derecha&#39;</span> <span class="ot">=</span> <span class="dv">7</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span> <span class="dv">3</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb157-3"><a href="tse07.html#cb157-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P3=</span><span class="fu">na_if</span>(P3, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb157-4"><a href="tse07.html#cb157-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb157-5"><a href="tse07.html#cb157-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb157-6"><a href="tse07.html#cb157-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-top: 2px solid grey;">
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
- 
-</th>
-<th colspan="5" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- P29 
-</th>
-</tr>
-<tr>
-<th style>
-</th>
-<th colspan="1" style="font-weight: 900; text-align: center;">
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Izquierda 
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Centro 
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Derecha 
-</th>
-</tr>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- A 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- B 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- C 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="8" style="font-weight: 900;">
- Satisfacción 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Mean 
-</td>
-<td style="text-align: right;">
-6.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-6.7 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-6.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.1 A B
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Std. dev. 
-</td>
-<td style="text-align: right;">
-1.9 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-1.9 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-1.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-2.0  
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
-   Unw. valid N 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-2542.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-770.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-750.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-348.0  
-</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="tse07.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb158-2"><a href="tse07.html#cb158-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="at">P29=</span><span class="fu">recode</span>(P29, <span class="st">&#39;Izquierda&#39;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">~</span><span class="dv">1</span>, <span class="st">&#39;Centro&#39;</span> <span class="ot">=</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">~</span><span class="dv">2</span>, <span class="st">&#39;Derecha&#39;</span> <span class="ot">=</span> <span class="dv">7</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span> <span class="dv">3</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb158-3"><a href="tse07.html#cb158-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P3=</span><span class="fu">na_if</span>(P3, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb158-4"><a href="tse07.html#cb158-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb158-5"><a href="tse07.html#cb158-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb158-6"><a href="tse07.html#cb158-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-93"></span>
+<div id="htmlwidget-4b0a092ad746f98ac066" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4b0a092ad746f98ac066">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Satisfacción","",""],["Mean","Std. dev.","Unw. valid N"],["   6.8","   1.9","2542.0"],["  6.7","  1.9","770.0"],["  6.8","  1.8","750.0"],["  7.1 A B","  2.0    ","348.0    "]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"3\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"3\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        P29\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Izquierda\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Centro\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Derecha\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        A\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        B\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        C\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.4: Prueba t en tabla
+</p>
+</div>
 <p>Se puede observar que la salida es igual a la de la prueba Z. Se rotulan las columnas con las letras A, B … y las que sean necesarias, y posteriormente se muestra (por defecto) la letra de la columna con la que la media de la columna en la que se ubica la media presenta diferencias positivas (es mayor). Podemos por tanto observar, que en la población de la que se ha extraído la muestra, se puede afirmar que la media de satisfacción con el funcionamiento del sistema sanitario español es más alta en los individuos cuya auto clasificación ideológica es del grupo de derecha (C), que en la izquierda (A) y en el centro (B). No entramos a valorar si la distribución de grupos es la correcta o no, en cuanto al significado general. Se ha hecho una distribución acorde al significado de los números en sí mismos.</p>
 <p>Existen ocasiones en las que esta prueba, se requiere publicar para un conjunto de ítems que forman parte de una misma batería. En estos casos, no es tan interesante publicar las desviaciones y las bases, por lo que podemos formular de esta forma el script.</p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="tse07.html#cb158-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb158-2"><a href="tse07.html#cb158-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="at">P29=</span><span class="fu">recode</span>(P29, <span class="st">&#39;Izquierda&#39;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">~</span><span class="dv">1</span>, <span class="st">&#39;Centro&#39;</span> <span class="ot">=</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">~</span><span class="dv">2</span>, <span class="st">&#39;Derecha&#39;</span> <span class="ot">=</span> <span class="dv">7</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span> <span class="dv">3</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-3"><a href="tse07.html#cb158-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P901=</span><span class="fu">na_if</span>(P901, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-4"><a href="tse07.html#cb158-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb158-5"><a href="tse07.html#cb158-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb158-6"><a href="tse07.html#cb158-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P902=</span><span class="fu">na_if</span>(P902, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-7"><a href="tse07.html#cb158-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb158-8"><a href="tse07.html#cb158-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb158-9"><a href="tse07.html#cb158-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P903=</span><span class="fu">na_if</span>(P903, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-10"><a href="tse07.html#cb158-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb158-11"><a href="tse07.html#cb158-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb158-12"><a href="tse07.html#cb158-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P904=</span><span class="fu">na_if</span>(P904, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-13"><a href="tse07.html#cb158-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb158-14"><a href="tse07.html#cb158-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb158-15"><a href="tse07.html#cb158-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P905=</span><span class="fu">na_if</span>(P905, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-16"><a href="tse07.html#cb158-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb158-17"><a href="tse07.html#cb158-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb158-18"><a href="tse07.html#cb158-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P906=</span><span class="fu">na_if</span>(P906, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-19"><a href="tse07.html#cb158-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb158-20"><a href="tse07.html#cb158-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb158-21"><a href="tse07.html#cb158-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P907=</span><span class="fu">na_if</span>(P907, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb158-22"><a href="tse07.html#cb158-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb158-23"><a href="tse07.html#cb158-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb158-24"><a href="tse07.html#cb158-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-top: 2px solid grey;">
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
- 
-</th>
-<th colspan="5" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- P29 
-</th>
-</tr>
-<tr>
-<th style>
-</th>
-<th colspan="1" style="font-weight: 900; text-align: center;">
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Izquierda 
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Centro 
-</th>
-<th style="border-bottom: none;" colspan="1">
- 
-</th>
-<th colspan="1" style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- Derecha 
-</th>
-</tr>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- A 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- B 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- C 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="8" style="font-weight: 900;">
- Los cuidados y la atención recibida del personal médico 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Mean 
-</td>
-<td style="text-align: right;">
-7.7 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.7 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.9 
-</td>
-</tr>
-<tr>
-<td colspan="8" style="font-weight: 900;">
- Los cuidados y la atención recibida del personal de enfermería 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Mean 
-</td>
-<td style="text-align: right;">
-7.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.7 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.9 
-</td>
-</tr>
-<tr>
-<td colspan="8" style="font-weight: 900;">
- La confianza y seguridad que transmite el personal médico 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Mean 
-</td>
-<td style="text-align: right;">
-7.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.7 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-8.0 A
-</td>
-</tr>
-<tr>
-<td colspan="8" style="font-weight: 900;">
- La confianza y seguridad que transmite el personal de enfermería 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Mean 
-</td>
-<td style="text-align: right;">
-7.8 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.7 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.7 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-8.0 A B
-</td>
-</tr>
-<tr>
-<td colspan="8" style="font-weight: 900;">
- El tiempo dedicado por el médico o la médica a cada enfermo o enferma 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Mean 
-</td>
-<td style="text-align: right;">
-7.1 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-6.9 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.0 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.2 
-</td>
-</tr>
-<tr>
-<td colspan="8" style="font-weight: 900;">
- El conocimiento del historial y seguimiento de los problemas de salud de cada usuario o usuaria 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Mean 
-</td>
-<td style="text-align: right;">
-7.5 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.4 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.4 
-</td>
-<td style="text-align: right;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-7.7 A B
-</td>
-</tr>
-<tr>
-<td colspan="8" style="font-weight: 900;">
- La información recibida sobre su problema de salud 
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
-   Mean 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-7.5 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-7.4 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-7.5 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-7.8 A B
-</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="tse07.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb159-2"><a href="tse07.html#cb159-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="at">P29=</span><span class="fu">recode</span>(P29, <span class="st">&#39;Izquierda&#39;</span> <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span> <span class="sc">~</span><span class="dv">1</span>, <span class="st">&#39;Centro&#39;</span> <span class="ot">=</span> <span class="dv">5</span><span class="sc">:</span><span class="dv">6</span> <span class="sc">~</span><span class="dv">2</span>, <span class="st">&#39;Derecha&#39;</span> <span class="ot">=</span> <span class="dv">7</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span> <span class="dv">3</span>, <span class="cn">TRUE</span> <span class="sc">~</span> <span class="cn">NA</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-3"><a href="tse07.html#cb159-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P901=</span><span class="fu">na_if</span>(P901, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-4"><a href="tse07.html#cb159-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb159-5"><a href="tse07.html#cb159-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-6"><a href="tse07.html#cb159-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P902=</span><span class="fu">na_if</span>(P902, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-7"><a href="tse07.html#cb159-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb159-8"><a href="tse07.html#cb159-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-9"><a href="tse07.html#cb159-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P903=</span><span class="fu">na_if</span>(P903, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-10"><a href="tse07.html#cb159-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb159-11"><a href="tse07.html#cb159-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-12"><a href="tse07.html#cb159-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P904=</span><span class="fu">na_if</span>(P904, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-13"><a href="tse07.html#cb159-13" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb159-14"><a href="tse07.html#cb159-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-15"><a href="tse07.html#cb159-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P905=</span><span class="fu">na_if</span>(P905, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-16"><a href="tse07.html#cb159-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb159-17"><a href="tse07.html#cb159-17" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-18"><a href="tse07.html#cb159-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P906=</span><span class="fu">na_if</span>(P906, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-19"><a href="tse07.html#cb159-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb159-20"><a href="tse07.html#cb159-20" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-21"><a href="tse07.html#cb159-21" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P907=</span><span class="fu">na_if</span>(P907, <span class="fu">gt</span>(<span class="dv">10</span>))) <span class="sc">%&gt;%</span> </span>
+<span id="cb159-22"><a href="tse07.html#cb159-22" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean_sd_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb159-23"><a href="tse07.html#cb159-23" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_means</span>(<span class="at">keep=</span><span class="st">&#39;means&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb159-24"><a href="tse07.html#cb159-24" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-94"></span>
+<div id="htmlwidget-c528772757ed7305b164" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c528772757ed7305b164">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Los cuidados y la atención recibida del personal médico","Los cuidados y la atención recibida del personal de enfermería","La confianza y seguridad que transmite el personal médico","La confianza y seguridad que transmite el personal de enfermería","El tiempo dedicado por el médico o la médica a cada enfermo o enferma","El conocimiento del historial y seguimiento de los problemas de salud de cada usuario o usuaria","La información recibida sobre su problema de salud"],["Mean","Mean","Mean","Mean","Mean","Mean","Mean"],["   7.7","   7.8","   7.8","   7.8","   7.1","   7.5","   7.5"],["  7.7","  7.8","  7.7","  7.7","  6.9","  7.4","  7.4"],["  7.8","  7.7","  7.8","  7.7","  7.0","  7.4","  7.5"],["  7.9","  7.9","  8.0 A","  8.0 A B","  7.2","  7.7 A B","  7.8 A B"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"3\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"3\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        P29\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Izquierda\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Centro\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Derecha\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        A\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        B\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        C\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.5: Prueba t con sólo medias
+</p>
+</div>
 <p>Se puede observar que la instrucción <code>keep='means'</code> lo que ha conseguido es eliminar la publicación de la desviación y la media del cuadro presentado. De este modo el resultado es más compacto y da una visión general de la batería de ítems</p>
 </div>
 </div>
@@ -1899,60 +646,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="algunos-ejemplos-de-uso-de-los-parámetros" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Algunos ejemplos de uso de los parámetros</h3>
 <p>Cambio del nivel de significación de la prueba y eliminación de las filas con las frecuencias, entre otros…</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="tse07.html#cb159-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb159-2"><a href="tse07.html#cb159-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
-<span id="cb159-3"><a href="tse07.html#cb159-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P33)) <span class="sc">%&gt;%</span> </span>
-<span id="cb159-4"><a href="tse07.html#cb159-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb159-5"><a href="tse07.html#cb159-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cases</span>(<span class="at">sig_level =</span> <span class="fl">0.01</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>, <span class="at">keep=</span><span class="st">&#39;bases&#39;</span>, <span class="at">mode=</span><span class="st">&#39;replace&#39;</span>, <span class="at">label=</span><span class="st">&#39;***&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb159-6"><a href="tse07.html#cb159-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; border-top: 2px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- #Total 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Hombre 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- Mujer 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">
- #Chi-squared p-value 
-</td>
-<td style="text-align: right;">
-&lt;0.01 (warn.)
-</td>
-<td style="text-align: right;">
-</td>
-<td style="text-align: right;">
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- #Total cases 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-2557.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1256.0 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-1301.0 
-</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="tse07.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb160-2"><a href="tse07.html#cb160-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), <span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P31)) <span class="sc">%&gt;%</span> </span>
+<span id="cb160-3"><a href="tse07.html#cb160-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(P33)) <span class="sc">%&gt;%</span> </span>
+<span id="cb160-4"><a href="tse07.html#cb160-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb160-5"><a href="tse07.html#cb160-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_last_sig_cases</span>(<span class="at">sig_level =</span> <span class="fl">0.01</span>, <span class="at">correct =</span> <span class="cn">TRUE</span>, <span class="at">keep=</span><span class="st">&#39;bases&#39;</span>, <span class="at">mode=</span><span class="st">&#39;replace&#39;</span>, <span class="at">label=</span><span class="st">&#39;***&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb160-6"><a href="tse07.html#cb160-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-95"></span>
+<div id="htmlwidget-aac5902b62763e5113ee" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-aac5902b62763e5113ee">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["#Chi-squared p-value","#Total cases"],["&lt;0.01 (warn.)","2557.0"],["","1256.0"],["","1301.0"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 8.6: Prueba Chi<sup>2</sup> con significación al 99%
+</p>
 </div>
 </div>
-<div id="conclusión-3" class="section level2" number="8.4">
+</div>
+<div id="conclusión-2" class="section level2" number="8.4">
 <h2><span class="header-section-number">8.4</span> Conclusión</h2>
 <p>Hasta aquí llegamos. Hemos presentado de forma muy breve y simplificada como podemos aprovechar toda la potencia de <code>expss</code> en nuestros scripts. Lo importante es practicar y practicar. No dejes de acudir a las viñetas de ayuda de <a href="http://gdemin.github.io/expss/">Gregory Demin</a> acerca de como usar el paquete y como generar nuevas tablas. Nosotros tan sólo hemos sentado las bases. Combinando las tablas con lenguaje R se puede llegar a conseguir casi todo.</p>
 <ul>
@@ -2017,7 +726,10 @@ gitbook.start({
 "position": "fixed"
 },
 "search": true,
-"info": true
+"info": true,
+"bibliography": ["packages.bib", "book.bib"],
+"biblio-style": "apalike",
+"link-citations": true
 });
 });
 </script>

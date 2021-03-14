@@ -4,27 +4,27 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 10 Estilos y formatos de tabla | Análisis de datos con tablas y gráficos en SegmentaNet con R</title>
-  <meta name="description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <title>Sección 10 Estilos y formatos de tabla | Tablas y gráficos con R y RStudio</title>
+  <meta name="description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 10 Estilos y formatos de tabla | Análisis de datos con tablas y gráficos en SegmentaNet con R" />
+  <meta property="og:title" content="Sección 10 Estilos y formatos de tabla | Tablas y gráficos con R y RStudio" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <meta property="og:description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 10 Estilos y formatos de tabla | Análisis de datos con tablas y gráficos en SegmentaNet con R" />
+  <meta name="twitter:title" content="Sección 10 Estilos y formatos de tabla | Tablas y gráficos con R y RStudio" />
   
-  <meta name="twitter:description" content="Documento de usuario para reproducir tablas del tipo SPSS / BarbWin en SegmentaNet usando el paquete expss y visualizaciones de resultados con paquete highcharter. Introducción al uso de scripts con R." />
+  <meta name="twitter:description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   
 
 <meta name="author" content="Roberto Gil-Saura" />
 
 
-<meta name="date" content="2021-02-12" />
+<meta name="date" content="2021-03-14" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,8 @@
   
 <link rel="prev" href="tse08.html"/>
 <link rel="next" href="tse09.html"/>
-<script src="libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="libs/jquery-3.5.0/jquery.min.js"></script>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -52,53 +52,58 @@
 
 
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
 <script src="libs/proj4js-2.3.15/proj4.js"></script>
-<link href="libs/highcharts-8.2.2/css/motion.css" rel="stylesheet" />
-<script src="libs/highcharts-8.2.2/highcharts.js"></script>
-<script src="libs/highcharts-8.2.2/highcharts-3d.js"></script>
-<script src="libs/highcharts-8.2.2/highcharts-more.js"></script>
-<script src="libs/highcharts-8.2.2/modules/stock.js"></script>
-<script src="libs/highcharts-8.2.2/modules/map.js"></script>
-<script src="libs/highcharts-8.2.2/modules/annotations.js"></script>
-<script src="libs/highcharts-8.2.2/modules/data.js"></script>
-<script src="libs/highcharts-8.2.2/modules/drilldown.js"></script>
-<script src="libs/highcharts-8.2.2/modules/item-series.js"></script>
-<script src="libs/highcharts-8.2.2/modules/offline-exporting.js"></script>
-<script src="libs/highcharts-8.2.2/modules/overlapping-datalabels.js"></script>
-<script src="libs/highcharts-8.2.2/modules/exporting.js"></script>
-<script src="libs/highcharts-8.2.2/modules/export-data.js"></script>
-<script src="libs/highcharts-8.2.2/modules/funnel.js"></script>
-<script src="libs/highcharts-8.2.2/modules/heatmap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/treemap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/sankey.js"></script>
-<script src="libs/highcharts-8.2.2/modules/dependency-wheel.js"></script>
-<script src="libs/highcharts-8.2.2/modules/organization.js"></script>
-<script src="libs/highcharts-8.2.2/modules/solid-gauge.js"></script>
-<script src="libs/highcharts-8.2.2/modules/streamgraph.js"></script>
-<script src="libs/highcharts-8.2.2/modules/sunburst.js"></script>
-<script src="libs/highcharts-8.2.2/modules/vector.js"></script>
-<script src="libs/highcharts-8.2.2/modules/wordcloud.js"></script>
-<script src="libs/highcharts-8.2.2/modules/xrange.js"></script>
-<script src="libs/highcharts-8.2.2/modules/tilemap.js"></script>
-<script src="libs/highcharts-8.2.2/modules/venn.js"></script>
-<script src="libs/highcharts-8.2.2/modules/gantt.js"></script>
-<script src="libs/highcharts-8.2.2/modules/timeline.js"></script>
-<script src="libs/highcharts-8.2.2/modules/parallel-coordinates.js"></script>
-<script src="libs/highcharts-8.2.2/modules/bullet.js"></script>
-<script src="libs/highcharts-8.2.2/modules/coloraxis.js"></script>
-<script src="libs/highcharts-8.2.2/modules/dumbbell.js"></script>
-<script src="libs/highcharts-8.2.2/modules/lollipop.js"></script>
-<script src="libs/highcharts-8.2.2/modules/series-label.js"></script>
-<script src="libs/highcharts-8.2.2/plugins/motion.js"></script>
-<script src="libs/highcharts-8.2.2/custom/reset.js"></script>
-<script src="libs/highcharts-8.2.2/modules/boost.js"></script>
-<script src="libs/highchart-binding-0.8.2.9000/highchart.js"></script>
-<script src="libs/plotly-binding-4.9.2.2/plotly.js"></script>
+<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.52.2/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.52.2/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
@@ -183,53 +188,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<a href="./">Análisis de datos con tablas y gráficos en SegmentaNet con R</a>
+<a href="./">Tablas y gráficos con R y RStudio</a>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#requisitos"><i class="fa fa-check"></i><b>1.1</b> Requisitos</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.2</b> Estructura del documento</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#por-qué-este-libro"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué este libro?</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#para-quién-es-este-libro"><i class="fa fa-check"></i><b>1.2</b> ¿Para quién es este libro?</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.3</b> Estructura del documento</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="tse01.html"><a href="tse01.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
+<li class="chapter" data-level="2" data-path="tse01.html"><a href="tse01.html"><i class="fa fa-check"></i><b>2</b> Instalación de R y Rstudio</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="tse01.html"><a href="tse01.html#preparar-nuestro-entorno"><i class="fa fa-check"></i><b>2.1</b> Preparar nuestro entorno</a>
+<li class="chapter" data-level="2.1" data-path="tse01.html"><a href="tse01.html#instalación-de-r-en-windows"><i class="fa fa-check"></i><b>2.1</b> Instalación de R en Windows</a></li>
+<li class="chapter" data-level="2.2" data-path="tse01.html"><a href="tse01.html#instalación-de-rstudio-en-windows"><i class="fa fa-check"></i><b>2.2</b> Instalación de RStudio en Windows</a></li>
+<li class="chapter" data-level="2.3" data-path="tse01.html"><a href="tse01.html#uso-básico-de-rstudio-y-de-r"><i class="fa fa-check"></i><b>2.3</b> Uso básico de RStudio y de R</a>
 <ul>
-<li class="chapter" data-level="2.1.1" data-path="tse01.html"><a href="tse01.html#crear-proyecto"><i class="fa fa-check"></i><b>2.1.1</b> Crear proyecto</a></li>
-<li class="chapter" data-level="2.1.2" data-path="tse01.html"><a href="tse01.html#crear-fuente-de-datos"><i class="fa fa-check"></i><b>2.1.2</b> Crear fuente de datos</a></li>
+<li class="chapter" data-level="2.3.1" data-path="tse01.html"><a href="tse01.html#qué-es-rstudio-una-interfaz-para-usar-r"><i class="fa fa-check"></i><b>2.3.1</b> ¿Qué es RStudio?: una interfaz para usar R</a></li>
 </ul></li>
-<li class="chapter" data-level="2.2" data-path="tse01.html"><a href="tse01.html#mi-primer-análisis-con-scripting"><i class="fa fa-check"></i><b>2.2</b> Mi primer análisis con scripting</a>
-<ul>
-<li class="chapter" data-level="2.2.1" data-path="tse01.html"><a href="tse01.html#crear-análisis"><i class="fa fa-check"></i><b>2.2.1</b> Crear análisis</a></li>
-<li class="chapter" data-level="2.2.2" data-path="tse01.html"><a href="tse01.html#conclusión"><i class="fa fa-check"></i><b>2.2.2</b> Conclusión</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="tse01.html"><a href="tse01.html#mi-primera-tabla-con-scripting"><i class="fa fa-check"></i><b>2.3</b> Mi primera tabla con scripting</a></li>
-<li class="chapter" data-level="2.4" data-path="tse01.html"><a href="tse01.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>2.4</b> ¿Desde dónde creo mis scripts?</a>
+<li class="chapter" data-level="3" data-path="tse02.html"><a href="tse02.html"><i class="fa fa-check"></i><b>3</b> Primeros pasos y términos a conocer</a>
 <ul>
-<li class="chapter" data-level="2.4.1" data-path="tse01.html"><a href="tse01.html#análisis"><i class="fa fa-check"></i><b>2.4.1</b> Análisis</a></li>
-<li class="chapter" data-level="2.4.2" data-path="tse01.html"><a href="tse01.html#procesos"><i class="fa fa-check"></i><b>2.4.2</b> Procesos</a></li>
-</ul></li>
-<li class="chapter" data-level="2.5" data-path="tse01.html"><a href="tse01.html#conclusión-1"><i class="fa fa-check"></i><b>2.5</b> Conclusión</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="tse02.html"><a href="tse02.html"><i class="fa fa-check"></i><b>3</b> Términos</a>
+<li class="chapter" data-level="3.1" data-path="tse02.html"><a href="tse02.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>3.1</b> ¿Desde dónde creo mis scripts?</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="tse02.html"><a href="tse02.html#básicos-de-r-yo-proceso-de-datos"><i class="fa fa-check"></i><b>3.1</b> Básicos de R y/o proceso de datos</a></li>
-<li class="chapter" data-level="3.2" data-path="tse02.html"><a href="tse02.html#básicos-de-tabulación"><i class="fa fa-check"></i><b>3.2</b> Básicos de tabulación</a></li>
+<li class="chapter" data-level="3.1.1" data-path="tse02.html"><a href="tse02.html#scripting-en-consola"><i class="fa fa-check"></i><b>3.1.1</b> Scripting en consola</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tse02.html"><a href="tse02.html#scripting-con-markdown"><i class="fa fa-check"></i><b>3.1.2</b> Scripting con markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="tse02.html"><a href="tse02.html#primeros-pasos"><i class="fa fa-check"></i><b>3.2</b> Primeros pasos</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="tse02.html"><a href="tse02.html#carga-de-datos"><i class="fa fa-check"></i><b>3.2.1</b> Carga de datos</a></li>
+<li class="chapter" data-level="3.2.2" data-path="tse02.html"><a href="tse02.html#instalación-de-paquetes"><i class="fa fa-check"></i><b>3.2.2</b> Instalación de paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tse02.html"><a href="tse02.html#crear-un-fichero-r-markdown"><i class="fa fa-check"></i><b>3.3</b> Crear un fichero R Markdown</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tse02.html"><a href="tse02.html#conclusión"><i class="fa fa-check"></i><b>3.3.1</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="tse02.html"><a href="tse02.html#básicos-de-r-yo-proceso-de-datos"><i class="fa fa-check"></i><b>3.4</b> Básicos de R y/o proceso de datos</a></li>
+<li class="chapter" data-level="3.5" data-path="tse02.html"><a href="tse02.html#básicos-de-tabulación"><i class="fa fa-check"></i><b>3.5</b> Básicos de tabulación</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="tse03.html"><a href="tse03.html"><i class="fa fa-check"></i><b>4</b> Tablas marginales</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="tse03.html"><a href="tse03.html#frecuencias"><i class="fa fa-check"></i><b>4.1</b> Frecuencias</a>
+<li class="chapter" data-level="4.1" data-path="tse03.html"><a href="tse03.html#una-pequeña-introducción"><i class="fa fa-check"></i><b>4.1</b> Una pequeña introducción</a></li>
+<li class="chapter" data-level="4.2" data-path="tse03.html"><a href="tse03.html#frecuencias"><i class="fa fa-check"></i><b>4.2</b> Frecuencias</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="tse03.html"><a href="tse03.html#variables-de-respuesta-simple"><i class="fa fa-check"></i><b>4.1.1</b> Variables de respuesta simple</a></li>
-<li class="chapter" data-level="4.1.2" data-path="tse03.html"><a href="tse03.html#variable-de-respuesta-múltiple"><i class="fa fa-check"></i><b>4.1.2</b> Variable de respuesta múltiple</a></li>
-<li class="chapter" data-level="4.1.3" data-path="tse03.html"><a href="tse03.html#tablas-combinadas"><i class="fa fa-check"></i><b>4.1.3</b> Tablas combinadas</a></li>
+<li class="chapter" data-level="4.2.1" data-path="tse03.html"><a href="tse03.html#variables-de-respuesta-simple"><i class="fa fa-check"></i><b>4.2.1</b> Variables de respuesta simple</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tse03.html"><a href="tse03.html#variable-de-respuesta-múltiple"><i class="fa fa-check"></i><b>4.2.2</b> Variable de respuesta múltiple</a></li>
+<li class="chapter" data-level="4.2.3" data-path="tse03.html"><a href="tse03.html#tablas-combinadas"><i class="fa fa-check"></i><b>4.2.3</b> Tablas combinadas</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="tse03.html"><a href="tse03.html#estadísticos"><i class="fa fa-check"></i><b>4.2</b> Estadísticos</a>
+<li class="chapter" data-level="4.3" data-path="tse03.html"><a href="tse03.html#estadísticos"><i class="fa fa-check"></i><b>4.3</b> Estadísticos</a>
 <ul>
-<li class="chapter" data-level="4.2.1" data-path="tse03.html"><a href="tse03.html#estadísticos-básicos"><i class="fa fa-check"></i><b>4.2.1</b> Estadísticos básicos</a></li>
-<li class="chapter" data-level="4.2.2" data-path="tse03.html"><a href="tse03.html#otros-estadísticos"><i class="fa fa-check"></i><b>4.2.2</b> Otros estadísticos</a></li>
+<li class="chapter" data-level="4.3.1" data-path="tse03.html"><a href="tse03.html#estadísticos-básicos"><i class="fa fa-check"></i><b>4.3.1</b> Estadísticos básicos</a></li>
+<li class="chapter" data-level="4.3.2" data-path="tse03.html"><a href="tse03.html#otros-estadísticos"><i class="fa fa-check"></i><b>4.3.2</b> Otros estadísticos</a></li>
 </ul></li>
-<li class="chapter" data-level="4.3" data-path="tse03.html"><a href="tse03.html#conclusión-2"><i class="fa fa-check"></i><b>4.3</b> Conclusión</a></li>
+<li class="chapter" data-level="4.4" data-path="tse03.html"><a href="tse03.html#conclusión-1"><i class="fa fa-check"></i><b>4.4</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="tse04.html"><a href="tse04.html"><i class="fa fa-check"></i><b>5</b> Tablas cruzadas</a>
 <ul>
@@ -291,7 +301,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="8.3.1" data-path="tse07.html"><a href="tse07.html#algunos-ejemplos-de-uso-de-los-parámetros"><i class="fa fa-check"></i><b>8.3.1</b> Algunos ejemplos de uso de los parámetros</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="tse07.html"><a href="tse07.html#conclusión-3"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
+<li class="chapter" data-level="8.4" data-path="tse07.html"><a href="tse07.html#conclusión-2"><i class="fa fa-check"></i><b>8.4</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="tse08.html"><a href="tse08.html"><i class="fa fa-check"></i><b>9</b> Visualización gráfica</a>
 <ul>
@@ -341,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.14.3" data-path="tse08.html"><a href="tse08.html#diagrama-streamgraph"><i class="fa fa-check"></i><b>9.14.3</b> Diagrama <em>streamgraph</em></a></li>
 <li class="chapter" data-level="9.14.4" data-path="tse08.html"><a href="tse08.html#diagrama-de-redes"><i class="fa fa-check"></i><b>9.14.4</b> Diagrama de redes</a></li>
 </ul></li>
-<li class="chapter" data-level="9.15" data-path="tse08.html"><a href="tse08.html#conclusión-4"><i class="fa fa-check"></i><b>9.15</b> Conclusión</a></li>
+<li class="chapter" data-level="9.15" data-path="tse08.html"><a href="tse08.html#conclusión-3"><i class="fa fa-check"></i><b>9.15</b> Conclusión</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="tse-formateo.html"><a href="tse-formateo.html"><i class="fa fa-check"></i><b>10</b> Estilos y formatos de tabla</a>
 <ul>
@@ -367,9 +377,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.5" data-path="tse09.html"><a href="tse09.html#criteria"><i class="fa fa-check"></i><b>11.5</b> Operadores específicos (criterios) en expss</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
-<li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -379,7 +386,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis de datos con tablas y gráficos en SegmentaNet con R</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tablas y gráficos con R y RStudio</a>
           </h1>
         </div>
 
@@ -388,62 +395,59 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="tse-formateo" class="section level1" number="10">
-<h1><span class="header-section-number">Capítulo 10</span> Estilos y formatos de tabla</h1>
-<blockquote>
-<p>.. en desarrollo</p>
-</blockquote>
+<h1><span class="header-section-number">Sección 10</span> Estilos y formatos de tabla</h1>
 <div id="introducción" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Introducción</h2>
 <p>Los paquetes que hemos utilizado en nuestro trabajo con las tablas ya han sido referido en multitud de ocasiones. <code>expss</code> nos permite además de obtener el cuadro preciso, operar con las filas y columnas de la tabla, puesto que el objeto creado es como un <em>dataframe</em> especial, ya que su clase de objeto es <code>etable</code>. Por tanto, vamos a tener la capacidad de poder operar con las columnas (variable) así como también con las filas (registros de ese dataframe).</p>
-<p>Existen multitud de paquetes con los que poder interactuar para poder obtener los resultados deseados. Los paquetes <code>DT</code> (datatable), <code>formattable</code>, y también <code>kable</code> y <code>kableExtra</code> que son nativos para utilizar junto con <code>rmarkdown</code>, lo que conforma un amplio espectro de soluciones. Deberemos buscar aquella que responda a nuestras expectativas y que haga nos sintamos más cómodos.</p>
+<p>Existen multitud de paquetes con los que poder interactuar para poder obtener los resultados deseados. Los paquetes <code>DT</code> (datatable), <code>formattable</code>, y también <code>kable</code> y <code>kableExtra</code> que son nativos para utilizar junto con <code>rmarkdown</code>, lo que conforma un amplio espectro de soluciones. Deberemos buscar aquella que responda a nuestras expectativas y que haga nos sintamos más cómodos. Nuestra elección será <code>kableExtra</code>.</p>
 <p>Por el lado de las operaciones en la tabla, comenzaremos sentando las bases de como se realizan las operaciones, para luego trabajar la salida aportando estilos y formatos condicionales a las mismas.</p>
 </div>
 <div id="operaciones-con-tablas" class="section level2" number="10.2">
 <h2><span class="header-section-number">10.2</span> Operaciones con tablas</h2>
 <p>Como hemos indicado en la presentación anterior, nuestro primer paso será la realización de operaciones muy simples con las tablas, que seguro en nuestro trabajo estamos acostumbrados a hacer. también vamos a adentramos un poco en la creación de los elementos con los que vamos a trabajar. Ahora ya no trabajaremos sobre lo que ha sido nuestro fichero base, sino que iremos aportando nuestros propios ejemplos que se adecuen a lo que deseamos hacer.</p>
 <p>Imaginemos que disponemos datos sobre las cifras de ventas anuales de cinco empresas muy conocidas: Apple, Amazon, Microsoft, Google y Facebook. Estas empresas ofrecen información sobre Ingresos , Beneficio Operativo y Beneficio Neto de cuatro trimestre de 2018 y primer trimestre de 2019 en millones de dólares. Con estos datos creamos un <em>dataframe</em>.</p>
-<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="tse-formateo.html#cb211-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span></span>
-<span id="cb211-2"><a href="tse-formateo.html#cb211-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb211-3"><a href="tse-formateo.html#cb211-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">emp =</span> <span class="fu">c</span>(</span>
-<span id="cb211-4"><a href="tse-formateo.html#cb211-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Apple&#39;</span>,</span>
-<span id="cb211-5"><a href="tse-formateo.html#cb211-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Apple&#39;</span>,</span>
-<span id="cb211-6"><a href="tse-formateo.html#cb211-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Microsoft&#39;</span>,</span>
-<span id="cb211-7"><a href="tse-formateo.html#cb211-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Microsoft&#39;</span>,</span>
-<span id="cb211-8"><a href="tse-formateo.html#cb211-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Amazon&#39;</span>,</span>
-<span id="cb211-9"><a href="tse-formateo.html#cb211-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Amazon&#39;</span>,</span>
-<span id="cb211-10"><a href="tse-formateo.html#cb211-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Google&#39;</span>,</span>
-<span id="cb211-11"><a href="tse-formateo.html#cb211-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Google&#39;</span>,</span>
-<span id="cb211-12"><a href="tse-formateo.html#cb211-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Facebook&#39;</span>,</span>
-<span id="cb211-13"><a href="tse-formateo.html#cb211-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Facebook&#39;</span></span>
-<span id="cb211-14"><a href="tse-formateo.html#cb211-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb211-15"><a href="tse-formateo.html#cb211-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">ing =</span> <span class="fu">c</span>(</span>
-<span id="cb211-16"><a href="tse-formateo.html#cb211-16" aria-hidden="true" tabindex="-1"></a>      <span class="dv">84310</span>,</span>
-<span id="cb211-17"><a href="tse-formateo.html#cb211-17" aria-hidden="true" tabindex="-1"></a>      <span class="dv">91819</span>,</span>
-<span id="cb211-18"><a href="tse-formateo.html#cb211-18" aria-hidden="true" tabindex="-1"></a>      <span class="dv">32471</span>,</span>
-<span id="cb211-19"><a href="tse-formateo.html#cb211-19" aria-hidden="true" tabindex="-1"></a>      <span class="dv">36906</span>,</span>
-<span id="cb211-20"><a href="tse-formateo.html#cb211-20" aria-hidden="true" tabindex="-1"></a>      <span class="dv">72400</span>,</span>
-<span id="cb211-21"><a href="tse-formateo.html#cb211-21" aria-hidden="true" tabindex="-1"></a>      <span class="dv">87400</span>,</span>
-<span id="cb211-22"><a href="tse-formateo.html#cb211-22" aria-hidden="true" tabindex="-1"></a>      <span class="dv">39276</span>,</span>
-<span id="cb211-23"><a href="tse-formateo.html#cb211-23" aria-hidden="true" tabindex="-1"></a>      <span class="dv">46075</span>,</span>
-<span id="cb211-24"><a href="tse-formateo.html#cb211-24" aria-hidden="true" tabindex="-1"></a>      <span class="dv">16914</span>,</span>
-<span id="cb211-25"><a href="tse-formateo.html#cb211-25" aria-hidden="true" tabindex="-1"></a>      <span class="dv">21082</span></span>
-<span id="cb211-26"><a href="tse-formateo.html#cb211-26" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb211-27"><a href="tse-formateo.html#cb211-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">bfo =</span> <span class="fu">c</span>(<span class="dv">23346</span>, <span class="dv">25569</span>, <span class="dv">10258</span>, <span class="dv">13891</span>, <span class="dv">3786</span>, <span class="dv">3879</span>, <span class="dv">8221</span>, <span class="dv">9266</span>, <span class="dv">7820</span>, <span class="dv">8858</span>),</span>
-<span id="cb211-28"><a href="tse-formateo.html#cb211-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">bfn =</span> <span class="fu">c</span>(<span class="dv">19965</span>, <span class="dv">22236</span>, <span class="dv">8420</span>, <span class="dv">11649</span>, <span class="dv">3027</span>, <span class="dv">3268</span>, <span class="dv">8948</span>, <span class="dv">10671</span>, <span class="dv">6882</span>, <span class="dv">7349</span>),</span>
-<span id="cb211-29"><a href="tse-formateo.html#cb211-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">per =</span> <span class="fu">c</span>(</span>
-<span id="cb211-30"><a href="tse-formateo.html#cb211-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
-<span id="cb211-31"><a href="tse-formateo.html#cb211-31" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span>,</span>
-<span id="cb211-32"><a href="tse-formateo.html#cb211-32" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
-<span id="cb211-33"><a href="tse-formateo.html#cb211-33" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span>,</span>
-<span id="cb211-34"><a href="tse-formateo.html#cb211-34" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
-<span id="cb211-35"><a href="tse-formateo.html#cb211-35" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span>,</span>
-<span id="cb211-36"><a href="tse-formateo.html#cb211-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
-<span id="cb211-37"><a href="tse-formateo.html#cb211-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span>,</span>
-<span id="cb211-38"><a href="tse-formateo.html#cb211-38" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
-<span id="cb211-39"><a href="tse-formateo.html#cb211-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span></span>
-<span id="cb211-40"><a href="tse-formateo.html#cb211-40" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb211-41"><a href="tse-formateo.html#cb211-41" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb211-42"><a href="tse-formateo.html#cb211-42" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="tse-formateo.html#cb212-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span></span>
+<span id="cb212-2"><a href="tse-formateo.html#cb212-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb212-3"><a href="tse-formateo.html#cb212-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">emp =</span> <span class="fu">c</span>(</span>
+<span id="cb212-4"><a href="tse-formateo.html#cb212-4" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Apple&#39;</span>,</span>
+<span id="cb212-5"><a href="tse-formateo.html#cb212-5" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Apple&#39;</span>,</span>
+<span id="cb212-6"><a href="tse-formateo.html#cb212-6" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Microsoft&#39;</span>,</span>
+<span id="cb212-7"><a href="tse-formateo.html#cb212-7" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Microsoft&#39;</span>,</span>
+<span id="cb212-8"><a href="tse-formateo.html#cb212-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Amazon&#39;</span>,</span>
+<span id="cb212-9"><a href="tse-formateo.html#cb212-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Amazon&#39;</span>,</span>
+<span id="cb212-10"><a href="tse-formateo.html#cb212-10" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Google&#39;</span>,</span>
+<span id="cb212-11"><a href="tse-formateo.html#cb212-11" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Google&#39;</span>,</span>
+<span id="cb212-12"><a href="tse-formateo.html#cb212-12" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Facebook&#39;</span>,</span>
+<span id="cb212-13"><a href="tse-formateo.html#cb212-13" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;Facebook&#39;</span></span>
+<span id="cb212-14"><a href="tse-formateo.html#cb212-14" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb212-15"><a href="tse-formateo.html#cb212-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">ing =</span> <span class="fu">c</span>(</span>
+<span id="cb212-16"><a href="tse-formateo.html#cb212-16" aria-hidden="true" tabindex="-1"></a>      <span class="dv">84310</span>,</span>
+<span id="cb212-17"><a href="tse-formateo.html#cb212-17" aria-hidden="true" tabindex="-1"></a>      <span class="dv">91819</span>,</span>
+<span id="cb212-18"><a href="tse-formateo.html#cb212-18" aria-hidden="true" tabindex="-1"></a>      <span class="dv">32471</span>,</span>
+<span id="cb212-19"><a href="tse-formateo.html#cb212-19" aria-hidden="true" tabindex="-1"></a>      <span class="dv">36906</span>,</span>
+<span id="cb212-20"><a href="tse-formateo.html#cb212-20" aria-hidden="true" tabindex="-1"></a>      <span class="dv">72400</span>,</span>
+<span id="cb212-21"><a href="tse-formateo.html#cb212-21" aria-hidden="true" tabindex="-1"></a>      <span class="dv">87400</span>,</span>
+<span id="cb212-22"><a href="tse-formateo.html#cb212-22" aria-hidden="true" tabindex="-1"></a>      <span class="dv">39276</span>,</span>
+<span id="cb212-23"><a href="tse-formateo.html#cb212-23" aria-hidden="true" tabindex="-1"></a>      <span class="dv">46075</span>,</span>
+<span id="cb212-24"><a href="tse-formateo.html#cb212-24" aria-hidden="true" tabindex="-1"></a>      <span class="dv">16914</span>,</span>
+<span id="cb212-25"><a href="tse-formateo.html#cb212-25" aria-hidden="true" tabindex="-1"></a>      <span class="dv">21082</span></span>
+<span id="cb212-26"><a href="tse-formateo.html#cb212-26" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb212-27"><a href="tse-formateo.html#cb212-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">bfo =</span> <span class="fu">c</span>(<span class="dv">23346</span>, <span class="dv">25569</span>, <span class="dv">10258</span>, <span class="dv">13891</span>, <span class="dv">3786</span>, <span class="dv">3879</span>, <span class="dv">8221</span>, <span class="dv">9266</span>, <span class="dv">7820</span>, <span class="dv">8858</span>),</span>
+<span id="cb212-28"><a href="tse-formateo.html#cb212-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">bfn =</span> <span class="fu">c</span>(<span class="dv">19965</span>, <span class="dv">22236</span>, <span class="dv">8420</span>, <span class="dv">11649</span>, <span class="dv">3027</span>, <span class="dv">3268</span>, <span class="dv">8948</span>, <span class="dv">10671</span>, <span class="dv">6882</span>, <span class="dv">7349</span>),</span>
+<span id="cb212-29"><a href="tse-formateo.html#cb212-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">per =</span> <span class="fu">c</span>(</span>
+<span id="cb212-30"><a href="tse-formateo.html#cb212-30" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
+<span id="cb212-31"><a href="tse-formateo.html#cb212-31" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span>,</span>
+<span id="cb212-32"><a href="tse-formateo.html#cb212-32" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
+<span id="cb212-33"><a href="tse-formateo.html#cb212-33" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span>,</span>
+<span id="cb212-34"><a href="tse-formateo.html#cb212-34" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
+<span id="cb212-35"><a href="tse-formateo.html#cb212-35" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span>,</span>
+<span id="cb212-36"><a href="tse-formateo.html#cb212-36" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
+<span id="cb212-37"><a href="tse-formateo.html#cb212-37" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span>,</span>
+<span id="cb212-38"><a href="tse-formateo.html#cb212-38" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;IV-2018&#39;</span>,</span>
+<span id="cb212-39"><a href="tse-formateo.html#cb212-39" aria-hidden="true" tabindex="-1"></a>      <span class="st">&#39;I-2019&#39;</span></span>
+<span id="cb212-40"><a href="tse-formateo.html#cb212-40" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb212-41"><a href="tse-formateo.html#cb212-41" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb212-42"><a href="tse-formateo.html#cb212-42" aria-hidden="true" tabindex="-1"></a>data</span></code></pre></div>
 <pre><code>##          emp   ing   bfo   bfn     per
 ## 1      Apple 84310 23346 19965 IV-2018
 ## 2      Apple 91819 25569 22236  I-2019
@@ -456,239 +460,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 9   Facebook 16914  7820  6882 IV-2018
 ## 10  Facebook 21082  8858  7349  I-2019</code></pre>
 <p>Ahora vamos a obtener la tabla con la que deseamos trabajar, que sería comparar los ingresos de las cinco compañías en los dos períodos. Para ello creamos una tabla de la siguiente forma.</p>
-<div class="sourceCode" id="cb213"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb213-1"><a href="tse-formateo.html#cb213-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span> </span>
-<span id="cb213-2"><a href="tse-formateo.html#cb213-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(per) <span class="sc">%&gt;%</span> </span>
-<span id="cb213-3"><a href="tse-formateo.html#cb213-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(emp) <span class="sc">%&gt;%</span> </span>
-<span id="cb213-4"><a href="tse-formateo.html#cb213-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(ing) <span class="sc">%&gt;%</span> </span>
-<span id="cb213-5"><a href="tse-formateo.html#cb213-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_sum</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb213-6"><a href="tse-formateo.html#cb213-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-top: 2px solid grey;">
-</th>
-<th colspan="2" style="font-weight: 900; border-top: 2px solid grey; text-align: center;">
-</th>
-<th style="border-bottom: none; border-top: 2px solid grey;" colspan="1">
- 
-</th>
-<th colspan="2" style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- per 
-</th>
-</tr>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;" colspan="1">
- 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- I-2019 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; text-align: center;">
- IV-2018 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td colspan="6" style="font-weight: 900;">
- emp 
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Amazon 
-</td>
-<td style="text-align: left;">
- ing 
-</td>
-<td style="text-align: left;">
- Sum 
-</td>
-<td style="text-align: left;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-87400
-</td>
-<td style="text-align: right;">
-72400
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Apple 
-</td>
-<td style="text-align: left;">
- ing 
-</td>
-<td style="text-align: left;">
- Sum 
-</td>
-<td style="text-align: left;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-91819
-</td>
-<td style="text-align: right;">
-84310
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Facebook 
-</td>
-<td style="text-align: left;">
- ing 
-</td>
-<td style="text-align: left;">
- Sum 
-</td>
-<td style="text-align: left;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-21082
-</td>
-<td style="text-align: right;">
-16914
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
-   Google 
-</td>
-<td style="text-align: left;">
- ing 
-</td>
-<td style="text-align: left;">
- Sum 
-</td>
-<td style="text-align: left;" colspan="1">
- 
-</td>
-<td style="text-align: right;">
-46075
-</td>
-<td style="text-align: right;">
-39276
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
-   Microsoft 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- ing 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- Sum 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: left;" colspan="1">
- 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-36906
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-32471
-</td>
-</tr>
-</tbody>
-</table>
-<p>Este sería el formato estándar de salida, pero como ya hemos visto e capítulos anteriores, podemos adaptar esa salida a nuestras necesidades. Nótese que aun no siendo necesario, vamos a guardar la tabla en un output llamado <strong>tab01</strong> que luego vamos a publicar. Utilizamos la función <code>class()</code>para mostrarte que tras hacer la tabla, el output almacenado es un <code>etable</code> <em>dataframe</em>.</p>
-<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="tse-formateo.html#cb214-1" aria-hidden="true" tabindex="-1"></a>tab01 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
-<span id="cb214-2"><a href="tse-formateo.html#cb214-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(per)) <span class="sc">%&gt;%</span> </span>
-<span id="cb214-3"><a href="tse-formateo.html#cb214-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(emp)) <span class="sc">%&gt;%</span> </span>
-<span id="cb214-4"><a href="tse-formateo.html#cb214-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(ing)) <span class="sc">%&gt;%</span> </span>
-<span id="cb214-5"><a href="tse-formateo.html#cb214-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_sum</span>(<span class="at">label=</span><span class="st">&#39;|&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb214-6"><a href="tse-formateo.html#cb214-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span>
-<span id="cb214-7"><a href="tse-formateo.html#cb214-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(tab01)</span></code></pre></div>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="tse-formateo.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb214-2"><a href="tse-formateo.html#cb214-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(per) <span class="sc">%&gt;%</span> </span>
+<span id="cb214-3"><a href="tse-formateo.html#cb214-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(emp) <span class="sc">%&gt;%</span> </span>
+<span id="cb214-4"><a href="tse-formateo.html#cb214-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(ing) <span class="sc">%&gt;%</span> </span>
+<span id="cb214-5"><a href="tse-formateo.html#cb214-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_sum</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb214-6"><a href="tse-formateo.html#cb214-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-151"></span>
+<div id="htmlwidget-cd170918c0921cdfea74" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cd170918c0921cdfea74">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["emp","","","",""],["Amazon","Apple","Facebook","Google","Microsoft"],["ing","ing","ing","ing","ing"],["Sum","Sum","Sum","Sum","Sum"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        per\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 10.1: Tabla con formato estándar de EXPSS
+</p>
+</div>
+<p>Este sería el formato estándar de salida, pero como ya hemos visto en anteriores secciones, podemos adaptar esa salida a nuestras necesidades. Nótese que aun no siendo necesario, vamos a guardar la tabla en un output llamado <strong>tab01</strong> que luego vamos a publicar. Utilizamos la función <code>class()</code>para mostrarte que tras hacer la tabla, el output almacenado es un <code>etable</code> <em>dataframe</em>.</p>
+<div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb215-1"><a href="tse-formateo.html#cb215-1" aria-hidden="true" tabindex="-1"></a>tab01 <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> </span>
+<span id="cb215-2"><a href="tse-formateo.html#cb215-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(per)) <span class="sc">%&gt;%</span> </span>
+<span id="cb215-3"><a href="tse-formateo.html#cb215-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(emp)) <span class="sc">%&gt;%</span> </span>
+<span id="cb215-4"><a href="tse-formateo.html#cb215-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="st">&#39;|&#39;</span><span class="ot">=</span><span class="fu">unvr</span>(ing)) <span class="sc">%&gt;%</span> </span>
+<span id="cb215-5"><a href="tse-formateo.html#cb215-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_sum</span>(<span class="at">label=</span><span class="st">&#39;|&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb215-6"><a href="tse-formateo.html#cb215-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()</span>
+<span id="cb215-7"><a href="tse-formateo.html#cb215-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(tab01)</span></code></pre></div>
 <pre><code>## [1] &quot;etable&quot;     &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="tse-formateo.html#cb216-1" aria-hidden="true" tabindex="-1"></a>tab01</span></code></pre></div>
-<table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
-<thead>
-<tr>
-<th style="border-bottom: 1px solid grey; font-weight: 900; border-top: 2px solid grey; text-align: center;">
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- I-2019 
-</th>
-<th style="font-weight: 900; border-bottom: 1px solid grey; border-top: 2px solid grey; text-align: center;">
- IV-2018 
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">
- Amazon 
-</td>
-<td style="text-align: right;">
-87400
-</td>
-<td style="text-align: right;">
-72400
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Apple 
-</td>
-<td style="text-align: right;">
-91819
-</td>
-<td style="text-align: right;">
-84310
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Facebook 
-</td>
-<td style="text-align: right;">
-21082
-</td>
-<td style="text-align: right;">
-16914
-</td>
-</tr>
-<tr>
-<td style="text-align: left;">
- Google 
-</td>
-<td style="text-align: right;">
-46075
-</td>
-<td style="text-align: right;">
-39276
-</td>
-</tr>
-<tr>
-<td style="border-bottom: 2px solid grey; text-align: left;">
- Microsoft 
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-36906
-</td>
-<td style="border-bottom: 2px solid grey; text-align: right;">
-32471
-</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="tse-formateo.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(tab01)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-152"></span>
+<div id="htmlwidget-ca219a012117c010fce1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ca219a012117c010fce1">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Amazon","Apple","Facebook","Google","Microsoft"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<p class="caption">
+Figure 10.2: Tabla con formato adaptado de EXPSS
+</p>
+</div>
 <p>Podemos ver que esta tabla ya tiene un formato más adecuado a nuestra necesidad. Hemos quitado aquellos textos que en esta ocasión eran innecesarios.</p>
 <p>Si convertimos (aunque ya lo es) y mostramos esta tabla como <em>dataframe</em> el resultado sería éste.</p>
-<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="tse-formateo.html#cb217-1" aria-hidden="true" tabindex="-1"></a>tab01 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tab01)</span>
-<span id="cb217-2"><a href="tse-formateo.html#cb217-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(tab01)</span></code></pre></div>
+<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb218-1"><a href="tse-formateo.html#cb218-1" aria-hidden="true" tabindex="-1"></a>tab01 <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tab01)</span>
+<span id="cb218-2"><a href="tse-formateo.html#cb218-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(tab01)</span></code></pre></div>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
-<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="tse-formateo.html#cb219-1" aria-hidden="true" tabindex="-1"></a>tab01</span></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="tse-formateo.html#cb220-1" aria-hidden="true" tabindex="-1"></a>tab01</span></code></pre></div>
 <pre><code>##   row_labels I-2019 IV-2018
 ## 1     Amazon  87400   72400
 ## 2      Apple  91819   84310
@@ -696,103 +503,103 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4     Google  46075   39276
 ## 5  Microsoft  36906   32471</code></pre>
 <p>Nótese que ahora ya el output no es un objeto de tipo <code>etable</code>, solo es <em>dataframe</em>. Ya estamos en condiciones de poder operar. Calculemos la diferencia entre los dos trimestres.</p>
-<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="tse-formateo.html#cb221-1" aria-hidden="true" tabindex="-1"></a>tab01<span class="sc">$</span>dif <span class="ot">&lt;-</span> tab01[,<span class="dv">2</span>]<span class="sc">-</span>tab01[,<span class="dv">3</span>]</span>
-<span id="cb221-2"><a href="tse-formateo.html#cb221-2" aria-hidden="true" tabindex="-1"></a>tab01</span></code></pre></div>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="tse-formateo.html#cb222-1" aria-hidden="true" tabindex="-1"></a>tab01<span class="sc">$</span>dif <span class="ot">&lt;-</span> tab01[,<span class="dv">2</span>]<span class="sc">-</span>tab01[,<span class="dv">3</span>]</span>
+<span id="cb222-2"><a href="tse-formateo.html#cb222-2" aria-hidden="true" tabindex="-1"></a>tab01</span></code></pre></div>
 <pre><code>##   row_labels I-2019 IV-2018   dif
 ## 1     Amazon  87400   72400 15000
 ## 2      Apple  91819   84310  7509
 ## 3   Facebook  21082   16914  4168
 ## 4     Google  46075   39276  6799
 ## 5  Microsoft  36906   32471  4435</code></pre>
-<p>Esta información puede ser presentada en un gráfico tal como veíamos en el capítulo anterior. Aprovechemos también para cambiar el nombre de las columnas …</p>
-<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="tse-formateo.html#cb223-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tab01) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;empresa&#39;</span>, <span class="st">&#39;2019 (1º)&#39;</span>, <span class="st">&#39;2018 (4º)&#39;</span>, <span class="st">&#39;dif&#39;</span>)</span>
-<span id="cb223-2"><a href="tse-formateo.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="fu">highchart</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb223-3"><a href="tse-formateo.html#cb223-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_chart</span>(<span class="at">type =</span> <span class="st">&#39;column&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb223-4"><a href="tse-formateo.html#cb223-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_title</span>(<span class="at">text =</span> <span class="st">&#39;Cifra de negocio de las 5 mayores tecnológicas&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb223-5"><a href="tse-formateo.html#cb223-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_xAxis</span>(<span class="at">categories =</span> tab01[, <span class="dv">1</span>]) <span class="sc">%&gt;%</span></span>
-<span id="cb223-6"><a href="tse-formateo.html#cb223-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_yAxis</span>(<span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100000</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb223-7"><a href="tse-formateo.html#cb223-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
-<span id="cb223-8"><a href="tse-formateo.html#cb223-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">2</span>],</span>
-<span id="cb223-9"><a href="tse-formateo.html#cb223-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;IV de 2018&#39;</span>,</span>
-<span id="cb223-10"><a href="tse-formateo.html#cb223-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb223-11"><a href="tse-formateo.html#cb223-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;salmon&#39;</span></span>
-<span id="cb223-12"><a href="tse-formateo.html#cb223-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb223-13"><a href="tse-formateo.html#cb223-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
-<span id="cb223-14"><a href="tse-formateo.html#cb223-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">3</span>],</span>
-<span id="cb223-15"><a href="tse-formateo.html#cb223-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;I de 2019&#39;</span>,</span>
-<span id="cb223-16"><a href="tse-formateo.html#cb223-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb223-17"><a href="tse-formateo.html#cb223-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;darksalmon&#39;</span></span>
-<span id="cb223-18"><a href="tse-formateo.html#cb223-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb223-19"><a href="tse-formateo.html#cb223-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
-<span id="cb223-20"><a href="tse-formateo.html#cb223-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">4</span>],</span>
-<span id="cb223-21"><a href="tse-formateo.html#cb223-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;Diferencia&#39;</span>,</span>
-<span id="cb223-22"><a href="tse-formateo.html#cb223-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb223-23"><a href="tse-formateo.html#cb223-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;teal&#39;</span></span>
-<span id="cb223-24"><a href="tse-formateo.html#cb223-24" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-154"></span>
-<div id="htmlwidget-9d6b54cc112020fb4d17" style="width:100%;height:500px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-9d6b54cc112020fb4d17">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":{"title":{"text":null},"min":0,"max":100000},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
+<p>Esta información puede ser presentada en un gráfico tal como veíamos en la sección anterior. Aprovechemos también para cambiar el nombre de las columnas …</p>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="tse-formateo.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(tab01) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&#39;empresa&#39;</span>, <span class="st">&#39;2019 (1º)&#39;</span>, <span class="st">&#39;2018 (4º)&#39;</span>, <span class="st">&#39;dif&#39;</span>)</span>
+<span id="cb224-2"><a href="tse-formateo.html#cb224-2" aria-hidden="true" tabindex="-1"></a><span class="fu">highchart</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb224-3"><a href="tse-formateo.html#cb224-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_chart</span>(<span class="at">type =</span> <span class="st">&#39;column&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb224-4"><a href="tse-formateo.html#cb224-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_title</span>(<span class="at">text =</span> <span class="st">&#39;Cifra de negocio de las 5 mayores tecnológicas&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb224-5"><a href="tse-formateo.html#cb224-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_xAxis</span>(<span class="at">categories =</span> tab01[, <span class="dv">1</span>]) <span class="sc">%&gt;%</span></span>
+<span id="cb224-6"><a href="tse-formateo.html#cb224-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_yAxis</span>(<span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100000</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb224-7"><a href="tse-formateo.html#cb224-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
+<span id="cb224-8"><a href="tse-formateo.html#cb224-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">2</span>],</span>
+<span id="cb224-9"><a href="tse-formateo.html#cb224-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;IV de 2018&#39;</span>,</span>
+<span id="cb224-10"><a href="tse-formateo.html#cb224-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb224-11"><a href="tse-formateo.html#cb224-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;salmon&#39;</span></span>
+<span id="cb224-12"><a href="tse-formateo.html#cb224-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb224-13"><a href="tse-formateo.html#cb224-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
+<span id="cb224-14"><a href="tse-formateo.html#cb224-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">3</span>],</span>
+<span id="cb224-15"><a href="tse-formateo.html#cb224-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;I de 2019&#39;</span>,</span>
+<span id="cb224-16"><a href="tse-formateo.html#cb224-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb224-17"><a href="tse-formateo.html#cb224-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;darksalmon&#39;</span></span>
+<span id="cb224-18"><a href="tse-formateo.html#cb224-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb224-19"><a href="tse-formateo.html#cb224-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
+<span id="cb224-20"><a href="tse-formateo.html#cb224-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">4</span>],</span>
+<span id="cb224-21"><a href="tse-formateo.html#cb224-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;Diferencia&#39;</span>,</span>
+<span id="cb224-22"><a href="tse-formateo.html#cb224-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb224-23"><a href="tse-formateo.html#cb224-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;teal&#39;</span></span>
+<span id="cb224-24"><a href="tse-formateo.html#cb224-24" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-155"></span>
+<div id="htmlwidget-278194718385306a4c0c" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-278194718385306a4c0c">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":{"title":{"text":null},"min":0,"max":100000},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
-Figure 10.1: Gráfico del dataframe
+Figure 10.3: Gráfico del dataframe
 </p>
 </div>
 <p>Añadamos más información a la tabla. Vamos a calcular el porcentaje de incremento. Habrían muchas formas de hacerlo, pero vamos a tratar de hacerlo de la forma más simple.</p>
-<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="tse-formateo.html#cb224-1" aria-hidden="true" tabindex="-1"></a>tab01<span class="sc">$</span>difpct <span class="ot">&lt;-</span> <span class="fu">round</span>(((tab01[,<span class="dv">2</span>]<span class="sc">/</span>tab01[,<span class="dv">3</span>])<span class="sc">-</span><span class="dv">1</span>)<span class="sc">*</span><span class="dv">100</span>,<span class="dv">1</span>) <span class="co">#cociente entre valores y paso a porcentaje con redondeo a un decimal</span></span>
-<span id="cb224-2"><a href="tse-formateo.html#cb224-2" aria-hidden="true" tabindex="-1"></a>tab01</span></code></pre></div>
+<div class="sourceCode" id="cb225"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb225-1"><a href="tse-formateo.html#cb225-1" aria-hidden="true" tabindex="-1"></a>tab01<span class="sc">$</span>difpct <span class="ot">&lt;-</span> <span class="fu">round</span>(((tab01[,<span class="dv">2</span>]<span class="sc">/</span>tab01[,<span class="dv">3</span>])<span class="sc">-</span><span class="dv">1</span>)<span class="sc">*</span><span class="dv">100</span>,<span class="dv">1</span>) <span class="co">#cociente entre valores y paso a porcentaje con redondeo a un decimal</span></span>
+<span id="cb225-2"><a href="tse-formateo.html#cb225-2" aria-hidden="true" tabindex="-1"></a>tab01</span></code></pre></div>
 <pre><code>##     empresa 2019 (1º) 2018 (4º)   dif difpct
 ## 1    Amazon     87400     72400 15000   20.7
 ## 2     Apple     91819     84310  7509    8.9
 ## 3  Facebook     21082     16914  4168   24.6
 ## 4    Google     46075     39276  6799   17.3
 ## 5 Microsoft     36906     32471  4435   13.7</code></pre>
-<p>Esto nos va a permitir probar algo que no vimos en el anterior capítulo, presentar en función de otro eje Y la información. Se puede observar que en el script abajo referido, estamos creando en la función <code>hc_yAxis()</code> una lista de dos ejes a los que referenciar los datos, mientras que las cifras absolutas se miran con el eje Y de la izquierda, el dato relativo se mira con el eje Y a la derecha del gráfico. El resto de opciones ya fueron analizadas</p>
-<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="tse-formateo.html#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">highchart</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb226-2"><a href="tse-formateo.html#cb226-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_chart</span>(<span class="at">type =</span> <span class="st">&#39;column&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb226-3"><a href="tse-formateo.html#cb226-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_title</span>(<span class="at">text =</span> <span class="st">&#39;Cifra de negocio de las 5 mayores tecnológicas&#39;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb226-4"><a href="tse-formateo.html#cb226-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_xAxis</span>(<span class="at">categories =</span> tab01[, <span class="dv">1</span>]) <span class="sc">%&gt;%</span></span>
-<span id="cb226-5"><a href="tse-formateo.html#cb226-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_yAxis_multiples</span>(</span>
-<span id="cb226-6"><a href="tse-formateo.html#cb226-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
-<span id="cb226-7"><a href="tse-formateo.html#cb226-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">&#39;Millones de dólares&#39;</span>),</span>
-<span id="cb226-8"><a href="tse-formateo.html#cb226-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">min =</span> <span class="dv">0</span>,</span>
-<span id="cb226-9"><a href="tse-formateo.html#cb226-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">max =</span> <span class="dv">100000</span></span>
-<span id="cb226-10"><a href="tse-formateo.html#cb226-10" aria-hidden="true" tabindex="-1"></a>    ),</span>
-<span id="cb226-11"><a href="tse-formateo.html#cb226-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
-<span id="cb226-12"><a href="tse-formateo.html#cb226-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">&#39;Porcentaje&#39;</span>),</span>
-<span id="cb226-13"><a href="tse-formateo.html#cb226-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">min =</span> <span class="dv">0</span>,</span>
-<span id="cb226-14"><a href="tse-formateo.html#cb226-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">max =</span> <span class="dv">100</span>,</span>
-<span id="cb226-15"><a href="tse-formateo.html#cb226-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">opposite =</span> <span class="cn">TRUE</span></span>
-<span id="cb226-16"><a href="tse-formateo.html#cb226-16" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb226-17"><a href="tse-formateo.html#cb226-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb226-18"><a href="tse-formateo.html#cb226-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
-<span id="cb226-19"><a href="tse-formateo.html#cb226-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">2</span>],</span>
-<span id="cb226-20"><a href="tse-formateo.html#cb226-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;IV de 2018&#39;</span>,</span>
-<span id="cb226-21"><a href="tse-formateo.html#cb226-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb226-22"><a href="tse-formateo.html#cb226-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;salmon&#39;</span></span>
-<span id="cb226-23"><a href="tse-formateo.html#cb226-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb226-24"><a href="tse-formateo.html#cb226-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
-<span id="cb226-25"><a href="tse-formateo.html#cb226-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">3</span>],</span>
-<span id="cb226-26"><a href="tse-formateo.html#cb226-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;I de 2019&#39;</span>,</span>
-<span id="cb226-27"><a href="tse-formateo.html#cb226-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb226-28"><a href="tse-formateo.html#cb226-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;darksalmon&#39;</span></span>
-<span id="cb226-29"><a href="tse-formateo.html#cb226-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb226-30"><a href="tse-formateo.html#cb226-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
-<span id="cb226-31"><a href="tse-formateo.html#cb226-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">4</span>],</span>
-<span id="cb226-32"><a href="tse-formateo.html#cb226-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;Diferencia&#39;</span>,</span>
-<span id="cb226-33"><a href="tse-formateo.html#cb226-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb226-34"><a href="tse-formateo.html#cb226-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;teal&#39;</span></span>
-<span id="cb226-35"><a href="tse-formateo.html#cb226-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb226-36"><a href="tse-formateo.html#cb226-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
-<span id="cb226-37"><a href="tse-formateo.html#cb226-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">5</span>],</span>
-<span id="cb226-38"><a href="tse-formateo.html#cb226-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;Diferencia porcentual&#39;</span>,</span>
-<span id="cb226-39"><a href="tse-formateo.html#cb226-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&#39;{point.y} %&#39;</span>),</span>
-<span id="cb226-40"><a href="tse-formateo.html#cb226-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
-<span id="cb226-41"><a href="tse-formateo.html#cb226-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">yAxis =</span> <span class="dv">1</span></span>
-<span id="cb226-42"><a href="tse-formateo.html#cb226-42" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-156"></span>
-<div id="htmlwidget-d11543d6aa35ea7bc099" style="width:100%;height:500px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d11543d6aa35ea7bc099">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":[{"title":{"text":"Millones de dólares"},"min":0,"max":100000},{"title":{"text":"Porcentaje"},"min":0,"max":100,"opposite":true}],"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"},{"data":[20.7,8.9,24.6,17.3,13.7],"name":"Diferencia porcentual","dataLabels":{"enabled":true,"format":"{point.y} %"},"color":"darkblue","yAxis":1}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadCSV":"Download CSV","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","downloadXLS":"Download XLS","drillUpText":"◁ Back to {series.name}","exitFullscreen":"Exit from full screen","exportData":{"annotationHeader":"Annotations","categoryDatetimeHeader":"DateTime","categoryHeader":"Category"},"hideData":"Hide data table","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbolMagnitude":1000,"numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"shortWeekdays":["Sat","Sun","Mon","Tue","Wed","Thu","Fri"],"thousandsSep":" ","viewData":"View data table","viewFullscreen":"View in full screen","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
+<p>Esto nos va a permitir probar algo que no vimos en la sección anterior, presentar en función de otro eje Y la información. Se puede observar que en el script abajo referido, estamos creando en la función <code>hc_yAxis()</code> una lista de dos ejes a los que referenciar los datos, mientras que las cifras absolutas se miran con el eje Y de la izquierda, el dato relativo se mira con el eje Y a la derecha del gráfico. El resto de opciones ya fueron analizadas</p>
+<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="tse-formateo.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="fu">highchart</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb227-2"><a href="tse-formateo.html#cb227-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_chart</span>(<span class="at">type =</span> <span class="st">&#39;column&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb227-3"><a href="tse-formateo.html#cb227-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_title</span>(<span class="at">text =</span> <span class="st">&#39;Cifra de negocio de las 5 mayores tecnológicas&#39;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb227-4"><a href="tse-formateo.html#cb227-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_xAxis</span>(<span class="at">categories =</span> tab01[, <span class="dv">1</span>]) <span class="sc">%&gt;%</span></span>
+<span id="cb227-5"><a href="tse-formateo.html#cb227-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_yAxis_multiples</span>(</span>
+<span id="cb227-6"><a href="tse-formateo.html#cb227-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb227-7"><a href="tse-formateo.html#cb227-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">&#39;Millones de dólares&#39;</span>),</span>
+<span id="cb227-8"><a href="tse-formateo.html#cb227-8" aria-hidden="true" tabindex="-1"></a>      <span class="at">min =</span> <span class="dv">0</span>,</span>
+<span id="cb227-9"><a href="tse-formateo.html#cb227-9" aria-hidden="true" tabindex="-1"></a>      <span class="at">max =</span> <span class="dv">100000</span></span>
+<span id="cb227-10"><a href="tse-formateo.html#cb227-10" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb227-11"><a href="tse-formateo.html#cb227-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">list</span>(</span>
+<span id="cb227-12"><a href="tse-formateo.html#cb227-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">title =</span> <span class="fu">list</span>(<span class="at">text =</span> <span class="st">&#39;Porcentaje&#39;</span>),</span>
+<span id="cb227-13"><a href="tse-formateo.html#cb227-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">min =</span> <span class="dv">0</span>,</span>
+<span id="cb227-14"><a href="tse-formateo.html#cb227-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">max =</span> <span class="dv">100</span>,</span>
+<span id="cb227-15"><a href="tse-formateo.html#cb227-15" aria-hidden="true" tabindex="-1"></a>      <span class="at">opposite =</span> <span class="cn">TRUE</span></span>
+<span id="cb227-16"><a href="tse-formateo.html#cb227-16" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb227-17"><a href="tse-formateo.html#cb227-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb227-18"><a href="tse-formateo.html#cb227-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
+<span id="cb227-19"><a href="tse-formateo.html#cb227-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">2</span>],</span>
+<span id="cb227-20"><a href="tse-formateo.html#cb227-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;IV de 2018&#39;</span>,</span>
+<span id="cb227-21"><a href="tse-formateo.html#cb227-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb227-22"><a href="tse-formateo.html#cb227-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;salmon&#39;</span></span>
+<span id="cb227-23"><a href="tse-formateo.html#cb227-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb227-24"><a href="tse-formateo.html#cb227-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
+<span id="cb227-25"><a href="tse-formateo.html#cb227-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">3</span>],</span>
+<span id="cb227-26"><a href="tse-formateo.html#cb227-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;I de 2019&#39;</span>,</span>
+<span id="cb227-27"><a href="tse-formateo.html#cb227-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb227-28"><a href="tse-formateo.html#cb227-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;darksalmon&#39;</span></span>
+<span id="cb227-29"><a href="tse-formateo.html#cb227-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb227-30"><a href="tse-formateo.html#cb227-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
+<span id="cb227-31"><a href="tse-formateo.html#cb227-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">4</span>],</span>
+<span id="cb227-32"><a href="tse-formateo.html#cb227-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;Diferencia&#39;</span>,</span>
+<span id="cb227-33"><a href="tse-formateo.html#cb227-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb227-34"><a href="tse-formateo.html#cb227-34" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;teal&#39;</span></span>
+<span id="cb227-35"><a href="tse-formateo.html#cb227-35" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb227-36"><a href="tse-formateo.html#cb227-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
+<span id="cb227-37"><a href="tse-formateo.html#cb227-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">5</span>],</span>
+<span id="cb227-38"><a href="tse-formateo.html#cb227-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&#39;Diferencia porcentual&#39;</span>,</span>
+<span id="cb227-39"><a href="tse-formateo.html#cb227-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>, <span class="at">format =</span> <span class="st">&#39;{point.y} %&#39;</span>),</span>
+<span id="cb227-40"><a href="tse-formateo.html#cb227-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;darkblue&#39;</span>,</span>
+<span id="cb227-41"><a href="tse-formateo.html#cb227-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">yAxis =</span> <span class="dv">1</span></span>
+<span id="cb227-42"><a href="tse-formateo.html#cb227-42" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-157"></span>
+<div id="htmlwidget-0180adae3ddf205f4226" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0180adae3ddf205f4226">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":[{"title":{"text":"Millones de dólares"},"min":0,"max":100000},{"title":{"text":"Porcentaje"},"min":0,"max":100,"opposite":true}],"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"},{"data":[20.7,8.9,24.6,17.3,13.7],"name":"Diferencia porcentual","dataLabels":{"enabled":true,"format":"{point.y} %"},"color":"darkblue","yAxis":1}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
-Figure 10.2: gráfic del dataframe
+Figure 10.4: gráfic del dataframe
 </p>
 </div>
 </div>
@@ -802,8 +609,8 @@ Figure 10.2: gráfic del dataframe
 <h3><span class="header-section-number">10.3.1</span> Estilo y posición</h3>
 <p>Vamos ahora a trabajar con la con la tabla y realizaremos algunos cambios sobre ella. Utilizaremos el paquete <code>kableExtra</code>. Este paquete permite trabajar con los <em>dataframe</em> para formatear la manera en que se van a mostrar en la pantalla. Existen multitud de paquetes que nos permitirían hacer cosas semejantes, entre los que podríamos destacar <code>formattable</code>, <code>DT</code> o <code>flextable</code> entre otros.</p>
 <p>Nuestro primer cambio va a ser mostrar de forma diferente nuestra tabla. Con un estilo diferente a lo que ha aprecido hasta ahora. Le vamos a aplicar el estilo típico de <strong>Bootstrap</strong>, conocida librería JS con la que fue desarrollada Twitter. Te recomendamos visitar la viñeta del paquete en este <a href="https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html">sitio</a> si quieres ver todas sus posibilidades.</p>
-<div class="sourceCode" id="cb227"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb227-1"><a href="tse-formateo.html#cb227-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb227-2"><a href="tse-formateo.html#cb227-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="tse-formateo.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb228-2"><a href="tse-formateo.html#cb228-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>()</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -914,8 +721,8 @@ Microsoft
 </table>
 <p>Se puede apreciar que el aspecto es diferente al mostrado por las tablas hasta ahora. Este sería el formato más básico de <em>Bootstrap</em>. Existen otras opciones entre las que vamos a ir añadiendo algunas características, aplicables a los formatos.</p>
 <p>Usando <code>paper</code>…</p>
-<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="tse-formateo.html#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb228-2"><a href="tse-formateo.html#cb228-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_paper</span>(<span class="st">&#39;hover&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="tse-formateo.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb229-2"><a href="tse-formateo.html#cb229-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_paper</span>(<span class="st">&#39;hover&#39;</span>)</span></code></pre></div>
 <table class=" lightable-paper lightable-hover" style="font-family: &quot;Arial Narrow&quot;, arial, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1025,8 +832,8 @@ Microsoft
 </tbody>
 </table>
 <p>Usando <code>classic</code>…</p>
-<div class="sourceCode" id="cb229"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb229-1"><a href="tse-formateo.html#cb229-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb229-2"><a href="tse-formateo.html#cb229-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="st">&#39;hover&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="tse-formateo.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb230-2"><a href="tse-formateo.html#cb230-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_classic</span>(<span class="st">&#39;hover&#39;</span>)</span></code></pre></div>
 <table class=" lightable-classic lightable-hover" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1136,8 +943,8 @@ Microsoft
 </tbody>
 </table>
 <p>Usando <code>minimal</code>…</p>
-<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="tse-formateo.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb230-2"><a href="tse-formateo.html#cb230-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_minimal</span>(<span class="st">&#39;hover&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="tse-formateo.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb231-2"><a href="tse-formateo.html#cb231-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_minimal</span>(<span class="st">&#39;hover&#39;</span>)</span></code></pre></div>
 <table class=" lightable-minimal lightable-hover" style="font-family: &quot;Trebuchet MS&quot;, verdana, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1247,8 +1054,8 @@ Microsoft
 </tbody>
 </table>
 <p>Añadimos además del efecto <em>hover</em> con el ratón, el oscurecimiento o <em>striped</em> de las filas para facilitar la lectura y usabilidad.</p>
-<div class="sourceCode" id="cb231"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb231-1"><a href="tse-formateo.html#cb231-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb231-2"><a href="tse-formateo.html#cb231-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>,<span class="st">&#39;hover&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="tse-formateo.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb232-2"><a href="tse-formateo.html#cb232-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_material</span>(<span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>,<span class="st">&#39;hover&#39;</span>))</span></code></pre></div>
 <table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1358,8 +1165,8 @@ Microsoft
 </tbody>
 </table>
 <p>Finalizamos de nuevo con el primer formato que será el que mantendremos a partir de este momento.</p>
-<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="tse-formateo.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span> </span>
-<span id="cb232-2"><a href="tse-formateo.html#cb232-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="tse-formateo.html#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span> </span>
+<span id="cb233-2"><a href="tse-formateo.html#cb233-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>))</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1469,8 +1276,8 @@ Microsoft
 </tbody>
 </table>
 <p>Una de las características que en algunos casos puede ser muy valiosa, es la posibilidad de establecer la tabla como flotante a derecha o izquierda del texto.</p>
-<div class="sourceCode" id="cb233"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb233-1"><a href="tse-formateo.html#cb233-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb233-2"><a href="tse-formateo.html#cb233-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>), <span class="at">full_width =</span> F, <span class="at">position =</span> <span class="st">&#39;float_right&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="tse-formateo.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb234-2"><a href="tse-formateo.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>), <span class="at">full_width =</span> F, <span class="at">position =</span> <span class="st">&#39;float_right&#39;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; float: right; margin-left: 10px;">
 <thead>
 <tr>
@@ -1597,18 +1404,18 @@ Microsoft
 <li>resultado si falso</li>
 </ul>
 <p>En nuestro caso nuestro resultado es la aplicación de un color verde o rojo según estemos por encima o por debajo de la media de la columna. Del mismo modo, también se puede aplicar como podemos observar un color directo a una columna determinada. Usaremos la función <code>column_spec()</code>.</p>
-<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="tse-formateo.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb234-2"><a href="tse-formateo.html#cb234-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
-<span id="cb234-3"><a href="tse-formateo.html#cb234-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>),</span>
-<span id="cb234-4"><a href="tse-formateo.html#cb234-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> F</span>
-<span id="cb234-5"><a href="tse-formateo.html#cb234-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb234-6"><a href="tse-formateo.html#cb234-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&#39;teal&#39;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb234-7"><a href="tse-formateo.html#cb234-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(</span>
-<span id="cb234-8"><a href="tse-formateo.html#cb234-8" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>,</span>
-<span id="cb234-9"><a href="tse-formateo.html#cb234-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb234-10"><a href="tse-formateo.html#cb234-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">ifelse</span>(tab01<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&#39;green&#39;</span>, <span class="st">&#39;salmon&#39;</span>),</span>
-<span id="cb234-11"><a href="tse-formateo.html#cb234-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">popover =</span> <span class="fu">paste</span>(tab01[, <span class="dv">1</span>])</span>
-<span id="cb234-12"><a href="tse-formateo.html#cb234-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="tse-formateo.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb235-2"><a href="tse-formateo.html#cb235-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb235-3"><a href="tse-formateo.html#cb235-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>),</span>
+<span id="cb235-4"><a href="tse-formateo.html#cb235-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> F</span>
+<span id="cb235-5"><a href="tse-formateo.html#cb235-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb235-6"><a href="tse-formateo.html#cb235-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&#39;teal&#39;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb235-7"><a href="tse-formateo.html#cb235-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(</span>
+<span id="cb235-8"><a href="tse-formateo.html#cb235-8" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>,</span>
+<span id="cb235-9"><a href="tse-formateo.html#cb235-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb235-10"><a href="tse-formateo.html#cb235-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">ifelse</span>(tab01<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&#39;green&#39;</span>, <span class="st">&#39;salmon&#39;</span>),</span>
+<span id="cb235-11"><a href="tse-formateo.html#cb235-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">popover =</span> <span class="fu">paste</span>(tab01[, <span class="dv">1</span>])</span>
+<span id="cb235-12"><a href="tse-formateo.html#cb235-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1718,15 +1525,15 @@ Microsoft
 </tbody>
 </table>
 <p>Otra posibilidad es la de poder marcar celdas cell_spec() o filas con <code>row_spec()</code>en particular …</p>
-<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="tse-formateo.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb235-2"><a href="tse-formateo.html#cb235-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
-<span id="cb235-3"><a href="tse-formateo.html#cb235-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>),</span>
-<span id="cb235-4"><a href="tse-formateo.html#cb235-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> F</span>
-<span id="cb235-5"><a href="tse-formateo.html#cb235-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb235-6"><a href="tse-formateo.html#cb235-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>,</span>
-<span id="cb235-7"><a href="tse-formateo.html#cb235-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">bold =</span> T,</span>
-<span id="cb235-8"><a href="tse-formateo.html#cb235-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb235-9"><a href="tse-formateo.html#cb235-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">background =</span> <span class="st">&#39;teal&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="tse-formateo.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb236-2"><a href="tse-formateo.html#cb236-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb236-3"><a href="tse-formateo.html#cb236-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>),</span>
+<span id="cb236-4"><a href="tse-formateo.html#cb236-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> F</span>
+<span id="cb236-5"><a href="tse-formateo.html#cb236-5" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb236-6"><a href="tse-formateo.html#cb236-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>,</span>
+<span id="cb236-7"><a href="tse-formateo.html#cb236-7" aria-hidden="true" tabindex="-1"></a>           <span class="at">bold =</span> T,</span>
+<span id="cb236-8"><a href="tse-formateo.html#cb236-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb236-9"><a href="tse-formateo.html#cb236-9" aria-hidden="true" tabindex="-1"></a>           <span class="at">background =</span> <span class="st">&#39;teal&#39;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1836,17 +1643,17 @@ Microsoft
 </tbody>
 </table>
 <p>Un caso particular para la fila 0, la de encabezado.</p>
-<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="tse-formateo.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
-<span id="cb236-2"><a href="tse-formateo.html#cb236-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hovered&#39;</span>), <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span></span>
-<span id="cb236-3"><a href="tse-formateo.html#cb236-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(</span>
-<span id="cb236-4"><a href="tse-formateo.html#cb236-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">0</span>,</span>
-<span id="cb236-5"><a href="tse-formateo.html#cb236-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">angle =</span> <span class="sc">-</span><span class="dv">20</span>,</span>
-<span id="cb236-6"><a href="tse-formateo.html#cb236-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">&#39;left&#39;</span>,</span>
-<span id="cb236-7"><a href="tse-formateo.html#cb236-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="st">&#39;teal&#39;</span>,</span>
-<span id="cb236-8"><a href="tse-formateo.html#cb236-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb236-9"><a href="tse-formateo.html#cb236-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">bold =</span> <span class="cn">TRUE</span></span>
-<span id="cb236-10"><a href="tse-formateo.html#cb236-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb236-11"><a href="tse-formateo.html#cb236-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">align =</span> <span class="st">&#39;center&#39;</span>, <span class="at">background =</span> <span class="st">&#39;lightsalmon&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="tse-formateo.html#cb237-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab01) <span class="sc">%&gt;%</span></span>
+<span id="cb237-2"><a href="tse-formateo.html#cb237-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hovered&#39;</span>), <span class="at">full_width =</span> F) <span class="sc">%&gt;%</span></span>
+<span id="cb237-3"><a href="tse-formateo.html#cb237-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(</span>
+<span id="cb237-4"><a href="tse-formateo.html#cb237-4" aria-hidden="true" tabindex="-1"></a>    <span class="dv">0</span>,</span>
+<span id="cb237-5"><a href="tse-formateo.html#cb237-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">angle =</span> <span class="sc">-</span><span class="dv">20</span>,</span>
+<span id="cb237-6"><a href="tse-formateo.html#cb237-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">align =</span> <span class="st">&#39;left&#39;</span>,</span>
+<span id="cb237-7"><a href="tse-formateo.html#cb237-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="st">&#39;teal&#39;</span>,</span>
+<span id="cb237-8"><a href="tse-formateo.html#cb237-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb237-9"><a href="tse-formateo.html#cb237-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">bold =</span> <span class="cn">TRUE</span></span>
+<span id="cb237-10"><a href="tse-formateo.html#cb237-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb237-11"><a href="tse-formateo.html#cb237-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">align =</span> <span class="st">&#39;center&#39;</span>, <span class="at">background =</span> <span class="st">&#39;lightsalmon&#39;</span>)</span></code></pre></div>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1960,24 +1767,24 @@ Microsoft
 <div id="adición-de-imágenes-y-de-otros-elementos" class="section level2" number="10.4">
 <h2><span class="header-section-number">10.4</span> Adición de imágenes y de otros elementos</h2>
 <p>Ya para finalizar, es muy habitual querer utilizar imágenes para ilustrar la tabla, darle un aspecto más impactante. Vemos como hacerlo. Esta imagen puede sustituir el contenido completo de la columna o añadirse al final de la misma. En nuestro ejemplo queremos sustituir, por lo que nuestra primera instrucción <em>limpia</em> la columna de tab01 denominada empresa. Posteriormente se crea un vector con las cinco imágenes que aprovecharemos en la columna 1. Para no perder nuestra tabla original, hacemos un copia de la misma en tab02.</p>
-<div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="tse-formateo.html#cb237-1" aria-hidden="true" tabindex="-1"></a>tab02 <span class="ot">&lt;-</span> tab01</span>
-<span id="cb237-2"><a href="tse-formateo.html#cb237-2" aria-hidden="true" tabindex="-1"></a>tab02<span class="sc">$</span>empresa <span class="ot">&lt;-</span> <span class="st">&#39;&#39;</span></span>
-<span id="cb237-3"><a href="tse-formateo.html#cb237-3" aria-hidden="true" tabindex="-1"></a>vector.img <span class="ot">&lt;-</span></span>
-<span id="cb237-4"><a href="tse-formateo.html#cb237-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
-<span id="cb237-5"><a href="tse-formateo.html#cb237-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112113121.png&#39;</span>,</span>
-<span id="cb237-6"><a href="tse-formateo.html#cb237-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112112927.png&#39;</span>,</span>
-<span id="cb237-7"><a href="tse-formateo.html#cb237-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112113240.png&#39;</span>,</span>
-<span id="cb237-8"><a href="tse-formateo.html#cb237-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112113259.png&#39;</span>,</span>
-<span id="cb237-9"><a href="tse-formateo.html#cb237-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112113048.png&#39;</span></span>
-<span id="cb237-10"><a href="tse-formateo.html#cb237-10" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb237-11"><a href="tse-formateo.html#cb237-11" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab02) <span class="sc">%&gt;%</span></span>
-<span id="cb237-12"><a href="tse-formateo.html#cb237-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;hover&#39;</span>),</span>
-<span id="cb237-13"><a href="tse-formateo.html#cb237-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb237-14"><a href="tse-formateo.html#cb237-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">image =</span> vector.img) <span class="sc">%&gt;%</span></span>
-<span id="cb237-15"><a href="tse-formateo.html#cb237-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&#39;teal&#39;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb237-16"><a href="tse-formateo.html#cb237-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">5</span>,</span>
-<span id="cb237-17"><a href="tse-formateo.html#cb237-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb237-18"><a href="tse-formateo.html#cb237-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02<span class="sc">$</span>difpct), <span class="st">&#39;green&#39;</span>, <span class="st">&#39;salmon&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="tse-formateo.html#cb238-1" aria-hidden="true" tabindex="-1"></a>tab02 <span class="ot">&lt;-</span> tab01</span>
+<span id="cb238-2"><a href="tse-formateo.html#cb238-2" aria-hidden="true" tabindex="-1"></a>tab02<span class="sc">$</span>empresa <span class="ot">&lt;-</span> <span class="st">&#39;&#39;</span></span>
+<span id="cb238-3"><a href="tse-formateo.html#cb238-3" aria-hidden="true" tabindex="-1"></a>vector.img <span class="ot">&lt;-</span></span>
+<span id="cb238-4"><a href="tse-formateo.html#cb238-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">c</span>(</span>
+<span id="cb238-5"><a href="tse-formateo.html#cb238-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112113121.png&#39;</span>,</span>
+<span id="cb238-6"><a href="tse-formateo.html#cb238-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112112927.png&#39;</span>,</span>
+<span id="cb238-7"><a href="tse-formateo.html#cb238-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112113240.png&#39;</span>,</span>
+<span id="cb238-8"><a href="tse-formateo.html#cb238-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112113259.png&#39;</span>,</span>
+<span id="cb238-9"><a href="tse-formateo.html#cb238-9" aria-hidden="true" tabindex="-1"></a>    <span class="st">&#39;https://download.tesigandia.com/test/20201112113048.png&#39;</span></span>
+<span id="cb238-10"><a href="tse-formateo.html#cb238-10" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb238-11"><a href="tse-formateo.html#cb238-11" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab02) <span class="sc">%&gt;%</span></span>
+<span id="cb238-12"><a href="tse-formateo.html#cb238-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;hover&#39;</span>),</span>
+<span id="cb238-13"><a href="tse-formateo.html#cb238-13" aria-hidden="true" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb238-14"><a href="tse-formateo.html#cb238-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">1</span>, <span class="at">image =</span> vector.img) <span class="sc">%&gt;%</span></span>
+<span id="cb238-15"><a href="tse-formateo.html#cb238-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&#39;teal&#39;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb238-16"><a href="tse-formateo.html#cb238-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">5</span>,</span>
+<span id="cb238-17"><a href="tse-formateo.html#cb238-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb238-18"><a href="tse-formateo.html#cb238-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02<span class="sc">$</span>difpct), <span class="st">&#39;green&#39;</span>, <span class="st">&#39;salmon&#39;</span>))</span></code></pre></div>
 <table class="table table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -2089,22 +1896,22 @@ difpct
 <div id="adición-de-iconos-de-fontawesome" class="section level3" number="10.4.1">
 <h3><span class="header-section-number">10.4.1</span> Adición de iconos de FontAwesome</h3>
 <p>En la siguiente tabla, vamos a añadir las marcas de icono llamadas <a href="https://fontawesome.com/v4.7.0/icons/"><code>fontawesome</code></a> que permite reproducir en modo texto los iconos más típicos. En nuestro caso y siguiendo el uso de la función <code>ifelse</code> que hemos visto antes, añadiremos una flecha arriba verde si la media de la cifra de negocio es mayor que la media o una flecha abajo roja si es menor.</p>
-<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="tse-formateo.html#cb238-1" aria-hidden="true" tabindex="-1"></a>tab02 <span class="ot">&lt;-</span> tab01</span>
-<span id="cb238-2"><a href="tse-formateo.html#cb238-2" aria-hidden="true" tabindex="-1"></a>tab02[, <span class="dv">2</span>] <span class="ot">&lt;-</span></span>
-<span id="cb238-3"><a href="tse-formateo.html#cb238-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(tab02[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02[, <span class="dv">2</span>]), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&#39;arrow-circle-up&#39;</span>, <span class="at">fill =</span></span>
-<span id="cb238-4"><a href="tse-formateo.html#cb238-4" aria-hidden="true" tabindex="-1"></a>                                                               <span class="st">&#39;green&#39;</span>)), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&#39;arrow-circle-down&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;red&#39;</span>)))</span>
-<span id="cb238-5"><a href="tse-formateo.html#cb238-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab02, <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb238-6"><a href="tse-formateo.html#cb238-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
-<span id="cb238-7"><a href="tse-formateo.html#cb238-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>),</span>
-<span id="cb238-8"><a href="tse-formateo.html#cb238-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> F</span>
-<span id="cb238-9"><a href="tse-formateo.html#cb238-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb238-10"><a href="tse-formateo.html#cb238-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&#39;teal&#39;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb238-11"><a href="tse-formateo.html#cb238-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(</span>
-<span id="cb238-12"><a href="tse-formateo.html#cb238-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>,</span>
-<span id="cb238-13"><a href="tse-formateo.html#cb238-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb238-14"><a href="tse-formateo.html#cb238-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&#39;green&#39;</span>, <span class="st">&#39;salmon&#39;</span>),</span>
-<span id="cb238-15"><a href="tse-formateo.html#cb238-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">popover =</span> <span class="fu">paste</span>(tab02[, <span class="dv">1</span>])</span>
-<span id="cb238-16"><a href="tse-formateo.html#cb238-16" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="tse-formateo.html#cb239-1" aria-hidden="true" tabindex="-1"></a>tab02 <span class="ot">&lt;-</span> tab01</span>
+<span id="cb239-2"><a href="tse-formateo.html#cb239-2" aria-hidden="true" tabindex="-1"></a>tab02[, <span class="dv">2</span>] <span class="ot">&lt;-</span></span>
+<span id="cb239-3"><a href="tse-formateo.html#cb239-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(tab02[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02[, <span class="dv">2</span>]), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&#39;arrow-circle-up&#39;</span>, <span class="at">fill =</span></span>
+<span id="cb239-4"><a href="tse-formateo.html#cb239-4" aria-hidden="true" tabindex="-1"></a>                                                               <span class="st">&#39;green&#39;</span>)), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&#39;arrow-circle-down&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;red&#39;</span>)))</span>
+<span id="cb239-5"><a href="tse-formateo.html#cb239-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab02, <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb239-6"><a href="tse-formateo.html#cb239-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb239-7"><a href="tse-formateo.html#cb239-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>),</span>
+<span id="cb239-8"><a href="tse-formateo.html#cb239-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> F</span>
+<span id="cb239-9"><a href="tse-formateo.html#cb239-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb239-10"><a href="tse-formateo.html#cb239-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&#39;teal&#39;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb239-11"><a href="tse-formateo.html#cb239-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(</span>
+<span id="cb239-12"><a href="tse-formateo.html#cb239-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>,</span>
+<span id="cb239-13"><a href="tse-formateo.html#cb239-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb239-14"><a href="tse-formateo.html#cb239-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&#39;green&#39;</span>, <span class="st">&#39;salmon&#39;</span>),</span>
+<span id="cb239-15"><a href="tse-formateo.html#cb239-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">popover =</span> <span class="fu">paste</span>(tab02[, <span class="dv">1</span>])</span>
+<span id="cb239-16"><a href="tse-formateo.html#cb239-16" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -2218,17 +2025,17 @@ Microsoft
 <h3><span class="header-section-number">10.4.2</span> Adición de gráficos de tipo sparkline</h3>
 <p>Dado que no tenemos datos para poder representar, vamos a suponer una serie de datos para cada empresa y vamos a hacer un gráfico de líneas de tipo <code>sparkline</code>, que vamos a integra como una columna más de nuestra tabla. <code>sparkline</code> es un paquete de R que utiliza la librería <code>jquery sparklines</code> para presentar gráficos minimalistas y ser integrados en nuestros <em>dataframe</em>, y por tanto, publicados en tablas.</p>
 <p>En primer lugar creamos la serie de datos para cada empresa y lo vamos a hacer usando la función <code>sample()</code> que nos aportará 15 valores aleatorios entre 1 y 100 con posibilidad de repetición. Esta es una fórmula muy sencilla que se utiliza mucho en R para crear datos de test.</p>
-<div class="sourceCode" id="cb239"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb239-1"><a href="tse-formateo.html#cb239-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sparkline</span>(<span class="dv">0</span>) <span class="co">#inicializamos la función sparkline</span></span></code></pre></div>
-<span id="htmlwidget-907f10ddcb62500eb9d1" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-907f10ddcb62500eb9d1">{"x":{"values":0,"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
-<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="tse-formateo.html#cb240-1" aria-hidden="true" tabindex="-1"></a>amz <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb240-2"><a href="tse-formateo.html#cb240-2" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb240-3"><a href="tse-formateo.html#cb240-3" aria-hidden="true" tabindex="-1"></a>fac <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb240-4"><a href="tse-formateo.html#cb240-4" aria-hidden="true" tabindex="-1"></a>goo <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb240-5"><a href="tse-formateo.html#cb240-5" aria-hidden="true" tabindex="-1"></a>mic <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb240-6"><a href="tse-formateo.html#cb240-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span></span>
-<span id="cb240-7"><a href="tse-formateo.html#cb240-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(amz, app, fac, goo, mic) <span class="co"># los unimos para mostrarlos en forma de tabla, aunque no sería necesario.</span></span>
-<span id="cb240-8"><a href="tse-formateo.html#cb240-8" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="tse-formateo.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sparkline</span>(<span class="dv">0</span>) <span class="co">#inicializamos la función sparkline</span></span></code></pre></div>
+<span id="htmlwidget-d1f2ff70d4d3300eac98" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-d1f2ff70d4d3300eac98">{"x":{"values":0,"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb241"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb241-1"><a href="tse-formateo.html#cb241-1" aria-hidden="true" tabindex="-1"></a>amz <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb241-2"><a href="tse-formateo.html#cb241-2" aria-hidden="true" tabindex="-1"></a>app <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb241-3"><a href="tse-formateo.html#cb241-3" aria-hidden="true" tabindex="-1"></a>fac <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb241-4"><a href="tse-formateo.html#cb241-4" aria-hidden="true" tabindex="-1"></a>goo <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb241-5"><a href="tse-formateo.html#cb241-5" aria-hidden="true" tabindex="-1"></a>mic <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>, <span class="dv">15</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb241-6"><a href="tse-formateo.html#cb241-6" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span></span>
+<span id="cb241-7"><a href="tse-formateo.html#cb241-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(amz, app, fac, goo, mic) <span class="co"># los unimos para mostrarlos en forma de tabla, aunque no sería necesario.</span></span>
+<span id="cb241-8"><a href="tse-formateo.html#cb241-8" aria-hidden="true" tabindex="-1"></a>df</span></code></pre></div>
 <pre><code>   amz app fac goo mic
 1   64  85  71  43  20
 2   70  85  80  28  55
@@ -2246,14 +2053,14 @@ Microsoft
 14  49  27  65   4  99
 15  91  59  36  17  95</code></pre>
 <p>Una vez tenemos esto Lo hemos juntado en un _dataframe para que se vea mejor, vamos a añadir una nueva columna a nuestra tabla, con la información del gráfico.</p>
-<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="tse-formateo.html#cb242-1" aria-hidden="true" tabindex="-1"></a>tab03 <span class="ot">&lt;-</span> tab01</span>
-<span id="cb242-2"><a href="tse-formateo.html#cb242-2" aria-hidden="true" tabindex="-1"></a>tab03<span class="sc">$</span>sparkline <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">spk_chr</span>(amz),</span>
-<span id="cb242-3"><a href="tse-formateo.html#cb242-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">spk_chr</span>(app),</span>
-<span id="cb242-4"><a href="tse-formateo.html#cb242-4" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">spk_chr</span>(fac),</span>
-<span id="cb242-5"><a href="tse-formateo.html#cb242-5" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">spk_chr</span>(goo),</span>
-<span id="cb242-6"><a href="tse-formateo.html#cb242-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">spk_chr</span>(mic))</span>
-<span id="cb242-7"><a href="tse-formateo.html#cb242-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab03, <span class="at">escape =</span> F) <span class="sc">%&gt;%</span></span>
-<span id="cb242-8"><a href="tse-formateo.html#cb242-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="tse-formateo.html#cb243-1" aria-hidden="true" tabindex="-1"></a>tab03 <span class="ot">&lt;-</span> tab01</span>
+<span id="cb243-2"><a href="tse-formateo.html#cb243-2" aria-hidden="true" tabindex="-1"></a>tab03<span class="sc">$</span>sparkline <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">spk_chr</span>(amz),</span>
+<span id="cb243-3"><a href="tse-formateo.html#cb243-3" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">spk_chr</span>(app),</span>
+<span id="cb243-4"><a href="tse-formateo.html#cb243-4" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">spk_chr</span>(fac),</span>
+<span id="cb243-5"><a href="tse-formateo.html#cb243-5" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">spk_chr</span>(goo),</span>
+<span id="cb243-6"><a href="tse-formateo.html#cb243-6" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">spk_chr</span>(mic))</span>
+<span id="cb243-7"><a href="tse-formateo.html#cb243-7" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab03, <span class="at">escape =</span> F) <span class="sc">%&gt;%</span></span>
+<span id="cb243-8"><a href="tse-formateo.html#cb243-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">full_width =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <table class="table" style="margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -2295,8 +2102,8 @@ Amazon
 20.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-ebbd70035fb7d16afd9e" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-ebbd70035fb7d16afd9e">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-ab9662a98631f689771b" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-ab9662a98631f689771b">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2316,8 +2123,8 @@ Apple
 8.9
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-d03687948b2c58df9f6f" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-d03687948b2c58df9f6f">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-813c6c44d3f85309d0b6" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-813c6c44d3f85309d0b6">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2337,8 +2144,8 @@ Facebook
 24.6
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-fd3edf696e5c424f55ca" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-fd3edf696e5c424f55ca">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-a507e1a912ec6bb28449" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-a507e1a912ec6bb28449">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2358,8 +2165,8 @@ Google
 17.3
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-3befe20d2b5d7b7f23a1" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-3befe20d2b5d7b7f23a1">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-9995403937a1b8502a83" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-9995403937a1b8502a83">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2379,27 +2186,27 @@ Microsoft
 13.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-5cd3cbb9cd2320f23837" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-5cd3cbb9cd2320f23837">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-7431afd98faad494ac80" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-7431afd98faad494ac80">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </tbody>
 </table>
 <p>La última columna de la tabla muestra los gráficos obtenidos. Nótese que los datos de la última columna han sido calculados con una fuente de datos diferente, por lo que esta tabla está presentando inputs obtenidos de dos fuentes. Por una lado nuestra vieja tabla y por otro lado la nueva información que le incorporamos.</p>
 <p>Y finalmente, mostramos casi todo lo que hemos hecho junto, no son cosas separadas.</p>
-<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="tse-formateo.html#cb243-1" aria-hidden="true" tabindex="-1"></a>tab02 <span class="ot">&lt;-</span> tab03</span>
-<span id="cb243-2"><a href="tse-formateo.html#cb243-2" aria-hidden="true" tabindex="-1"></a>tab02[, <span class="dv">2</span>] <span class="ot">&lt;-</span></span>
-<span id="cb243-3"><a href="tse-formateo.html#cb243-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(tab02[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02[, <span class="dv">2</span>]), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&#39;arrow-circle-up&#39;</span>, <span class="at">fill =</span></span>
-<span id="cb243-4"><a href="tse-formateo.html#cb243-4" aria-hidden="true" tabindex="-1"></a>                                                               <span class="st">&#39;green&#39;</span>)), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&#39;arrow-circle-down&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;red&#39;</span>)))</span>
-<span id="cb243-5"><a href="tse-formateo.html#cb243-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab02, <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb243-6"><a href="tse-formateo.html#cb243-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
-<span id="cb243-7"><a href="tse-formateo.html#cb243-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>),</span>
-<span id="cb243-8"><a href="tse-formateo.html#cb243-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> F</span>
-<span id="cb243-9"><a href="tse-formateo.html#cb243-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb243-10"><a href="tse-formateo.html#cb243-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&#39;teal&#39;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb243-11"><a href="tse-formateo.html#cb243-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">5</span>,</span>
-<span id="cb243-12"><a href="tse-formateo.html#cb243-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
-<span id="cb243-13"><a href="tse-formateo.html#cb243-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&#39;green&#39;</span>, <span class="st">&#39;salmon&#39;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb244"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb244-1"><a href="tse-formateo.html#cb244-1" aria-hidden="true" tabindex="-1"></a>tab02 <span class="ot">&lt;-</span> tab03</span>
+<span id="cb244-2"><a href="tse-formateo.html#cb244-2" aria-hidden="true" tabindex="-1"></a>tab02[, <span class="dv">2</span>] <span class="ot">&lt;-</span></span>
+<span id="cb244-3"><a href="tse-formateo.html#cb244-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(tab02[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02[, <span class="dv">2</span>]), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&#39;arrow-circle-up&#39;</span>, <span class="at">fill =</span></span>
+<span id="cb244-4"><a href="tse-formateo.html#cb244-4" aria-hidden="true" tabindex="-1"></a>                                                               <span class="st">&#39;green&#39;</span>)), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&#39;arrow-circle-down&#39;</span>, <span class="at">fill =</span> <span class="st">&#39;red&#39;</span>)))</span>
+<span id="cb244-5"><a href="tse-formateo.html#cb244-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab02, <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb244-6"><a href="tse-formateo.html#cb244-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
+<span id="cb244-7"><a href="tse-formateo.html#cb244-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&#39;striped&#39;</span>, <span class="st">&#39;hover&#39;</span>, <span class="st">&#39;condensed&#39;</span>, <span class="st">&#39;responsive&#39;</span>),</span>
+<span id="cb244-8"><a href="tse-formateo.html#cb244-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">full_width =</span> F</span>
+<span id="cb244-9"><a href="tse-formateo.html#cb244-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb244-10"><a href="tse-formateo.html#cb244-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&#39;teal&#39;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb244-11"><a href="tse-formateo.html#cb244-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">5</span>,</span>
+<span id="cb244-12"><a href="tse-formateo.html#cb244-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&#39;white&#39;</span>,</span>
+<span id="cb244-13"><a href="tse-formateo.html#cb244-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&#39;green&#39;</span>, <span class="st">&#39;salmon&#39;</span>))</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -2441,8 +2248,8 @@ Amazon
 20.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-ebbd70035fb7d16afd9e" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-ebbd70035fb7d16afd9e">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-ab9662a98631f689771b" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-ab9662a98631f689771b">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2462,8 +2269,8 @@ Apple
 8.9
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-d03687948b2c58df9f6f" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-d03687948b2c58df9f6f">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-813c6c44d3f85309d0b6" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-813c6c44d3f85309d0b6">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2483,8 +2290,8 @@ Facebook
 24.6
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-fd3edf696e5c424f55ca" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-fd3edf696e5c424f55ca">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-a507e1a912ec6bb28449" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-a507e1a912ec6bb28449">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2504,8 +2311,8 @@ Google
 17.3
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-3befe20d2b5d7b7f23a1" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-3befe20d2b5d7b7f23a1">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-9995403937a1b8502a83" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-9995403937a1b8502a83">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2525,8 +2332,8 @@ Microsoft
 13.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-5cd3cbb9cd2320f23837" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-5cd3cbb9cd2320f23837">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-7431afd98faad494ac80" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-7431afd98faad494ac80">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </tbody>
@@ -2590,7 +2397,10 @@ gitbook.start({
 "position": "fixed"
 },
 "search": true,
-"info": true
+"info": true,
+"bibliography": ["packages.bib", "book.bib"],
+"biblio-style": "apalike",
+"link-citations": true
 });
 });
 </script>

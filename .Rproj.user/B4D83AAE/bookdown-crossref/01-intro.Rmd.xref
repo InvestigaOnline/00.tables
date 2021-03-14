@@ -1,17 +1,6 @@
-h1:tse01 Introducción
-h2:preparar-nuestro-entorno Preparar nuestro entorno
-h3:crear-proyecto Crear proyecto
-h3:crear-fuente-de-datos Crear fuente de datos
-h2:mi-primer-análisis-con-scripting Mi primer análisis con scripting
-h3:crear-análisis Crear análisis
-fig:c0001 Cálculo de la media
-fig:c0002 Cálculo de la media
-h3:conclusión Conclusión
-h2:mi-primera-tabla-con-scripting Mi primera tabla con scripting
-h2:desde-dónde-creo-mis-scripts ¿Desde dónde creo mis scripts?
-h3:análisis Análisis
-h4:scripting-avanzado-markdown Scripting avanzado (markdown)
-h4:scripting-avanzado-consola Scripting avanzado (consola)
-h3:procesos Procesos
-h2:conclusión-1 Conclusión
+h1:tse01 Instalación de R y Rstudio
+h2:instalación-de-r-en-windows Instalación de R en Windows
+h2:instalación-de-rstudio-en-windows Instalación de RStudio en Windows
+h2:uso-básico-de-rstudio-y-de-r Uso básico de RStudio y de R
+h3:qué-es-rstudio-una-interfaz-para-usar-r ¿Qué es RStudio?: una interfaz para usar R
 

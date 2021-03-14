@@ -139,6 +139,29 @@
             "type": "book"
         },
         {
+            "URL": "https://github.com/rstudio/bookdown",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "bookdown",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1138700109",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Bookdown: Authoring books and technical documents with R markdown",
+            "title-short": "Bookdown",
+            "type": "book"
+        },
+        {
             "URL": "https://www.R-project.org/",
             "author": [
                 {
@@ -208,7 +231,7 @@
                     ]
                 ]
             },
-            "note": "R package version 1.0.3",
+            "note": "R package version 1.0.5",
             "title": "Dplyr: A grammar of data manipulation",
             "title-short": "Dplyr",
             "type": "book"
@@ -264,7 +287,7 @@
             "type": "book"
         },
         {
-            "URL": "https://davidgohel.github.io/flextable/",
+            "URL": "https://CRAN.R-project.org/package=flextable",
             "author": [
                 {
                     "family": "Gohel",
@@ -275,11 +298,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 0.6.1",
+            "note": "R package version 0.6.4",
             "title": "Flextable: Functions for tabular reporting",
             "title-short": "Flextable",
             "type": "book"
@@ -330,6 +353,7 @@
             "type": "book"
         },
         {
+            "URL": "https://CRAN.R-project.org/package=highcharter",
             "author": [
                 {
                     "family": "Kunst",
@@ -340,11 +364,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2021
+                        2020
                     ]
                 ]
             },
-            "note": "http://jkunst.com/highcharter, https://github.com/jbkunst/highcharter",
+            "note": "R package version 0.8.2",
             "title": "Highcharter: A wrapper for the highcharts library",
             "title-short": "Highcharter",
             "type": "book"
@@ -382,11 +406,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 1.3.1",
+            "note": "R package version 1.3.4",
             "title": "kableExtra: Construct complex table with kable and pipe syntax",
             "title-short": "kableExtra",
             "type": "book"
@@ -403,11 +427,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 1.30",
+            "note": "R package version 1.31",
             "title": "Knitr: A general-purpose package for dynamic report generation in r",
             "title-short": "Knitr",
             "type": "book"
@@ -432,11 +456,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 1.7.9.2",
+            "note": "R package version 1.7.10",
             "title": "Lubridate: Make dealing with dates a little easier",
             "title-short": "Lubridate",
             "type": "book"
@@ -477,11 +501,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 4.9.2.2",
+            "note": "R package version 4.9.3",
             "title": "Plotly: Create interactive web graphics via plotly.js",
             "title-short": "Plotly",
             "type": "book"
@@ -537,7 +561,7 @@
             "type": "book"
         },
         {
-            "URL": "https://github.com/rstudio/rmarkdown",
+            "URL": "https://CRAN.R-project.org/package=rmarkdown",
             "author": [
                 {
                     "family": "Allaire",
@@ -584,11 +608,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 2.6",
+            "note": "R package version 2.7",
             "title": "Rmarkdown: Dynamic documents for r",
             "title-short": "Rmarkdown",
             "type": "book"

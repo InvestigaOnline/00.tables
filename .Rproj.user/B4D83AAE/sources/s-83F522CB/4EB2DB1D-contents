@@ -1,0 +1,425 @@
+--- 
+title: "Tablas y gráficos con R y RStudio"
+author: "Roberto Gil-Saura"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete **expss** y visualizaciones de resultados con el paquete **highcharter**. Introducción al uso de scripts con R en el entorno de RStudio."
+---
+
+# Prefacio
+
+Placeholder
+
+
+## ¿Por qué este libro?
+## Requisitos y audiencia del libro
+## Estructura del documento
+
+<!--chapter:end:index.Rmd-->
+
+# Introducción {#tse01}
+
+> … **¿por qué R y Rstudio?**
+
+¿No es acaso necesario y nos viene muy bien el poder utilizar macros en software como Microsoft Office o sintaxis en SPSS? Pues esta es la respuesta, mostrar de una forma sencilla la posibilidad de que el usuario pueda utilizar código R [@R] en sus análisis de datos, que le permitan ir mucho más allá de lo que ofrecen las herramientas básicas comerciales. Además, la elección de R no es casual. 
+
+La primera razón para elegir R es que es un programa extremadamente potente para manipular y analizar datos. Su popularidad en alza lo ha convertido en el software de referencia para estadísticas y análisis en muchas disciplinas, y se enseña cada vez más en muchas universidades. R se ha convertido en uno los de los estándares de facto de la industria del proceso, análisis y visualización de datos, dentro de ese nuevo ámbito que es al analítica o ciencia de datos, que está dando cabida a muchos profesionales de nueva creación y en la que nos estamos integrando muchos otros que provenimos de ámbitos diferentes. 
+
+La segunda razón principal para seleccionar R es que es independiente de la plataforma (puede usarla en Windows, Mac o Unix) y es gratis y por ello no se deb invertir un euro en licencias, mantenimientos o actualizaciones. Los proveedores de software comercial pueden brindar soporte y ofrecer algún tipo de garantía, pero eso es secundario. No se puede superar el precio y la funcionalidad de R. R se enriquece por el hecho de que muchas personas de todo el mundo contribuyen y comparten su propio trabajo en forma de funcionalidades incluidas en paquetes de lo más variado y que llegan al mercado con una celeridad imposible para cualquier otro software comercial. Asimismo, R tiene recursos de ayuda inigualables, tanto en línea como físicos. Hay muchos foros en línea, listas de correo electrónico, grupos de interés, foros, blogs y sitios web llenos de información rica sobre R. Además, cada año se publican cada vez más muchos libros de R de excelente calidad. Lo que realmente se valora de R, es su carácter de código abierto, lo que permite (si sabes) ver el código por dentro alejándose de ser una caja negra. 
+
+
+## Preparar nuestro entorno
+
+Para poder seguir el manual de forma correcta, deberemos tener instalados R y Rstudio. Sigue estos pasos para poder hacerlo en Windows. Si es sobre Linux o MacOS, busca información sobre cómo instalarlo específicamente en tu versión.
+
+### Instalación de R y RStudio en Windows
+
+#### Instalación de R
+
+Los pasos son los siguientes:
+
+1. Abrir el siguiente enlace: https://cran.r-project.org/
+
+2. Seleccionar la opción “Download R for Windows”.
+
+![](data/08.-Ubicacion-1.jpg)
+3. En la nueva página seleccione “base”.
+
+![](data/02.jpg)
+
+4. En la nueva página presione en “Download R X.X.X for Windows”, donde X.X.X corresponde a la versión más actualizada disponible en ese momento. Para este caso es 4.0.3.
+
+![](data/03.jpg)
+
+5. El archivo instalador empezará a descargarse como cualquier otro documento, la ubicación de la descarga y la forma en que se realice dependerán de la configuración que usted esté usando en su buscador de internet.
+
+6. Una vez que la descarga se complete, ejecute el archivo de instalación.
+
+7. Seleccione el idioma de su preferencia y presione OK.
+
+![](data/04.png)
+8. Siga las recomendaciones de la pantalla y luego presione “Siguiente”.
+
+![](data/08.jpg)
+
+9. Seleccione la carpeta donde desea instalar R. La recomendación es dejar la carpeta que viene por defecto. Luego, presione “Siguiente”.
+
+![](data/09.jpg)
+
+
+10. Seleccione los componentes que desea instalar. Es recomendable dejar seleccionados los que vienen por defecto. Luego, presione “Siguiente”.
+
+![](data/10.jpg)
+
+
+11. Especifique las opciones de configuración. En este caso la guía detalla la instalación básica por lo que la opción sugerida es “No”. Luego, presione “Siguiente”.
+
+![]()
+
+
+12. Lea las indicaciones y seleccione las opciones de su conveniencia. La sugerencia es dejar las opciones que vienen por defecto. Luego, presione “Siguiente”.
+
+![]()
+
+
+13. Seleccione las tareas adicionales. La sugerencia es dejar habilitadas solamente las que vienen por defecto. Luego, presione “Siguiente”.
+
+![]()
+
+
+14. Esto iniciará el proceso de instalación. No cierre la ventana hasta que el programa indique que el proceso ha sido completado con éxito.
+
+![]()
+
+15. Esto completa la instalación de R. Presione “Finalizar”.
+
+![](data/15.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Carga de datos 
+
+Vamos a trabajar con ello y verás que sencillo. Para comenzar, en [este enlace](https://drive.google.com/a/investigaonline.com/file/d/1JjevbQjzGc1NMyR7qf7bbvtbMyK8Pvhr/view?usp=drive_web) tienes un archivo de datos con el que haremos todos nuestros ejemplos. Esta fuente de datos está en formato SPSS (sav) y se corresponde con la tercera oleada de un estudio del CIS (Centro de Investigaciones Sociológics de España) de 2017, el barómetro sanitario. 
+La fuente de datos tiene 2557 registros y tiene 190 campos. Si deseas ver el cuestionario que originalmente se utilizó para recoger los datos, [lo puedes descargar aquí](https://drive.google.com/a/investigaonline.com/file/d/1AUUI-1isOmKB1ovR4MRoqMj2Fp7Re2f2/view?usp=drive_web). En él puedes ver todo lo referente a como se ha realizado la entrevista.
+
+
+## Script inicial
+
+### Instalacion de paquetes
+
+### Carga de paquetes de trabajo
+
+### Carga de fuente de datos
+
+
+Todo junto en el mismo script ...
+
+
+### Crear análisis
+
+Escribimos el script de R, que como puedes ver en línea 1 y 3 comienza y acaba con una simbología determinada. Estos son los caracteres indicadores de que todo lo que queda entre ` ```{r echo=TRUE}` y ` ``` ` es scripting. A partir de ahora, nuestras instrucciones irán siempre entre estos símbolos de inicio y final. Nótese que se añade la instrucción echo=TRUE. Esta instrucción provocará que se imprima en el resultado los comandos del script, si en lugar de eso se escribe echo=FALSE, no se imprimiría ese código.
+
+El script debe escribirse así
+
+```{r c0001, fig.cap='Cálculo de la media', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+mean(data$PESO, na.rm=TRUE)
+```
+
+El script escrito contiene la información donde se indica:
+
+* se calcula la media (mean);
+* de una variable que está en el marco de datos denominado `data`);
+* y que se llama PESO (`data$PESO`);
+* no teniendo en cuenta los valores NA (nulos, no definidos, que no sean número: `na.rm=TRUE`)
+
+El resultado, ya puedes verlo, 0,9999273. 
+
+
+**************************** 
+
+
+Terminamos con el análisis. Este aparece ahora en el listado de análisis realizados y podemos acceder a su posterior edición.
+
+
+Vamos a realizar algunos cambios en nuestro script ¿Te parece que redondeemos esta cifra? Edita el análisis utilizando el icono de edición (lápiz) en la fila del gestor.
+
+Posteriormente, pinchamos en opciones y se mostrará nuevamente el script.
+
+
+Ahora, edita el texto del script y déjalo como éste
+
+```{r c0002, fig.cap='Cálculo de la media', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+round(mean(data$PESO, na.rm=TRUE),2)
+```
+
+Como puedes observar, la edición ha consistido en añadir otra instrucción de R, el `round`, completando con el modificador `,2` que indica redondear a 2 decimales. El resultado es el siguiente ...
+
+
+Y grabamos nuestro script ...
+
+### Conclusión
+
+Así, hemos finalizado con nuestro primer *script*. Posiblemente pensarás que eso lo podías haber hecho también con un análisis descriptivo de SegmentaNet. Claro que sí, pero no nos vamos a detener aquí, vamos a seguir avanzando y aportando más. 
+
+No volveremos a ser tan explicativos en este manual acerca de como crear y editar los scripts. La gestión de los scrips en SegmentaNet, la suponemos superada, por lo que ahora ya sólo mostraremos directamente el código de los scripts.
+
+El siguiente paso ya será utilizando el paquete de referencia @expss. Este paquete está cargado por defecto si usas una fuente de datos alojada en SegmentaNet, pero si tratas de cargar una fuente externa (R te da esta posibilidad) lo deberás elegir como paquete a cargar desde el panel de **Paquetes** en la ventana de edición del script.
+
+## Mi primera tabla con scripting
+
+`expss` es un paquete desarrollado por @expss que calcula y muestra tablas con soporte para etiquetas de estilo 'SPSS', cabeceras múltiples y anidadas, pesos, variables de respuesta múltiple y pruebas de significación de tabla y celda. Ofrece facilidades para una salida formateada de tablas. Los métodos para variables etiquetadas agregan soporte de etiquetas de valor a las funciones de R base y a algunas funciones de otros paquetes. Es un paquete destinado a ayudar a las personas a cambiar el proceso de datos desde 'EXCEL' y 'SPSS' hasta R.
+
+Vamos a crear nuestra primera tabla con scripting avanzado en SegmentaNet, utilizando una instrucción muy básica de `expss`, que evolucionará en posteriores secciones. 
+
+Aquí dejo algunos enlaces para que puedas leer acerca de este paquete y las posibilidades que te ofrece de modo combinado con RStudio:
+
+* [manual PDF de EXPSS](https://cran.r-project.org/web/packages/expss/expss.pdf)
+* [material de ayuda, ejemplos](https://cran.r-project.org/web/packages/expss/vignettes/tables-with-labels.html)
+* [uso de etiquetas en R](https://cran.r-project.org/web/packages/expss/vignettes/labels-support.html)
+
+Esta es la forma básica de pedir que se calcule la media de la variable PESO en `expss` Le indicamos: la instrucción de cálculo (calculate), el marco de datos (data), el cálculo a hacer cro_mean (equivalente a calcula la media (mean) en forma de tabla (crosstab). Mira su resultado:
+
+```{r echo=TRUE}
+calculate(data, cro_mean(PESO))
+```
+
+Verás algunos cambios respecto a la salida anterior, no hemos tenido que indicar cuántos decimales, ni que redondee, ni le hemos dicho que no tenga en cuenta los valores especiales o nulos… y ha respondido de forma correcta. Ya vamos viendo que eso puede dar mucho juego, pero vamos a ir de forma ordenada y presentando poco a poco todos los tipos de tabla jugando con diferentes variables del banco de datos (¡¡¡ sí... dataframe!!!) que hemos cargado.
+
+Comenzaremos con la creación de tablas unidimensionales o conocidas como marginales, para luego continuar con las tablas cruzadas, y entre medio, iremos incorporando medidas estadísticas. 
+
+El capítulo 2, simplemente incorpora una serie de términos que manejamos en este manual. Da un vistazo, pero es posible que muchos de ellos ya sea habituales y conocidos por ti. Pasa pues la sección 3, donde comenzamos a trabajar los scripts.
+
+## ¿Desde dónde creo mis scripts?
+
+Hay diferentes lugares en SegmentaNet donde puedes utilizar scripting de código R. Hay otras partes de la plataforma que usan scripting de R, pero que no es editable por el usuario. Te explicamos brevemente la funcionalidad de las que sí puede el usuario trabajar.
+
+### Análisis
+
+En el menú de análisis hay dos tipos de análisis que utilizan scripting de R:
+
+* scripting avanzado (consola)
+* scripting avanzado (markdown)
+
+Cada uno de ellos presenta particularidades distintas. 
+
+#### Scripting avanzado (markdown)
+
+El scripting con markdown está pensado para generar páginas completas o documentos completos con texto, tablas, gráficos, etc. Se pueden utilizar paquetes como `flexdashboard` o generar salidas de tipo diapositiva utilizando las opciones de configuración que ofrece el paquete `rmarkdown`. No aseguramos una compatibilidad al 100%, pues eso sería imposible, pero gran parte de las características estarían funcionales. La idea es generar un documento HTML, de forma totalmente transparente para el usuario que se guarda en la base de datos y se presenta como resultado del análisis. Ese HTML puede contener texto, gráficos, tablas y cualquier elemento que se te ocurra. El código R se ubica en lo que se denomina `chunks` que luego veremos y se puede incluir también código R `inline` en el texto. 
+
+#### Scripting avanzado (consola)
+
+El scripting avanzado con consola está pensado para obtener tablas u otros objetos manipulados sobre los que realizar una publicación en modo tabla o en modo gráfico. Se da la oportunidad al usuario de elegir qué objeto y en qué formato se debe procesar. Tanto tabla como gráfico adquieren el aspecto estándar de SegmentaNet.
+
+### Procesos
+
+Desde procesos, el scripting avanzado (consola) se debería usar para crear una fuente de datos que pueda ser luego utilizada de forma estándar por el usuario de SegmentaNet. Por poner un ejemplo sencillo, imaginemos un archivo público que está en una URL, lo leemos, lo procesamos con scripts de R y obtenemos nuestra fuente de datos, que será subida a SegmentaNet de forma integrada en el proceso.
+
+## Conclusión
+
+En este documento, nos centraremos en trabajar con los análisis de tipo scripting avanzado markdown.
+
+<!--chapter:end:01-intro.Rmd-->
+
+
+# Términos {#tse02}
+
+Placeholder
+
+
+## Básicos de R y/o proceso de datos
+## Básicos de tabulación
+
+<!--chapter:end:02-terminos.Rmd-->
+
+
+# Tablas marginales {#tse03}
+
+Placeholder
+
+
+## Frecuencias
+### Variables de respuesta simple
+#### Cálculo de frecuencias (estilo SPSS)
+#### Tablas de frecuencias (absolutos)
+#### Tablas de frecuencias relativas
+#### Tablas de absolutos y realativos (juntos)
+### Variable de respuesta múltiple
+#### Tablas de frecuencias absolutas
+#### Tablas de frecuencias relativas
+### Tablas combinadas
+## Estadísticos
+### Estadísticos básicos
+### Otros estadísticos
+## Conclusión
+
+<!--chapter:end:03-tablas.marginales.Rmd-->
+
+
+# Tablas cruzadas {#tse04}
+
+Placeholder
+
+
+## Básica con variables simples
+### De frecuencias, variable simple y sólo absolutos
+### De frecuencias, variable simple, con porcentajes de columna
+### De frecuencias, variable simple, con porcentajes de fila
+### De frecuencias, variable simple, con porcentajes total muestra
+### Combinaciones de los anteriores
+## Básica con múltiples
+### De frecuencias, variable múltiple y sólo absolutos
+### De frecuencias, variable múltiple, con porcentajes de columna
+### De frecuencias, variable múltiple, con porcentajes de fila
+### De frecuencias, variable múltiple, con porcentajes total muestra
+### Combinaciones de los anteriores
+## Básica con estadísticos
+### Cruce entre variable simple y dos estadísticos
+#### Tabulación cruzada (con cálculo estadístico) y múltiples
+
+<!--chapter:end:04-tablas.cruzadas.Rmd-->
+
+
+# Tablas especiales {#tse05}
+
+Placeholder
+
+
+## Subgrupos (filtros en la tabla)
+## Bases y/o con anidación
+## Características avanzadas
+
+<!--chapter:end:05-tablas.especiales.Rmd-->
+
+
+# Otras utilidades y tablas especiales {#tse06}
+
+Placeholder
+
+
+## Recodificar {#recode}
+## Cuadros
+## Ponderación
+## Subtotales y NETS
+### Subtotales
+### NETS
+## _Top_ y _Bottom_
+### Gráficos base
+
+<!--chapter:end:06-otras.Rmd-->
+
+
+# Pruebas inferenciales {#tse07}
+
+Placeholder
+
+
+## Prueba de dependencia
+### De una tabla
+### De una celda de una tabla
+## Pruebas de diferencias
+### Porcentajes (prueba z)
+### Medias (prueba t)
+## Parámetros posibles en las pruebas de significación
+### Algunos ejemplos de uso de los parámetros
+## Conclusión
+
+<!--chapter:end:07-pruebas.Rmd-->
+
+
+# Visualización gráfica {#tse08}
+
+Placeholder
+
+
+## highcharteR, introducción
+### highchart()
+### hchart()
+## Mi primer gráfico
+## Gráfico de barras 
+### Cambiar el nombre de la serie de datos
+### Añadir créditos al gráfico
+### Añadir el valor del dato al elemento (datalabels)
+### Guardar y exportar el gráfico
+### API de Highcharts, toda la potencia de los gráficos
+## Gráfico de columna
+### Variación de columna a pirámide
+### Variación de columna a _lollipop_
+### Gráficos polares
+## Diagramas de secciones
+### Tarta / _pie chart_
+### Anillo / _doughnut_
+### _Funnel_
+### Pirámide
+## Gráfico de línea
+#### Suavizado de la línea
+## Gráficos de columnas / barras con apilamiento
+## Gráfico de área
+## Gráfico de puntos / _scatterplot_
+## Histograma o gráfico de densidad
+## Gráficos indicadores
+### Gauge
+### Bullet
+## Gráfico / _boxplot_
+## Gráfico de barras de error
+## Gráficos de transiciones
+### Diagrama de Sankey
+### Diagrama de rueda
+### Diagrama _streamgraph_
+### Diagrama de redes
+## Conclusión
+
+<!--chapter:end:08-visualizacion.Rmd-->
+
+
+# Estilos y formatos de tabla {#tse-formateo}
+
+Placeholder
+
+
+## Introducción
+## Operaciones con tablas
+## Estilo de las tablas
+### Estilo y posición
+### Formato específico de fila o columna
+## Adición de imágenes y de otros elementos
+### Adición de iconos de FontAwesome
+### Adición de gráficos de tipo sparkline
+
+<!--chapter:end:09-formateo.Rmd-->
+
+
+# Condiciones {#tse09}
+
+Placeholder
+
+
+## Operadores aritméticos
+## Operadores relacionales
+## Operadores lógicos
+## Operadores de asignación
+## Operadores específicos (criterios) en expss {#criteria}
+
+<!--chapter:end:10-condiciones.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# Bibliografía {-}
+'`
+
+
+<!--chapter:end:11-referencias.Rmd-->
+
