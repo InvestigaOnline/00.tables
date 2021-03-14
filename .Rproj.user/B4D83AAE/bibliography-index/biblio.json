@@ -328,6 +328,27 @@
             "type": "book"
         },
         {
+            "URL": "https://github.com/yihui/formatR",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "id": "R-formatR",
+            "issued": {
+                "date-parts": [
+                    [
+                        2021
+                    ]
+                ]
+            },
+            "note": "R package version 1.8",
+            "title": "formatR: Format r code automatically",
+            "title-short": "formatR",
+            "type": "book"
+        },
+        {
             "URL": "https://CRAN.R-project.org/package=formattable",
             "author": [
                 {

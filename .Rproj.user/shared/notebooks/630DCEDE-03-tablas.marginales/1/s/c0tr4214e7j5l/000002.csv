@@ -1,4 +1,0 @@
-"0","as.datatable_widget(data %>%"
-"0","  tab_cells(P31) %>%"
-"0","  tab_stat_cases() %>%"
-"0","  tab_pivot())"

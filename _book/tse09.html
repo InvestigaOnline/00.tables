@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Sección 11 Condiciones | Tablas y gráficos con R y RStudio</title>
+  <title>11 Condiciones | Tablas y gráficos con R y RStudio</title>
   <meta name="description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Sección 11 Condiciones | Tablas y gráficos con R y RStudio" />
+  <meta property="og:title" content="11 Condiciones | Tablas y gráficos con R y RStudio" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Sección 11 Condiciones | Tablas y gráficos con R y RStudio" />
+  <meta name="twitter:title" content="11 Condiciones | Tablas y gráficos con R y RStudio" />
   
   <meta name="twitter:description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   
@@ -211,7 +211,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="tse02.html"><a href="tse02.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>3.1</b> ¿Desde dónde creo mis scripts?</a>
 <ul>
 <li class="chapter" data-level="3.1.1" data-path="tse02.html"><a href="tse02.html#scripting-en-consola"><i class="fa fa-check"></i><b>3.1.1</b> Scripting en consola</a></li>
-<li class="chapter" data-level="3.1.2" data-path="tse02.html"><a href="tse02.html#scripting-con-markdown"><i class="fa fa-check"></i><b>3.1.2</b> Scripting con markdown</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tse02.html"><a href="tse02.html#scripting-con-markdown"><i class="fa fa-check"></i><b>3.1.2</b> Scripting con <em>markdown</em></a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="tse02.html"><a href="tse02.html#primeros-pasos"><i class="fa fa-check"></i><b>3.2</b> Primeros pasos</a>
 <ul>
@@ -305,7 +305,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="tse08.html"><a href="tse08.html"><i class="fa fa-check"></i><b>9</b> Visualización gráfica</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="tse08.html"><a href="tse08.html#highcharter-introducción"><i class="fa fa-check"></i><b>9.1</b> highcharteR, introducción</a>
+<li class="chapter" data-level="9.1" data-path="tse08.html"><a href="tse08.html#highcharter-introducción"><i class="fa fa-check"></i><b>9.1</b> <code>highcharter</code>, introducción</a>
 <ul>
 <li class="chapter" data-level="9.1.1" data-path="tse08.html"><a href="tse08.html#highchart"><i class="fa fa-check"></i><b>9.1.1</b> highchart()</a></li>
 <li class="chapter" data-level="9.1.2" data-path="tse08.html"><a href="tse08.html#hchart"><i class="fa fa-check"></i><b>9.1.2</b> hchart()</a></li>
@@ -374,7 +374,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11.2" data-path="tse09.html"><a href="tse09.html#operadores-relacionales"><i class="fa fa-check"></i><b>11.2</b> Operadores relacionales</a></li>
 <li class="chapter" data-level="11.3" data-path="tse09.html"><a href="tse09.html#operadores-lógicos"><i class="fa fa-check"></i><b>11.3</b> Operadores lógicos</a></li>
 <li class="chapter" data-level="11.4" data-path="tse09.html"><a href="tse09.html#operadores-de-asignación"><i class="fa fa-check"></i><b>11.4</b> Operadores de asignación</a></li>
-<li class="chapter" data-level="11.5" data-path="tse09.html"><a href="tse09.html#criteria"><i class="fa fa-check"></i><b>11.5</b> Operadores específicos (criterios) en expss</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
 </ul>
@@ -395,7 +394,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="tse09" class="section level1" number="11">
-<h1><span class="header-section-number">Sección 11</span> Condiciones</h1>
+<h1><span class="header-section-number">11</span> Condiciones</h1>
 <p>Los operadores son los símbolos que le indican a R que debe realizar una tarea. Combinando datos y operadores es que logramos que R haga su trabajo.</p>
 <p>Existen operadores específicos para cada tipo de tarea. Los tipos de operadores principales son los siguientes:</p>
 <ul>
@@ -407,8 +406,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Familiarizarnos con los operadores nos permitirá manipular y transformar datos de distintos tipos.</p>
 <div id="operadores-aritméticos" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> Operadores aritméticos</h2>
-<p>Como su nombre lo indica, este tipo de operador es usado para operaciones aritméticas.</p>
-<p>En R tenemos los siguientes operadores aritméticos:</p>
+<p>Como su nombre lo indica, este tipo de operador es usado para operaciones aritméticas. En R tenemos los siguientes operadores aritméticos:</p>
 <table>
 <thead>
 <tr class="header">
@@ -579,10 +577,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </table>
 <p>Aunque podemos usar el signo igual para una asignación, a lo largo de este libro utilizaremos &lt;-, por ser característico de R y fácil de reconocer visualmente.</p>
 <p>Después de realizar la operación de asignación, podemos usar el nombre de la variable para realizar operaciones con ella, como si fuera del tipo de datos que le hemos asignado. Si asignamos un valor a una variable a la que ya habíamos asignado datos, nuestra variable conserva el valor más reciente. Además, esta operación nos permite “guardar” el resultado de operaciones, de modo que podemos recuperarlos sin necesidad de realizar las operaciones otra vez.</p>
-</div>
-<div id="criteria" class="section level2" number="11.5">
-<h2><span class="header-section-number">11.5</span> Operadores específicos (criterios) en expss</h2>
-<p>[en desarrollo]</p>
 
 </div>
 </div>

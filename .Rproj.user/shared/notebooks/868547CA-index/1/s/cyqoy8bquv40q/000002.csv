@@ -1,5 +1,0 @@
-"0","# automatically create a bib database for R packages
-knitr::write_bib(c(.packages(), 'bookdown', 'knitr', 'rmarkdown', 'knitr', 'kableExtra', 'DT', 'expss', 'formattable', 'flextable', 'fontawesome', 'sparkline', 'dplyr', 'stringr', 'purrr', 'lubridate', 'readr', 'igraph', 'highcharter', 'plotly' ), 'packages.bib')
-"
-"2","no date field in DESCRIPTION file of package ‘fontawesome’"
-"2","no date field in DESCRIPTION file of package ‘highcharter’"
