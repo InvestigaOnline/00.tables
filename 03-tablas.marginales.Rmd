@@ -91,7 +91,7 @@ as.datatable_widget(data %>%
 
 Realicemos ahora una pequeña pero importante variación en el cálculo del estadístico casos -frecuencias- y utilicemos la posibilidad de ubicar donde queramos el total de casos, así como su etiqueta. Ello lo hacemos con `total_row_position = "above", label = "Casos" ` aplicado a la función `tab_stat_cases()`.
 
-```{r fig.cap='Frecuencias de P31, moviendo el #Total', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+```{r fig.cap='Frecuencias de P31, moviendo el Total', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P31) %>% 
   tab_stat_cases(total_row_position = "above", label = "Casos") %>%
@@ -111,7 +111,7 @@ as.datatable_widget(data %>%
 
 #### Tablas de absolutos y realativos (juntos)
 
-Cuando deseamos hacer combinaciones de frecuencias y porcentajes, la filosofía de trabajo es muy parecida. En nuestro caso vamos a hacer algo muy típico. Aunque creo que resulta más sencillo leer cada estadístico en su tabla, hay ocasiones en las que la comparativa es muy necesaria y por tanto es ncesario unir los estadísticos en la misma tabla.  Nótese la diferencia con el siguiente cuadro...
+Cuando deseamos hacer combinaciones de frecuencias y porcentajes, la filosofía de trabajo es muy parecida. En nuestro caso vamos a hacer algo muy típico. Aunque creo que resulta más sencillo leer cada estadístico en su tabla, hay ocasiones en las que la comparativa es muy necesaria y por tanto es necesario unir los estadísticos en la misma tabla.  Nótese la diferencia con el siguiente cuadro...
 
 ```{r fig.cap='Frecuencias y porcentajes de P31', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
 as.datatable_widget(data %>% 
