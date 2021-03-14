@@ -21,7 +21,6 @@
   <meta name="twitter:description" content="Guía para la realización de sencillos y complejos análisis en tablas de contingencia, reproduciendo tablas del tipo SPSS / BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de RStudio." />
   
 
-<meta name="author" content="Roberto Gil-Saura" />
 
 
 <meta name="date" content="2021-03-14" />
@@ -188,7 +187,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<a href="./">Tablas y gráficos con R y RStudio</a>
+<br><a href="./">Tablas y gráficos con R y RStudio</a><br>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prefacio</a>
@@ -466,8 +465,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb217-5"><a href="tse-formateo.html#cb217-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_sum</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb217-6"><a href="tse-formateo.html#cb217-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-160"></span>
-<div id="htmlwidget-d15e2395e73d5a6977ff" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-d15e2395e73d5a6977ff">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["emp","","","",""],["Amazon","Apple","Facebook","Google","Microsoft"],["ing","ing","ing","ing","ing"],["Sum","Sum","Sum","Sum","Sum"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        per\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-066c1e32dd4329148e3e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-066c1e32dd4329148e3e">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["emp","","","",""],["Amazon","Apple","Facebook","Google","Microsoft"],["ing","ing","ing","ing","ing"],["Sum","Sum","Sum","Sum","Sum"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        per\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 10.1: Tabla con formato estándar de <code>expss</code>
 </p>
@@ -483,8 +482,8 @@ Figura 10.1: Tabla con formato estándar de <code>expss</code>
 <pre><code>## [1] &quot;etable&quot;     &quot;data.frame&quot;</code></pre>
 <div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb220-1"><a href="tse-formateo.html#cb220-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(tab01)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-161"></span>
-<div id="htmlwidget-0e0695fe8a90d6daef8f" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0e0695fe8a90d6daef8f">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Amazon","Apple","Facebook","Google","Microsoft"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div id="htmlwidget-7f14192410f2dde13715" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-7f14192410f2dde13715">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Amazon","Apple","Facebook","Google","Microsoft"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 10.2: Tabla con formato adaptado de <code>expss</code>
 </p>
@@ -536,8 +535,8 @@ Figura 10.2: Tabla con formato adaptado de <code>expss</code>
 <span id="cb227-23"><a href="tse-formateo.html#cb227-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&#39;teal&#39;</span></span>
 <span id="cb227-24"><a href="tse-formateo.html#cb227-24" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-164"></span>
-<div id="htmlwidget-266541b7efecd3c45116" style="width:100%;height:500px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-266541b7efecd3c45116">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":{"title":{"text":null},"min":0,"max":100000},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6bb28e1e2a3f4d5e061f" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6bb28e1e2a3f4d5e061f">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":{"title":{"text":null},"min":0,"max":100000},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figura 10.3: Gráfico del <em>dataframe</em>
 </p>
@@ -595,8 +594,8 @@ Figura 10.3: Gráfico del <em>dataframe</em>
 <span id="cb230-41"><a href="tse-formateo.html#cb230-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">yAxis =</span> <span class="dv">1</span></span>
 <span id="cb230-42"><a href="tse-formateo.html#cb230-42" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-166"></span>
-<div id="htmlwidget-0497e0735940fe90d4d9" style="width:100%;height:500px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0497e0735940fe90d4d9">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":[{"title":{"text":"Millones de dólares"},"min":0,"max":100000},{"title":{"text":"Porcentaje"},"min":0,"max":100,"opposite":true}],"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"},{"data":[20.7,8.9,24.6,17.3,13.7],"name":"Diferencia porcentual","dataLabels":{"enabled":true,"format":"{point.y} %"},"color":"darkblue","yAxis":1}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-9934c29f6de1c22c9a9c" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-9934c29f6de1c22c9a9c">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":[{"title":{"text":"Millones de dólares"},"min":0,"max":100000},{"title":{"text":"Porcentaje"},"min":0,"max":100,"opposite":true}],"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"},{"data":[20.7,8.9,24.6,17.3,13.7],"name":"Diferencia porcentual","dataLabels":{"enabled":true,"format":"{point.y} %"},"color":"darkblue","yAxis":1}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figura 10.4: Gráfico del <em>dataframe</em>
 </p>
@@ -2026,8 +2025,8 @@ Microsoft
 <p>En primer lugar creamos la serie de datos para cada empresa y lo vamos a hacer usando la función <code>sample()</code> que nos aportará 15 valores aleatorios entre 1 y 100 con posibilidad de repetición. Esta es una fórmula muy sencilla que se utiliza mucho en R para crear datos de test.</p>
 <div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="tse-formateo.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sparkline</span>(<span class="dv">0</span>) <span class="co">#inicializamos la función sparkline</span></span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-179"></span>
-<span id="htmlwidget-c739b1df35f0a260b533" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-c739b1df35f0a260b533">{"x":{"values":0,"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-236659b6f9b8513c9c56" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-236659b6f9b8513c9c56">{"x":{"values":0,"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figura 10.5: Tabla con elementos de imagen y <em>sparkline</em>
 </p>
@@ -2106,8 +2105,8 @@ Amazon
 20.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-a944b0f8f63ebce7f307" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-a944b0f8f63ebce7f307">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-f9dae239811706005b7b" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-f9dae239811706005b7b">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2127,8 +2126,8 @@ Apple
 8.9
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-73e00d7522fa6a582ab3" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-73e00d7522fa6a582ab3">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-f116b65ae6630915600f" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-f116b65ae6630915600f">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2148,8 +2147,8 @@ Facebook
 24.6
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-6f3ff83fdc2ab5fb3724" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-6f3ff83fdc2ab5fb3724">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-64194966e58873eb45f2" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-64194966e58873eb45f2">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2169,8 +2168,8 @@ Google
 17.3
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-da40ca0011c4a0c0b7e8" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-da40ca0011c4a0c0b7e8">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-664957905a731ffb554d" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-664957905a731ffb554d">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2190,8 +2189,8 @@ Microsoft
 13.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-193c4c62f167751a81aa" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-193c4c62f167751a81aa">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-9e7a7b2adc67a3c923fb" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-9e7a7b2adc67a3c923fb">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </tbody>
@@ -2252,8 +2251,8 @@ Amazon
 20.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-a944b0f8f63ebce7f307" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-a944b0f8f63ebce7f307">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-f9dae239811706005b7b" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-f9dae239811706005b7b">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2273,8 +2272,8 @@ Apple
 8.9
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-73e00d7522fa6a582ab3" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-73e00d7522fa6a582ab3">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-f116b65ae6630915600f" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-f116b65ae6630915600f">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2294,8 +2293,8 @@ Facebook
 24.6
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-6f3ff83fdc2ab5fb3724" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-6f3ff83fdc2ab5fb3724">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-64194966e58873eb45f2" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-64194966e58873eb45f2">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2315,8 +2314,8 @@ Google
 17.3
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-da40ca0011c4a0c0b7e8" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-da40ca0011c4a0c0b7e8">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-664957905a731ffb554d" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-664957905a731ffb554d">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2336,8 +2335,8 @@ Microsoft
 13.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-193c4c62f167751a81aa" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-193c4c62f167751a81aa">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-9e7a7b2adc67a3c923fb" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-9e7a7b2adc67a3c923fb">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </tbody>
@@ -2381,7 +2380,7 @@ gitbook.start({
 "fontsettings": {
 "theme": "white",
 "family": "sans",
-"size": 1
+"size": 1.25
 },
 "edit": null,
 "history": {
@@ -2404,7 +2403,8 @@ gitbook.start({
 "info": true,
 "bibliography": ["packages.bib", "book.bib"],
 "biblio-style": "apalike",
-"link-citations": true
+"link-citations": true,
+"cover-image": "data/portada.png"
 });
 });
 </script>

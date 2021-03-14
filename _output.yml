@@ -3,7 +3,7 @@ bookdown::gitbook:
   config:
     toc:
       before: |
-        <a href="./">Tablas y gráficos con R y RStudio</a>
+        <br><a href="./">Tablas y gráficos con R y RStudio</a><br>
       collapse: subsection
       scroll_highlight: yes
     toolbar:
@@ -14,7 +14,7 @@ bookdown::gitbook:
     fontsettings:
       theme: white
       family: sans
-      size: 1
+      size: 1.25
     sharing:
       facebook: yes
       twitter: yes
@@ -24,6 +24,7 @@ bookdown::gitbook:
     bibliography: ["packages.bib", "book.bib"]
     biblio-style: "apalike"
     link-citations: true
+    cover-image: data/portada.png
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
