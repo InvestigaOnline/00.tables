@@ -5,21 +5,21 @@ if(!knitr:::is_html_output())
 {
   options("width"=56)
   knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
-  knitr::opts_chunk$set(fig.pos = 'H')
+  knitr::opts_chunk$set(fig.pos = "H")
 }
 ```
 
 Cuando trabajamos con tablas de contingencia es muy frecuente que sintamos la necesidad de tener que inferir acerca de la dependencia de las categorías analizadas o de las diferencias entre los grupos analizados. Siempre que nuestras variables cumplan con los requisitos que para ellas cada prueba establece (normalidad, homoscedasticidad, linealidad y en algunos casos independencia), podremos aplicar las pruebas inferenciales típicas con tablas de contingencia en la investigación básica:
 
-* Chi<sup>2</sup> en su variantes de tabla y celda;
-* Pruebas z de contraste proporciones;
-* Prueba t de contraste de medias.
+* Chi<sup>2</sup> en su variantes de tabla y celda [@art001; @amon2009estadistica];
+* Pruebas z de contraste proporciones [@amon2009estadistica; @glass1986metodos];
+* Prueba t de contraste de medias [@amon2009estadistica; @glass1986metodos].
 
 Para todas ellas`expss` nos da la oportunidad de hacer los cálculos desde el propio script de realización de la tabla y/o desde una instrucción posterior a la realización de la tabla. Pasemos por ello a explicar, no tanto el cometido de estas pruebas, sino el como llevarlas adelante.
 
 ## Prueba de dependencia
 
-El contraste Chi<sup>2</sup> de Pearson es una prueba estadística no paramétrica, que compara las frecuencias realmente obtenidas con las frecuencias esperadas que son las que corresponderían a cada celda o casilla de la tabla si su valor se ajustase a cualquier norma teórica previamente adoptada; en nuestro caso, una distribución proporcional de frecuencias normales. En definitiva, “se está calculando un índice acerca de la distancia entre lo real y lo esperado” @manzano1995.
+El contraste Chi<sup>2</sup> de Pearson es una prueba estadística no paramétrica, que compara las frecuencias realmente obtenidas con las frecuencias esperadas que son las que corresponderían a cada celda o casilla de la tabla si su valor se ajustase a cualquier norma teórica previamente adoptada; en nuestro caso, una distribución proporcional de frecuencias normales @siegel1995estadistica. En definitiva, “se está calculando un índice acerca de la distancia entre lo real y lo esperado” @manzano1995.
 
 El valor numérico de esta prueba se obtiene como:
 
@@ -40,21 +40,21 @@ Esta prueba se suele utilizar (entre muchas otras posibilidades) para contrastar
 
 ### De una tabla
 
-La prueba Chi<sup>2</sup> puede hacerse a nivel de tabla, lo que muestra la relación de dependencia entre las categorías. Hagamos una primera aproximación con dos tablas de contingencia muy sencillas, pero que nos mostrarán como se indica que la relación de dependencia existe o no existe. La función [`tab_last_sig_cases`](https://www.rdocumentation.org/packages/expss/versions/0.10.5/topics/tab_significance_options) realiza la prueba base de R denominada [`chisq.test`](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/chisq.test).
+La prueba Chi<sup>2</sup> puede hacerse a nivel de tabla, lo que muestra la relación de dependencia entre las categorías @siegel1995estadistica. Hagamos una primera aproximación con dos tablas de contingencia muy sencillas, pero que nos mostrarán como se indica que la relación de dependencia existe o no existe. La función [`tab_last_sig_cases`](https://www.rdocumentation.org/packages/expss/versions/0.10.5/topics/tab_significance_options) realiza la prueba base de R denominada [`chisq.test`](https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/chisq.test).
 
-Nótese el uso de '|'=unvr() para utilizar la variable sin que se publiquen los texto extra de la misma.
+Nótese el uso de "|"=unvr() para utilizar la variable sin que se publiquen los texto extra de la misma.
 
-```{r fig.cap='Prueba Chi<sup>2</sup> en tabla', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE, warning=FALSE}
+```{r fig.cap="Prueba Chi<sup>2</sup> en tabla", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE, warning=FALSE}
 as.datatable_widget(data %>% 
-    tab_cols(total(), '|'=unvr(P31)) %>% 
-    tab_cells('|'=unvr(P2)) %>% 
+    tab_cols(total(), "|"=unvr(P31)) %>% 
+    tab_cells("|"=unvr(P2)) %>% 
     tab_stat_cases() %>% 
     tab_last_sig_cases() %>%
     tab_pivot())
 
 as.datatable_widget(data %>% 
-    tab_cols(total(), '|'=unvr(P31)) %>% 
-    tab_cells('|'=unvr(P33)) %>% 
+    tab_cols(total(), "|"=unvr(P31)) %>% 
+    tab_cells("|"=unvr(P33)) %>% 
     tab_stat_cases() %>% 
     tab_last_sig_cases() %>%
     tab_pivot())
@@ -62,7 +62,7 @@ as.datatable_widget(data %>%
 
 En la primera tabla se muestra la relación entre la variable  P31 (sexo) y la P2 (valoración del sistema sanitario). Nótese que en la tabla se ha usado una línea tras el cálculo de los casos con la función `tab_last_sig_cases()` que indica que se debe realizar la prueba Chi<sup>2</sup> a la relación. Esta línea provoca que en la tabla surja una nueva fila sobre el `#Total` con el texto `#Chi-squared p-value` que indica que se realiza la prueba al 5% (0,05). Si el resultado es el rechazo de la hipótesis nula de independencia se muestra un `<0,05 (warn.)`, pero si no se puede rechazar la hipótesis nula de independencia sale sólo `(warn.)` En la tabla no se publica el resultado de la prueba, pero podemos hacerlo siguiendo el formato estándar.
 
-```{r fig.cap='Prueba Chi<sup>2</sup>', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE, warning=FALSE}
+```{r fig.cap="Prueba Chi<sup>2</sup>", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE, warning=FALSE}
 table(data$P2, data$P31)
 chisq.test(table(data$P2, data$P31))
 table(data$P33, data$P31)
@@ -78,17 +78,17 @@ Particularmente de interés es la prueba Chi<sup>2</sup> de celda. A diferencia 
 Para obtener la tabla y la subsiguiente prueba se utilizará una nueva función denominada `tab_last_sig_cell_chisq()` sobre la misma estructura ya conocida de tabla. Nótese que en este caso, para la prueba se requiere utilizar los porcentajes en lugar de los casos, para que el cálculo sea el oportuno. Chi<sup>2</sup> es una prueba muy sensible al tamaño de la muestra.
 
 
-```{r fig.cap='Prueba Chi<sup>2</sup> de celda', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE, warning=FALSE}
+```{r fig.cap="Prueba Chi<sup>2</sup> de celda", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE, warning=FALSE}
 as.datatable_widget(data %>% 
-    tab_cols(total(), '|'=unvr(P31)) %>% 
-    tab_cells('|'=unvr(P2)) %>% 
+    tab_cols(total(), "|"=unvr(P31)) %>% 
+    tab_cells("|"=unvr(P2)) %>% 
     tab_stat_cpct() %>% 
     tab_last_sig_cell_chisq() %>%
     tab_pivot())
 
 as.datatable_widget(data %>% 
-    tab_cols(total(), '|'=unvr(P31)) %>% 
-    tab_cells('|'=unvr(P33)) %>% 
+    tab_cols(total(), "|"=unvr(P31)) %>% 
+    tab_cells("|"=unvr(P33)) %>% 
     tab_stat_cpct() %>% 
     tab_last_sig_cell_chisq() %>%
     tab_pivot())
@@ -107,17 +107,17 @@ Obsérvese la diferencia de concepto; mientras que la prueba Chi<sup>2</sup> de 
 
 Para utilizar esta funcionalidad el script sería el siguiente:
 
-```{r  fig.cap='Prueba Z en tabla', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE, warning=FALSE}
+```{r  fig.cap="Prueba Z en tabla", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE, warning=FALSE}
 as.datatable_widget(data %>% 
-    tab_cols(total(), 'SEXO'=unvr(P31)) %>% 
-    tab_cells('|'=unvr(P2)) %>% 
+    tab_cols(total(), "SEXO"=unvr(P31)) %>% 
+    tab_cells("|"=unvr(P2)) %>% 
     tab_stat_cpct() %>% 
     tab_last_sig_cpct() %>%
     tab_pivot())
 
 as.datatable_widget(data %>% 
-    tab_cols(total(), 'SEXO'=unvr(P31)) %>% 
-    tab_cells('|'=unvr(P33)) %>% 
+    tab_cols(total(), "SEXO"=unvr(P31)) %>% 
+    tab_cells("|"=unvr(P33)) %>% 
     tab_stat_cpct() %>% 
     tab_last_sig_cpct() %>%
     tab_pivot())
@@ -132,9 +132,9 @@ Por tanto, creemos que queda claro el funcionamiento de la prueba. Se etiquetan 
 
 Al igual que en el apartado anterior el objetivo es determinar si existen o no diferencias entre los grupos que se están testando, teniendo como hipótesis nula que las medias de los grupos son iguales. En nuestro ejemplo, hemos tomado la de auto clasificación ideológica (recodificando las posiciones de 1 a 10, izquierda a derecha respectivamente) creando grupos de izquierda, centro y derecha. Sobre esta tabla que calcula las medias, se aplica el estadístico `tab_stat_mean_sd_n()`que contiene todos los datos requeridos para el cálculo del valor t y se le indica que requerimos el test con `tab_last_sig_means()`. Se asume que los grupos son independientes, que existe normalidad y que las varianzas de los grupos son iguales.
 
-```{r fig.cap='Prueba t en tabla', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE, warning=FALSE}
+```{r fig.cap="Prueba t en tabla", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE, warning=FALSE}
 as.datatable_widget(data %>% 
-    tab_cols(total(), P29=recode(P29, 'Izquierda' = 1:4 ~1, 'Centro' = 5:6 ~2, 'Derecha' = 7:10 ~ 3, TRUE ~ NA)) %>% 
+    tab_cols(total(), P29=recode(P29, "Izquierda" = 1:4 ~1, "Centro" = 5:6 ~2, "Derecha" = 7:10 ~ 3, TRUE ~ NA)) %>% 
     tab_cells(P3=na_if(P3, gt(10))) %>% 
     tab_stat_mean_sd_n() %>% 
     tab_last_sig_means() %>%
@@ -145,33 +145,33 @@ Se puede observar que la salida es igual a la de la prueba Z. Se rotulan las col
 
 Existen ocasiones en las que esta prueba, se requiere publicar para un conjunto de ítems que forman parte de una misma batería. En estos casos, no es tan interesante publicar las desviaciones y las bases, por lo que podemos formular de esta forma el script.
 
-```{r fig.cap='Prueba t con sólo medias', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE, warning=FALSE}
+```{r fig.cap="Prueba t con sólo medias", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE, warning=FALSE}
 as.datatable_widget(data %>% 
-    tab_cols(total(), P29=recode(P29, 'Izquierda' = 1:4 ~1, 'Centro' = 5:6 ~2, 'Derecha' = 7:10 ~ 3, TRUE ~ NA)) %>% 
+    tab_cols(total(), P29=recode(P29, "Izquierda" = 1:4 ~1, "Centro" = 5:6 ~2, "Derecha" = 7:10 ~ 3, TRUE ~ NA)) %>% 
     tab_cells(P901=na_if(P901, gt(10))) %>% 
     tab_stat_mean_sd_n() %>% 
-    tab_last_sig_means(keep='means') %>%
+    tab_last_sig_means(keep="means") %>%
     tab_cells(P902=na_if(P902, gt(10))) %>% 
     tab_stat_mean_sd_n() %>% 
-    tab_last_sig_means(keep='means') %>%
+    tab_last_sig_means(keep="means") %>%
     tab_cells(P903=na_if(P903, gt(10))) %>% 
     tab_stat_mean_sd_n() %>% 
-    tab_last_sig_means(keep='means') %>%
+    tab_last_sig_means(keep="means") %>%
     tab_cells(P904=na_if(P904, gt(10))) %>% 
     tab_stat_mean_sd_n() %>% 
-    tab_last_sig_means(keep='means') %>%
+    tab_last_sig_means(keep="means") %>%
     tab_cells(P905=na_if(P905, gt(10))) %>% 
     tab_stat_mean_sd_n() %>% 
-    tab_last_sig_means(keep='means') %>%
+    tab_last_sig_means(keep="means") %>%
     tab_cells(P906=na_if(P906, gt(10))) %>% 
     tab_stat_mean_sd_n() %>% 
-    tab_last_sig_means(keep='means') %>%
+    tab_last_sig_means(keep="means") %>%
     tab_cells(P907=na_if(P907, gt(10))) %>% 
     tab_stat_mean_sd_n() %>% 
-    tab_last_sig_means(keep='means') %>%
+    tab_last_sig_means(keep="means") %>%
     tab_pivot())
 ```
-Se puede observar que la instrucción `keep='means'` lo que ha conseguido es eliminar la publicación de la desviación y la media del cuadro presentado. De este modo el resultado es más compacto y da una visión general de la batería de ítems
+Se puede observar que la instrucción `keep="means"` lo que ha conseguido es eliminar la publicación de la desviación y la media del cuadro presentado. De este modo el resultado es más compacto y da una visión general de la batería de ítems
 
 ## Parámetros posibles en las pruebas de significación
 
@@ -210,12 +210,12 @@ De manera conjunta exponemos aquí diferentes parámetros que modifican el compo
 
 Cambio del nivel de significación de la prueba y eliminación de las filas con las frecuencias, entre otros...
 
-```{r fig.cap='Prueba Chi<sup>2</sup> con significación al 99%', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE, warning=FALSE}
+```{r fig.cap="Prueba Chi<sup>2</sup> con significación al 99%", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE, warning=FALSE}
 as.datatable_widget(data %>% 
-    tab_cols(total(), '|'=unvr(P31)) %>% 
-    tab_cells('|'=unvr(P33)) %>% 
+    tab_cols(total(), "|"=unvr(P31)) %>% 
+    tab_cells("|"=unvr(P33)) %>% 
     tab_stat_cases() %>% 
-    tab_last_sig_cases(sig_level = 0.01, correct = TRUE, keep='bases', mode='replace', label='***') %>%
+    tab_last_sig_cases(sig_level = 0.01, correct = TRUE, keep="bases", mode="replace", label="***") %>%
     tab_pivot())
 ```
 

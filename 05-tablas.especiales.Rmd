@@ -5,7 +5,7 @@ if(!knitr:::is_html_output())
 {
   options("width"=56)
   knitr::opts_chunk$set(tidy.opts=list(width.cutoff=56, indent = 2), tidy = TRUE)
-  knitr::opts_chunk$set(fig.pos = 'H')
+  knitr::opts_chunk$set(fig.pos = "H")
 }
 ```
 
@@ -31,15 +31,15 @@ Una de las primeras cuestiones que nos surge en muchas ocasiones es trabajar con
 
 En la siguiente tabla, filtramos la tabla para aquellos entrevistados que han declarado tener hijos `(P34  == 1)` por un lado y los que no popr otro `(P34 == 2)`. Para ello usamos la instrucción [`tab_subgroup()`](https://rdrr.io/cran/expss/man/tables.html) e introducimos también la instrucción [`tab_row_label()`](https://rdrr.io/cran/expss/man/tables.html) donde escribimos una fila con texto libre. Puedes consultar en la sección \@ref(tse08) como se escriben las condiciones y cuáles son los operadores que puede utilizar `expss` que además tiene algunos operadores propios que en esta misma sección incluiremos.
 
-```{r fig.cap='Tabla con subgrupos', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+```{r fig.cap="Tabla con subgrupos", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
 as.datatable_widget(data %>%
     tab_subgroup(P34 == 1) %>%
-    tab_row_label('Entrevistado con hijos') %>%
+    tab_row_label("Entrevistado con hijos") %>%
     tab_cols(total(), P31) %>%
     tab_cells(P36) %>%
     tab_stat_cases() %>%
     tab_subgroup(P34 == 2) %>%
-    tab_row_label('Entrevistado sin hijos') %>%
+    tab_row_label("Entrevistado sin hijos") %>%
     tab_cols(total(), P31) %>%
     tab_cells(P36) %>%
     tab_stat_cases() %>%
@@ -58,8 +58,8 @@ En esta tabla hay algunas cosas a reseñar.
 
 La función [`var_lab()`](https://rdrr.io/cran/expss/man/var_lab.html) permite asignar a una variable (data$P34) una lista (expresa con la función base de R denminada vector `c()`vector) de etiquetas donde el texto de la etiqueta va entrecomillado y el valor va igualado a la etiqueta. Es una forma muy simple a la par que práctica de etiquetar los valores de una variable.
 
-```{r fig.cap='Tabla con bases 1', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
-val_lab(data$P34) <- c('Sí' = 1, 'No' = 2) 
+```{r fig.cap="Tabla con bases 1", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+val_lab(data$P34) <- c("Sí" = 1, "No" = 2) 
 as.datatable_widget(data %>%
     tab_subgroup(P34 == 1 | P34 == 2) %>%
     tab_cols(total(), P31) %>%
@@ -71,33 +71,33 @@ as.datatable_widget(data %>%
 
 Si nos gusta esta opción, se le puede añadir un modificador llamado `%nest%` que nos va a permitir anidar esas bases de cálculo. El modificador `%nest%` nos permite anidar los niveles o categorías de las variables. Cualquiera de las tablas anteriores puede ser anidada en tantos niveles como se desee con la opción `%nest%`. Para que la tabla no se alargue horizontalmente, reasignamos el texto extra de la variable denominada `P3bis`.
 
-```{r fig.cap='Tabla con bases 2', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+```{r fig.cap="Tabla con bases 2", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
 data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
-var_lab(data$P3bis) <- 'Satisfacción'
-val_lab(data$P3bis) <- c('1.Negativa' = 1, '2.Positiva' = 2)
-val_lab(data$P34) <- c('1.Sí' = 1, '2.No' = 2)
+var_lab(data$P3bis) <- "Satisfacción"
+val_lab(data$P3bis) <- c("1.Negativa" = 1, "2.Positiva" = 2)
+val_lab(data$P34) <- c("1.Sí" = 1, "2.No" = 2)
 as.datatable_widget(data %>%
     tab_subgroup(P34 == 1 | P34 == 2) %>%
     tab_cols(total(), P31) %>%
     tab_rows(P3bis %nest% P34) %>%
     tab_cells(P36) %>%
-    tab_stat_cases(total_row_position = 'none') %>%
+    tab_stat_cases(total_row_position = "none") %>%
     tab_pivot()) 
 ```
 
 Si añadimos la instrucción `drop_rc()`, nótese la diferencia, pues desaparecen las filas y columnas sin información.
 
-```{r fig.cap='Borrando filas y columnas vacías', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+```{r fig.cap="Borrando filas y columnas vacías", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
 data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
-var_lab(data$P3bis) <- 'Satisfacción'
-val_lab(data$P3bis) <- c('1.Negativa' = 1, '2.Positiva' = 2)
-val_lab(data$P34) <- c('1.Sí' = 1, '2.No' = 2)
+var_lab(data$P3bis) <- "Satisfacción"
+val_lab(data$P3bis) <- c("1.Negativa" = 1, "2.Positiva" = 2)
+val_lab(data$P34) <- c("1.Sí" = 1, "2.No" = 2)
 as.datatable_widget(data %>%
     tab_subgroup(P34 == 1 | P34 == 2) %>%
     tab_cols(total(), P31) %>%
     tab_rows(P3bis %nest% P34) %>%
     tab_cells(P36) %>%
-    tab_stat_cases(total_row_position = 'none') %>%
+    tab_stat_cases(total_row_position = "none") %>%
     tab_pivot() %>% 
     drop_rc())
 ```
@@ -117,11 +117,11 @@ Los criterios más básicos son:
 
 Puede usarse la expresión larga o también cualquiera de las cortas. Por tanto, `na_if(P6C, gt(5))` significa trabaja con la variable `P6C` considerando `NA` los valores mayores que 5.
  
-```{r fig.cap='Usando criterios', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
-var_lab(data$P6C) <- 'Valoración de la atención recibida'
+```{r fig.cap="Usando criterios", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+var_lab(data$P6C) <- "Valoración de la atención recibida"
 data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
-val_lab(data$P3bis) <- c('1.Negativa' = 1, '2.Positiva' = 2)
-val_lab(data$P34) <- c('1.Sí' = 1, '2.No' = 2)
+val_lab(data$P3bis) <- c("1.Negativa" = 1, "2.Positiva" = 2)
+val_lab(data$P34) <- c("1.Sí" = 1, "2.No" = 2)
 as.datatable_widget(data %>%
     tab_subgroup(P34 == 1 | P34 == 2) %>%
     tab_cols(total(), P31) %>%
@@ -133,21 +133,21 @@ as.datatable_widget(data %>%
 
 Se puede anidar también en filas y columnas. Vamos a reducir a dos el nivel de anidación para que se lea bien la tabla.
 
-```{r fig.cap='Anidando filas y columnas', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+```{r fig.cap="Anidando filas y columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
 data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
-var_lab(data$P3bis) <- 'Satisfacción'
-val_lab(data$P3bis) <- c('1.Negativa' = 1, '2.Positiva' = 2)
-val_lab(data$P34) <- c('1.Sí' = 1, '2.No' = 2)
+var_lab(data$P3bis) <- "Satisfacción"
+val_lab(data$P3bis) <- c("1.Negativa" = 1, "2.Positiva" = 2)
+val_lab(data$P34) <- c("1.Sí" = 1, "2.No" = 2)
 as.datatable_widget(data %>%
     tab_cols(P31 %nest% P34) %>% 
     tab_rows(P3bis %nest% P33) %>%
-    tab_stat_cases(total_row_position='none') %>%
+    tab_stat_cases(total_row_position="none") %>%
     tab_pivot())
 ```
 
 Como caso particular en muchos casos se requieren los subtotales de los niveles de anidación. Fíjate esta tabla y trata de ver las diferencias con la anterior.
 
-```{r fig.cap='Anidando con subtotales', out.width='80%', fig.asp=.75, fig.align='center', echo=TRUE}
+```{r fig.cap="Anidando con subtotales", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
 as.datatable_widget(data %>%
     tab_cols(P31 %nest%  list(total(),P34)) %>% 
     tab_rows(P36 %nest% P33) %>%

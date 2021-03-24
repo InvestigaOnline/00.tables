@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>1 Introducción | Tablas y gráficos con R y R Studio</title>
+  <meta name="description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="1 Introducción | Tablas y gráficos con R y R Studio" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="1 Introducción | Tablas y gráficos con R y R Studio" />
+  
+  <meta name="twitter:description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
+  
+
+<meta name="author" content="Roberto Gil-Saura " />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="tse02.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
+<script src="libs/jquery-sparkline-2.1.2/jquery.sparkline.js"></script>
+<script src="libs/sparkline-binding-2.0/sparkline.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><br><a href="./">Tablas y gráficos con R y RStudio</a><br></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefacio</a></li>
+<li class="chapter" data-level="1" data-path="tse01.html"><a href="tse01.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="tse01.html"><a href="tse01.html#por-qué-este-libro"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué este libro?</a></li>
+<li class="chapter" data-level="1.2" data-path="tse01.html"><a href="tse01.html#para-quién-este-libro"><i class="fa fa-check"></i><b>1.2</b> ¿Para quién este libro?</a></li>
+<li class="chapter" data-level="1.3" data-path="tse01.html"><a href="tse01.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.3</b> Estructura del documento</a></li>
+<li class="chapter" data-level="1.4" data-path="tse01.html"><a href="tse01.html#instalación-de-r-y-r-studio"><i class="fa fa-check"></i><b>1.4</b> Instalación de R y R Studio</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="tse01.html"><a href="tse01.html#instalación-de-r-en-windows"><i class="fa fa-check"></i><b>1.4.1</b> Instalación de R en Windows</a></li>
+<li class="chapter" data-level="1.4.2" data-path="tse01.html"><a href="tse01.html#instalación-de-r-studio-en-windows"><i class="fa fa-check"></i><b>1.4.2</b> Instalación de R Studio en Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="tse01.html"><a href="tse01.html#uso-básico-de-r-studio-y-de-r"><i class="fa fa-check"></i><b>1.5</b> Uso básico de R Studio y de R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="tse01.html"><a href="tse01.html#qué-es-r-studio-una-interfaz-para-usar-r"><i class="fa fa-check"></i><b>1.5.1</b> ¿Qué es R Studio?: una interfaz para usar R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tse02.html"><a href="tse02.html"><i class="fa fa-check"></i><b>2</b> Primeros pasos y términos a conocer</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tse02.html"><a href="tse02.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>2.1</b> ¿Desde dónde creo mis scripts?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="tse02.html"><a href="tse02.html#scripts-en-consola"><i class="fa fa-check"></i><b>2.1.1</b> Scripts en consola</a></li>
+<li class="chapter" data-level="2.1.2" data-path="tse02.html"><a href="tse02.html#scripting-con-markdown"><i class="fa fa-check"></i><b>2.1.2</b> Scripting con <em>markdown</em></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="tse02.html"><a href="tse02.html#primeros-pasos"><i class="fa fa-check"></i><b>2.2</b> Primeros pasos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="tse02.html"><a href="tse02.html#carga-de-datos"><i class="fa fa-check"></i><b>2.2.1</b> Carga de datos</a></li>
+<li class="chapter" data-level="2.2.2" data-path="tse02.html"><a href="tse02.html#instalación-de-paquetes"><i class="fa fa-check"></i><b>2.2.2</b> Instalación de paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="tse02.html"><a href="tse02.html#crear-un-fichero-r-markdown"><i class="fa fa-check"></i><b>2.3</b> Crear un fichero R Markdown</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="tse02.html"><a href="tse02.html#conclusión"><i class="fa fa-check"></i><b>2.3.1</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="tse02.html"><a href="tse02.html#básicos-de-r-yo-proceso-de-datos"><i class="fa fa-check"></i><b>2.4</b> Básicos de R y/o proceso de datos</a></li>
+<li class="chapter" data-level="2.5" data-path="tse02.html"><a href="tse02.html#básicos-de-tabulación"><i class="fa fa-check"></i><b>2.5</b> Básicos de tabulación</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tse03.html"><a href="tse03.html"><i class="fa fa-check"></i><b>3</b> Tablas marginales</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tse03.html"><a href="tse03.html#una-pequeña-introducción"><i class="fa fa-check"></i><b>3.1</b> Una pequeña introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="tse03.html"><a href="tse03.html#frecuencias"><i class="fa fa-check"></i><b>3.2</b> Frecuencias</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="tse03.html"><a href="tse03.html#variables-de-respuesta-simple"><i class="fa fa-check"></i><b>3.2.1</b> Variables de respuesta simple</a></li>
+<li class="chapter" data-level="3.2.2" data-path="tse03.html"><a href="tse03.html#variable-de-respuesta-múltiple"><i class="fa fa-check"></i><b>3.2.2</b> Variable de respuesta múltiple</a></li>
+<li class="chapter" data-level="3.2.3" data-path="tse03.html"><a href="tse03.html#tablas-combinadas"><i class="fa fa-check"></i><b>3.2.3</b> Tablas combinadas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tse03.html"><a href="tse03.html#estadísticos"><i class="fa fa-check"></i><b>3.3</b> Estadísticos</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tse03.html"><a href="tse03.html#estadísticos-básicos"><i class="fa fa-check"></i><b>3.3.1</b> Estadísticos básicos</a></li>
+<li class="chapter" data-level="3.3.2" data-path="tse03.html"><a href="tse03.html#otros-estadísticos"><i class="fa fa-check"></i><b>3.3.2</b> Otros estadísticos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="tse03.html"><a href="tse03.html#conclusión-1"><i class="fa fa-check"></i><b>3.4</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tse04.html"><a href="tse04.html"><i class="fa fa-check"></i><b>4</b> Tablas cruzadas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tse04.html"><a href="tse04.html#básica-con-variables-simples"><i class="fa fa-check"></i><b>4.1</b> Básica con variables simples</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-simple-y-sólo-absolutos"><i class="fa fa-check"></i><b>4.1.1</b> De frecuencias, variable simple y sólo absolutos</a></li>
+<li class="chapter" data-level="4.1.2" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-simple-con-porcentajes-de-columna"><i class="fa fa-check"></i><b>4.1.2</b> De frecuencias, variable simple, con porcentajes de columna</a></li>
+<li class="chapter" data-level="4.1.3" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-simple-con-porcentajes-de-fila"><i class="fa fa-check"></i><b>4.1.3</b> De frecuencias, variable simple, con porcentajes de fila</a></li>
+<li class="chapter" data-level="4.1.4" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-simple-con-porcentajes-total-muestra"><i class="fa fa-check"></i><b>4.1.4</b> De frecuencias, variable simple, con porcentajes total muestra</a></li>
+<li class="chapter" data-level="4.1.5" data-path="tse04.html"><a href="tse04.html#combinaciones-de-los-anteriores"><i class="fa fa-check"></i><b>4.1.5</b> Combinaciones de los anteriores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tse04.html"><a href="tse04.html#básica-con-múltiples"><i class="fa fa-check"></i><b>4.2</b> Básica con múltiples</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-múltiple-y-sólo-absolutos"><i class="fa fa-check"></i><b>4.2.1</b> De frecuencias, variable múltiple y sólo absolutos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-múltiple-con-porcentajes-de-columna"><i class="fa fa-check"></i><b>4.2.2</b> De frecuencias, variable múltiple, con porcentajes de columna</a></li>
+<li class="chapter" data-level="4.2.3" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-múltiple-con-porcentajes-de-fila"><i class="fa fa-check"></i><b>4.2.3</b> De frecuencias, variable múltiple, con porcentajes de fila</a></li>
+<li class="chapter" data-level="4.2.4" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-múltiple-con-porcentajes-total-muestra"><i class="fa fa-check"></i><b>4.2.4</b> De frecuencias, variable múltiple, con porcentajes total muestra</a></li>
+<li class="chapter" data-level="4.2.5" data-path="tse04.html"><a href="tse04.html#combinaciones-de-los-anteriores-1"><i class="fa fa-check"></i><b>4.2.5</b> Combinaciones de los anteriores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tse04.html"><a href="tse04.html#básica-con-estadísticos"><i class="fa fa-check"></i><b>4.3</b> Básica con estadísticos</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="tse04.html"><a href="tse04.html#cruce-entre-variable-simple-y-dos-estadísticos"><i class="fa fa-check"></i><b>4.3.1</b> Cruce entre variable simple y dos estadísticos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tse05.html"><a href="tse05.html"><i class="fa fa-check"></i><b>5</b> Tablas especiales</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tse05.html"><a href="tse05.html#subgrupos-filtros-en-la-tabla"><i class="fa fa-check"></i><b>5.1</b> Subgrupos (filtros en la tabla)</a></li>
+<li class="chapter" data-level="5.2" data-path="tse05.html"><a href="tse05.html#bases-yo-con-anidación"><i class="fa fa-check"></i><b>5.2</b> Bases y/o con anidación</a></li>
+<li class="chapter" data-level="5.3" data-path="tse05.html"><a href="tse05.html#características-avanzadas"><i class="fa fa-check"></i><b>5.3</b> Características avanzadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tse06.html"><a href="tse06.html"><i class="fa fa-check"></i><b>6</b> Otras utilidades y tablas especiales</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tse06.html"><a href="tse06.html#plan"><i class="fa fa-check"></i><b>6.1</b> Plan de códigos</a></li>
+<li class="chapter" data-level="6.2" data-path="tse06.html"><a href="tse06.html#recode"><i class="fa fa-check"></i><b>6.2</b> Recodificar</a></li>
+<li class="chapter" data-level="6.3" data-path="tse06.html"><a href="tse06.html#cuadros"><i class="fa fa-check"></i><b>6.3</b> Cuadros</a></li>
+<li class="chapter" data-level="6.4" data-path="tse06.html"><a href="tse06.html#ponderación"><i class="fa fa-check"></i><b>6.4</b> Ponderación</a></li>
+<li class="chapter" data-level="6.5" data-path="tse06.html"><a href="tse06.html#subtotales-y-nets"><i class="fa fa-check"></i><b>6.5</b> Subtotales y NETS</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tse06.html"><a href="tse06.html#subtotales"><i class="fa fa-check"></i><b>6.5.1</b> Subtotales</a></li>
+<li class="chapter" data-level="6.5.2" data-path="tse06.html"><a href="tse06.html#nets"><i class="fa fa-check"></i><b>6.5.2</b> NETS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="tse06.html"><a href="tse06.html#top-y-bottom"><i class="fa fa-check"></i><b>6.6</b> <em>Top</em> y <em>Bottom</em></a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="tse06.html"><a href="tse06.html#gráficos-base"><i class="fa fa-check"></i><b>6.6.1</b> Gráficos base</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tse07.html"><a href="tse07.html"><i class="fa fa-check"></i><b>7</b> Pruebas inferenciales</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tse07.html"><a href="tse07.html#prueba-de-dependencia"><i class="fa fa-check"></i><b>7.1</b> Prueba de dependencia</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="tse07.html"><a href="tse07.html#de-una-tabla"><i class="fa fa-check"></i><b>7.1.1</b> De una tabla</a></li>
+<li class="chapter" data-level="7.1.2" data-path="tse07.html"><a href="tse07.html#de-una-celda-de-una-tabla"><i class="fa fa-check"></i><b>7.1.2</b> De una celda de una tabla</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="tse07.html"><a href="tse07.html#pruebas-de-diferencias"><i class="fa fa-check"></i><b>7.2</b> Pruebas de diferencias</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="tse07.html"><a href="tse07.html#porcentajes-prueba-z"><i class="fa fa-check"></i><b>7.2.1</b> Porcentajes (prueba z)</a></li>
+<li class="chapter" data-level="7.2.2" data-path="tse07.html"><a href="tse07.html#medias-prueba-t"><i class="fa fa-check"></i><b>7.2.2</b> Medias (prueba t)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="tse07.html"><a href="tse07.html#parámetros-posibles-en-las-pruebas-de-significación"><i class="fa fa-check"></i><b>7.3</b> Parámetros posibles en las pruebas de significación</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="tse07.html"><a href="tse07.html#algunos-ejemplos-de-uso-de-los-parámetros"><i class="fa fa-check"></i><b>7.3.1</b> Algunos ejemplos de uso de los parámetros</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="tse07.html"><a href="tse07.html#conclusión-2"><i class="fa fa-check"></i><b>7.4</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tse08.html"><a href="tse08.html"><i class="fa fa-check"></i><b>8</b> Visualización gráfica</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="tse08.html"><a href="tse08.html#highcharter-introducción"><i class="fa fa-check"></i><b>8.1</b> <code>highcharter</code>, introducción</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="tse08.html"><a href="tse08.html#highchart"><i class="fa fa-check"></i><b>8.1.1</b> highchart()</a></li>
+<li class="chapter" data-level="8.1.2" data-path="tse08.html"><a href="tse08.html#hchart"><i class="fa fa-check"></i><b>8.1.2</b> hchart()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="tse08.html"><a href="tse08.html#mi-primer-gráfico"><i class="fa fa-check"></i><b>8.2</b> Mi primer gráfico</a></li>
+<li class="chapter" data-level="8.3" data-path="tse08.html"><a href="tse08.html#gráfico-de-barras"><i class="fa fa-check"></i><b>8.3</b> Gráfico de barras</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="tse08.html"><a href="tse08.html#cambiar-el-nombre-de-la-serie-de-datos"><i class="fa fa-check"></i><b>8.3.1</b> Cambiar el nombre de la serie de datos</a></li>
+<li class="chapter" data-level="8.3.2" data-path="tse08.html"><a href="tse08.html#añadir-créditos-al-gráfico"><i class="fa fa-check"></i><b>8.3.2</b> Añadir créditos al gráfico</a></li>
+<li class="chapter" data-level="8.3.3" data-path="tse08.html"><a href="tse08.html#añadir-el-valor-del-dato-al-elemento-datalabels"><i class="fa fa-check"></i><b>8.3.3</b> Añadir el valor del dato al elemento (datalabels)</a></li>
+<li class="chapter" data-level="8.3.4" data-path="tse08.html"><a href="tse08.html#guardar-y-exportar-el-gráfico"><i class="fa fa-check"></i><b>8.3.4</b> Guardar y exportar el gráfico</a></li>
+<li class="chapter" data-level="8.3.5" data-path="tse08.html"><a href="tse08.html#api-de-highcharts-toda-la-potencia-de-los-gráficos"><i class="fa fa-check"></i><b>8.3.5</b> API de Highcharts, toda la potencia de los gráficos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="tse08.html"><a href="tse08.html#gráfico-de-columna"><i class="fa fa-check"></i><b>8.4</b> Gráfico de columna</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="tse08.html"><a href="tse08.html#variación-de-columna-a-pirámide"><i class="fa fa-check"></i><b>8.4.1</b> Variación de columna a pirámide</a></li>
+<li class="chapter" data-level="8.4.2" data-path="tse08.html"><a href="tse08.html#variación-de-columna-a-lollipop"><i class="fa fa-check"></i><b>8.4.2</b> Variación de columna a <em>lollipop</em></a></li>
+<li class="chapter" data-level="8.4.3" data-path="tse08.html"><a href="tse08.html#gráficos-polares"><i class="fa fa-check"></i><b>8.4.3</b> Gráficos polares</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="tse08.html"><a href="tse08.html#diagramas-de-secciones"><i class="fa fa-check"></i><b>8.5</b> Diagramas de secciones</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="tse08.html"><a href="tse08.html#tarta-pie-chart"><i class="fa fa-check"></i><b>8.5.1</b> Tarta / <em>pie chart</em></a></li>
+<li class="chapter" data-level="8.5.2" data-path="tse08.html"><a href="tse08.html#anillo-doughnut"><i class="fa fa-check"></i><b>8.5.2</b> Anillo / <em>doughnut</em></a></li>
+<li class="chapter" data-level="8.5.3" data-path="tse08.html"><a href="tse08.html#funnel"><i class="fa fa-check"></i><b>8.5.3</b> <em>Funnel</em></a></li>
+<li class="chapter" data-level="8.5.4" data-path="tse08.html"><a href="tse08.html#pirámide"><i class="fa fa-check"></i><b>8.5.4</b> Pirámide</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="tse08.html"><a href="tse08.html#gráfico-de-línea"><i class="fa fa-check"></i><b>8.6</b> Gráfico de línea</a></li>
+<li class="chapter" data-level="8.7" data-path="tse08.html"><a href="tse08.html#gráficos-de-columnas-barras-con-apilamiento"><i class="fa fa-check"></i><b>8.7</b> Gráficos de columnas / barras con apilamiento</a></li>
+<li class="chapter" data-level="8.8" data-path="tse08.html"><a href="tse08.html#gráfico-de-área"><i class="fa fa-check"></i><b>8.8</b> Gráfico de área</a></li>
+<li class="chapter" data-level="8.9" data-path="tse08.html"><a href="tse08.html#gráfico-de-puntos-scatterplot"><i class="fa fa-check"></i><b>8.9</b> Gráfico de puntos / <em>scatterplot</em></a></li>
+<li class="chapter" data-level="8.10" data-path="tse08.html"><a href="tse08.html#histograma-o-gráfico-de-densidad"><i class="fa fa-check"></i><b>8.10</b> Histograma o gráfico de densidad</a></li>
+<li class="chapter" data-level="8.11" data-path="tse08.html"><a href="tse08.html#gráficos-indicadores"><i class="fa fa-check"></i><b>8.11</b> Gráficos indicadores</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="tse08.html"><a href="tse08.html#gauge"><i class="fa fa-check"></i><b>8.11.1</b> Gauge</a></li>
+<li class="chapter" data-level="8.11.2" data-path="tse08.html"><a href="tse08.html#bullet"><i class="fa fa-check"></i><b>8.11.2</b> Bullet</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="tse08.html"><a href="tse08.html#gráfico-boxplot"><i class="fa fa-check"></i><b>8.12</b> Gráfico / <em>boxplot</em></a></li>
+<li class="chapter" data-level="8.13" data-path="tse08.html"><a href="tse08.html#gráfico-de-barras-de-error"><i class="fa fa-check"></i><b>8.13</b> Gráfico de barras de error</a></li>
+<li class="chapter" data-level="8.14" data-path="tse08.html"><a href="tse08.html#gráficos-de-transiciones"><i class="fa fa-check"></i><b>8.14</b> Gráficos de transiciones</a>
+<ul>
+<li class="chapter" data-level="8.14.1" data-path="tse08.html"><a href="tse08.html#diagrama-de-sankey"><i class="fa fa-check"></i><b>8.14.1</b> Diagrama de Sankey</a></li>
+<li class="chapter" data-level="8.14.2" data-path="tse08.html"><a href="tse08.html#diagrama-de-rueda"><i class="fa fa-check"></i><b>8.14.2</b> Diagrama de rueda</a></li>
+<li class="chapter" data-level="8.14.3" data-path="tse08.html"><a href="tse08.html#diagrama-streamgraph"><i class="fa fa-check"></i><b>8.14.3</b> Diagrama <em>streamgraph</em></a></li>
+<li class="chapter" data-level="8.14.4" data-path="tse08.html"><a href="tse08.html#diagrama-de-redes"><i class="fa fa-check"></i><b>8.14.4</b> Diagrama de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.15" data-path="tse08.html"><a href="tse08.html#conclusión-3"><i class="fa fa-check"></i><b>8.15</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tse-formateo.html"><a href="tse-formateo.html"><i class="fa fa-check"></i><b>9</b> Estilos y formatos de tabla</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tse-formateo.html"><a href="tse-formateo.html#introducción"><i class="fa fa-check"></i><b>9.1</b> Introducción</a></li>
+<li class="chapter" data-level="9.2" data-path="tse-formateo.html"><a href="tse-formateo.html#operaciones-con-tablas"><i class="fa fa-check"></i><b>9.2</b> Operaciones con tablas</a></li>
+<li class="chapter" data-level="9.3" data-path="tse-formateo.html"><a href="tse-formateo.html#estilo-de-las-tablas"><i class="fa fa-check"></i><b>9.3</b> Estilo de las tablas</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="tse-formateo.html"><a href="tse-formateo.html#estilo-y-posición"><i class="fa fa-check"></i><b>9.3.1</b> Estilo y posición</a></li>
+<li class="chapter" data-level="9.3.2" data-path="tse-formateo.html"><a href="tse-formateo.html#formato-específico-de-fila-o-columna"><i class="fa fa-check"></i><b>9.3.2</b> Formato específico de fila o columna</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="tse-formateo.html"><a href="tse-formateo.html#adición-de-imágenes-y-de-otros-elementos"><i class="fa fa-check"></i><b>9.4</b> Adición de imágenes y de otros elementos</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="tse-formateo.html"><a href="tse-formateo.html#adición-de-iconos-de-fontawesome"><i class="fa fa-check"></i><b>9.4.1</b> Adición de iconos de FontAwesome</a></li>
+<li class="chapter" data-level="9.4.2" data-path="tse-formateo.html"><a href="tse-formateo.html#adición-de-gráficos-de-tipo-sparkline"><i class="fa fa-check"></i><b>9.4.2</b> Adición de gráficos de tipo sparkline</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tse09.html"><a href="tse09.html"><i class="fa fa-check"></i><b>10</b> Condiciones</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="tse09.html"><a href="tse09.html#operadores-aritméticos"><i class="fa fa-check"></i><b>10.1</b> Operadores aritméticos</a></li>
+<li class="chapter" data-level="10.2" data-path="tse09.html"><a href="tse09.html#operadores-relacionales"><i class="fa fa-check"></i><b>10.2</b> Operadores relacionales</a></li>
+<li class="chapter" data-level="10.3" data-path="tse09.html"><a href="tse09.html#operadores-lógicos"><i class="fa fa-check"></i><b>10.3</b> Operadores lógicos</a></li>
+<li class="chapter" data-level="10.4" data-path="tse09.html"><a href="tse09.html#operadores-de-asignación"><i class="fa fa-check"></i><b>10.4</b> Operadores de asignación</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="https://www.investigaonline.com/book001" target="blank">Roberto Gil-Saura (c) 2021</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tablas y gráficos con R y R Studio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="tse01" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Introducción</h1>
+<div id="por-qué-este-libro" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> ¿Por qué este libro?</h2>
+<p>La respuesta más simple a la pregunta ¿Por qué este libro? es que no hay libros dedicados a ilustrar y mostrar cómo hacer tablas de contingencia y gráficos a partir de esas tablas usando R; hablando más específicamente usando <code>expss</code> y <code>highcharter</code>. Por otro lado, a partir de mi experiencia y de muchos años dedicado al mundo de la investigación y la docencia (mi hobbie personal) encontré el tiempo y la motivación para escribirlo. Quería crear un recurso que fuera diferente del resto de textos con el mismo contenido aproximado y porque creo que para que las ideas se difundan y adopten ampliamente, deben percibirse de manera amigable y fácil de entender, lo que tiene por qué estar reñido con una baja calidad científica y teórica. Si algo se percibe como complejo e intimidante, solo pocos creerán que ese recurso es apropiado para ellos. Así pues, y aunque todos los análisis requieren las habilidades propias de una persona acostumbrada a manejar fuentes de datos variadas, creo realmente que el recurso es extremadamente sencillo, funcional, comprensible y válido para todos.</p>
+<p>¿No es acaso necesario y nos viene muy bien el poder utilizar macros en software como Microsoft Office<sup>©</sup> o sintaxis en IBM SPSS<sup>©</sup> ? Pues esta es la respuesta, mostrar de una forma sencilla la posibilidad de que el usuario pueda utilizar código R <span class="citation">(<a href="bibliografía.html#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span> en sus análisis de datos, que le permitan ir mucho más allá de lo que ofrecen las herramientas básicas comerciales.</p>
+<p>Además, la elección de R no es casual:</p>
+<ul>
+<li><p>La primera razón para elegir R es que es un programa extremadamente potente para manipular y analizar datos. Su popularidad en alza lo ha convertido en el software de referencia para estadísticas y análisis en muchas disciplinas, y se enseña cada vez más en muchas universidades. R se ha convertido en uno los de los estándares de facto de la industria del proceso, análisis y visualización de datos, dentro de ese nuevo ámbito que es al analítica o ciencia de datos, que está dando cabida a muchos profesionales de nueva creación y en la que nos estamos integrando muchos otros que provenimos de ámbitos diferentes.</p></li>
+<li><p>La segunda razón para seleccionar R es que es independiente de la plataforma (puede usarla en Windows<sup>©</sup> , Mac o Unix) y es gratis y por ello no se deb invertir un euro en licencias, mantenimientos o actualizaciones. Los proveedores de software comercial pueden brindar soporte y ofrecer algún tipo de garantía, pero eso es secundario. No se puede superar el precio y la funcionalidad de R. R se enriquece por el hecho de que muchas personas de todo el mundo contribuyen y comparten su propio trabajo en forma de funcionalidades incluidas en paquetes de lo más variado y que llegan al mercado con una celeridad imposible para cualquier otro software comercial. Asimismo, R tiene recursos de ayuda inigualables, tanto en línea como físicos. Hay muchos foros en línea, listas de correo electrónico, grupos de interés, foros, blogs y sitios web llenos de información rica sobre R. Además, cada año se publican cada vez más muchos libros de R de excelente calidad. Lo que realmente se valora de R, es su carácter de código abierto, lo que permite (si sabes) ver el código por dentro alejándose de ser una caja negra.</p></li>
+</ul>
+</div>
+<div id="para-quién-este-libro" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> ¿Para quién este libro?</h2>
+<p>El presente documento enfoca e introduce al usuario de investigación (fundamentalmente de Investigación de Mercados) en la creación de información analítica y reproducible utilizando scripting con <em>Markdown</em>, que permita obtener cualquier tipo de tabla resumen de datos o cualquier análisis que pueda hacer utilizando código R.</p>
+<p>Este manual ha sido redactado pensando en los usuarios que trabajan de forma conjunta con R Studio y R. Por tanto, se asume que el usuario estará familiarizado con el uso de ambas aplicaciones y se le supone conocimiento básico de cómo funcionar con ellas. No obstante, al inicio de la sección 3, el usuario puede encontrar unos sencillos rudimentos de como trabajar para iniciarse con el trabajo de R Studio y por extensión de R.</p>
+</div>
+<div id="estructura-del-documento" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Estructura del documento</h2>
+<p>En investigación de mercado, las tablas de contingencia o cruzadas probablemente sean el análisis de datos más predominante de todos los utilizados, complementado por una potente visualización en forma de gráfico de esos datos. Se pretende dotar al usuario de de las herramientas básicas que le permitan reproducir cualquier tipo de cuadro o tabla, de tipo marginal o cruzada, con medidas estadísticas básicas, combinando estadísticos y frecuencias o porcentajes, o realizar pruebas de significación estándar, así como la reproducción de los gráficos que se adaptarían a esas tablas. La estructura del manual se adapta por tanto a este objetivo, organizándose de la siguiente forma:</p>
+<ul>
+<li>esta introducción al manual, donde también se ayuda a la instalación de ambas herramientas de trabajo R y R Studio;</li>
+<li>una sección que dedicamos a introducir al lector en el lenguaje R; no se pretende hacer un revisión exhaustiva del lenguaje, sino simplemente enumerar los términos y conceptos que serán necesarios para entender el funcionamiento de las tablas y el manejo y gestión de las mismas;</li>
+<li>una sección donde se introduce al usuario en la escritura de sencillas órdenes que como resultado obtendrán un cuadro o tabla;</li>
+<li>una sección dedicada a la creación de las tablas cruzadas;</li>
+<li>una sección dedicada a tablas más especiales, que denominaremos multi dimensionales;</li>
+<li>una sección dedicada a la generación de otras tablas auxiliares: cuadros, escalas, etc.;</li>
+<li>un epígrafe que describirá las pruebas básicas de significación que se utilizan en las tablas de contingencia;</li>
+<li>una sección dedicada a los gráficos;</li>
+<li>un epígrafe dedicado a operaciones con tablas, entre filas y/o columnas y a mejorar la visualización de las tablas y obtener gráficos a partir de estas operaciones especiales, ampliando el conjunto de paquetes a utilizar y combinando sus funcionalidades;</li>
+<li>por último, una sección complementaria más de lenguaje R, para saber cómo se incluyen las condiciones para cualquier tipo de selección de datos.</li>
+</ul>
+<p>Para seguir este manual, tal y como hemos comentado anteriormente, asumimos que el usuario conoce mínimamente R y R Studio y que ha constatado su necesidad de reproducir tipos de tabla que ha visto que son posibles de obtener en Quantum, Minitab, Systat, Star, SPSS o BarbWin entre otros. Explicaremos los rudimentos básicos de trabajo en R, pero adecuados a su uso en R Studio, con una primera introducción a cómo integramos R en su flujo de trabajo.</p>
+<p>Agradecemos expresamente a Gregory <span class="citation"><a href="bibliografía.html#ref-expss" role="doc-biblioref">Demin</a> (<a href="bibliografía.html#ref-expss" role="doc-biblioref">2020</a>)</span>, desarrollador del paquete <strong><code>expss</code></strong> de R por su desinteresado trabajo en código abierto que permite reproducir e ir más allá de los cuadros resumen creados; al igual que a Joshua <span class="citation"><a href="bibliografía.html#ref-highcharter" role="doc-biblioref">Kunst</a> (<a href="bibliografía.html#ref-highcharter" role="doc-biblioref">2020</a>)</span>, desarrollador del paquete <strong><code>highcharter</code></strong> por su excelente aportación en el mundo de la graficación con la creación del <em>wrapper</em> para la librería Highchart, renombrada y conocida librería de gráficos JavaScipt que permite su uso en R. Y no puedo acabar esta sección sin mencionar al equipo de R Studio y en particular a Yihui <span class="citation"><a href="bibliografía.html#ref-bookdown" role="doc-biblioref">Xie</a> (<a href="bibliografía.html#ref-bookdown" role="doc-biblioref">2016</a>)</span>, que con sus diferentes aportaciones, permite que esta obra llegue a vuestros ojos en las condiciones que lo hace usando el paquete <strong><code>bookdown</code></strong> desde R Studio.</p>
+</div>
+<div id="instalación-de-r-y-r-studio" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Instalación de R y R Studio</h2>
+<p>Para poder seguir el manual de forma correcta, deberemos tener instalados R y R Studio. Sigue estos pasos para poder hacerlo en Windows. Si es sobre Linux o MacOS, busca información sobre cómo instalarlo específicamente en tu versión. Es muy sencillo, pero con una imágenes se ve mejor.</p>
+<div id="instalación-de-r-en-windows" class="section level3" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Instalación de R en Windows</h3>
+<p>Los pasos son los siguientes:</p>
+<ol style="list-style-type: decimal">
+<li><p>Abre el siguiente enlace: <a href="https://cran.r-project.org/" class="uri">https://cran.r-project.org/</a></p></li>
+<li><p>Selecciona la opción “Download R for Windows.”</p></li>
+</ol>
+<p><img src="data/01.jpg" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>En la nueva página seleccione “base.”</li>
+</ol>
+<p><img src="data/02.jpg" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>En la nueva página presiona en “Download R X.X.X for Windows,” donde X.X.X corresponde a la versión más actualizada disponible en ese momento. Para este caso es 4.0.3.</li>
+</ol>
+<p><img src="data/03.jpg" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>El archivo instalador empieza a descargarse como cualquier otro documento, la ubicación de la descarga y la forma en que se realice dependerán de la configuración que estés usando en tu navegador de internet.</p></li>
+<li><p>Una vez que la descarga se complete, ejecuta el archivo de instalación desde la carpeta donde se haya almacenado.</p></li>
+<li><p>Selecciona el idioma de preferencia y presiona OK.</p></li>
+</ol>
+<p><img src="data/04.png" /></p>
+<ol start="8" style="list-style-type: decimal">
+<li>Sigue las recomendaciones de la pantalla y luego presiona “Siguiente.”</li>
+</ol>
+<p><img src="data/08.jpg" /></p>
+<ol start="9" style="list-style-type: decimal">
+<li>Selecciona la carpeta donde quieres instalar R. La recomendación es dejar la carpeta que viene por defecto. Luego, presiona “Siguiente.”</li>
+</ol>
+<p><img src="data/09.jpg" /></p>
+<ol start="10" style="list-style-type: decimal">
+<li>Selecciona los componentes que desea instalar. Es recomendable dejar seleccionados los que vienen por defecto. Luego, presiona “Siguiente.”</li>
+</ol>
+<p><img src="data/10.jpg" /></p>
+<ol start="11" style="list-style-type: decimal">
+<li>Especifica las opciones de configuración. En este caso, como es la instalación básica, la opción sugerida es “No.” Luego, presiona “Siguiente.”</li>
+</ol>
+<p><img src="data/11.jpg" /></p>
+<ol start="12" style="list-style-type: decimal">
+<li>Lee las indicaciones y selecciona las opciones de su conveniencia. La sugerencia es dejar las opciones que vienen por defecto. Luego, presiona “Siguiente.”</li>
+</ol>
+<p><img src="data/12.jpg" /></p>
+<ol start="13" style="list-style-type: decimal">
+<li>Selecciona las tareas adicionales. La sugerencia es dejar habilitadas solamente las que vienen por defecto. Luego, presiona “Siguiente.”</li>
+</ol>
+<p><img src="data/13.jpg" /></p>
+<ol start="14" style="list-style-type: decimal">
+<li>Esto iniciará el proceso de instalación. No cierres la ventana hasta que el programa indique que el proceso ha sido completado con éxito.</li>
+</ol>
+<p><img src="data/14.jpg" /></p>
+<ol start="15" style="list-style-type: decimal">
+<li>Esto completa la instalación de R. Presiona “Finalizar.”</li>
+</ol>
+<p><img src="data/15.jpg" /></p>
+</div>
+<div id="instalación-de-r-studio-en-windows" class="section level3" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Instalación de R Studio en Windows</h3>
+<p>Vamos ahora a proceder con R Studio.</p>
+<ol style="list-style-type: decimal">
+<li><p>Abre el siguiente enlace <a href="https://R" class="uri">https://R</a> Studio.com/products/R Studio/download/#download</p></li>
+<li><p>En esta página, se indica lo siguiente:</p></li>
+</ol>
+<p>2.1. Install R: Se requiere que R esté preinstalado. La versión más antigua soportada es 3.0.1, si se siguieron los pasos descritos anteriormente para la instalación de R tendríamos la versión más nueva, por lo que no tendríamos problema.</p>
+<p>2.2. Download R Studio Desktop: R Studio provee un instalador sugerido basado en su sistema. En la imagen de abajo el instalador sugerido es Windows porque es el sistema operativo detectado. Si el instalador coincide con su sistema operativo, haga click en el recuadro para iniciar la descarga. Si requiere otro instalador, mirar el punto 3.</p>
+<p><img src="data/R01.png" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>En caso de requerir instaladores para otros sistemas operativos, estos se pueden encontrar en el cuadro abajo de la imagen en la misma página “All Installers.”</li>
+</ol>
+<p><img src="data/R02.png" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Después de seleccionar la descarga del instalador correspondiente, el archivo empezará a descargarse como cualquier otro documento, la ubicación de la descarga y la forma en que se realice dependerán de la configuración que estés usando tu navegador de internet.</p></li>
+<li><p>Una vez que la descarga se complete, ejecuta el archivo de instalación desde la carpeta donde haya sido descargado.</p></li>
+<li><p>La ventana de bienvenida indica que es recomendado cerrar todas las demás aplicaciones que se estén usando antes de iniciar la instalación. Esto es para que sea posible actualizar archivos importantes en el sistema sin necesidad de reiniciar el PC. Presiona “Next” cuando se haya completado lo anterior o si no hay inconveniente con reiniciar el PC.</p></li>
+</ol>
+<p><img src="data/R06.jpg" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li>Seleccion la carpeta donde instalar R Studio. La recomendación es dejar la carpeta que viene por defecto. Luego, presiona “Next.”</li>
+</ol>
+<p><img src="data/R07.jpg" /></p>
+<ol start="8" style="list-style-type: decimal">
+<li>Selecciona la carpeta del menú de Inicio en el que se crearán los accesos directos al programa, o escribe un nombre para crear una nueva carpeta. La sugerencia es dejar las opciones que vienen por defecto. Luego, presiona “Install.”</li>
+</ol>
+<p><img src="data/R08.jpg" /></p>
+<ol start="9" style="list-style-type: decimal">
+<li>Esto iniciará el proceso de instalación. No cierres la ventana hasta que el programa indique que el proceso ha sido completado con éxito.</li>
+</ol>
+<p><img src="data/R09.jpg" /></p>
+<ol start="10" style="list-style-type: decimal">
+<li>Esto completa la instalación de R Studio. Presiona “Finalizar”; es posible que debas reiniciar el PC dependiendo de lo establecido en el paso 6.</li>
+</ol>
+<p><img src="data/R10.jpg" /></p>
+<ol start="11" style="list-style-type: decimal">
+<li>Tras el posible reinicio o sin el reinicio, lanza R Studio como cuqlquier otra aplicación. este es su aspecto.</li>
+</ol>
+<p><img src="data/R11.jpg" /></p>
+<p>A partir de aquí continuamos. R Studio se encarga de gestionar R, no deberemos preocuparnos por éste salvo para actualizarlo cuando creamos necesario o tengamos alguna necesidad puntual. R y R Studio son como cualquier otra aplicación de Windows, harás lo mismo que con las demás.</p>
+</div>
+</div>
+<div id="uso-básico-de-r-studio-y-de-r" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Uso básico de R Studio y de R</h2>
+<p>Si eres un lector / usuario que ya ha trabajado con R y R Studio, puedes saltar ya lo que resta de sección y pasar directamente a la sección 3. Si no lo eres, unas breves instrucciones para comenzar.</p>
+<div id="qué-es-r-studio-una-interfaz-para-usar-r" class="section level3" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> ¿Qué es R Studio?: una interfaz para usar R</h3>
+<p>Cuando arrancamos R Studio, se pueden ver 4 ventanas, que según el gusto del usuario, pueden estar organizadas de diversa forma. En mi caso, me gusta disponer del editor de scripts o sintaxis ( <em>source</em> ) en la parte superior izquierda, en la parte superior derecha la consola ( <em>console</em> ) y abajo de izquierda a derecha el entorno ( <em>environment</em> ) y a la derecha el resto de opciones ( <em>files</em>, <em>plots</em>, …) en la parte superior el además de la barra de opciones en la parte superior.</p>
+<p>Puedes adoptar esta configuración desde el menú <strong><em>Tools &gt; Global Options &gt; Pane Layout</em></strong>.</p>
+<p><img src="data/RS01.png" />
+Mi escritorio …</p>
+<p><img src="data/RS03.png" /></p>
+<p>Ventana (1): es el editor de sintaxis: se trata del lugar donde editamos la sintaxis para posteriormente ejecutarla. Al escribir allí no sucederá nada, a no ser que se apriete algún botón para ejecutar los comandos o la tecla CTRL+ENTER.</p>
+<p>Ventana (2): es la consola. Corresponde a lo que sería el software R en su versión básica. Allí el software ejecuta las operaciones realizadas desde el editor de sintaxis.</p>
+<p>Ventana (4): es el “entorno de trabajo” del programa: en este lugar se muestra el conjunto de datos y los “objetos” (resultados, variables, gráficos, etc.) que se almacenan al ejecutar diferentes análisis.</p>
+<p>Ventana (4) tiene varias sub pestañas: (i) la pestaña files permite ver el historial de archivos trabajados con el programa; (ii) la pestaña plots permite visualizar los gráficos que se generen; (iii) la pestaña packages permite ver los paquetes descargados y guardados en el disco duro así como gestionar su instalación o actualización; (iv) la ventana help permite acceder al CRAN - Comprehensive R Archive Network (siempre que se cuente con conexión a Internet), página oficial del software que ofrece diferentes recursos para el programa: manuales para el usuario, cursos on line, información general, descarga de paquetes, información de los paquetes instalados, etc. Esta última pestaña es bastante útil: empleando el motor de búsqueda se accede de manera rápida a manuales de uso de los diferentes paquetes (y sus funciones) instalados en el computador (esto no requiere conexión a Internet).7; (v) la ventana viewer muestra los resultados al construir reportes mediante funcionalidades tipo R Markdown que será nuestra herramienta de trabajo.</p>
+<p>¿Dónde está nuestro trabajo? El software R funciona como un entorno temporal de trabajo, esto quiere decir que el usuario va agregando datos y objetos (conjuntos de datos con diferentes atributos) a una “hoja en blanco.” Hay que tener en cuenta que R trabaja con la memoria activa (RAM) del computador, por lo tanto cualquier análisis sólo mostrará la información resultante pero no permanecerá como archivo posible de utilizar de modo posterior. Es decir, si los análisis no son guardados como objetos (vectores, matrices, listas u otros tipos de objetos) se deberán repetir las instrucciones para obtener otra vez el resultado.</p>
+<p>Todas las operaciones de R - sean indicadas vía sintaxis o botones - son ejecutadas según comando computacional que es visualizado en la consola. La ejecución de comandos entrega diferentes señales respecto a su funcionamiento. Por ejemplo, mientras se está ejecutando un comando, el programa muestra un signo “Stop” en la esquina superior derecha de la consola (como se ve en la imagen). Eso indica que el programa está ocupado ejecutando una acción. Si se presiona tal símbolo, se cancelará la operación en curso.</p>
+<p>En la sección <a href="tse02.html#tse02">2</a>, comenzamos a trabar con sccripts que nos devuelvan resultados.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tse02.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 1.25
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true,
+"bibliography": ["packages.bib", "book.bib"],
+"biblio-style": "apalike",
+"link-citations": true,
+"cover-image": "data/portada.png"
+});
+});
+</script>
+
+</body>
+
+</html>

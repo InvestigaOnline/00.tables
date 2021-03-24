@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tablas y gráficos con R y R Studio</title>
+  <meta name="description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tablas y gráficos con R y R Studio" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tablas y gráficos con R y R Studio" />
+  
+  <meta name="twitter:description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
+  
+
+<meta name="author" content="Roberto Gil-Saura " />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="tse01.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/proj4js-2.3.15/proj4.js"></script>
+<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
+<script src="libs/highcharts-8.1.2/highcharts.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
+<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
+<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
+<script src="libs/highcharts-8.1.2/modules/map.js"></script>
+<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
+<script src="libs/highcharts-8.1.2/modules/data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
+<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
+<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
+<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
+<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
+<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
+<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
+<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
+<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
+<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
+<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
+<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
+<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
+<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
+<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
+<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
+<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
+<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
+<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
+<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
+<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
+<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
+<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
+<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
+<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
+<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
+<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
+<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
+<script src="libs/jquery-sparkline-2.1.2/jquery.sparkline.js"></script>
+<script src="libs/sparkline-binding-2.0/sparkline.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><br><a href="./">Tablas y gráficos con R y RStudio</a><br></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="prefacio.html"><a href="prefacio.html"><i class="fa fa-check"></i>Prefacio</a></li>
+<li class="chapter" data-level="1" data-path="tse01.html"><a href="tse01.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="tse01.html"><a href="tse01.html#por-qué-este-libro"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué este libro?</a></li>
+<li class="chapter" data-level="1.2" data-path="tse01.html"><a href="tse01.html#para-quién-este-libro"><i class="fa fa-check"></i><b>1.2</b> ¿Para quién este libro?</a></li>
+<li class="chapter" data-level="1.3" data-path="tse01.html"><a href="tse01.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.3</b> Estructura del documento</a></li>
+<li class="chapter" data-level="1.4" data-path="tse01.html"><a href="tse01.html#instalación-de-r-y-r-studio"><i class="fa fa-check"></i><b>1.4</b> Instalación de R y R Studio</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="tse01.html"><a href="tse01.html#instalación-de-r-en-windows"><i class="fa fa-check"></i><b>1.4.1</b> Instalación de R en Windows</a></li>
+<li class="chapter" data-level="1.4.2" data-path="tse01.html"><a href="tse01.html#instalación-de-r-studio-en-windows"><i class="fa fa-check"></i><b>1.4.2</b> Instalación de R Studio en Windows</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="tse01.html"><a href="tse01.html#uso-básico-de-r-studio-y-de-r"><i class="fa fa-check"></i><b>1.5</b> Uso básico de R Studio y de R</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="tse01.html"><a href="tse01.html#qué-es-r-studio-una-interfaz-para-usar-r"><i class="fa fa-check"></i><b>1.5.1</b> ¿Qué es R Studio?: una interfaz para usar R</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="tse02.html"><a href="tse02.html"><i class="fa fa-check"></i><b>2</b> Primeros pasos y términos a conocer</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="tse02.html"><a href="tse02.html#desde-dónde-creo-mis-scripts"><i class="fa fa-check"></i><b>2.1</b> ¿Desde dónde creo mis scripts?</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="tse02.html"><a href="tse02.html#scripting-en-consola"><i class="fa fa-check"></i><b>2.1.1</b> Scripting en consola</a></li>
+<li class="chapter" data-level="2.1.2" data-path="tse02.html"><a href="tse02.html#scripting-con-markdown"><i class="fa fa-check"></i><b>2.1.2</b> Scripting con <em>markdown</em></a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="tse02.html"><a href="tse02.html#primeros-pasos"><i class="fa fa-check"></i><b>2.2</b> Primeros pasos</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="tse02.html"><a href="tse02.html#carga-de-datos"><i class="fa fa-check"></i><b>2.2.1</b> Carga de datos</a></li>
+<li class="chapter" data-level="2.2.2" data-path="tse02.html"><a href="tse02.html#instalación-de-paquetes"><i class="fa fa-check"></i><b>2.2.2</b> Instalación de paquetes</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="tse02.html"><a href="tse02.html#crear-un-fichero-r-markdown"><i class="fa fa-check"></i><b>2.3</b> Crear un fichero R Markdown</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="tse02.html"><a href="tse02.html#conclusión"><i class="fa fa-check"></i><b>2.3.1</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="tse02.html"><a href="tse02.html#básicos-de-r-yo-proceso-de-datos"><i class="fa fa-check"></i><b>2.4</b> Básicos de R y/o proceso de datos</a></li>
+<li class="chapter" data-level="2.5" data-path="tse02.html"><a href="tse02.html#básicos-de-tabulación"><i class="fa fa-check"></i><b>2.5</b> Básicos de tabulación</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tse03.html"><a href="tse03.html"><i class="fa fa-check"></i><b>3</b> Tablas marginales</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="tse03.html"><a href="tse03.html#una-pequeña-introducción"><i class="fa fa-check"></i><b>3.1</b> Una pequeña introducción</a></li>
+<li class="chapter" data-level="3.2" data-path="tse03.html"><a href="tse03.html#frecuencias"><i class="fa fa-check"></i><b>3.2</b> Frecuencias</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="tse03.html"><a href="tse03.html#variables-de-respuesta-simple"><i class="fa fa-check"></i><b>3.2.1</b> Variables de respuesta simple</a></li>
+<li class="chapter" data-level="3.2.2" data-path="tse03.html"><a href="tse03.html#variable-de-respuesta-múltiple"><i class="fa fa-check"></i><b>3.2.2</b> Variable de respuesta múltiple</a></li>
+<li class="chapter" data-level="3.2.3" data-path="tse03.html"><a href="tse03.html#tablas-combinadas"><i class="fa fa-check"></i><b>3.2.3</b> Tablas combinadas</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tse03.html"><a href="tse03.html#estadísticos"><i class="fa fa-check"></i><b>3.3</b> Estadísticos</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tse03.html"><a href="tse03.html#estadísticos-básicos"><i class="fa fa-check"></i><b>3.3.1</b> Estadísticos básicos</a></li>
+<li class="chapter" data-level="3.3.2" data-path="tse03.html"><a href="tse03.html#otros-estadísticos"><i class="fa fa-check"></i><b>3.3.2</b> Otros estadísticos</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="tse03.html"><a href="tse03.html#conclusión-1"><i class="fa fa-check"></i><b>3.4</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tse04.html"><a href="tse04.html"><i class="fa fa-check"></i><b>4</b> Tablas cruzadas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tse04.html"><a href="tse04.html#básica-con-variables-simples"><i class="fa fa-check"></i><b>4.1</b> Básica con variables simples</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-simple-y-sólo-absolutos"><i class="fa fa-check"></i><b>4.1.1</b> De frecuencias, variable simple y sólo absolutos</a></li>
+<li class="chapter" data-level="4.1.2" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-simple-con-porcentajes-de-columna"><i class="fa fa-check"></i><b>4.1.2</b> De frecuencias, variable simple, con porcentajes de columna</a></li>
+<li class="chapter" data-level="4.1.3" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-simple-con-porcentajes-de-fila"><i class="fa fa-check"></i><b>4.1.3</b> De frecuencias, variable simple, con porcentajes de fila</a></li>
+<li class="chapter" data-level="4.1.4" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-simple-con-porcentajes-total-muestra"><i class="fa fa-check"></i><b>4.1.4</b> De frecuencias, variable simple, con porcentajes total muestra</a></li>
+<li class="chapter" data-level="4.1.5" data-path="tse04.html"><a href="tse04.html#combinaciones-de-los-anteriores"><i class="fa fa-check"></i><b>4.1.5</b> Combinaciones de los anteriores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="tse04.html"><a href="tse04.html#básica-con-múltiples"><i class="fa fa-check"></i><b>4.2</b> Básica con múltiples</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-múltiple-y-sólo-absolutos"><i class="fa fa-check"></i><b>4.2.1</b> De frecuencias, variable múltiple y sólo absolutos</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-múltiple-con-porcentajes-de-columna"><i class="fa fa-check"></i><b>4.2.2</b> De frecuencias, variable múltiple, con porcentajes de columna</a></li>
+<li class="chapter" data-level="4.2.3" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-múltiple-con-porcentajes-de-fila"><i class="fa fa-check"></i><b>4.2.3</b> De frecuencias, variable múltiple, con porcentajes de fila</a></li>
+<li class="chapter" data-level="4.2.4" data-path="tse04.html"><a href="tse04.html#de-frecuencias-variable-múltiple-con-porcentajes-total-muestra"><i class="fa fa-check"></i><b>4.2.4</b> De frecuencias, variable múltiple, con porcentajes total muestra</a></li>
+<li class="chapter" data-level="4.2.5" data-path="tse04.html"><a href="tse04.html#combinaciones-de-los-anteriores-1"><i class="fa fa-check"></i><b>4.2.5</b> Combinaciones de los anteriores</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tse04.html"><a href="tse04.html#básica-con-estadísticos"><i class="fa fa-check"></i><b>4.3</b> Básica con estadísticos</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="tse04.html"><a href="tse04.html#cruce-entre-variable-simple-y-dos-estadísticos"><i class="fa fa-check"></i><b>4.3.1</b> Cruce entre variable simple y dos estadísticos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="tse05.html"><a href="tse05.html"><i class="fa fa-check"></i><b>5</b> Tablas especiales</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="tse05.html"><a href="tse05.html#subgrupos-filtros-en-la-tabla"><i class="fa fa-check"></i><b>5.1</b> Subgrupos (filtros en la tabla)</a></li>
+<li class="chapter" data-level="5.2" data-path="tse05.html"><a href="tse05.html#bases-yo-con-anidación"><i class="fa fa-check"></i><b>5.2</b> Bases y/o con anidación</a></li>
+<li class="chapter" data-level="5.3" data-path="tse05.html"><a href="tse05.html#características-avanzadas"><i class="fa fa-check"></i><b>5.3</b> Características avanzadas</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="tse06.html"><a href="tse06.html"><i class="fa fa-check"></i><b>6</b> Otras utilidades y tablas especiales</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="tse06.html"><a href="tse06.html#plan"><i class="fa fa-check"></i><b>6.1</b> Plan de códigos</a></li>
+<li class="chapter" data-level="6.2" data-path="tse06.html"><a href="tse06.html#recode"><i class="fa fa-check"></i><b>6.2</b> Recodificar</a></li>
+<li class="chapter" data-level="6.3" data-path="tse06.html"><a href="tse06.html#cuadros"><i class="fa fa-check"></i><b>6.3</b> Cuadros</a></li>
+<li class="chapter" data-level="6.4" data-path="tse06.html"><a href="tse06.html#ponderación"><i class="fa fa-check"></i><b>6.4</b> Ponderación</a></li>
+<li class="chapter" data-level="6.5" data-path="tse06.html"><a href="tse06.html#subtotales-y-nets"><i class="fa fa-check"></i><b>6.5</b> Subtotales y NETS</a>
+<ul>
+<li class="chapter" data-level="6.5.1" data-path="tse06.html"><a href="tse06.html#subtotales"><i class="fa fa-check"></i><b>6.5.1</b> Subtotales</a></li>
+<li class="chapter" data-level="6.5.2" data-path="tse06.html"><a href="tse06.html#nets"><i class="fa fa-check"></i><b>6.5.2</b> NETS</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="tse06.html"><a href="tse06.html#top-y-bottom"><i class="fa fa-check"></i><b>6.6</b> <em>Top</em> y <em>Bottom</em></a>
+<ul>
+<li class="chapter" data-level="6.6.1" data-path="tse06.html"><a href="tse06.html#gráficos-base"><i class="fa fa-check"></i><b>6.6.1</b> Gráficos base</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="tse07.html"><a href="tse07.html"><i class="fa fa-check"></i><b>7</b> Pruebas inferenciales</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="tse07.html"><a href="tse07.html#prueba-de-dependencia"><i class="fa fa-check"></i><b>7.1</b> Prueba de dependencia</a>
+<ul>
+<li class="chapter" data-level="7.1.1" data-path="tse07.html"><a href="tse07.html#de-una-tabla"><i class="fa fa-check"></i><b>7.1.1</b> De una tabla</a></li>
+<li class="chapter" data-level="7.1.2" data-path="tse07.html"><a href="tse07.html#de-una-celda-de-una-tabla"><i class="fa fa-check"></i><b>7.1.2</b> De una celda de una tabla</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="tse07.html"><a href="tse07.html#pruebas-de-diferencias"><i class="fa fa-check"></i><b>7.2</b> Pruebas de diferencias</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="tse07.html"><a href="tse07.html#porcentajes-prueba-z"><i class="fa fa-check"></i><b>7.2.1</b> Porcentajes (prueba z)</a></li>
+<li class="chapter" data-level="7.2.2" data-path="tse07.html"><a href="tse07.html#medias-prueba-t"><i class="fa fa-check"></i><b>7.2.2</b> Medias (prueba t)</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="tse07.html"><a href="tse07.html#parámetros-posibles-en-las-pruebas-de-significación"><i class="fa fa-check"></i><b>7.3</b> Parámetros posibles en las pruebas de significación</a>
+<ul>
+<li class="chapter" data-level="7.3.1" data-path="tse07.html"><a href="tse07.html#algunos-ejemplos-de-uso-de-los-parámetros"><i class="fa fa-check"></i><b>7.3.1</b> Algunos ejemplos de uso de los parámetros</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="tse07.html"><a href="tse07.html#conclusión-2"><i class="fa fa-check"></i><b>7.4</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tse08.html"><a href="tse08.html"><i class="fa fa-check"></i><b>8</b> Visualización gráfica</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="tse08.html"><a href="tse08.html#highcharter-introducción"><i class="fa fa-check"></i><b>8.1</b> <code>highcharter</code>, introducción</a>
+<ul>
+<li class="chapter" data-level="8.1.1" data-path="tse08.html"><a href="tse08.html#highchart"><i class="fa fa-check"></i><b>8.1.1</b> highchart()</a></li>
+<li class="chapter" data-level="8.1.2" data-path="tse08.html"><a href="tse08.html#hchart"><i class="fa fa-check"></i><b>8.1.2</b> hchart()</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="tse08.html"><a href="tse08.html#mi-primer-gráfico"><i class="fa fa-check"></i><b>8.2</b> Mi primer gráfico</a></li>
+<li class="chapter" data-level="8.3" data-path="tse08.html"><a href="tse08.html#gráfico-de-barras"><i class="fa fa-check"></i><b>8.3</b> Gráfico de barras</a>
+<ul>
+<li class="chapter" data-level="8.3.1" data-path="tse08.html"><a href="tse08.html#cambiar-el-nombre-de-la-serie-de-datos"><i class="fa fa-check"></i><b>8.3.1</b> Cambiar el nombre de la serie de datos</a></li>
+<li class="chapter" data-level="8.3.2" data-path="tse08.html"><a href="tse08.html#añadir-créditos-al-gráfico"><i class="fa fa-check"></i><b>8.3.2</b> Añadir créditos al gráfico</a></li>
+<li class="chapter" data-level="8.3.3" data-path="tse08.html"><a href="tse08.html#añadir-el-valor-del-dato-al-elemento-datalabels"><i class="fa fa-check"></i><b>8.3.3</b> Añadir el valor del dato al elemento (datalabels)</a></li>
+<li class="chapter" data-level="8.3.4" data-path="tse08.html"><a href="tse08.html#guardar-y-exportar-el-gráfico"><i class="fa fa-check"></i><b>8.3.4</b> Guardar y exportar el gráfico</a></li>
+<li class="chapter" data-level="8.3.5" data-path="tse08.html"><a href="tse08.html#api-de-highcharts-toda-la-potencia-de-los-gráficos"><i class="fa fa-check"></i><b>8.3.5</b> API de Highcharts, toda la potencia de los gráficos</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="tse08.html"><a href="tse08.html#gráfico-de-columna"><i class="fa fa-check"></i><b>8.4</b> Gráfico de columna</a>
+<ul>
+<li class="chapter" data-level="8.4.1" data-path="tse08.html"><a href="tse08.html#variación-de-columna-a-pirámide"><i class="fa fa-check"></i><b>8.4.1</b> Variación de columna a pirámide</a></li>
+<li class="chapter" data-level="8.4.2" data-path="tse08.html"><a href="tse08.html#variación-de-columna-a-lollipop"><i class="fa fa-check"></i><b>8.4.2</b> Variación de columna a <em>lollipop</em></a></li>
+<li class="chapter" data-level="8.4.3" data-path="tse08.html"><a href="tse08.html#gráficos-polares"><i class="fa fa-check"></i><b>8.4.3</b> Gráficos polares</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="tse08.html"><a href="tse08.html#diagramas-de-secciones"><i class="fa fa-check"></i><b>8.5</b> Diagramas de secciones</a>
+<ul>
+<li class="chapter" data-level="8.5.1" data-path="tse08.html"><a href="tse08.html#tarta-pie-chart"><i class="fa fa-check"></i><b>8.5.1</b> Tarta / <em>pie chart</em></a></li>
+<li class="chapter" data-level="8.5.2" data-path="tse08.html"><a href="tse08.html#anillo-doughnut"><i class="fa fa-check"></i><b>8.5.2</b> Anillo / <em>doughnut</em></a></li>
+<li class="chapter" data-level="8.5.3" data-path="tse08.html"><a href="tse08.html#funnel"><i class="fa fa-check"></i><b>8.5.3</b> <em>Funnel</em></a></li>
+<li class="chapter" data-level="8.5.4" data-path="tse08.html"><a href="tse08.html#pirámide"><i class="fa fa-check"></i><b>8.5.4</b> Pirámide</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="tse08.html"><a href="tse08.html#gráfico-de-línea"><i class="fa fa-check"></i><b>8.6</b> Gráfico de línea</a></li>
+<li class="chapter" data-level="8.7" data-path="tse08.html"><a href="tse08.html#gráficos-de-columnas-barras-con-apilamiento"><i class="fa fa-check"></i><b>8.7</b> Gráficos de columnas / barras con apilamiento</a></li>
+<li class="chapter" data-level="8.8" data-path="tse08.html"><a href="tse08.html#gráfico-de-área"><i class="fa fa-check"></i><b>8.8</b> Gráfico de área</a></li>
+<li class="chapter" data-level="8.9" data-path="tse08.html"><a href="tse08.html#gráfico-de-puntos-scatterplot"><i class="fa fa-check"></i><b>8.9</b> Gráfico de puntos / <em>scatterplot</em></a></li>
+<li class="chapter" data-level="8.10" data-path="tse08.html"><a href="tse08.html#histograma-o-gráfico-de-densidad"><i class="fa fa-check"></i><b>8.10</b> Histograma o gráfico de densidad</a></li>
+<li class="chapter" data-level="8.11" data-path="tse08.html"><a href="tse08.html#gráficos-indicadores"><i class="fa fa-check"></i><b>8.11</b> Gráficos indicadores</a>
+<ul>
+<li class="chapter" data-level="8.11.1" data-path="tse08.html"><a href="tse08.html#gauge"><i class="fa fa-check"></i><b>8.11.1</b> Gauge</a></li>
+<li class="chapter" data-level="8.11.2" data-path="tse08.html"><a href="tse08.html#bullet"><i class="fa fa-check"></i><b>8.11.2</b> Bullet</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="tse08.html"><a href="tse08.html#gráfico-boxplot"><i class="fa fa-check"></i><b>8.12</b> Gráfico / <em>boxplot</em></a></li>
+<li class="chapter" data-level="8.13" data-path="tse08.html"><a href="tse08.html#gráfico-de-barras-de-error"><i class="fa fa-check"></i><b>8.13</b> Gráfico de barras de error</a></li>
+<li class="chapter" data-level="8.14" data-path="tse08.html"><a href="tse08.html#gráficos-de-transiciones"><i class="fa fa-check"></i><b>8.14</b> Gráficos de transiciones</a>
+<ul>
+<li class="chapter" data-level="8.14.1" data-path="tse08.html"><a href="tse08.html#diagrama-de-sankey"><i class="fa fa-check"></i><b>8.14.1</b> Diagrama de Sankey</a></li>
+<li class="chapter" data-level="8.14.2" data-path="tse08.html"><a href="tse08.html#diagrama-de-rueda"><i class="fa fa-check"></i><b>8.14.2</b> Diagrama de rueda</a></li>
+<li class="chapter" data-level="8.14.3" data-path="tse08.html"><a href="tse08.html#diagrama-streamgraph"><i class="fa fa-check"></i><b>8.14.3</b> Diagrama <em>streamgraph</em></a></li>
+<li class="chapter" data-level="8.14.4" data-path="tse08.html"><a href="tse08.html#diagrama-de-redes"><i class="fa fa-check"></i><b>8.14.4</b> Diagrama de redes</a></li>
+</ul></li>
+<li class="chapter" data-level="8.15" data-path="tse08.html"><a href="tse08.html#conclusión-3"><i class="fa fa-check"></i><b>8.15</b> Conclusión</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="tse-formateo.html"><a href="tse-formateo.html"><i class="fa fa-check"></i><b>9</b> Estilos y formatos de tabla</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="tse-formateo.html"><a href="tse-formateo.html#introducción"><i class="fa fa-check"></i><b>9.1</b> Introducción</a></li>
+<li class="chapter" data-level="9.2" data-path="tse-formateo.html"><a href="tse-formateo.html#operaciones-con-tablas"><i class="fa fa-check"></i><b>9.2</b> Operaciones con tablas</a></li>
+<li class="chapter" data-level="9.3" data-path="tse-formateo.html"><a href="tse-formateo.html#estilo-de-las-tablas"><i class="fa fa-check"></i><b>9.3</b> Estilo de las tablas</a>
+<ul>
+<li class="chapter" data-level="9.3.1" data-path="tse-formateo.html"><a href="tse-formateo.html#estilo-y-posición"><i class="fa fa-check"></i><b>9.3.1</b> Estilo y posición</a></li>
+<li class="chapter" data-level="9.3.2" data-path="tse-formateo.html"><a href="tse-formateo.html#formato-específico-de-fila-o-columna"><i class="fa fa-check"></i><b>9.3.2</b> Formato específico de fila o columna</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="tse-formateo.html"><a href="tse-formateo.html#adición-de-imágenes-y-de-otros-elementos"><i class="fa fa-check"></i><b>9.4</b> Adición de imágenes y de otros elementos</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="tse-formateo.html"><a href="tse-formateo.html#adición-de-iconos-de-fontawesome"><i class="fa fa-check"></i><b>9.4.1</b> Adición de iconos de FontAwesome</a></li>
+<li class="chapter" data-level="9.4.2" data-path="tse-formateo.html"><a href="tse-formateo.html#adición-de-gráficos-de-tipo-sparkline"><i class="fa fa-check"></i><b>9.4.2</b> Adición de gráficos de tipo sparkline</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="tse09.html"><a href="tse09.html"><i class="fa fa-check"></i><b>10</b> Condiciones</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="tse09.html"><a href="tse09.html#operadores-aritméticos"><i class="fa fa-check"></i><b>10.1</b> Operadores aritméticos</a></li>
+<li class="chapter" data-level="10.2" data-path="tse09.html"><a href="tse09.html#operadores-relacionales"><i class="fa fa-check"></i><b>10.2</b> Operadores relacionales</a></li>
+<li class="chapter" data-level="10.3" data-path="tse09.html"><a href="tse09.html#operadores-lógicos"><i class="fa fa-check"></i><b>10.3</b> Operadores lógicos</a></li>
+<li class="chapter" data-level="10.4" data-path="tse09.html"><a href="tse09.html#operadores-de-asignación"><i class="fa fa-check"></i><b>10.4</b> Operadores de asignación</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i>Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="https://www.investigaonline.com/book001" target="blank">Roberto Gil-Saura (c) 2021</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tablas y gráficos con R y R Studio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Tablas y gráficos con R y R Studio</h1>
+<p class="author"><em>Roberto Gil-Saura<br><img src="data/88x31.png" /></em></p>
+<p class="date"><em>Última actualización: 2021-03-23<br><br><br><img src="data/portada.png" /></em></p>
+</div>
+<div id="prefacio" class="section level1 unnumbered">
+<h1>Prefacio</h1>
+<p>Todavía recuerdo cuando hace unos años descubrí R <span class="citation">(<a href="bibliografía.html#ref-R-base" role="doc-biblioref">R Core Team 2021</a>)</span> -lejos queda ya aquel 2000- y me pareció una herramienta valiosa para mi trabajo, pero que no era para mí. La percibí para usuarios programadores y no para analistas o científicos de datos como se gusta de llamar hoy en día a estos trabajadores del dato. Sin embargo, hace tres años (2018)y tras una etapa en la que centré mis energías y esfuerzos en mi PhD, redescubrí esta herramienta y no sólo ella, también R Studio y todo el trabajo que se había realizado. Quedé gratamente impresionado y me puse manos a la obra porque vi un enorme potencial en la misma para lo que era mi trabajo. Una de las cuestiones fundamentales que aprecié es que las dos herramientas ya no sólo se enfocaban (probablemente nunca lo habían hecho) sólo a los programadores, sino que se apreciaba mucho el enfoque a analistas con todo tipo de formación y con escasos conocimientos de programación, pero que no temían enfrentarse a algo que les iba a reportar eficiencia en su trabajo y un enorme potencial de evolución. Con el paso del tiempo fui descubriendo todo lo que R y R Studio podrían hacer por mí, y lo que ganaba / ahorraba en mi trabajo y en las soluciones que podía ofrecer a mis colegas y/o clientes.</p>
+<p>Y ahí empezó todo. En este documento, sólo pongo el foco en dos aspectos fundamentales en el mundo de la investigación de mercados cuantitativa: las tablas de contingencia y los gráficos, en sus diferentes modalidades y con sus diferentes sabores, básico y avanzados, visuales y no tan visuales; todo ello condimentado y aderezado con una cantidad de paquetes suplementarios y la inestimable ayuda de esos programadores que desinteresadamente ceden su trabajo a la comunidad. En especial aquí debo agradecer a Gregory Demin, Joshua Kunst y a Yihui Xie su desinteresada colaboración en la creación de diferentes paquetes y utilidades que han servidor para poder plasmar toda la información que aquí se desarrolla.</p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="tse01.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": true,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 1.25
+},
+"edit": null,
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"scroll_highlight": true
+},
+"toolbar": {
+"position": "fixed"
+},
+"search": true,
+"info": true,
+"bibliography": ["packages.bib", "book.bib"],
+"biblio-style": "apalike",
+"link-citations": true,
+"cover-image": "data/portada.png"
+});
+});
+</script>
+
+</body>
+
+</html>

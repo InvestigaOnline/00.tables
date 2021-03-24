@@ -41,28 +41,6 @@
             "type": "book"
         },
         {
-            "URL": "https://www.R-project.org/",
-            "author": [
-                {
-                    "family": "Team",
-                    "given": "R Core"
-                }
-            ],
-            "id": "R",
-            "issued": {
-                "date-parts": [
-                    [
-                        2020
-                    ]
-                ]
-            },
-            "publisher": "R Foundation for Statistical Computing",
-            "publisher-place": "Vienna, Austria",
-            "title": "R: A language and environment for statistical computing",
-            "title-short": "R",
-            "type": "book"
-        },
-        {
             "URL": "https://jkunst.com/highcharter/index.html",
             "author": [
                 {
@@ -201,6 +179,185 @@
             },
             "publisher": "Esic Editorial",
             "title": "Preparación, tabulación y análisis de encuestas para directivos",
+            "type": "book"
+        },
+        {
+            "ISSN": "03067734, 17515823",
+            "URL": "http://www.jstor.org/stable/1402731",
+            "abstract": "Pearson’s paper of 1900 introduced what subsequently became known as the chi-squared test of goodness of fit. The terminology and allusions of 80 years ago create a barrier for the modern reader, who finds that the interpretation of Pearson’s test procedure and the assessment of what he achieved are less than straightforward, notwithstanding the technical advances made since then. An attempt is made here to surmount these difficulties by exploring Pearson’s relevant activities during the first decade of his statistical career, and by describing the work by his contemporaries and predecessors which seem to have influenced his approach to the problem. Not all the questions are answered, and others remain for further study. /// La communication de Pearson en 1900 présentait ce que ultérieurement est devenu l’épreuve de Chi-carré d’excellence d’ajustement. La terminologie et les allusions d’il y a quatre-vingt ans créent une barrière pour le lecteur moderne, qui trouve que l’interpretation du procédure de l’épreuve de Pearson et la détermination de ce qu’il a achevé ne sont pas très nettes en dépit des avances techniques qui ont été faites depuis lors. Ici j’ai fait un effort de surmonter ces difficultés par les moyens de l’exploration des activités pertinantes de Pearson pendant la premiere décade de sa carrière en statistiques, et de la description du travail de ses contemporains et prédécesseurs qui semble avoir eu une influence sur son approche au problème. Je n’ai pas eu une réponse à toutes les questions, et il y en a d’autres qui resteront pour une étude ultérieure.",
+            "author": [
+                {
+                    "family": "Plackett",
+                    "given": "R. L."
+                }
+            ],
+            "container-title": "International Statistical Review / Revue Internationale de Statistique",
+            "id": "art001",
+            "issue": "1",
+            "issued": {
+                "date-parts": [
+                    [
+                        1983
+                    ]
+                ]
+            },
+            "page": "59-72",
+            "publisher": "[Wiley, International Statistical Institute (ISI)]",
+            "title": "Karl pearson and the chi-squared test",
+            "type": "article-journal",
+            "volume": "51"
+        },
+        {
+            "author": [
+                {
+                    "family": "Glass",
+                    "given": "Gene V"
+                },
+                {
+                    "family": "Stanley",
+                    "given": "Julian C"
+                },
+                {
+                    "family": "Gómez",
+                    "given": "Elsa Galvis"
+                },
+                {
+                    "family": "Guzmán",
+                    "given": "Eugenia"
+                }
+            ],
+            "id": "glass1986metodos",
+            "issued": {
+                "date-parts": [
+                    [
+                        1986
+                    ]
+                ]
+            },
+            "publisher": "Prentice-Hall Hispanoamericana",
+            "title": "Métodos estadı́sticos aplicados a las ciencias sociales",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Siegel",
+                    "given": "Sidney"
+                },
+                {
+                    "family": "Castellan",
+                    "given": "N John"
+                },
+                {
+                    "literal": "others"
+                }
+            ],
+            "id": "siegel1995estadistica",
+            "issued": {
+                "date-parts": [
+                    [
+                        1995
+                    ]
+                ]
+            },
+            "publisher": "Trillas México",
+            "title": "Estadı́stica no paramétrica: Aplicada a las ciencias de la conducta",
+            "title-short": "Estadı́stica no paramétrica",
+            "type": "book",
+            "volume": "4"
+        },
+        {
+            "author": [
+                {
+                    "family": "Amón",
+                    "given": "Jesús"
+                }
+            ],
+            "id": "amon2009estadistica",
+            "issued": {
+                "date-parts": [
+                    [
+                        2009
+                    ]
+                ]
+            },
+            "publisher": "Madrid: Pirámide, 1990.",
+            "title": "Estadı́stica para psicólogos",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Biemer",
+                    "given": "Paul P"
+                },
+                {
+                    "family": "Christ",
+                    "given": "Sharon L"
+                }
+            ],
+            "container-title": "International handbook of survey methodology",
+            "id": "biemer2008weighting",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "page": "317-341",
+            "publisher": "Psychology Press New York, NY",
+            "title": "Weighting survey data",
+            "type": "article-journal",
+            "volume": "2008"
+        },
+        {
+            "author": [
+                {
+                    "family": "Mohler",
+                    "given": "Peter Ph"
+                },
+                {
+                    "family": "Pennell",
+                    "given": "Beth-Ellen"
+                },
+                {
+                    "family": "Hubbard",
+                    "given": "Frost"
+                }
+            ],
+            "container-title": "International handbook of survey methodology",
+            "id": "mohler2008survey",
+            "issued": {
+                "date-parts": [
+                    [
+                        2008
+                    ]
+                ]
+            },
+            "page": "403-420",
+            "publisher": "European Association of Methodology/Lawrence Erlbaum Associates New York, NY",
+            "title": "Survey documentation: Toward professional knowledge management in sample surveys",
+            "title-short": "Survey documentation",
+            "type": "article-journal"
+        },
+        {
+            "author": [
+                {
+                    "family": "Kuan",
+                    "given": "Joe"
+                }
+            ],
+            "id": "kuan2015learning",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "publisher": "Packt Publishing Ltd",
+            "title": "Learning highcharts 4",
             "type": "book"
         },
         {
