@@ -1,0 +1,6 @@
+"0","as.datatable_widget(data %>%"
+"0","    tab_cols(P31 %nest%  list(total(),P34)) %>% "
+"0","    tab_rows(P36 %nest% P33) %>%"
+"0","    tab_stat_cases() %>%"
+"0","	tab_sort_desc() %>%"
+"0","    tab_pivot())"

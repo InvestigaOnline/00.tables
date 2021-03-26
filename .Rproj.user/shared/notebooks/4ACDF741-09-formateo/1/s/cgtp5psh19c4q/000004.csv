@@ -1,0 +1,8 @@
+"0","amz <- sample(1:100, 15, replace = TRUE)"
+"0","app <- sample(1:100, 15, replace = TRUE)"
+"0","fac <- sample(1:100, 15, replace = TRUE)"
+"0","goo <- sample(1:100, 15, replace = TRUE)"
+"0","mic <- sample(1:100, 15, replace = TRUE)"
+"0","df <-"
+"0","  data.frame(amz, app, fac, goo, mic) # los unimos para mostrarlos en forma de tabla, aunque no sería necesario."
+"0","df"

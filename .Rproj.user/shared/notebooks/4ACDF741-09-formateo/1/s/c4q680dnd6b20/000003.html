@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="lib/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="lib/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="lib/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="lib/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="lib/kePrint-0.0.1/kePrint.js"></script>
+<link href="lib/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+</head>
+<body>
+<table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
+ <thead>
+  <tr>
+   <th style="text-align:left;"> empresa </th>
+   <th style="text-align:left;"> 2019 (1º) </th>
+   <th style="text-align:right;"> 2018 (4º) </th>
+   <th style="text-align:right;"> dif </th>
+   <th style="text-align:right;"> difpct </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Amazon </td>
+   <td style="text-align:left;font-weight: bold;color: teal !important;"> 87400 <svg style="height:0.8em;top:.04em;position:relative;fill:green;" viewbox="0 0 512 512"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg> </td>
+   <td style="text-align:right;"> 72400 </td>
+   <td style="text-align:right;"> 15000 </td>
+   <td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Amazon"> 20.7 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Apple </td>
+   <td style="text-align:left;font-weight: bold;color: teal !important;"> 91819 <svg style="height:0.8em;top:.04em;position:relative;fill:green;" viewbox="0 0 512 512"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg> </td>
+   <td style="text-align:right;"> 84310 </td>
+   <td style="text-align:right;"> 7509 </td>
+   <td style="text-align:right;color: white !important;background-color: salmon !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Apple"> 8.9 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Facebook </td>
+   <td style="text-align:left;font-weight: bold;color: teal !important;"> 21082 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg> </td>
+   <td style="text-align:right;"> 16914 </td>
+   <td style="text-align:right;"> 4168 </td>
+   <td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Facebook"> 24.6 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Google </td>
+   <td style="text-align:left;font-weight: bold;color: teal !important;"> 46075 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg> </td>
+   <td style="text-align:right;"> 39276 </td>
+   <td style="text-align:right;"> 6799 </td>
+   <td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Google"> 17.3 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Microsoft </td>
+   <td style="text-align:left;font-weight: bold;color: teal !important;"> 36906 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg> </td>
+   <td style="text-align:right;"> 32471 </td>
+   <td style="text-align:right;"> 4435 </td>
+   <td style="text-align:right;color: white !important;background-color: salmon !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Microsoft"> 13.7 </td>
+  </tr>
+</tbody>
+</table> <script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"]]}})</script><script async src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

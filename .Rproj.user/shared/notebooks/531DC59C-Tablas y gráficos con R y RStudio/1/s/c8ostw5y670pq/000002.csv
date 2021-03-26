@@ -1,5 +1,0 @@
-"0","library(expss)"
-"0","data <- read_spss(""https://drive.google.com/uc?export=download&id=1JjevbQjzGc1NMyR7qf7bbvtbMyK8Pvhr"")"
-"2","Error in foreign::read.spss(enc2native(file), use.value.labels = FALSE,  : 
-  file 'C:\Users\ROBER~1.LAP\AppData\Local\Temp\Rtmp8Sgybr\file33ac4bfb6335' is not in any supported SPSS format
-"
