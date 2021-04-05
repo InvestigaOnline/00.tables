@@ -1,6 +1,6 @@
 {
     "dialog-state": {
-        "query": "read_spss",
+        "query": "df",
         "path": "",
         "regex": false,
         "caseSensitive": false,
@@ -21,7 +21,7 @@
             "*.cpp"
         ],
         "excludeFilePatterns": [],
-        "resultsCount": 10,
+        "resultsCount": 152,
         "errorCount": 0,
         "replaceErrors": "",
         "projectRelative": true

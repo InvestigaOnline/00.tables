@@ -19,7 +19,7 @@ En este documento, sólo pongo el foco en dos aspectos fundamentales en el mundo
 > **Cita**
 
 <hr>
-Gil-Saura, R., 2021. Tablas y gráficos con R y R Studio. 1st ed. [ebook] València: InvestigaOnline.com. Available at: <https://tables.investigaonline.com>.
+Gil-Saura, R., 2021. Tablas y gráficos con R y R Studio. 1st ed. [ebook] València: InvestigaOnline.com. ISBN: 	978-84-09-29382-7;disponible en: <https://tables.investigaonline.com>.
 <hr>
 
 > **Licencia**
@@ -29,6 +29,7 @@ Gil-Saura, R., 2021. Tablas y gráficos con R y R Studio. 1st ed. [ebook] Valèn
 Cualquier forma de reproducción, distribución, comunicación pública o transformación de esta obra solo podrá ser realizada con la autorización expresa del autor bajo los términos abajo descritos.
 
 1ª edición: Valencia, 2021
+ISBN: 	978-84-09-29382-7
 Última actualización: `r Sys.Date()`
 
 <br>
