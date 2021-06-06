@@ -1,2 +1,0 @@
-"0","tab01$difpct <- round(((tab01[,2]/tab01[,3])-1)*100,1) #cociente entre valores y paso a porcentaje con redondeo a un decimal"
-"0","tab01"

@@ -18,8 +18,8 @@ Vamos a crear nuestra primera tabla utilizando una instrucción muy básica de `
 
 Así pues, crea un fichero R MarkDown como vimos en la sección \@ref(tse02), y escribe este código (o mejor _copy&paste_) y obtén el resultado ...
 
-```{r echo=TRUE}
-setwd("~/R/r-data/00.tables") # esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)
+```{r echo = TRUE}
+setwd("~/R/r-projects/00.tables") # esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)
 library(expss) #cargamos el paquete
 data <- read_spss("data/3192.sav") #cargamos los datos
 calculate(data, cro_mean(PESO)) #hacemos el cálculo
@@ -43,14 +43,14 @@ Este conjunto de tablas sólo trabajará con el estadístico de cálculo de frec
 
 Utilizaremos en estos ejemplos de forma inicial un campo del marco de datos, `P31`, de respuesta simple. La primera tabla que haremos responde a un recuento de frecuencias, y es muy usada para el análisis univariante de una campo. Este comando muestra una tabla básica utilizando la función `fre()` que copia la salida del SPSS. Nótese que la columna de porcentaje válido y porcentaje es igual ante la inexistencia de NA (valores perdidos).
 
-```{r fig.cap="Frecuencias marginales de P31, estilo SPSS", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias marginales de P31, estilo SPSS", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 tab <- fre(data$P31)
 as.datatable_widget(tab)
 ```
 
 Alternativamente se puede presentar la forma que trabajaremos a lo largo de este curso, esta forma es la denominada script encadenado, donde definimos el marco de datos al inicio, y encadenamos instrucciones con el símbolo %>%  que irían línea a línea sucesivamente para una mejor lectura y comprensión del texto escrito; podrían perfectamente ir en una línea. Nótese que la tabla sale igual con las dos formas, pero mientras que en el primer caso se usa la nomenclatura estándar de R, y el campo se llama `data$P31`, es decir nombre del marco de datos en R (data) el símbolo del `$` que separa y nombre del campo en el marco de datos `P31` en la segunda al definir de inicio que se utilizará `data` ya se usa el nombre `P31` directamente, aunque debamos dar la orden de cálculo con el comando `calculate()`. 
 
-```{r fig.cap="Frecuencias marginalesde P31 en tabla", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias marginalesde P31 en tabla", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%  
   calculate(fre(P31)))
 ```
@@ -71,7 +71,7 @@ La que ahora entregamos, es la estructura básica de un script de R con el paque
 
 Para este primer script, indicaremos que usamos la fuente de datos (_dataframe_) ya cargado en el análisis. En R Studio, el _dataframe_ tendrá el nombre que le hayas indicado en la carga -en nuestro caso _data_-. Redactamos pues nuestro script, donde identificamos el _dataframe_, el campo `P31` del cual vamos a calcular el número de casos:
 
-```{r fig.cap="Frecuencias de P31", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias de P31", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
   tab_cells(P31) %>%
   tab_stat_cases() %>%
@@ -80,7 +80,7 @@ as.datatable_widget(data %>%
 
 Realicemos ahora una pequeña pero importante variación en el cálculo del estadístico casos -frecuencias- y utilicemos la posibilidad de ubicar donde queramos el total de casos, así como su etiqueta. Ello lo hacemos con `total_row_position = "above", label = "Casos" ` aplicado a la función `tab_stat_cases()`.
 
-```{r fig.cap="Frecuencias de P31, moviendo el Total", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias de P31, moviendo el Total", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P31) %>% 
   tab_stat_cases(total_row_position = "above", label = "Casos") %>%
@@ -91,7 +91,7 @@ as.datatable_widget(data %>%
 
 Si en lugar de obtener casos (valores absolutos) queremos sacar valores porcentuales, el cambio es mínimo. Usaremos el comando `tab_stat_cpct()`para indicarlo. 
 
-```{r fig.cap="Porcentajes de P31", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Porcentajes de P31", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P31) %>% 
   tab_stat_cpct(total_row_position = "above", label = "% casos") %>% 
@@ -102,7 +102,7 @@ as.datatable_widget(data %>%
 
 Cuando deseamos hacer combinaciones de frecuencias y porcentajes, la filosofía de trabajo es muy parecida. En nuestro caso vamos a hacer algo muy típico. Aunque creo que resulta más sencillo leer cada estadístico en su tabla, hay ocasiones en las que la comparativa es muy necesaria y por tanto es necesario unir los estadísticos en la misma tabla.  Nótese la diferencia con el siguiente cuadro...
 
-```{r fig.cap="Frecuencias y porcentajes de P31", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias y porcentajes de P31", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P31) %>% 
   tab_stat_cases(total_row_position = "above", label = "Casos") %>%
@@ -112,7 +112,7 @@ as.datatable_widget(data %>%
  
 Nótese el efecto introducido por el modificador de posición del cálculo. También ...
 
-```{r fig.cap="Tablas con propiedades diferentes a estándar", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Tablas con propiedades diferentes a estándar", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P31) %>% 
   tab_stat_cases(total_row_position = "above", label = "Casos") %>% 
@@ -122,7 +122,7 @@ as.datatable_widget(data %>%
 
 O también ...
 
-```{r fig.cap="Propiedades diferentes al estándar", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Propiedades diferentes al estándar", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P31) %>% 
   tab_stat_cases(total_row_position = "below", label = "Casos") %>% 
@@ -147,7 +147,7 @@ Como hemos indicado, no olvides que existe otra forma de trabajar las múltiples
 
 Usaremos el campo P18C para procesar su información, que se localiza en el banco de datos desde P18C01 hasta P18C08.
 
-```{r fig.cap="Frecuencias de P18", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias de P18", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(mdset_f(P18C)) %>% 
   tab_stat_cases(total_row_position="above", label="Casos") %>% 
@@ -158,7 +158,7 @@ as.datatable_widget(data %>%
 
 También se pueden, como es obvio, obtener porcentajes en las tablas marginales múltiples. A diferencia de cuando la variables es simple que todos los porcentajes suman 100, en las variables múltiples cada alternativa tiene un rango de 0 a 100, desde no ser elegida una opción en ningún registro del `_dataframe_`, hasta ser elegida por todos los registros. Usaremos nuevamente el campo P18C para procesar su información, que se localiza en el banco de datos desde P18C01 hasta P18C08.
 
-```{r fig.cap="Frecuencias de P18", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias de P18", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(mdset_f(P18C)) %>%
   tab_stat_cpct(total_row_position="above", label="% casos") %>% 
@@ -167,7 +167,7 @@ as.datatable_widget(data %>%
 
 Pero vamos a introducir una nueva variación. En una múltiple, también pueden calcularse los resultados en lo que se llama `base respuestas`, donde sí suman 100% los porcentajes nuevamente, pero recuerda que el porcentaje hace referencia a las respuestas, no a los individuos. En este caso el script modifica el estadístico solicitado.
 
-```{r fig.cap="Frecuencias de P18", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias de P18", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(mdset_f(P18C)) %>%
   tab_stat_cpct_responses(total_row_position="above", label="% casos") %>% 
@@ -180,7 +180,7 @@ Con las múltiples también funciona el posicionamiento del estadístico casos -
 
 Ubicar los cálculos dentro de las columnas ...
 
-```{r fig.cap="Frecuencias y porcentajes de P18 (1)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias y porcentajes de P18 (1)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(mdset_f(P18C)) %>%  # o tab_cells(mdset(P18C01 %to% P18C08))
   tab_stat_cases(label ="Casos") %>% 
@@ -193,7 +193,7 @@ Préstese atención a las dos líneas de #Total, dado que las bases son diferent
 
 Podemos ubicar los cálculos dentro de las filas ...
 
-```{r fig.cap="Frecuencias y porcentajes de P18 (2)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias y porcentajes de P18 (2)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(mdset_f(P18C)) %>%  # o tab_cells(mdset(P18C01 %to% P18C08))
   tab_stat_cases(label ="Casos") %>% 
@@ -204,7 +204,7 @@ as.datatable_widget(data %>%
 
 Podemos ubicar los cálculos fuera de las columnas (igual a la anterior `inside...` porque no hay campo de columna) ...
 
-```{r fig.cap="Frecuencias y porcentajes de P18 (3)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias y porcentajes de P18 (3)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(mdset_f(P18C)) %>%  # o tab_cells(mdset(P18C01 %to% P18C08))
   tab_stat_cases(label ="Casos") %>% 
@@ -215,7 +215,7 @@ as.datatable_widget(data %>%
 
 Podemos ubicar los cálculos fuera de las filas ... nótese que la agrupación es diferente a la anterior con `inside_rows`
 
-```{r fig.cap="Frecuencias y porcentajes de P18 (4)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Frecuencias y porcentajes de P18 (4)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(mdset_f(P18C)) %>%  # o tab_cells(mdset(P18C01 %to% P18C08))
   tab_stat_cases(label ="Casos") %>% 
@@ -234,7 +234,7 @@ Recordemos que hasta ahora no hemos cruzado la información, solo estamos trabaj
 
 Así, siguiendo la misma estructra de las tablas anteriores, redactamos el siguiente script:
 
-```{r fig.cap="Estadísticos marginales de P3 (1)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos marginales de P3 (1)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P3) %>% 
   tab_stat_mean() %>% 
@@ -245,7 +245,7 @@ as.datatable_widget(data %>%
  
 No, no tienes por qué ver los nombres de los estadísticos en lengua inglesa. También aquí podemos jugar con la etiqueta (label).
 
-```{r fig.cap="Estadísticos marginales de P3 (2)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos marginales de P3 (2)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P3) %>% 
   tab_stat_mean(label = "media") %>% 
@@ -256,7 +256,7 @@ as.datatable_widget(data %>%
  
 Hagamos una nueva tabla con una pequeña variación, ahora vamos a poner los estadísticos en columnas.
 
-```{r fig.cap="Estadísticos marginales de P3 (3)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos marginales de P3 (3)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data%>%
   tab_cells(P3) %>% 
   tab_stat_mean(label = "media") %>% 
@@ -267,7 +267,7 @@ as.datatable_widget(data%>%
 
 `expss` tiene además la posibilidad de obtener estos tres cálculos, bastante habituales por cierto, con un solo comando: `tab_stat_mean_sd_n()` pudiendo añadir además etiquetas separadas.
 
-```{r fig.cap="Estadísticos marginales de P3 (4)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos marginales de P3 (4)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P3) %>% 
   tab_stat_mean_sd_n(labels = c("media", "desviación", "casos")) %>% 
@@ -278,7 +278,7 @@ as.datatable_widget(data %>%
 
 Además de los estadísticos más básicos, otros que podemos añadir son el máximo, el mínimo, la mediana, el error estándar y la suma. Los unimos todos.
 
-```{r fig.cap="Estadísticos marginales de P3 (5)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos marginales de P3 (5)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P3) %>% 
   tab_stat_mean(label = "Media") %>% 
@@ -295,7 +295,7 @@ Nótese que no se han definido ni filas, ni columnas. Es el modificador de la po
 
 Del mismo modo, estos estadísticos pueden ubicarse en las columnas.
 
-```{r fig.cap="Estadísticos marginales de P3 (6)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos marginales de P3 (6)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P3) %>% 
   tab_stat_mean(label = "Media") %>% 
@@ -311,7 +311,7 @@ as.datatable_widget(data %>%
 
 Hagamos finalmente una leve variación. Nótese que al utilizar `"|"` en la etiqueta del estadístico casos, hemos eliminado la columna intermedia y aparace todo como más compacto. Este será un recurso que utilizaremos en muchas ocasiones.
 
-```{r fig.cap="Estadísticos marginales de P3 (7)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos marginales de P3 (7)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>% 
   tab_cells(P3) %>% 
   tab_stat_mean(label = "Media") %>% 

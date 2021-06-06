@@ -6,11 +6,11 @@ AlwaysSaveHistory: Default
 
 EnableCodeIndexing: Yes
 UseSpacesForTab: Yes
-NumSpacesForTab: 4
+NumSpacesForTab: 5
 Encoding: UTF-8
 
 RnwWeave: knitr
-LaTeX: XeLaTeX
+LaTeX: pdfLaTeX
 
 AutoAppendNewline: Yes
 StripTrailingWhitespace: Yes
@@ -18,3 +18,9 @@ StripTrailingWhitespace: Yes
 BuildType: Website
 
 QuitChildProcessesOnExit: Yes
+
+MarkdownWrap: None
+MarkdownReferences: Document
+MarkdownCanonical: Yes
+
+SpellingDictionary: es_ES

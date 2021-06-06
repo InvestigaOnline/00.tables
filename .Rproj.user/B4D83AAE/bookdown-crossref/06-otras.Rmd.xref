@@ -1,11 +1,29 @@
 h1:tse06 Otras utilidades y tablas especiales
 h2:plan Plan de códigos
 h2:recode Recodificar
+fig:6030 Ejemplos de recodificación 1
+fig:6040 Ejemplos de recodificación 2
 h2:cuadros Cuadros
+fig:6050 Cuadros de baterías
+fig:6060 Cuadros de baterías modificado
 h2:ponderación Ponderación
+fig:6070 Uso de ponderación
+fig:6080 Uso de ponderación con multi respuesta
+fig:6090 Cálculo de la eficiencia del peso
 h2:subtotales-y-nets Subtotales y NETS
 h3:subtotales Subtotales
+fig:6100 Uso de subtotales 1
+fig:6110 Uso de subtotales 2
 h3:nets NETS
+fig:6120 Uso de nets 1
+fig:6130 Uso de nets 2
 h2:top-y-bottom  y 
+fig:6140 Uso de top y bottom
+fig:6150 Uso de top y bottom arriba
+fig:6160 Uso de top y bottom abajo
+fig:6170 Uso de top y bottom sin los valores agrupados
 h3:gráficos-base Gráficos base
+fig:6180 Uso de gráfico highcharter 1
+fig:6190 Uso de gráfico highcharter 2
+fig:6200 Uso de gráfico con plotly
 

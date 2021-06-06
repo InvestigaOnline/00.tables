@@ -1,7 +1,7 @@
 # Tablas especiales {#tse05}
 
 ```{r echo= FALSE}
-suppressMessages(setwd("~/R/r-data/00.tables")) #esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)
+suppressMessages(setwd("~/R/r-projects/00.tables")) #esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)
 suppressMessages(library(expss)) #cargamos el paquete
 suppressMessages(data <- read_spss("data/3192.sav")) #cargamos los datos
 ```
@@ -28,7 +28,7 @@ Una de las primeras cuestiones que nos surge en muchas ocasiones es trabajar con
 
 En la siguiente tabla, filtramos el banco de datos para aquellos entrevistados que han declarado tener hijos `(P34  == 1)` por un lado y los que no por otro `(P34 == 2)`. Para ello usamos la instrucción [`tab_subgroup()`](https://rdrr.io/cran/expss/man/tables.html) e introducimos también la instrucción [`tab_row_label()`](https://rdrr.io/cran/expss/man/tables.html) donde escribimos una fila con texto libre. Puedes consultar en la sección \@ref(tse10) como se escriben las condiciones y cuáles son los operadores que puede utilizar `expss`, que su vez, tiene algunos operadores propios que en esta misma sección incluiremos.
 
-```{r fig.cap="Tabla con subgrupos", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Tabla con subgrupos", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_subgroup(P34 == 1) %>%
     tab_row_label("Entrevistado con hijos") %>%
@@ -55,7 +55,7 @@ En esta tabla hay algunas cosas a reseñar.
 
 La función [`var_lab()`](https://rdrr.io/cran/expss/man/var_lab.html) permite asignar a una variable (`data$P34`) una lista (expresa con la función base de R denominada vector `c()` vector) de etiquetas donde el texto de la etiqueta va entrecomillado y el valor va igualado a la etiqueta. Es una forma muy simple, a la par que práctica, de etiquetar los valores de una variable.
 
-```{r fig.cap="Tabla con bases 1", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Tabla con bases 1", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 val_lab(data$P34) <- c("Sí" = 1, "No" = 2)  # los valores de P34 son etiquetados como ...
 as.datatable_widget(data %>%
     tab_subgroup(P34 == 1 | P34 == 2) %>%
@@ -68,7 +68,7 @@ as.datatable_widget(data %>%
 
 Si nos gusta esta opción, se le puede añadir un modificador llamado `%nest%` que nos va a permitir anidar esas bases de cálculo. El modificador `%nest%` nos permite anidar los niveles o categorías de las variables. Cualquiera de las tablas anteriores puede ser anidada en tantos niveles como se desee con la opción `%nest%`. Para que la tabla no se alargue horizontalmente, reasignamos el texto extra de la variable denominada `P3bis`. Usamos también el `recode()`para dejar tan sólo tres niveles en la variable P3. Más adelante en la sección \@ref(recode) una mayor profundidad con el `recode()`.
 
-```{r fig.cap="Tabla con bases 2", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Tabla con bases 2", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
 var_lab(data$P3bis) <- "Satisfacción"
 val_lab(data$P3bis) <- c("1.Negativa" = 1, "2.Positiva" = 2)
@@ -84,7 +84,7 @@ as.datatable_widget(data %>%
 
 Algo más, si añadimos la instrucción `drop_rc()`, nótese la diferencia, pues desaparecen las filas y columnas sin información.
 
-```{r fig.cap="Borrando filas y columnas vacías", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Borrando filas y columnas vacías", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
 var_lab(data$P3bis) <- "Satisfacción"
 val_lab(data$P3bis) <- c("1.Negativa" = 1, "2.Positiva" = 2)
@@ -114,7 +114,7 @@ Los criterios más básicos son:
 
 Puede usarse la expresión larga o también cualquiera de las cortas. Por tanto, `na_if(P6C, gt(5))` significa trabaja con la variable `P6C` considerando `NA` los valores mayores que 5.
  
-```{r fig.cap="Usando criterios", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Usando criterios", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 var_lab(data$P6C) <- "Valoración de la atención recibida"
 data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
 val_lab(data$P3bis) <- c("Negativa" = 1, "Positiva" = 2)
@@ -130,7 +130,7 @@ as.datatable_widget(data %>%
 
 Se puede anidar también en filas y columnas. Vamos a reducir a dos el nivel de anidación para que se lea bien la tabla.
 
-```{r fig.cap="Anidando filas y columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Anidando filas y columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 data$P3bis <- recode(data$P3, 0:5 ~1, 6:10 ~2)
 var_lab(data$P3bis) <- "Satisfacción"
 val_lab(data$P3bis) <- c("1.Negativa" = 1, "2.Positiva" = 2)
@@ -144,7 +144,7 @@ as.datatable_widget(data %>%
 
 Como caso particular en muchos casos se requieren los subtotales de los niveles de anidación. Fíjate esta tabla y trata de ver las diferencias con la anterior.
 
-```{r fig.cap="Anidando con subtotales", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Anidando con subtotales", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cols(P31 %nest%  list(total(),P34)) %>% 
     tab_rows(P36 %nest% P33) %>%

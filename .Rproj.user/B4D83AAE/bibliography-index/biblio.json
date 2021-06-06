@@ -336,7 +336,7 @@
                 ]
             },
             "page": "403-420",
-            "publisher": "European Association of Methodology/Lawrence Erlbaum Associates New York, NY",
+            "publisher": "European Association of Methodology / Lawrence Erlbaum Associates New York, NY",
             "title": "Survey documentation: Toward professional knowledge management in sample surveys",
             "title-short": "Survey documentation",
             "type": "article-journal"
@@ -382,7 +382,7 @@
             "type": "book"
         },
         {
-            "URL": "https://github.com/rstudio/bookdown",
+            "URL": "https://CRAN.R-project.org/package=bookdown",
             "author": [
                 {
                     "family": "Xie",
@@ -393,11 +393,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 0.21",
+            "note": "R package version 0.22",
             "title": "Bookdown: Authoring books and technical documents with r markdown",
             "title-short": "Bookdown",
             "type": "book"
@@ -430,7 +430,7 @@
                     ]
                 ]
             },
-            "note": "R package version 1.0.5",
+            "note": "R package version 1.0.6",
             "title": "Dplyr: A grammar of data manipulation",
             "title-short": "Dplyr",
             "type": "book"
@@ -459,7 +459,7 @@
                     ]
                 ]
             },
-            "note": "R package version 0.17",
+            "note": "R package version 0.18",
             "title": "DT: A wrapper of the JavaScript library DataTables",
             "title-short": "DT",
             "type": "book"
@@ -501,12 +501,13 @@
                     ]
                 ]
             },
-            "note": "R package version 0.6.4",
+            "note": "R package version 0.6.6",
             "title": "Flextable: Functions for tabular reporting",
             "title-short": "Flextable",
             "type": "book"
         },
         {
+            "URL": "https://github.com/rstudio/fontawesome",
             "author": [
                 {
                     "family": "Iannone",
@@ -517,12 +518,12 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 0.1.0",
-            "title": "Fontawesome: Easily insert FontAwesome icons into documents",
+            "note": "R package version 0.2.1",
+            "title": "Fontawesome: Easily work with font awesome icons",
             "title-short": "Fontawesome",
             "type": "book"
         },
@@ -542,7 +543,7 @@
                     ]
                 ]
             },
-            "note": "R package version 1.8",
+            "note": "R package version 1.11",
             "title": "formatR: Format r code automatically",
             "title-short": "formatR",
             "type": "book"
@@ -651,7 +652,7 @@
                     ]
                 ]
             },
-            "note": "R package version 1.31",
+            "note": "R package version 1.33",
             "title": "Knitr: A general-purpose package for dynamic report generation in r",
             "title-short": "Knitr",
             "type": "book"
@@ -832,7 +833,7 @@
                     ]
                 ]
             },
-            "note": "R package version 2.7",
+            "note": "R package version 2.8",
             "title": "Rmarkdown: Dynamic documents for r",
             "title-short": "Rmarkdown",
             "type": "book"
@@ -888,7 +889,7 @@
             "type": "book"
         },
         {
-            "URL": "https://github.com/rstudio/bookdown",
+            "URL": "https://bookdown.org/yihui/bookdown",
             "author": [
                 {
                     "family": "Xie",

@@ -1,5 +1,0 @@
-"0","suppressMessages(data <- read_spss(""https://drive.google.com/uc?export=download&id=1JjevbQjzGc1NMyR7qf7bbvtbMyK8Pvhr"")) #cargamos los datos
-"
-"2","Error in foreign::read.spss(enc2native(file), use.value.labels = FALSE,  : 
-  file 'C:\Users\ROBER~1.LAP\AppData\Local\Temp\RtmpaKVFzv\file2bace3d21a7' is not in any supported SPSS format
-"

@@ -1,38 +1,91 @@
 h1:tse08 Visualización gráfica
-h2:highcharter-introducción , introducción
-h3:highchart highchart()
-h3:hchart hchart()
+h2:paquete-highcharter-introducción Paquete highcharter, introducción
+fig:8010 Tabla de ejemplo para uso en highcharter
+h3:función-principal Función principal
+h3:otra-forma-más-rápida Otra forma más rápida
 h2:mi-primer-gráfico Mi primer gráfico
 h2:gráfico-de-barras Gráfico de barras
+fig:8020 Gráfico inicial de barras
+fig:8030 Gráfico de barras de tabla original
 h3:cambiar-el-nombre-de-la-serie-de-datos Cambiar el nombre de la serie de datos
+fig:8040 Gráfico de barras, adición nombre serie
 h3:añadir-créditos-al-gráfico Añadir créditos al gráfico
+fig:8050 Gráfico de barras, adición de créditos
 h3:añadir-el-valor-del-dato-al-elemento-datalabels Añadir el valor del dato al elemento (datalabels)
+fig:8060 Gráfico de barras, adición de valores
 h3:guardar-y-exportar-el-gráfico Guardar y exportar el gráfico
+fig:8070 Gráfico de barras, adición de exportación
 h3:api-de-highcharts-toda-la-potencia-de-los-gráficos API de Highcharts, toda la potencia de los gráficos
 h2:gráfico-de-columna Gráfico de columna
+fig:8080 gráfico de columnas
+fig:8090 Gráfico de columnas 3D
 h3:variación-de-columna-a-pirámide Variación de columna a pirámide
-h3:variación-de-columna-a-lollipop Variación de columna a 
+fig:8100 Gráfico de columnas con pirámides
+h3:variación-de-columna-a-lollipop Variación de columna a lollipop
+fig:8110 Gráfico lollipop o dumbbell
+fig:8120 Gráfico lollipop invertido
 h3:gráficos-polares Gráficos polares
+fig:8130 Gráfico de barras, circular -polar-
+fig:8140 Gráfico de barras circular con fijación de ángulo de parada
 h2:diagramas-de-secciones Diagramas de secciones
-h3:tarta-pie-chart Tarta / 
-h3:anillo-doughnut Anillo / 
-h3:funnel 
+h3:tarta-o-pie-chart Tarta o pie chart
+fig:8150 Gráfico de tarta y adición de secciones separadas
+h3:anillo-o-doughnut Anillo o doughnut
+fig:8160 Gráfico de doughnut
+fig:8170 Gráfico dedoughnut, adelgazado
+h3:funnel Funnel
+fig:8180 Gráfico de funnel
 h3:pirámide Pirámide
+fig:8190 Gráfico de pirámide
 h2:gráfico-de-línea Gráfico de línea
+fig:8200 Gráfico de línea
+fig:8220 Gráfico de línea multi serie (1)
+fig:8230 Gráfico de línea multi serie (2)
 h4:suavizado-de-la-línea Suavizado de la línea
-h2:gráficos-de-columnas-barras-con-apilamiento Gráficos de columnas / barras con apilamiento
+fig:8240 Gráfico de línea suavizado
+fig:8250 Gráfico combinado línea y columna
+fig:8260 Gráfico combinado polarizado
+fig:8270 Gráfico de tela de araña
+h2:gráficos-de-columnas-o-barras-con-apilamiento Gráficos de columnas o barras con apilamiento
+fig:8280 Gráfico de columnas apiladas
+fig:8290 Gráfico de columnas apiladas, adición de color
+fig:8300 Gráfico columnas combinando apilamiento y normal
+fig:8310 Gráfico de columnas combinando apilamiento porcentual
+fig:8320 Gráfico de barras con apilamiento porcentual
+fig:8330 Gráfico de columnas apiladas porcentual
 h2:gráfico-de-área Gráfico de área
-h2:gráfico-de-puntos-scatterplot Gráfico de puntos / 
+fig:8340 Gráfico de área
+fig:8350 Gráfico de área apilado
+fig:8360 Gráfico de área apilado porcentual
+h2:gráfico-de-puntos-o-scatterplot Gráfico de puntos o scatterplot
+fig:8370 Gráfico de puntos, scatter
+fig:8380 Scatterplot, preparación
+fig:8390 Scatterplot
+fig:8400 Scatterplot
+fig:8410 Bubble scatterplot
 h2:histograma-o-gráfico-de-densidad Histograma o gráfico de densidad
+fig:8420 Histograma
+fig:8430 Gráfico de densidad
 h2:gráficos-indicadores Gráficos indicadores
 h3:gauge Gauge
+fig:8440 Gauge o indicador
+fig:8450 Gauge
 h3:bullet Bullet
-h2:gráfico-boxplot Gráfico / 
+fig:8460 Bullet o indicador lineal
+h2:gráfico-de-caja-o-boxplot Gráfico de caja o boxplot
+fig:8470 Boxplot
+fig:8480 Boxplot con series
 h2:gráfico-de-barras-de-error Gráfico de barras de error
+fig:8490 Gráfico de barras error
+fig:8500 Gráfico de barras error con punto
 h2:gráficos-de-transiciones Gráficos de transiciones
 h3:diagrama-de-sankey Diagrama de Sankey
+fig:8510 Gráfico de Sankey
 h3:diagrama-de-rueda Diagrama de rueda
-h3:diagrama-streamgraph Diagrama 
+fig:8520 Gráfico de rueda
+h3:diagrama-streamgraph Diagrama streamgraph
+fig:8530 Streamgraph
 h3:diagrama-de-redes Diagrama de redes
+fig:8540 Diagrama network, redes de influencia
 h2:conclusión Conclusión
 

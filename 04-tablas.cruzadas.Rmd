@@ -2,8 +2,8 @@
 
 A diferencia de lo visto en la sección \@ref(tse03), en este epígrafe analizaremos como obtener cuadros resumen en los que existen variables en la cabecera, que determinan grupos o perfiles de análisis y existen variables en las filas, de las cuáles queremos conocer cómo se distribuyen sus alternativas de respuesta entre los diferentes perfiles o grupos que determinan las variables de columna. Al igual que sucedió con las tablas marginales, mostraremos poco a poco como trabajar con variables de respuesta simple, múltiple o con medidas estadísticas. Vamos a utilizar otros campos que se localizan en la base de datos del CIS (P3, P21A01, P21A02, P21A03, P31, P33). Aquí su resumen... -nótese que se ha incluido la función `suppressMessages()` para no publicar los mensajes de carga del paquete y datos-.
 
-```{r fig.cap="Campos con los que trabajar", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
-suppressMessages(setwd("~/R/r-data/00.tables")) #esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)
+```{r fig.cap="Campos con los que trabajar", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
+suppressMessages(setwd("~/R/r-projects/00.tables")) #esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)
 suppressMessages(library(expss)) #cargamos el paquete
 suppressMessages(data <- read_spss("data/3192.sav")) #cargamos los datos
 data$P3
@@ -22,7 +22,7 @@ Las tablas que vamos a hacer a continuación, siempre son tablas en las que inte
 
 Usaremos la variable P31 para las columnas, P33 en las celdas (de la que se hará el cálculo)y el estadístico a usar será el nº de casos.
 
-```{r fig.cap="Cruce de estado civil por sexo", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce de estado civil por sexo", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P33) %>%
     tab_cols(total(), P31) %>%
@@ -34,7 +34,7 @@ as.datatable_widget(data %>%
 
 Al igual que hicimos con las tablas marginales vamos a repetir esta tabla, pero en porcentaje de columna (vertical).
 
-```{r fig.cap="Cruce de estado civil por sexo, porcentaje de columna", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce de estado civil por sexo, porcentaje de columna", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P33) %>%
     tab_cols(total(), P31) %>%
@@ -46,7 +46,7 @@ as.datatable_widget(data %>%
 
 Al igual que hicimos con las tablas marginales vamos a repetir esta tabla, pero en porcentaje de fila (horizontal).
 
-```{r fig.cap="Cruce de estado civil por sexo, porcentaje de fila", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce de estado civil por sexo, porcentaje de fila", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P33) %>%
     tab_cols(total(), P31) %>%
@@ -58,7 +58,7 @@ as.datatable_widget(data %>%
 
 Al igual que hicimos con las tablas marginales vamos a repetir esta tabla, pero en porcentaje sobre el total de la muestra.
 
-```{r fig.cap="Cruce de estado civil por sexo, porcentaje sobre el total de la muestra", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce de estado civil por sexo, porcentaje sobre el total de la muestra", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P33) %>%
     tab_cols(total(), P31) %>%
@@ -70,7 +70,7 @@ as.datatable_widget(data %>%
 
 Vamos ahora a hacer combinaciones entre ellos. Advierto que cada vez se dificulta más la tabla en su lectura. Como dije inicialmente, me decanto más por tablas sencillas y con un sólo dato.
 
-```{r fig.cap="Combinación de casos y porcentajes dentro de las columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Combinación de casos y porcentajes dentro de las columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P33) %>%
     tab_cols(total(), P31) %>%
@@ -81,7 +81,7 @@ as.datatable_widget(data %>%
 
 Y la misma tabla pero con los estadísticos en las filas combinando frecuencia y porcentaje...
 
-```{r fig.cap="Combinación de casos y porcentajes por tipo de estadístico en columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Combinación de casos y porcentajes por tipo de estadístico en columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P33) %>%
     tab_cols(total(), P31) %>%
@@ -92,7 +92,7 @@ as.datatable_widget(data %>%
 
 Y la misma tabla pero con los estadísticos en las filas combinando frecuencia y porcentaje...
 
-```{r fig.cap="Combinación de casos y porcentajes dentro de las filas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Combinación de casos y porcentajes dentro de las filas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P33) %>%
     tab_cols(total(), P31) %>%
@@ -103,7 +103,7 @@ as.datatable_widget(data %>%
 
 Y la misma tabla pero con los estadísticos en las filas por bloque de tipo de estadístico...
 
-```{r fig.cap="Combinación de casos y porcentajes, por tipo de estadístico en filas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Combinación de casos y porcentajes, por tipo de estadístico en filas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P33) %>%
     tab_cols(total(), P31) %>%
@@ -118,7 +118,7 @@ Vamos a realizar ahora el mismo conjunto de tablas, pero en las filas, en lugar 
 
 ### De frecuencias, variable múltiple y sólo absolutos
 
-```{r fig.cap="Cruce de motivos guardar envases enteros por sexo", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce de motivos guardar envases enteros por sexo", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(mdset(P21A01 %to% P21A03)) %>%
     tab_cols(total(), P31) %>%
@@ -130,7 +130,7 @@ as.datatable_widget(data %>%
 
 Al igual que hicimos con las tablas marginales vamos a repetir esta tabla, pero en porcentaje de columna (vertical).
 
-```{r fig.cap="Cruce de motivos guardar envases enteros por sexo, porcentaje de columna", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce de motivos guardar envases enteros por sexo, porcentaje de columna", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(mdset(P21A01 %to% P21A03)) %>%
     tab_cols(total(), P31) %>%
@@ -142,7 +142,7 @@ as.datatable_widget(data %>%
 
 Al igual que hicimos con las tablas marginales vamos a repetir esta tabla, pero en porcentaje de fila (horizontal).
 
-```{r fig.cap="Cruce de motivos guardar envases enteros por sexo, porcentaje de fila", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce de motivos guardar envases enteros por sexo, porcentaje de fila", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(mdset(P21A01 %to% P21A03)) %>%
     tab_cols(total(), P31) %>%
@@ -154,7 +154,7 @@ as.datatable_widget(data %>%
 
 Al igual que hicimos con las tablas marginales vamos a repetir esta tabla, pero en porcentaje sobre el total de la muestra.
 
-```{r fig.cap="Cruce de motivos guardar envases enteros por sexo, porcentaje sobre el total de la muestra", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce de motivos guardar envases enteros por sexo, porcentaje sobre el total de la muestra", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(mdset(P21A01 %to% P21A03)) %>%
     tab_cols(total(), P31) %>%
@@ -166,7 +166,7 @@ as.datatable_widget(data %>%
 
 Vamos ahora a hacer combinaciones entre ellos. Advierto que cada vez se dificulta más la tabla en su lectura. Como dije inicialmente, me decanto más por tablas sencillas y con un sólo dato.
 
-```{r fig.cap="Combinación de casos y porcentajes dentro de las columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Combinación de casos y porcentajes dentro de las columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(mdset(P21A01 %to% P21A03)) %>%
     tab_cols(total(), P31) %>%
@@ -177,7 +177,7 @@ as.datatable_widget(data %>%
 
 Y la misma tabla pero con los estadísticos en las filas combinando frecuencia y porcentaje...
 
-```{r fig.cap="Combinación de casos y porcentajes por tipo de estadístico en columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Combinación de casos y porcentajes por tipo de estadístico en columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(mdset(P21A01 %to% P21A03)) %>%
     tab_cols(total(), P31) %>%
@@ -188,7 +188,7 @@ as.datatable_widget(data %>%
 
 Y la misma tabla pero con los estadísticos en las filas combinando frecuencia y porcentaje...
 
-```{r fig.cap="Combinación de casos y porcentajes dentro de las filas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Combinación de casos y porcentajes dentro de las filas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(mdset(P21A01 %to% P21A03)) %>%
     tab_cols(total(), P31) %>%
@@ -199,7 +199,7 @@ as.datatable_widget(data %>%
 
 Y la misma tabla pero con los estadísticos en las filas por bloque de tipo de estadístico...
 
-```{r fig.cap="Combinación de casos y porcentajes, por tipo de estadístico en filas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Combinación de casos y porcentajes, por tipo de estadístico en filas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(mdset(P21A01 %to% P21A03)) %>%
     tab_cols(total(), P31) %>%
@@ -218,7 +218,7 @@ Del mismo modo que antes utilizábamos la tabla cruzada para obtener los casos d
 
 Vamos a comenzar con las más simples, dos estadísticos (media y desviación) de una variable métrica (P3) calculados para una variable (P31) que genera dos categorías (hombre y mujer). Nótese el juego a realizar con más de 2 estadísticos con la ubicación de los mismos.
 
-```{r fig.cap="Cruce entre variable y estadísticos", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce entre variable y estadísticos", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -229,7 +229,7 @@ as.datatable_widget(data %>%
 
 Hagamos ahora su traspuesta, es decir ubiquemos en filas P31 y en columnas 
 
-```{r fig.cap="Transposición de tabla", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Transposición de tabla", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 var_lab(data$P3)="Satisfacción"
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
@@ -243,7 +243,7 @@ Recordemos que los estadísticos los podemos ir moviendo a nuestra necesidad par
 
 Dentro de las columnas ...
 
-```{r fig.cap="Estadísticos dentro de columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos dentro de columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -254,7 +254,7 @@ as.datatable_widget(data %>%
 
 Dentro de las filas ...
 
-```{r fig.cap="Estadísticos dentro de las filas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos dentro de las filas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -265,7 +265,7 @@ as.datatable_widget(data %>%
 
 Como columnas separadas o fuera de columnas ...
 
-```{r fig.cap="Estadísticos separados en columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos separados en columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -276,7 +276,7 @@ as.datatable_widget(data %>%
 
 Como filas separadas o fuera de filas...
 
-```{r fig.cap="Estadísticos separados en filas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Estadísticos separados en filas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -287,7 +287,7 @@ as.datatable_widget(data %>%
 
 Repitamos ahora estas cuatro últimas tablas, pero en lugar de con una variable que genera grupos y de ellos se calcula la medida estadística, vamos a hacerlo con un cruce de categorías (un campo en columnas y otro en filas) y que en esos cruces, se calcule la medida estadística. Por ejemplo esta tabla me permitiría saber la media de P3 en los hombres de 18 a 25 años.
 
-```{r fig.cap="Uso de variable base (anidación)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Uso de variable base (anidación)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -301,7 +301,7 @@ y juguemos con la posición del cálculo estadística que ahora sí arrojará cu
 
 La primera con los estadísticos fuera de las filas...
 
-```{r fig.cap="Filas con estadístico fuera de filas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Filas con estadístico fuera de filas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -313,7 +313,7 @@ as.datatable_widget(data %>%
 
 Los estadísticos dentro de las filas ...
 
-```{r fig.cap="Filas con estadístico dentro de las filas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Filas con estadístico dentro de las filas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -325,7 +325,7 @@ as.datatable_widget(data %>%
 
 Los estadísticos dentro de las columnas ...
  
-```{r fig.cap="Filas con estadísticos dentro de las columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Filas con estadísticos dentro de las columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -337,7 +337,7 @@ as.datatable_widget(data %>%
 
 Los estadísticos fuera de las columnas ...
 
-```{r fig.cap="Filas con estadísticos fuera de las columnas", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Filas con estadísticos fuera de las columnas", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), P31) %>%
@@ -353,7 +353,7 @@ as.datatable_widget(data %>%
 
 Vamos a comenzar con las más simples, dos estadísticos (media y desviación) de una variable métrica (P3) calculados para una variable múltiple (P4_1 a P4_3) que genera categorías. Nótese el juego a realizar con más de 2 estadísticos con la ubicación de los mismos.
 
-```{r fig.cap="Cruce con múltiple y estadístico (1)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (1)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -364,7 +364,7 @@ as.datatable_widget(data %>%
 
 Hagamos ahora su traspuesta, es decir ubiquemos en filas P21A y en columnas P3.
 
-```{r fig.cap="Cruce con múltiple y estadístico (2)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (2)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_rows(total(),mdset(P21A01 %to% P21A03)) %>%
@@ -377,7 +377,7 @@ Recordemos que los estadísticos los podemos ir moviendo a nuestra necesidad par
 
 Dentro de columnas ...
 
-```{r fig.cap="Cruce con múltiple y estadístico (3)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (3)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -388,7 +388,7 @@ as.datatable_widget(data %>%
 
 Dentro de filas ...
 
-```{r fig.cap="Cruce con múltiple y estadístico (4)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (4)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -399,7 +399,7 @@ as.datatable_widget(data %>%
 
 Fuera de columnas ...
 
-```{r fig.cap="Cruce con múltiple y estadístico (5)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (5)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -410,7 +410,7 @@ as.datatable_widget(data %>%
 
 Fuera de filas ...
 
-```{r fig.cap="Cruce con múltiple y estadístico (6)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (6)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -421,7 +421,7 @@ as.datatable_widget(data %>%
 
 Repitamos ahora estas cuatro últimas tablas, pero en lugar de con una variable que genera grupos y de ellos se calcula la medida estadística, vamos a hacerlo con un cruce de categorías (un campo en columnas y otro en filas) y que en esos cruces, se calcule la medida estadística. Por ejemplo esta tabla me permitiría saber la media de P3 en los hombres de 18 a 25 años.
 
-```{r fig.cap="Cruce con múltiple y estadístico (7)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (7)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -433,7 +433,7 @@ as.datatable_widget(data %>%
 
 y juguemos con la posición del cálculo estadística que ahora sí arrojará cuatro configuraciones diferentes. La primera con los estadísticos dentro de las filas es idéntica a la anterior (por defecto).
 
-```{r fig.cap="Cruce con múltiple y estadístico (8)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (8)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -445,7 +445,7 @@ as.datatable_widget(data %>%
 
 Los estadísticos fuera de las filas ...
 
-```{r fig.cap="Cruce con múltiple y estadístico (9)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (9)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -457,7 +457,7 @@ as.datatable_widget(data %>%
 
 Los estadísticos dentro de las columnas ...
 
-```{r fig.cap="Cruce con múltiple y estadístico (10)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (10)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%
@@ -469,7 +469,7 @@ as.datatable_widget(data %>%
 
 Los estadísticos fuera de las columnas ...
 
-```{r fig.cap="Cruce con múltiple y estadístico (11)", out.width="80%", fig.asp=.75, fig.align="center", echo=TRUE}
+```{r fig.cap="Cruce con múltiple y estadístico (11)", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
 as.datatable_widget(data %>%
     tab_cells(P3) %>%
     tab_cols(total(), mdset(P21A01 %to% P21A03)) %>%

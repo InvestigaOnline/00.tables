@@ -67,7 +67,7 @@ Este es un fichero de ejemplo, borra desde donde pone ## R Markdown hasta abajo 
 
 ![](data/RS09.png)
 
-Aquí escribimos el script de R, que como puedes ver en línea 1 y 3 comienza y acaba con una simbología determinada. Estos son los caracteres indicadores de que todo lo que queda entre ` ```{r echo=TRUE}` y ` ``` ` es scripting. A partir de ahora, nuestras instrucciones irán siempre entre estos símbolos de inicio y final. Nótese que se añade la instrucción `echo=TRUE`. Esta instrucción provocará que se imprima en el resultado los comandos del script, si en lugar de eso se escribe `echo=FALSE`, no se imprimiría ese código.
+Aquí escribimos el script de R, que como puedes ver en línea 1 y 3 comienza y acaba con una simbología determinada. Estos son los caracteres indicadores de que todo lo que queda entre ` ```{r echo = TRUE}` y ` ``` ` es scripting. A partir de ahora, nuestras instrucciones irán siempre entre estos símbolos de inicio y final. Nótese que se añade la instrucción `echo = TRUE`. Esta instrucción provocará que se imprima en el resultado los comandos del script, si en lugar de eso se escribe `echo=FALSE`, no se imprimiría ese código.
 
 Nuestro código le dirá a R que secuencialmente haga...
 
@@ -79,7 +79,7 @@ Nuestro código le dirá a R que secuencialmente haga...
 * no teniendo en cuenta los valores NA (nulos, no definidos, que no sean número: `na.rm=TRUE`)
 
 ```{r }
-suppressMessages(setwd("~/R/r-data/00.tables")) #esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)
+suppressMessages(setwd("~/R/r-projects/00.tables")) #esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)
 suppressMessages(library(expss)) #cargamos el paquete
 suppressMessages(data <- read_spss("data/3192.sav")) #cargamos los datos
 mean(data$PESO, na.rm=TRUE)

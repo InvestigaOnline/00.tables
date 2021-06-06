@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>9 Estilos y formatos de tabla | Tablas y gráficos con R y R Studio</title>
+  <title>9 Estilos y formatos de tabla | Tablas y graficos con R y R Studio</title>
   <meta name="description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="9 Estilos y formatos de tabla | Tablas y gráficos con R y R Studio" />
+  <meta property="og:title" content="9 Estilos y formatos de tabla | Tablas y graficos con R y R Studio" />
   <meta property="og:type" content="book" />
   
   
@@ -16,12 +16,12 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="9 Estilos y formatos de tabla | Tablas y gráficos con R y R Studio" />
+  <meta name="twitter:title" content="9 Estilos y formatos de tabla | Tablas y graficos con R y R Studio" />
   
   <meta name="twitter:description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
   
 
-<meta name="author" content="Roberto Gil-Saura " />
+<meta name="author" content="Roberto Gil Saura  " />
 
 
 
@@ -32,7 +32,7 @@
   
 <link rel="prev" href="tse08.html"/>
 <link rel="next" href="tse10.html"/>
-<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-3.5.1/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,9 +50,11 @@
 
 
 
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<script src="libs/datatables-binding-0.18/datatables.js"></script>
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
@@ -114,6 +116,7 @@
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
@@ -172,6 +175,29 @@ code span.st { color: #4070a0; } /* String */
 code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -302,14 +328,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="7.3.1" data-path="tse07.html"><a href="tse07.html#algunos-ejemplos-de-uso-de-los-parámetros"><i class="fa fa-check"></i><b>7.3.1</b> Algunos ejemplos de uso de los parámetros</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="tse07.html"><a href="tse07.html#conclusión-al-uso-de-expss"><i class="fa fa-check"></i><b>7.4</b> Conclusión al uso de <code>expss</code></a></li>
+<li class="chapter" data-level="7.4" data-path="tse07.html"><a href="tse07.html#conclusión-al-uso-del-paquete-expss"><i class="fa fa-check"></i><b>7.4</b> Conclusión al uso del paquete expss</a></li>
+<li class="chapter" data-level="7.5" data-path="tse07.html"><a href="tse07.html#section"><i class="fa fa-check"></i><b>7.5</b> —</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="tse08.html"><a href="tse08.html"><i class="fa fa-check"></i><b>8</b> Visualización gráfica</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="tse08.html"><a href="tse08.html#highcharter-introducción"><i class="fa fa-check"></i><b>8.1</b> <code>highcharter</code>, introducción</a>
+<li class="chapter" data-level="8.1" data-path="tse08.html"><a href="tse08.html#paquete-highcharter-introducción"><i class="fa fa-check"></i><b>8.1</b> Paquete highcharter, introducción</a>
 <ul>
-<li class="chapter" data-level="8.1.1" data-path="tse08.html"><a href="tse08.html#highchart"><i class="fa fa-check"></i><b>8.1.1</b> highchart()</a></li>
-<li class="chapter" data-level="8.1.2" data-path="tse08.html"><a href="tse08.html#hchart"><i class="fa fa-check"></i><b>8.1.2</b> hchart()</a></li>
+<li class="chapter" data-level="8.1.1" data-path="tse08.html"><a href="tse08.html#función-principal"><i class="fa fa-check"></i><b>8.1.1</b> Función principal</a></li>
+<li class="chapter" data-level="8.1.2" data-path="tse08.html"><a href="tse08.html#otra-forma-más-rápida"><i class="fa fa-check"></i><b>8.1.2</b> Otra forma más rápida</a></li>
 </ul></li>
 <li class="chapter" data-level="8.2" data-path="tse08.html"><a href="tse08.html#mi-primer-gráfico"><i class="fa fa-check"></i><b>8.2</b> Mi primer gráfico</a></li>
 <li class="chapter" data-level="8.3" data-path="tse08.html"><a href="tse08.html#gráfico-de-barras"><i class="fa fa-check"></i><b>8.3</b> Gráfico de barras</a>
@@ -323,33 +350,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4" data-path="tse08.html"><a href="tse08.html#gráfico-de-columna"><i class="fa fa-check"></i><b>8.4</b> Gráfico de columna</a>
 <ul>
 <li class="chapter" data-level="8.4.1" data-path="tse08.html"><a href="tse08.html#variación-de-columna-a-pirámide"><i class="fa fa-check"></i><b>8.4.1</b> Variación de columna a pirámide</a></li>
-<li class="chapter" data-level="8.4.2" data-path="tse08.html"><a href="tse08.html#variación-de-columna-a-lollipop"><i class="fa fa-check"></i><b>8.4.2</b> Variación de columna a <em>lollipop</em></a></li>
+<li class="chapter" data-level="8.4.2" data-path="tse08.html"><a href="tse08.html#variación-de-columna-a-lollipop"><i class="fa fa-check"></i><b>8.4.2</b> Variación de columna a lollipop</a></li>
 <li class="chapter" data-level="8.4.3" data-path="tse08.html"><a href="tse08.html#gráficos-polares"><i class="fa fa-check"></i><b>8.4.3</b> Gráficos polares</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="tse08.html"><a href="tse08.html#diagramas-de-secciones"><i class="fa fa-check"></i><b>8.5</b> Diagramas de secciones</a>
 <ul>
-<li class="chapter" data-level="8.5.1" data-path="tse08.html"><a href="tse08.html#tarta-pie-chart"><i class="fa fa-check"></i><b>8.5.1</b> Tarta / <em>pie chart</em></a></li>
-<li class="chapter" data-level="8.5.2" data-path="tse08.html"><a href="tse08.html#anillo-doughnut"><i class="fa fa-check"></i><b>8.5.2</b> Anillo / <em>doughnut</em></a></li>
-<li class="chapter" data-level="8.5.3" data-path="tse08.html"><a href="tse08.html#funnel"><i class="fa fa-check"></i><b>8.5.3</b> <em>Funnel</em></a></li>
+<li class="chapter" data-level="8.5.1" data-path="tse08.html"><a href="tse08.html#tarta-o-pie-chart"><i class="fa fa-check"></i><b>8.5.1</b> Tarta o pie chart</a></li>
+<li class="chapter" data-level="8.5.2" data-path="tse08.html"><a href="tse08.html#anillo-o-doughnut"><i class="fa fa-check"></i><b>8.5.2</b> Anillo o doughnut</a></li>
+<li class="chapter" data-level="8.5.3" data-path="tse08.html"><a href="tse08.html#funnel"><i class="fa fa-check"></i><b>8.5.3</b> Funnel</a></li>
 <li class="chapter" data-level="8.5.4" data-path="tse08.html"><a href="tse08.html#pirámide"><i class="fa fa-check"></i><b>8.5.4</b> Pirámide</a></li>
 </ul></li>
 <li class="chapter" data-level="8.6" data-path="tse08.html"><a href="tse08.html#gráfico-de-línea"><i class="fa fa-check"></i><b>8.6</b> Gráfico de línea</a></li>
-<li class="chapter" data-level="8.7" data-path="tse08.html"><a href="tse08.html#gráficos-de-columnas-barras-con-apilamiento"><i class="fa fa-check"></i><b>8.7</b> Gráficos de columnas / barras con apilamiento</a></li>
+<li class="chapter" data-level="8.7" data-path="tse08.html"><a href="tse08.html#gráficos-de-columnas-o-barras-con-apilamiento"><i class="fa fa-check"></i><b>8.7</b> Gráficos de columnas o barras con apilamiento</a></li>
 <li class="chapter" data-level="8.8" data-path="tse08.html"><a href="tse08.html#gráfico-de-área"><i class="fa fa-check"></i><b>8.8</b> Gráfico de área</a></li>
-<li class="chapter" data-level="8.9" data-path="tse08.html"><a href="tse08.html#gráfico-de-puntos-scatterplot"><i class="fa fa-check"></i><b>8.9</b> Gráfico de puntos / <em>scatterplot</em></a></li>
+<li class="chapter" data-level="8.9" data-path="tse08.html"><a href="tse08.html#gráfico-de-puntos-o-scatterplot"><i class="fa fa-check"></i><b>8.9</b> Gráfico de puntos o scatterplot</a></li>
 <li class="chapter" data-level="8.10" data-path="tse08.html"><a href="tse08.html#histograma-o-gráfico-de-densidad"><i class="fa fa-check"></i><b>8.10</b> Histograma o gráfico de densidad</a></li>
 <li class="chapter" data-level="8.11" data-path="tse08.html"><a href="tse08.html#gráficos-indicadores"><i class="fa fa-check"></i><b>8.11</b> Gráficos indicadores</a>
 <ul>
 <li class="chapter" data-level="8.11.1" data-path="tse08.html"><a href="tse08.html#gauge"><i class="fa fa-check"></i><b>8.11.1</b> Gauge</a></li>
 <li class="chapter" data-level="8.11.2" data-path="tse08.html"><a href="tse08.html#bullet"><i class="fa fa-check"></i><b>8.11.2</b> Bullet</a></li>
 </ul></li>
-<li class="chapter" data-level="8.12" data-path="tse08.html"><a href="tse08.html#gráfico-boxplot"><i class="fa fa-check"></i><b>8.12</b> Gráfico / <em>boxplot</em></a></li>
+<li class="chapter" data-level="8.12" data-path="tse08.html"><a href="tse08.html#gráfico-de-caja-o-boxplot"><i class="fa fa-check"></i><b>8.12</b> Gráfico de caja o boxplot</a></li>
 <li class="chapter" data-level="8.13" data-path="tse08.html"><a href="tse08.html#gráfico-de-barras-de-error"><i class="fa fa-check"></i><b>8.13</b> Gráfico de barras de error</a></li>
 <li class="chapter" data-level="8.14" data-path="tse08.html"><a href="tse08.html#gráficos-de-transiciones"><i class="fa fa-check"></i><b>8.14</b> Gráficos de transiciones</a>
 <ul>
 <li class="chapter" data-level="8.14.1" data-path="tse08.html"><a href="tse08.html#diagrama-de-sankey"><i class="fa fa-check"></i><b>8.14.1</b> Diagrama de Sankey</a></li>
 <li class="chapter" data-level="8.14.2" data-path="tse08.html"><a href="tse08.html#diagrama-de-rueda"><i class="fa fa-check"></i><b>8.14.2</b> Diagrama de rueda</a></li>
-<li class="chapter" data-level="8.14.3" data-path="tse08.html"><a href="tse08.html#diagrama-streamgraph"><i class="fa fa-check"></i><b>8.14.3</b> Diagrama <em>streamgraph</em></a></li>
+<li class="chapter" data-level="8.14.3" data-path="tse08.html"><a href="tse08.html#diagrama-streamgraph"><i class="fa fa-check"></i><b>8.14.3</b> Diagrama streamgraph</a></li>
 <li class="chapter" data-level="8.14.4" data-path="tse08.html"><a href="tse08.html#diagrama-de-redes"><i class="fa fa-check"></i><b>8.14.4</b> Diagrama de redes</a></li>
 </ul></li>
 <li class="chapter" data-level="8.15" data-path="tse08.html"><a href="tse08.html#conclusión-2"><i class="fa fa-check"></i><b>8.15</b> Conclusión</a></li>
@@ -389,7 +416,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tablas y gráficos con R y R Studio</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Tablas y graficos con R y R Studio</a>
           </h1>
         </div>
 
@@ -470,9 +497,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb229-4"><a href="tse-formateo.html#cb229-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(ing) <span class="sc">%&gt;%</span> </span>
 <span id="cb229-5"><a href="tse-formateo.html#cb229-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_sum</span>() <span class="sc">%&gt;%</span></span>
 <span id="cb229-6"><a href="tse-formateo.html#cb229-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-156"></span>
-<div id="htmlwidget-0e5036639ec59ca8f206" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0e5036639ec59ca8f206">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["emp","","","",""],["Amazon","Apple","Facebook","Google","Microsoft"],["ing","ing","ing","ing","ing"],["Sum","Sum","Sum","Sum","Sum"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        per\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-75"></span>
+<div id="htmlwidget-ffea72920f40880246ed" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ffea72920f40880246ed">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["emp","","","",""],["Amazon","Apple","Facebook","Google","Microsoft"],["ing","ing","ing","ing","ing"],["Sum","Sum","Sum","Sum","Sum"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        per\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 9.1: Tabla con formato estándar de <code>expss</code>
 </p>
@@ -487,9 +514,9 @@ Figura 9.1: Tabla con formato estándar de <code>expss</code>
 <span id="cb230-7"><a href="tse-formateo.html#cb230-7" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(tab01)</span></code></pre></div>
 <pre><code>## [1] &quot;etable&quot;     &quot;data.frame&quot;</code></pre>
 <div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="tse-formateo.html#cb232-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(tab01)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-157"></span>
-<div id="htmlwidget-2219fc3b9f6fbf6d3c66" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2219fc3b9f6fbf6d3c66">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Amazon","Apple","Facebook","Google","Microsoft"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-76"></span>
+<div id="htmlwidget-8a56a416eab466f7c194" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8a56a416eab466f7c194">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Amazon","Apple","Facebook","Google","Microsoft"],[87400,91819,21082,46075,36906],[72400,84310,16914,39276,32471]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        I-2019\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        IV-2018\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 9.2: Tabla con formato adaptado de <code>expss</code>
 </p>
@@ -506,7 +533,7 @@ Figura 9.2: Tabla con formato adaptado de <code>expss</code>
 ## 3   Facebook  21082   16914
 ## 4     Google  46075   39276
 ## 5  Microsoft  36906   32471</code></pre>
-<p>Nótese que ahora ya el output no es un objeto de tipo <code>etable</code>, solo es <em>dataframe</em>. Ya estamos en condiciones de poder operar. Calculemos la diferencia entre los dos trimestres.</p>
+<p>Nótese que ahora ya el <em>output</em> no es un objeto de tipo <code>etable</code>, solo es <em>dataframe</em>. Ya estamos en condiciones de poder operar. Calculemos la diferencia entre los dos trimestres.</p>
 <div class="sourceCode" id="cb237"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb237-1"><a href="tse-formateo.html#cb237-1" aria-hidden="true" tabindex="-1"></a>tab01<span class="sc">$</span>dif <span class="ot">&lt;-</span> tab01[,<span class="dv">2</span>]<span class="sc">-</span>tab01[,<span class="dv">3</span>]</span>
 <span id="cb237-2"><a href="tse-formateo.html#cb237-2" aria-hidden="true" tabindex="-1"></a>tab01</span></code></pre></div>
 <pre><code>##   row_labels I-2019 IV-2018   dif
@@ -526,13 +553,13 @@ Figura 9.2: Tabla con formato adaptado de <code>expss</code>
 <span id="cb239-8"><a href="tse-formateo.html#cb239-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">2</span>],</span>
 <span id="cb239-9"><a href="tse-formateo.html#cb239-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;IV de 2018&quot;</span>,</span>
 <span id="cb239-10"><a href="tse-formateo.html#cb239-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb239-11"><a href="tse-formateo.html#cb239-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;salmon&quot;</span></span>
+<span id="cb239-11"><a href="tse-formateo.html#cb239-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#FA8072&quot;</span></span>
 <span id="cb239-12"><a href="tse-formateo.html#cb239-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb239-13"><a href="tse-formateo.html#cb239-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
 <span id="cb239-14"><a href="tse-formateo.html#cb239-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">3</span>],</span>
 <span id="cb239-15"><a href="tse-formateo.html#cb239-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;I de 2019&quot;</span>,</span>
 <span id="cb239-16"><a href="tse-formateo.html#cb239-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb239-17"><a href="tse-formateo.html#cb239-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;darksalmon&quot;</span></span>
+<span id="cb239-17"><a href="tse-formateo.html#cb239-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#E9967A&quot;</span></span>
 <span id="cb239-18"><a href="tse-formateo.html#cb239-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb239-19"><a href="tse-formateo.html#cb239-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
 <span id="cb239-20"><a href="tse-formateo.html#cb239-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">4</span>],</span>
@@ -540,9 +567,9 @@ Figura 9.2: Tabla con formato adaptado de <code>expss</code>
 <span id="cb239-22"><a href="tse-formateo.html#cb239-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
 <span id="cb239-23"><a href="tse-formateo.html#cb239-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;teal&quot;</span></span>
 <span id="cb239-24"><a href="tse-formateo.html#cb239-24" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-160"></span>
-<div id="htmlwidget-a7d1052eb4c29df8c09a" style="width:100%;height:500px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a7d1052eb4c29df8c09a">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":{"title":{"text":null},"min":0,"max":100000},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"dataLabels":{"valueDecimals":2},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-79"></span>
+<div id="htmlwidget-29a6df859ea47ca4dbe2" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-29a6df859ea47ca4dbe2">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":{"title":{"text":null},"min":0,"max":100000},"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"#FA8072"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"#E9967A"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"dataLabels":{"valueDecimals":2},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figura 9.3: Gráfico del <em>dataframe</em>
 </p>
@@ -578,13 +605,13 @@ Figura 9.3: Gráfico del <em>dataframe</em>
 <span id="cb242-19"><a href="tse-formateo.html#cb242-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">2</span>],</span>
 <span id="cb242-20"><a href="tse-formateo.html#cb242-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;IV de 2018&quot;</span>,</span>
 <span id="cb242-21"><a href="tse-formateo.html#cb242-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb242-22"><a href="tse-formateo.html#cb242-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;salmon&quot;</span></span>
+<span id="cb242-22"><a href="tse-formateo.html#cb242-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#FA8072&quot;</span></span>
 <span id="cb242-23"><a href="tse-formateo.html#cb242-23" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb242-24"><a href="tse-formateo.html#cb242-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
 <span id="cb242-25"><a href="tse-formateo.html#cb242-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">3</span>],</span>
 <span id="cb242-26"><a href="tse-formateo.html#cb242-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="st">&quot;I de 2019&quot;</span>,</span>
 <span id="cb242-27"><a href="tse-formateo.html#cb242-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">dataLabels =</span> <span class="fu">list</span>(<span class="at">enabled =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb242-28"><a href="tse-formateo.html#cb242-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;darksalmon&quot;</span></span>
+<span id="cb242-28"><a href="tse-formateo.html#cb242-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;#E9967A&quot;</span></span>
 <span id="cb242-29"><a href="tse-formateo.html#cb242-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
 <span id="cb242-30"><a href="tse-formateo.html#cb242-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">hc_add_series</span>(</span>
 <span id="cb242-31"><a href="tse-formateo.html#cb242-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> tab01[, <span class="dv">4</span>],</span>
@@ -599,9 +626,9 @@ Figura 9.3: Gráfico del <em>dataframe</em>
 <span id="cb242-40"><a href="tse-formateo.html#cb242-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>,</span>
 <span id="cb242-41"><a href="tse-formateo.html#cb242-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">yAxis =</span> <span class="dv">1</span></span>
 <span id="cb242-42"><a href="tse-formateo.html#cb242-42" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-162"></span>
-<div id="htmlwidget-2f99da3713dc5db8590c" style="width:100%;height:500px;" class="highchart html-widget"></div>
-<script type="application/json" data-for="htmlwidget-2f99da3713dc5db8590c">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":[{"title":{"text":"Millones de dólares"},"min":0,"max":100000},{"title":{"text":"Porcentaje"},"min":0,"max":100,"opposite":true}],"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"salmon"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"darksalmon"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"},{"data":[20.7,8.9,24.6,17.3,13.7],"name":"Diferencia porcentual","dataLabels":{"enabled":true,"format":"{point.y} %"},"color":"darkblue","yAxis":1}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"dataLabels":{"valueDecimals":2},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-81"></span>
+<div id="htmlwidget-a321ca1a488e612a6e2c" style="width:100%;height:500px;" class="highchart html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a321ca1a488e612a6e2c">{"x":{"hc_opts":{"chart":{"reflow":true,"type":"column"},"title":{"text":"Cifra de negocio de las 5 mayores tecnológicas"},"yAxis":[{"title":{"text":"Millones de dólares"},"min":0,"max":100000},{"title":{"text":"Porcentaje"},"min":0,"max":100,"opposite":true}],"credits":{"enabled":false},"exporting":{"enabled":false},"boost":{"enabled":false},"plotOptions":{"series":{"label":{"enabled":false},"turboThreshold":0},"treemap":{"layoutAlgorithm":"squarified"}},"xAxis":{"categories":["Amazon","Apple","Facebook","Google","Microsoft"]},"series":[{"data":[87400,91819,21082,46075,36906],"name":"IV de 2018","dataLabels":{"enabled":true},"color":"#FA8072"},{"data":[72400,84310,16914,39276,32471],"name":"I de 2019","dataLabels":{"enabled":true},"color":"#E9967A"},{"data":[15000,7509,4168,6799,4435],"name":"Diferencia","dataLabels":{"enabled":true},"color":"teal"},{"data":[20.7,8.9,24.6,17.3,13.7],"name":"Diferencia porcentual","dataLabels":{"enabled":true,"format":"{point.y} %"},"color":"darkblue","yAxis":1}]},"theme":{"colors":["#47475c","#61BC7B","#508CC8","#F49952","#9C9EDB","#6699a1"],"chart":{"style":{"fontFamily":"Roboto","color":"#666666"}},"title":{"align":"left","style":{"fontFamily":"Alegreya Sans SC","fontSize":"24px"}},"subtitle":{"align":"left","style":{"fontFamily":"Alegreya Sans","fontSize":"16px"}},"caption":{"style":{"fontFamily":"Alegreya Sans","fontSize":"14px"}},"credits":{"style":{"fontFamily":"Roboto","fontSize":"10px"}},"legend":{"align":"right","verticalAlign":"bottom"},"xAxis":{"gridLineWidth":1,"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"yAxis":{"gridLineColor":"#F3F3F3","lineColor":"#F3F3F3","minorGridLineColor":"#F3F3F3","tickColor":"#F3F3F3","tickWidth":1},"plotOptions":{"line":{"marker":{"enabled":false}},"spline":{"marker":{"enabled":false}},"area":{"marker":{"enabled":false}},"areaspline":{"marker":{"enabled":false}},"arearange":{"marker":{"enabled":false}},"bubble":{"maxSize":"10%"}},"dataLabels":{"valueDecimals":2},"tooltip":{"valueDecimals":2}},"conf_opts":{"global":{"Date":null,"VMLRadialGradientURL":"http =//code.highcharts.com/list(version)/gfx/vml-radial-gradient.png","canvasToolsURL":"http =//code.highcharts.com/list(version)/modules/canvas-tools.js","getTimezoneOffset":null,"timezoneOffset":0,"useUTC":true},"lang":{"contextButtonTitle":"Chart context menu","decimalPoint":".","downloadJPEG":"Download JPEG image","downloadPDF":"Download PDF document","downloadPNG":"Download PNG image","downloadSVG":"Download SVG vector image","drillUpText":"Back to {series.name}","invalidDate":null,"loading":"Loading...","months":["January","February","March","April","May","June","July","August","September","October","November","December"],"noData":"No data to display","numericSymbols":["k","M","G","T","P","E"],"printChart":"Print chart","resetZoom":"Reset zoom","resetZoomTitle":"Reset zoom level 1:1","shortMonths":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"thousandsSep":" ","weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]}},"type":"chart","fonts":["Roboto","Alegreya+Sans+SC","Alegreya+Sans"],"debug":false},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figura 9.4: Gráfico del <em>dataframe</em>
 </p>
@@ -1417,7 +1444,7 @@ Microsoft
 <span id="cb250-7"><a href="tse-formateo.html#cb250-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(</span>
 <span id="cb250-8"><a href="tse-formateo.html#cb250-8" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>,</span>
 <span id="cb250-9"><a href="tse-formateo.html#cb250-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb250-10"><a href="tse-formateo.html#cb250-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">ifelse</span>(tab01<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&quot;green&quot;</span>, <span class="st">&quot;salmon&quot;</span>),</span>
+<span id="cb250-10"><a href="tse-formateo.html#cb250-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">ifelse</span>(tab01<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&quot;#3CB371&quot;</span>, <span class="st">&quot;#FA8072&quot;</span>),</span>
 <span id="cb250-11"><a href="tse-formateo.html#cb250-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">popover =</span> <span class="fu">paste</span>(tab01[, <span class="dv">1</span>])</span>
 <span id="cb250-12"><a href="tse-formateo.html#cb250-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1454,7 +1481,7 @@ Amazon
 <td style="text-align:right;">
 15000
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Amazon">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Amazon">
 20.7
 </td>
 </tr>
@@ -1471,7 +1498,7 @@ Apple
 <td style="text-align:right;">
 7509
 </td>
-<td style="text-align:right;color: white !important;background-color: salmon !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Apple">
+<td style="text-align:right;color: white !important;background-color: #FA8072 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Apple">
 8.9
 </td>
 </tr>
@@ -1488,7 +1515,7 @@ Facebook
 <td style="text-align:right;">
 4168
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Facebook">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Facebook">
 24.6
 </td>
 </tr>
@@ -1505,7 +1532,7 @@ Google
 <td style="text-align:right;">
 6799
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Google">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Google">
 17.3
 </td>
 </tr>
@@ -1522,7 +1549,7 @@ Microsoft
 <td style="text-align:right;">
 4435
 </td>
-<td style="text-align:right;color: white !important;background-color: salmon !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Microsoft">
+<td style="text-align:right;color: white !important;background-color: #FA8072 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Microsoft">
 13.7
 </td>
 </tr>
@@ -1657,7 +1684,7 @@ Microsoft
 <span id="cb252-8"><a href="tse-formateo.html#cb252-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
 <span id="cb252-9"><a href="tse-formateo.html#cb252-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">bold =</span> <span class="cn">TRUE</span></span>
 <span id="cb252-10"><a href="tse-formateo.html#cb252-10" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb252-11"><a href="tse-formateo.html#cb252-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">align =</span> <span class="st">&quot;center&quot;</span>, <span class="at">background =</span> <span class="st">&quot;lightsalmon&quot;</span>)</span></code></pre></div>
+<span id="cb252-11"><a href="tse-formateo.html#cb252-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">row_spec</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="at">align =</span> <span class="st">&quot;center&quot;</span>, <span class="at">background =</span> <span class="st">&quot;light#FA8072&quot;</span>)</span></code></pre></div>
 <table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1680,87 +1707,87 @@ difpct
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:left;background-color: light#FA8072 !important;text-align: center;">
 Amazon
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 87400
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 72400
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 15000
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 20.7
 </td>
 </tr>
 <tr>
-<td style="text-align:left;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:left;background-color: light#FA8072 !important;text-align: center;">
 Apple
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 91819
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 84310
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 7509
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 8.9
 </td>
 </tr>
 <tr>
-<td style="text-align:left;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:left;background-color: light#FA8072 !important;text-align: center;">
 Facebook
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 21082
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 16914
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 4168
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 24.6
 </td>
 </tr>
 <tr>
-<td style="text-align:left;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:left;background-color: light#FA8072 !important;text-align: center;">
 Google
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 46075
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 39276
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 6799
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 17.3
 </td>
 </tr>
 <tr>
-<td style="text-align:left;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:left;background-color: light#FA8072 !important;text-align: center;">
 Microsoft
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 36906
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 32471
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 4435
 </td>
-<td style="text-align:right;background-color: lightsalmon !important;text-align: center;">
+<td style="text-align:right;background-color: light#FA8072 !important;text-align: center;">
 13.7
 </td>
 </tr>
@@ -1788,7 +1815,7 @@ Microsoft
 <span id="cb253-15"><a href="tse-formateo.html#cb253-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&quot;teal&quot;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb253-16"><a href="tse-formateo.html#cb253-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">5</span>,</span>
 <span id="cb253-17"><a href="tse-formateo.html#cb253-17" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb253-18"><a href="tse-formateo.html#cb253-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02<span class="sc">$</span>difpct), <span class="st">&quot;green&quot;</span>, <span class="st">&quot;salmon&quot;</span>))</span></code></pre></div>
+<span id="cb253-18"><a href="tse-formateo.html#cb253-18" aria-hidden="true" tabindex="-1"></a>              <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02<span class="sc">$</span>difpct), <span class="st">&quot;#3CB371&quot;</span>, <span class="st">&quot;#FA8072&quot;</span>))</span></code></pre></div>
 <table class="table table-hover" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1823,7 +1850,7 @@ difpct
 <td style="text-align:right;">
 15000
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;">
 20.7
 </td>
 </tr>
@@ -1840,7 +1867,7 @@ difpct
 <td style="text-align:right;">
 7509
 </td>
-<td style="text-align:right;color: white !important;background-color: salmon !important;">
+<td style="text-align:right;color: white !important;background-color: #FA8072 !important;">
 8.9
 </td>
 </tr>
@@ -1857,7 +1884,7 @@ difpct
 <td style="text-align:right;">
 4168
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;">
 24.6
 </td>
 </tr>
@@ -1874,7 +1901,7 @@ difpct
 <td style="text-align:right;">
 6799
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;">
 17.3
 </td>
 </tr>
@@ -1891,7 +1918,7 @@ difpct
 <td style="text-align:right;">
 4435
 </td>
-<td style="text-align:right;color: white !important;background-color: salmon !important;">
+<td style="text-align:right;color: white !important;background-color: #FA8072 !important;">
 13.7
 </td>
 </tr>
@@ -1903,7 +1930,7 @@ difpct
 <div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="tse-formateo.html#cb254-1" aria-hidden="true" tabindex="-1"></a>tab02 <span class="ot">&lt;-</span> tab01</span>
 <span id="cb254-2"><a href="tse-formateo.html#cb254-2" aria-hidden="true" tabindex="-1"></a>tab02[, <span class="dv">2</span>] <span class="ot">&lt;-</span></span>
 <span id="cb254-3"><a href="tse-formateo.html#cb254-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(tab02[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02[, <span class="dv">2</span>]), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&quot;arrow-circle-up&quot;</span>, <span class="at">fill =</span></span>
-<span id="cb254-4"><a href="tse-formateo.html#cb254-4" aria-hidden="true" tabindex="-1"></a>                                                               <span class="st">&quot;green&quot;</span>)), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&quot;arrow-circle-down&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>)))</span>
+<span id="cb254-4"><a href="tse-formateo.html#cb254-4" aria-hidden="true" tabindex="-1"></a>                                                               <span class="st">&quot;#3CB371&quot;</span>)), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&quot;arrow-circle-down&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>)))</span>
 <span id="cb254-5"><a href="tse-formateo.html#cb254-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab02, <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb254-6"><a href="tse-formateo.html#cb254-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
 <span id="cb254-7"><a href="tse-formateo.html#cb254-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</span>
@@ -1913,7 +1940,7 @@ difpct
 <span id="cb254-11"><a href="tse-formateo.html#cb254-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(</span>
 <span id="cb254-12"><a href="tse-formateo.html#cb254-12" aria-hidden="true" tabindex="-1"></a>    <span class="dv">5</span>,</span>
 <span id="cb254-13"><a href="tse-formateo.html#cb254-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb254-14"><a href="tse-formateo.html#cb254-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&quot;green&quot;</span>, <span class="st">&quot;salmon&quot;</span>),</span>
+<span id="cb254-14"><a href="tse-formateo.html#cb254-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&quot;#3CB371&quot;</span>, <span class="st">&quot;#FA8072&quot;</span>),</span>
 <span id="cb254-15"><a href="tse-formateo.html#cb254-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">popover =</span> <span class="fu">paste</span>(tab02[, <span class="dv">1</span>])</span>
 <span id="cb254-16"><a href="tse-formateo.html#cb254-16" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1942,7 +1969,7 @@ difpct
 Amazon
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-87400 <svg style="height:0.8em;top:.04em;position:relative;fill:green;" viewbox="0 0 512 512"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
+87400 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#3CB371;overflow:visible;position:relative;"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 72400
@@ -1950,7 +1977,7 @@ Amazon
 <td style="text-align:right;">
 15000
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Amazon">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Amazon">
 20.7
 </td>
 </tr>
@@ -1959,7 +1986,7 @@ Amazon
 Apple
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-91819 <svg style="height:0.8em;top:.04em;position:relative;fill:green;" viewbox="0 0 512 512"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
+91819 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#3CB371;overflow:visible;position:relative;"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 84310
@@ -1967,7 +1994,7 @@ Apple
 <td style="text-align:right;">
 7509
 </td>
-<td style="text-align:right;color: white !important;background-color: salmon !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Apple">
+<td style="text-align:right;color: white !important;background-color: #FA8072 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Apple">
 8.9
 </td>
 </tr>
@@ -1976,7 +2003,7 @@ Apple
 Facebook
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-21082 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
+21082 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 16914
@@ -1984,7 +2011,7 @@ Facebook
 <td style="text-align:right;">
 4168
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Facebook">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Facebook">
 24.6
 </td>
 </tr>
@@ -1993,7 +2020,7 @@ Facebook
 Google
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-46075 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
+46075 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 39276
@@ -2001,7 +2028,7 @@ Google
 <td style="text-align:right;">
 6799
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Google">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Google">
 17.3
 </td>
 </tr>
@@ -2010,7 +2037,7 @@ Google
 Microsoft
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-36906 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
+36906 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 32471
@@ -2018,7 +2045,7 @@ Microsoft
 <td style="text-align:right;">
 4435
 </td>
-<td style="text-align:right;color: white !important;background-color: salmon !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Microsoft">
+<td style="text-align:right;color: white !important;background-color: #FA8072 !important;" data-toggle="popover" data-container="body" data-trigger="hover" data-placement="right" data-content="Microsoft">
 13.7
 </td>
 </tr>
@@ -2030,9 +2057,9 @@ Microsoft
 <p>Dado que no tenemos datos para poder representar, vamos a suponer una serie de datos para cada empresa y vamos a hacer un gráfico de líneas de tipo <code>sparkline</code>, que vamos a integra como una columna más de nuestra tabla. <code>sparkline</code> es un paquete de R que utiliza la librería <code>jquery sparklines</code> para presentar gráficos minimalistas y ser integrados en nuestros <strong>dataframe</strong>, y por tanto, publicados en tablas.</p>
 <p>En primer lugar creamos la serie de datos para cada empresa y lo vamos a hacer usando la función <code>sample()</code> que nos aportará 15 valores aleatorios entre 1 y 100 con posibilidad de repetición. Esta es una fórmula muy sencilla que se utiliza mucho en R para crear datos de test.</p>
 <div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="tse-formateo.html#cb255-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sparkline</span>(<span class="dv">0</span>) <span class="co">#inicializamos la función sparkline</span></span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-175"></span>
-<span id="htmlwidget-a51023b36d5686c4eae0" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-a51023b36d5686c4eae0">{"x":{"values":0,"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-94"></span>
+<span id="htmlwidget-84c2d7cf0cbf1b43ab67" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-84c2d7cf0cbf1b43ab67">{"x":{"values":0,"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 <p class="caption">
 Figura 9.5: Tabla con elementos de imagen y <em>sparkline</em>
 </p>
@@ -2111,8 +2138,8 @@ Amazon
 20.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-c68bba5e30fdf462e9ba" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-c68bba5e30fdf462e9ba">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-e30d124a0e46a3b9add8" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-e30d124a0e46a3b9add8">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2132,8 +2159,8 @@ Apple
 8.9
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-6844b0090a811cb71f1d" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-6844b0090a811cb71f1d">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-710b11e5324be83f091f" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-710b11e5324be83f091f">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2153,8 +2180,8 @@ Facebook
 24.6
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-4f2391eaab15e8af2e91" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-4f2391eaab15e8af2e91">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-02c86e6021154cd59c5a" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-02c86e6021154cd59c5a">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2174,8 +2201,8 @@ Google
 17.3
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-672f39d7d12613f4b963" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-672f39d7d12613f4b963">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-0080d6e11c4218e3167e" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-0080d6e11c4218e3167e">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2195,8 +2222,8 @@ Microsoft
 13.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-6a694bbd454696385e3d" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-6a694bbd454696385e3d">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-fe838897c3183ee47890" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-fe838897c3183ee47890">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </tbody>
@@ -2206,7 +2233,7 @@ Microsoft
 <div class="sourceCode" id="cb259"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb259-1"><a href="tse-formateo.html#cb259-1" aria-hidden="true" tabindex="-1"></a>tab02 <span class="ot">&lt;-</span> tab03</span>
 <span id="cb259-2"><a href="tse-formateo.html#cb259-2" aria-hidden="true" tabindex="-1"></a>tab02[, <span class="dv">2</span>] <span class="ot">&lt;-</span></span>
 <span id="cb259-3"><a href="tse-formateo.html#cb259-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ifelse</span>(tab02[, <span class="dv">2</span>] <span class="sc">&gt;</span> <span class="fu">mean</span>(tab02[, <span class="dv">2</span>]), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&quot;arrow-circle-up&quot;</span>, <span class="at">fill =</span></span>
-<span id="cb259-4"><a href="tse-formateo.html#cb259-4" aria-hidden="true" tabindex="-1"></a>                                                               <span class="st">&quot;green&quot;</span>)), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&quot;arrow-circle-down&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>)))</span>
+<span id="cb259-4"><a href="tse-formateo.html#cb259-4" aria-hidden="true" tabindex="-1"></a>                                                               <span class="st">&quot;#3CB371&quot;</span>)), <span class="fu">paste</span>(tab02[, <span class="dv">2</span>], <span class="fu">fa</span>(<span class="st">&quot;arrow-circle-down&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;red&quot;</span>)))</span>
 <span id="cb259-5"><a href="tse-formateo.html#cb259-5" aria-hidden="true" tabindex="-1"></a><span class="fu">kbl</span>(tab02, <span class="at">escape =</span> <span class="cn">FALSE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb259-6"><a href="tse-formateo.html#cb259-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">kable_styling</span>(</span>
 <span id="cb259-7"><a href="tse-formateo.html#cb259-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>, <span class="st">&quot;responsive&quot;</span>),</span>
@@ -2215,7 +2242,7 @@ Microsoft
 <span id="cb259-10"><a href="tse-formateo.html#cb259-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">2</span>, <span class="at">color =</span> <span class="st">&quot;teal&quot;</span>, <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb259-11"><a href="tse-formateo.html#cb259-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">column_spec</span>(<span class="dv">5</span>,</span>
 <span id="cb259-12"><a href="tse-formateo.html#cb259-12" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">&quot;white&quot;</span>,</span>
-<span id="cb259-13"><a href="tse-formateo.html#cb259-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&quot;green&quot;</span>, <span class="st">&quot;salmon&quot;</span>))</span></code></pre></div>
+<span id="cb259-13"><a href="tse-formateo.html#cb259-13" aria-hidden="true" tabindex="-1"></a>              <span class="at">background =</span> <span class="fu">ifelse</span>(tab02<span class="sc">$</span>difpct <span class="sc">&gt;</span> <span class="fu">mean</span>(tab01<span class="sc">$</span>difpct), <span class="st">&quot;#3CB371&quot;</span>, <span class="st">&quot;#FA8072&quot;</span>))</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -2245,7 +2272,7 @@ sparkline
 Amazon
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-87400 <svg style="height:0.8em;top:.04em;position:relative;fill:green;" viewbox="0 0 512 512"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
+87400 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#3CB371;overflow:visible;position:relative;"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 72400
@@ -2253,12 +2280,12 @@ Amazon
 <td style="text-align:right;">
 15000
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;">
 20.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-c68bba5e30fdf462e9ba" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-c68bba5e30fdf462e9ba">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-e30d124a0e46a3b9add8" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-e30d124a0e46a3b9add8">{"x":{"values":[64,70,86,76,54,65,71,82,4,82,79,17,56,49,91],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2266,7 +2293,7 @@ Amazon
 Apple
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-91819 <svg style="height:0.8em;top:.04em;position:relative;fill:green;" viewbox="0 0 512 512"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
+91819 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:#3CB371;overflow:visible;position:relative;"><path d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm143.6 28.9l72.4-75.5V392c0 13.3 10.7 24 24 24h16c13.3 0 24-10.7 24-24V209.4l72.4 75.5c9.3 9.7 24.8 9.9 34.3.4l10.9-11c9.4-9.4 9.4-24.6 0-33.9L273 107.7c-9.4-9.4-24.6-9.4-33.9 0L106.3 240.4c-9.4 9.4-9.4 24.6 0 33.9l10.9 11c9.6 9.5 25.1 9.3 34.4-.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 84310
@@ -2274,12 +2301,12 @@ Apple
 <td style="text-align:right;">
 7509
 </td>
-<td style="text-align:right;color: white !important;background-color: salmon !important;">
+<td style="text-align:right;color: white !important;background-color: #FA8072 !important;">
 8.9
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-6844b0090a811cb71f1d" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-6844b0090a811cb71f1d">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-710b11e5324be83f091f" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-710b11e5324be83f091f">{"x":{"values":[85,85,17,42,35,29,75,88,13,18,75,4,27,27,59],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2287,7 +2314,7 @@ Apple
 Facebook
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-21082 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
+21082 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 16914
@@ -2295,12 +2322,12 @@ Facebook
 <td style="text-align:right;">
 4168
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;">
 24.6
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-4f2391eaab15e8af2e91" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-4f2391eaab15e8af2e91">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-02c86e6021154cd59c5a" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-02c86e6021154cd59c5a">{"x":{"values":[71,80,7,42,91,4,26,75,66,44,21,73,9,65,36],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2308,7 +2335,7 @@ Facebook
 Google
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-46075 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
+46075 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 39276
@@ -2316,12 +2343,12 @@ Google
 <td style="text-align:right;">
 6799
 </td>
-<td style="text-align:right;color: white !important;background-color: green !important;">
+<td style="text-align:right;color: white !important;background-color: #3CB371 !important;">
 17.3
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-672f39d7d12613f4b963" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-672f39d7d12613f4b963">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-0080d6e11c4218e3167e" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-0080d6e11c4218e3167e">{"x":{"values":[43,28,30,85,57,23,46,93,3,47,54,27,96,4,17],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 <tr>
@@ -2329,7 +2356,7 @@ Google
 Microsoft
 </td>
 <td style="text-align:left;font-weight: bold;color: teal !important;">
-36906 <svg style="height:0.8em;top:.04em;position:relative;fill:red;" viewbox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
+36906 <svg aria-hidden="true" role="img" viewbox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zm-143.6-28.9L288 302.6V120c0-13.3-10.7-24-24-24h-16c-13.3 0-24 10.7-24 24v182.6l-72.4-75.5c-9.3-9.7-24.8-9.9-34.3-.4l-10.9 11c-9.4 9.4-9.4 24.6 0 33.9L239 404.3c9.4 9.4 24.6 9.4 33.9 0l132.7-132.7c9.4-9.4 9.4-24.6 0-33.9l-10.9-11c-9.5-9.5-25-9.3-34.3.4z"></path></svg>
 </td>
 <td style="text-align:right;">
 32471
@@ -2337,12 +2364,12 @@ Microsoft
 <td style="text-align:right;">
 4435
 </td>
-<td style="text-align:right;color: white !important;background-color: salmon !important;">
+<td style="text-align:right;color: white !important;background-color: #FA8072 !important;">
 13.7
 </td>
 <td style="text-align:left;">
-<span id="htmlwidget-6a694bbd454696385e3d" class="sparkline html-widget"></span>
-<script type="application/json" data-for="htmlwidget-6a694bbd454696385e3d">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
+<span id="htmlwidget-fe838897c3183ee47890" class="sparkline html-widget"></span>
+<script type="application/json" data-for="htmlwidget-fe838897c3183ee47890">{"x":{"values":[20,55,21,72,9,25,72,100,84,18,30,6,72,99,95],"options":{"height":20,"width":60},"width":60,"height":20},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </tbody>
@@ -2381,6 +2408,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin"]
 },
 "fontsettings": {

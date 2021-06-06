@@ -1,6 +1,0 @@
-"0","as.datatable_widget(data %>% "
-"0","    tab_cols(per) %>% "
-"0","    tab_rows(emp) %>% "
-"0","    tab_cells(ing) %>% "
-"0","    tab_stat_sum() %>%"
-"0","    tab_pivot())"
