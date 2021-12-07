@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>3 Tablas marginales | Tablas y graficos con R y R Studio</title>
   <meta name="description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
-  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="3 Tablas marginales | Tablas y graficos con R y R Studio" />
   <meta property="og:type" content="book" />
@@ -32,8 +32,9 @@
   
 <link rel="prev" href="tse02.html"/>
 <link rel="next" href="tse04.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
-<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,17 +50,16 @@
 
 
 
-
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.18/datatables.js"></script>
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
+<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
 <script src="libs/proj4js-2.3.15/proj4.js"></script>
 <link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
 <script src="libs/highcharts-8.1.2/highcharts.js"></script>
@@ -101,10 +101,10 @@
 <script src="libs/highcharts-8.1.2/custom/reset.js"></script>
 <script src="libs/highcharts-8.1.2/modules/boost.js"></script>
 <script src="libs/highchart-binding-0.8.2/highchart.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
 <script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 <link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
@@ -307,10 +307,8 @@ div.csl-indent {
 <li class="chapter" data-level="6.5.1" data-path="tse06.html"><a href="tse06.html#subtotales"><i class="fa fa-check"></i><b>6.5.1</b> Subtotales</a></li>
 <li class="chapter" data-level="6.5.2" data-path="tse06.html"><a href="tse06.html#nets"><i class="fa fa-check"></i><b>6.5.2</b> NETS</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="tse06.html"><a href="tse06.html#top-y-bottom"><i class="fa fa-check"></i><b>6.6</b> <em>Top</em> y <em>Bottom</em></a>
-<ul>
-<li class="chapter" data-level="6.6.1" data-path="tse06.html"><a href="tse06.html#gráficos-base"><i class="fa fa-check"></i><b>6.6.1</b> Gráficos base</a></li>
-</ul></li>
+<li class="chapter" data-level="6.6" data-path="tse06.html"><a href="tse06.html#top-y-bottom"><i class="fa fa-check"></i><b>6.6</b> <em>Top</em> y <em>Bottom</em></a></li>
+<li class="chapter" data-level="6.7" data-path="tse06.html"><a href="tse06.html#gráficos-base"><i class="fa fa-check"></i><b>6.7</b> Gráficos base</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="tse07.html"><a href="tse07.html"><i class="fa fa-check"></i><b>7</b> Pruebas inferenciales</a>
 <ul>
@@ -329,7 +327,6 @@ div.csl-indent {
 <li class="chapter" data-level="7.3.1" data-path="tse07.html"><a href="tse07.html#algunos-ejemplos-de-uso-de-los-parámetros"><i class="fa fa-check"></i><b>7.3.1</b> Algunos ejemplos de uso de los parámetros</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="tse07.html"><a href="tse07.html#conclusión-al-uso-del-paquete-expss"><i class="fa fa-check"></i><b>7.4</b> Conclusión al uso del paquete expss</a></li>
-<li class="chapter" data-level="7.5" data-path="tse07.html"><a href="tse07.html#section"><i class="fa fa-check"></i><b>7.5</b> —</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="tse08.html"><a href="tse08.html"><i class="fa fa-check"></i><b>8</b> Visualización gráfica</a>
 <ul>
@@ -442,11 +439,550 @@ div.csl-indent {
 <li>y el cálculo a hacer <em>cro_mean</em> (equivalente a calcula la media <em>mean</em>) en forma de tabla.</li>
 </ul>
 <p>Así pues, crea un fichero R MarkDown como vimos en la sección <a href="tse02.html#tse02">2</a>, y escribe este código (o mejor <em>copy&amp;paste</em>) y obtén el resultado …</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tse03.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/R/r-projects/00.tables&quot;</span>) <span class="co"># esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)</span></span>
-<span id="cb3-2"><a href="tse03.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(expss) <span class="co">#cargamos el paquete</span></span>
-<span id="cb3-3"><a href="tse03.html#cb3-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;data/3192.sav&quot;</span>) <span class="co">#cargamos los datos</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tse03.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;~/R/r-projects/00.tables&quot;</span>) <span class="co"># esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)</span></span>
+<span id="cb5-2"><a href="tse03.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(expss) <span class="co">#cargamos el paquete</span></span>
+<span id="cb5-3"><a href="tse03.html#cb5-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;data/3192.sav&quot;</span>) <span class="co">#cargamos los datos</span></span></code></pre></div>
 <pre><code>## re-encoding from UTF-8</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tse03.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate</span>(data, <span class="fu">cro_mean</span>(PESO)) <span class="co">#hacemos el cálculo</span></span></code></pre></div>
+<pre><code>## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE
+
+## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
+## be specified by the caller; using TRUE</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tse03.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">calculate</span>(data, <span class="fu">cro_mean</span>(PESO)) <span class="co">#hacemos el cálculo</span></span></code></pre></div>
 <table class="gmisc_table" style="border-collapse: collapse; margin-top: 1em; margin-bottom: 1em;">
 <thead>
 <tr>
@@ -481,21 +1017,21 @@ div.csl-indent {
 <div id="cálculo-de-frecuencias-estilo-spss" class="section level4" number="3.2.1.1">
 <h4><span class="header-section-number">3.2.1.1</span> Cálculo de frecuencias (estilo SPSS)</h4>
 <p>Utilizaremos en estos ejemplos de forma inicial un campo del marco de datos, <code>P31</code>, de respuesta simple. La primera tabla que haremos responde a un recuento de frecuencias, y es muy usada para el análisis univariante de una campo. Este comando muestra una tabla básica utilizando la función <code>fre()</code> que copia la salida del SPSS. Nótese que la columna de porcentaje válido y porcentaje es igual ante la inexistencia de NA (valores perdidos).</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tse03.html#cb6-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">fre</span>(data<span class="sc">$</span>P31)</span>
-<span id="cb6-2"><a href="tse03.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(tab)</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-4"></span>
-<div id="htmlwidget-36089c852891af4b90bc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-36089c852891af4b90bc">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Hombre","Mujer","#Total","&lt;NA&gt;"],[1256,1301,2557,0],[49.1,50.9,100,null],[49.1,50.9,100,0],[49.1,50.9,100,null],[49.1,100,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Count\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Valid percent\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Percent\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Responses, %\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Cumulative responses, %\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tse03.html#cb9-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">fre</span>(data<span class="sc">$</span>P31)</span>
+<span id="cb9-2"><a href="tse03.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(tab)</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<div id="htmlwidget-f622ff0cd8889e503f05" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f622ff0cd8889e503f05">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Hombre","Mujer","#Total","&lt;NA&gt;"],[1256,1301,2557,0],[49.1,50.9,100,null],[49.1,50.9,100,0],[49.1,50.9,100,null],[49.1,100,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Count\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Valid percent\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Percent\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Responses, %\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Cumulative responses, %\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.1: Frecuencias marginales de P31, estilo SPSS
 </p>
 </div>
 <p>Alternativamente se puede presentar la forma que trabajaremos a lo largo de este curso, esta forma es la denominada script encadenado, donde definimos el marco de datos al inicio, y encadenamos instrucciones con el símbolo %&gt;% que irían línea a línea sucesivamente para una mejor lectura y comprensión del texto escrito; podrían perfectamente ir en una línea. Nótese que la tabla sale igual con las dos formas, pero mientras que en el primer caso se usa la nomenclatura estándar de R, y el campo se llama <code>data$P31</code>, es decir nombre del marco de datos en R (data) el símbolo del <code>$</code> que separa y nombre del campo en el marco de datos <code>P31</code> en la segunda al definir de inicio que se utilizará <code>data</code> ya se usa el nombre <code>P31</code> directamente, aunque debamos dar la orden de cálculo con el comando <code>calculate()</code>.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tse03.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span>  </span>
-<span id="cb7-2"><a href="tse03.html#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="fu">fre</span>(P31)))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-5"></span>
-<div id="htmlwidget-0e9ce6849aeeec3eefb8" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0e9ce6849aeeec3eefb8">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Hombre","Mujer","#Total","&lt;NA&gt;"],[1256,1301,2557,0],[49.1,50.9,100,null],[49.1,50.9,100,0],[49.1,50.9,100,null],[49.1,100,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Count\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Valid percent\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Percent\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Responses, %\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Cumulative responses, %\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tse03.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span>  </span>
+<span id="cb10-2"><a href="tse03.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">calculate</span>(<span class="fu">fre</span>(P31)))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<div id="htmlwidget-2341b3adaa5aff9fab81" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2341b3adaa5aff9fab81">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Hombre","Mujer","#Total","&lt;NA&gt;"],[1256,1301,2557,0],[49.1,50.9,100,null],[49.1,50.9,100,0],[49.1,50.9,100,null],[49.1,100,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Count\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Valid percent\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Percent\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Responses, %\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Cumulative responses, %\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.2: Frecuencias marginalesde P31 en tabla
 </p>
@@ -513,25 +1049,25 @@ Figura 3.2: Frecuencias marginalesde P31 en tabla
 <p>Estos elementos básicos pueden completarse con campos de columnas, campos de filas, pruebas de significación, etc. Iremos desarrollando estos conceptos a lo largo de este documento. ¡Vamos a por el cuadro!</p>
 <p>La que ahora entregamos, es la estructura básica de un script de R con el paquete <code>expss</code>. A lo largo del documento veremos cómo ir introduciendo mínimas variaciones a esta estructura que te permitirán descubrir un sinnúmero de posibilidades que ofrece este paquete de R. Por ejemplo, podemos modificar la etiqueta de TOTAL o indicar donde debe situarse la fila que contiene el cálculo TOTAL. Todas estas posibilidades las puedes conocer en la documentación original del <em>package</em>, aunque en este manual trataremos de ir desgranado las más relevantes para nuestro objetivo. Inicialmente iremos añadiendo tras el operador <code>%&gt;%</code> comentarios precedidos por el símbolo <code>#</code>. Estos comentarios irán desapareciendo a medida que avancemos en el manual, y sólo se recurrirá a ellos cuando se aporte alguna nueva funcionalidad.</p>
 <p>Para este primer script, indicaremos que usamos la fuente de datos (<em>dataframe</em>) ya cargado en el análisis. En R Studio, el <em>dataframe</em> tendrá el nombre que le hayas indicado en la carga -en nuestro caso <em>data</em>-. Redactamos pues nuestro script, donde identificamos el <em>dataframe</em>, el campo <code>P31</code> del cual vamos a calcular el número de casos:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="tse03.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="tse03.html#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span></span>
-<span id="cb8-3"><a href="tse03.html#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb8-4"><a href="tse03.html#cb8-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-6"></span>
-<div id="htmlwidget-137f6102ecc489bffe03" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-137f6102ecc489bffe03">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["Hombre","Mujer","#Total cases"],[1256,1301,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tse03.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="tse03.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="tse03.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="tse03.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<div id="htmlwidget-af3aac82a7c12a9acf70" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-af3aac82a7c12a9acf70">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["Hombre","Mujer","#Total cases"],[1256,1301,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.3: Frecuencias de P31
 </p>
 </div>
 <p>Realicemos ahora una pequeña pero importante variación en el cálculo del estadístico casos -frecuencias- y utilicemos la posibilidad de ubicar donde queramos el total de casos, así como su etiqueta. Ello lo hacemos con <code>total_row_position = "above", label = "Casos"</code> aplicado a la función <code>tab_stat_cases()</code>.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="tse03.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb9-2"><a href="tse03.html#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
-<span id="cb9-3"><a href="tse03.html#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;above&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="tse03.html#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-7"></span>
-<div id="htmlwidget-af7b17951d9ad8edcd3a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-af7b17951d9ad8edcd3a">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["#Total cases","Hombre","Mujer"],["Casos","Casos","Casos"],[2557,1256,1301]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tse03.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb12-2"><a href="tse03.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="tse03.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;above&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="tse03.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<div id="htmlwidget-6e27282b4100f3279b80" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6e27282b4100f3279b80">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["#Total cases","Hombre","Mujer"],["Casos","Casos","Casos"],[2557,1256,1301]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.4: Frecuencias de P31, moviendo el Total
 </p>
@@ -540,13 +1076,13 @@ Figura 3.4: Frecuencias de P31, moviendo el Total
 <div id="tablas-de-frecuencias-relativas" class="section level4" number="3.2.1.3">
 <h4><span class="header-section-number">3.2.1.3</span> Tablas de frecuencias relativas</h4>
 <p>Si en lugar de obtener casos (valores absolutos) queremos sacar valores porcentuales, el cambio es mínimo. Usaremos el comando <code>tab_stat_cpct()</code>para indicarlo.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="tse03.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="tse03.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="tse03.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">total_row_position =</span> <span class="st">&quot;above&quot;</span>, <span class="at">label =</span> <span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-4"><a href="tse03.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-8"></span>
-<div id="htmlwidget-f7f2f4ff649d1f1722c7" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f7f2f4ff649d1f1722c7">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["#Total cases","Hombre","Mujer"],["% casos","% casos","% casos"],[2557,49.1,50.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tse03.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="tse03.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="tse03.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">total_row_position =</span> <span class="st">&quot;above&quot;</span>, <span class="at">label =</span> <span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-4"><a href="tse03.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<div id="htmlwidget-700ca911bfa1451e7710" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-700ca911bfa1451e7710">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["#Total cases","Hombre","Mujer"],["% casos","% casos","% casos"],[2557,49.1,50.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.5: Porcentajes de P31
 </p>
@@ -555,40 +1091,40 @@ Figura 3.5: Porcentajes de P31
 <div id="tablas-de-absolutos-y-realativos-juntos" class="section level4" number="3.2.1.4">
 <h4><span class="header-section-number">3.2.1.4</span> Tablas de absolutos y realativos (juntos)</h4>
 <p>Cuando deseamos hacer combinaciones de frecuencias y porcentajes, la filosofía de trabajo es muy parecida. En nuestro caso vamos a hacer algo muy típico. Aunque creo que resulta más sencillo leer cada estadístico en su tabla, hay ocasiones en las que la comparativa es muy necesaria y por tanto es necesario unir los estadísticos en la misma tabla. Nótese la diferencia con el siguiente cuadro…</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="tse03.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb11-2"><a href="tse03.html#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-3"><a href="tse03.html#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;above&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="tse03.html#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label =</span> <span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb11-5"><a href="tse03.html#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-9"></span>
-<div id="htmlwidget-80aaaa26032c3c5b9d3e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-80aaaa26032c3c5b9d3e">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["#Total cases","Hombre","Mujer"],[2557,1256,1301],[2557,49.1,50.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tse03.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="tse03.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
+<span id="cb14-3"><a href="tse03.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;above&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="tse03.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label =</span> <span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb14-5"><a href="tse03.html#cb14-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<div id="htmlwidget-473bcf67f615f922eb53" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-473bcf67f615f922eb53">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["#Total cases","Hombre","Mujer"],[2557,1256,1301],[2557,49.1,50.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.6: Frecuencias y porcentajes de P31
 </p>
 </div>
 <p>Nótese el efecto introducido por el modificador de posición del cálculo. También …</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="tse03.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb12-2"><a href="tse03.html#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-3"><a href="tse03.html#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;above&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-4"><a href="tse03.html#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label =</span> <span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb12-5"><a href="tse03.html#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;outside_rows&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-10"></span>
-<div id="htmlwidget-1ebadc0553c98e8e7d14" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1ebadc0553c98e8e7d14">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","","","","",""],["#Total cases","Hombre","Mujer","Hombre","Mujer","#Total cases"],["Casos","Casos","Casos","% casos","% casos","% casos"],[2557,1256,1301,49.1,50.9,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tse03.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="tse03.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-3"><a href="tse03.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;above&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-4"><a href="tse03.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label =</span> <span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb15-5"><a href="tse03.html#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;outside_rows&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-10"></span>
+<div id="htmlwidget-09d1e4955f1e2c4b37fc" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-09d1e4955f1e2c4b37fc">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","","","","",""],["#Total cases","Hombre","Mujer","Hombre","Mujer","#Total cases"],["Casos","Casos","Casos","% casos","% casos","% casos"],[2557,1256,1301,49.1,50.9,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.7: Tablas con propiedades diferentes a estándar
 </p>
 </div>
 <p>O también …</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="tse03.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb13-2"><a href="tse03.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-3"><a href="tse03.html#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;below&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-4"><a href="tse03.html#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label =</span> <span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-5"><a href="tse03.html#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-11"></span>
-<div id="htmlwidget-7b6001e1fff41bf02aa3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-7b6001e1fff41bf02aa3">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["Hombre","Mujer","#Total cases"],[1256,1301,2557],[49.1,50.9,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tse03.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="tse03.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P31) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-3"><a href="tse03.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;below&quot;</span>, <span class="at">label =</span> <span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-4"><a href="tse03.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label =</span> <span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-5"><a href="tse03.html#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
+<div id="htmlwidget-db01889984e6f399d1d4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-db01889984e6f399d1d4">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Sexo de la persona entrevistada","",""],["Hombre","Mujer","#Total cases"],[1256,1301,2557],[49.1,50.9,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.8: Propiedades diferentes al estándar
 </p>
@@ -608,13 +1144,13 @@ Figura 3.8: Propiedades diferentes al estándar
 <div id="tablas-de-frecuencias-absolutas" class="section level4" number="3.2.2.1">
 <h4><span class="header-section-number">3.2.2.1</span> Tablas de frecuencias absolutas</h4>
 <p>Usaremos el campo P18C para procesar su información, que se localiza en el banco de datos desde P18C01 hasta P18C08.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="tse03.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb14-2"><a href="tse03.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-3"><a href="tse03.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position=</span><span class="st">&quot;above&quot;</span>, <span class="at">label=</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb14-4"><a href="tse03.html#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-12"></span>
-<div id="htmlwidget-5656b9acda368790978a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5656b9acda368790978a">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["#Total cases","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C."],[198,33,23,75,57,17,48,null,3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tse03.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="tse03.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-3"><a href="tse03.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position=</span><span class="st">&quot;above&quot;</span>, <span class="at">label=</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="tse03.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-12"></span>
+<div id="htmlwidget-fa6fe6e3762e012b7151" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fa6fe6e3762e012b7151">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["#Total cases","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C."],[198,33,23,75,57,17,48,null,3]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.9: Frecuencias de P18
 </p>
@@ -623,25 +1159,25 @@ Figura 3.9: Frecuencias de P18
 <div id="tablas-de-frecuencias-relativas-1" class="section level4" number="3.2.2.2">
 <h4><span class="header-section-number">3.2.2.2</span> Tablas de frecuencias relativas</h4>
 <p>También se pueden, como es obvio, obtener porcentajes en las tablas marginales múltiples. A diferencia de cuando la variables es simple que todos los porcentajes suman 100, en las variables múltiples cada alternativa tiene un rango de 0 a 100, desde no ser elegida una opción en ningún registro del <code>_dataframe_</code>, hasta ser elegida por todos los registros. Usaremos nuevamente el campo P18C para procesar su información, que se localiza en el banco de datos desde P18C01 hasta P18C08.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="tse03.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb15-2"><a href="tse03.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span></span>
-<span id="cb15-3"><a href="tse03.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">total_row_position=</span><span class="st">&quot;above&quot;</span>, <span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb15-4"><a href="tse03.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-13"></span>
-<div id="htmlwidget-3038437363c1dcf2a3ee" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3038437363c1dcf2a3ee">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["#Total cases","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C."],[198,16.7,11.6,37.9,28.8,8.6,24.2,null,1.5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tse03.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="tse03.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="tse03.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">total_row_position=</span><span class="st">&quot;above&quot;</span>, <span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-4"><a href="tse03.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-13"></span>
+<div id="htmlwidget-605c2086026430bc9446" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-605c2086026430bc9446">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["#Total cases","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C."],[198,16.7,11.6,37.9,28.8,8.6,24.2,null,1.5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.10: Frecuencias de P18
 </p>
 </div>
 <p>Pero vamos a introducir una nueva variación. En una múltiple, también pueden calcularse los resultados en lo que se llama <code>base respuestas</code>, donde sí suman 100% los porcentajes nuevamente, pero recuerda que el porcentaje hace referencia a las respuestas, no a los individuos. En este caso el script modifica el estadístico solicitado.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="tse03.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb16-2"><a href="tse03.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span></span>
-<span id="cb16-3"><a href="tse03.html#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">total_row_position=</span><span class="st">&quot;above&quot;</span>, <span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb16-4"><a href="tse03.html#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-14"></span>
-<div id="htmlwidget-51dc58fc557cccb0bf3c" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-51dc58fc557cccb0bf3c">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["#Total responses","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C."],[256,12.9,9,29.3,22.3,6.6,18.8,null,1.2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tse03.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb19-2"><a href="tse03.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-3"><a href="tse03.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">total_row_position=</span><span class="st">&quot;above&quot;</span>, <span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb19-4"><a href="tse03.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-14"></span>
+<div id="htmlwidget-ada5f702616e55221de6" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ada5f702616e55221de6">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["#Total responses","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C."],[256,12.9,9,29.3,22.3,6.6,18.8,null,1.2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.11: Frecuencias de P18
 </p>
@@ -652,58 +1188,58 @@ Figura 3.11: Frecuencias de P18
 <h3><span class="header-section-number">3.2.3</span> Tablas combinadas</h3>
 <p>Con las múltiples también funciona el posicionamiento del estadístico casos -frecuencias- cuando combinamos los mismos (frecuencia y porcentaje) y podemos realizar las mismas variantes que antes.</p>
 <p>Ubicar los cálculos dentro de las columnas …</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="tse03.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb17-2"><a href="tse03.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span>  <span class="co"># o tab_cells(mdset(P18C01 %to% P18C08))</span></span>
-<span id="cb17-3"><a href="tse03.html#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-4"><a href="tse03.html#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-5"><a href="tse03.html#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">label=</span><span class="st">&quot;% respuestas&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb17-6"><a href="tse03.html#cb17-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-15"></span>
-<div id="htmlwidget-85ac61a25ccee384f091" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-85ac61a25ccee384f091">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total responses","#Total cases"],[33,23,75,57,17,48,null,3,null,198],[16.7,11.6,37.9,28.8,8.6,24.2,null,1.5,null,198],[12.9,9,29.3,22.3,6.6,18.8,null,1.2,256,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % respuestas\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tse03.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb20-2"><a href="tse03.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span>  <span class="co"># o tab_cells(mdset(P18C01 %to% P18C08))</span></span>
+<span id="cb20-3"><a href="tse03.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-4"><a href="tse03.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-5"><a href="tse03.html#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">label=</span><span class="st">&quot;% respuestas&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb20-6"><a href="tse03.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
+<div id="htmlwidget-06113e8b12e0c4c0104f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-06113e8b12e0c4c0104f">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total responses","#Total cases"],[33,23,75,57,17,48,null,3,null,198],[16.7,11.6,37.9,28.8,8.6,24.2,null,1.5,null,198],[12.9,9,29.3,22.3,6.6,18.8,null,1.2,256,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % respuestas\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.12: Frecuencias y porcentajes de P18 (1)
 </p>
 </div>
 <p>Préstese atención a las dos líneas de #Total, dado que las bases son diferentes (número de individuos y número de respuestas).</p>
 <p>Podemos ubicar los cálculos dentro de las filas …</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="tse03.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb18-2"><a href="tse03.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span>  <span class="co"># o tab_cells(mdset(P18C01 %to% P18C08))</span></span>
-<span id="cb18-3"><a href="tse03.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-4"><a href="tse03.html#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-5"><a href="tse03.html#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">label=</span><span class="st">&quot;% respuestas&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb18-6"><a href="tse03.html#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_rows&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-16"></span>
-<div id="htmlwidget-1069a5a7571cbd6df146" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-1069a5a7571cbd6df146">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["La tarjeta sanitaria no funcionaba","","","El ordenador de la farmacia no funcionaba","","","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","","","No aparecían los medicamentos recetados","","","No pudo retirarlos en una comunidad autónoma distinta a la suya","","","Otro tipo de problema","","","No recuerda","","","N.C.","","","#Total cases","","#Total responses"],["Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas"],[33,16.7,12.9,23,11.6,9,75,37.9,29.3,57,28.8,22.3,17,8.6,6.6,48,24.2,18.8,null,null,null,3,1.5,1.2,198,198,256]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tse03.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="tse03.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span>  <span class="co"># o tab_cells(mdset(P18C01 %to% P18C08))</span></span>
+<span id="cb21-3"><a href="tse03.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-4"><a href="tse03.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-5"><a href="tse03.html#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">label=</span><span class="st">&quot;% respuestas&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb21-6"><a href="tse03.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;inside_rows&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-16"></span>
+<div id="htmlwidget-225b744daac1a3339b91" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-225b744daac1a3339b91">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["La tarjeta sanitaria no funcionaba","","","El ordenador de la farmacia no funcionaba","","","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","","","No aparecían los medicamentos recetados","","","No pudo retirarlos en una comunidad autónoma distinta a la suya","","","Otro tipo de problema","","","No recuerda","","","N.C.","","","#Total cases","","#Total responses"],["Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas","Casos","% casos","% respuestas"],[33,16.7,12.9,23,11.6,9,75,37.9,29.3,57,28.8,22.3,17,8.6,6.6,48,24.2,18.8,null,null,null,3,1.5,1.2,198,198,256]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.13: Frecuencias y porcentajes de P18 (2)
 </p>
 </div>
 <p>Podemos ubicar los cálculos fuera de las columnas (igual a la anterior <code>inside...</code> porque no hay campo de columna) …</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="tse03.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb19-2"><a href="tse03.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span>  <span class="co"># o tab_cells(mdset(P18C01 %to% P18C08))</span></span>
-<span id="cb19-3"><a href="tse03.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-4"><a href="tse03.html#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-5"><a href="tse03.html#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">label=</span><span class="st">&quot;% respuestas&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb19-6"><a href="tse03.html#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;outside_columns&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-17"></span>
-<div id="htmlwidget-da0774b755fed1ce09a9" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-da0774b755fed1ce09a9">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total responses","#Total cases"],[33,23,75,57,17,48,null,3,null,198],[16.7,11.6,37.9,28.8,8.6,24.2,null,1.5,null,198],[12.9,9,29.3,22.3,6.6,18.8,null,1.2,256,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % respuestas\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tse03.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb22-2"><a href="tse03.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span>  <span class="co"># o tab_cells(mdset(P18C01 %to% P18C08))</span></span>
+<span id="cb22-3"><a href="tse03.html#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-4"><a href="tse03.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-5"><a href="tse03.html#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">label=</span><span class="st">&quot;% respuestas&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb22-6"><a href="tse03.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;outside_columns&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<div id="htmlwidget-987626595e17bd888df3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-987626595e17bd888df3">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total responses","#Total cases"],[33,23,75,57,17,48,null,3,null,198],[16.7,11.6,37.9,28.8,8.6,24.2,null,1.5,null,198],[12.9,9,29.3,22.3,6.6,18.8,null,1.2,256,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % casos\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        % respuestas\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.14: Frecuencias y porcentajes de P18 (3)
 </p>
 </div>
 <p>Podemos ubicar los cálculos fuera de las filas … nótese que la agrupación es diferente a la anterior con <code>inside_rows</code></p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="tse03.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb20-2"><a href="tse03.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span>  <span class="co"># o tab_cells(mdset(P18C01 %to% P18C08))</span></span>
-<span id="cb20-3"><a href="tse03.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-4"><a href="tse03.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-5"><a href="tse03.html#cb20-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">label=</span><span class="st">&quot;% respuestas&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb20-6"><a href="tse03.html#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;outside_rows&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-18"></span>
-<div id="htmlwidget-f70b47ce1dd3b0e394be" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f70b47ce1dd3b0e394be">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total cases","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total cases","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total responses"],["Casos","Casos","Casos","Casos","Casos","Casos","Casos","Casos","Casos","% casos","% casos","% casos","% casos","% casos","% casos","% casos","% casos","% casos","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas"],[33,23,75,57,17,48,null,3,198,16.7,11.6,37.9,28.8,8.6,24.2,null,1.5,198,12.9,9,29.3,22.3,6.6,18.8,null,1.2,256]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tse03.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb23-2"><a href="tse03.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(<span class="fu">mdset_f</span>(P18C)) <span class="sc">%&gt;%</span>  <span class="co"># o tab_cells(mdset(P18C01 %to% P18C08))</span></span>
+<span id="cb23-3"><a href="tse03.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span><span class="st">&quot;Casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-4"><a href="tse03.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct</span>(<span class="at">label=</span><span class="st">&quot;% casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-5"><a href="tse03.html#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cpct_responses</span>(<span class="at">label=</span><span class="st">&quot;% respuestas&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb23-6"><a href="tse03.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position=</span><span class="st">&quot;outside_rows&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-18"></span>
+<div id="htmlwidget-f265b87625fab677d779" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f265b87625fab677d779">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total cases","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total cases","La tarjeta sanitaria no funcionaba","El ordenador de la farmacia no funcionaba","Estaba fuera de plazo (era demasiado pronto o demasiado tarde)","No aparecían los medicamentos recetados","No pudo retirarlos en una comunidad autónoma distinta a la suya","Otro tipo de problema","No recuerda","N.C.","#Total responses"],["Casos","Casos","Casos","Casos","Casos","Casos","Casos","Casos","Casos","% casos","% casos","% casos","% casos","% casos","% casos","% casos","% casos","% casos","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas","% respuestas"],[33,23,75,57,17,48,null,3,198,16.7,11.6,37.9,28.8,8.6,24.2,null,1.5,198,12.9,9,29.3,22.3,6.6,18.8,null,1.2,256]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.15: Frecuencias y porcentajes de P18 (4)
 </p>
@@ -717,55 +1253,55 @@ Figura 3.15: Frecuencias y porcentajes de P18 (4)
 <h3><span class="header-section-number">3.3.1</span> Estadísticos básicos</h3>
 <p>Recordemos que hasta ahora no hemos cruzado la información, solo estamos trabajando con lo que se denomina medidas marginales.Nuestro primer ejemplo es un caso típico, donde queremos obtener la media (<code>tab_stat_mean</code>), la desviación típica (<code>tab_stat_sd()</code>) y la base de cálculo, es decir el número de casos con valor (<code>tab_stat_valid_n()</code>) para el cálculo.</p>
 <p>Así, siguiendo la misma estructra de las tablas anteriores, redactamos el siguiente script:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="tse03.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb21-2"><a href="tse03.html#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
-<span id="cb21-3"><a href="tse03.html#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb21-4"><a href="tse03.html#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb21-5"><a href="tse03.html#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_valid_n</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb21-6"><a href="tse03.html#cb21-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-19"></span>
-<div id="htmlwidget-f6581a27ac947de8c526" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f6581a27ac947de8c526">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","",""],["Mean","Std. dev.","Valid N"],[7.3,7.2,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tse03.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb24-2"><a href="tse03.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
+<span id="cb24-3"><a href="tse03.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb24-4"><a href="tse03.html#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb24-5"><a href="tse03.html#cb24-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_valid_n</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb24-6"><a href="tse03.html#cb24-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<div id="htmlwidget-28a7deb9414c58e4bba7" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-28a7deb9414c58e4bba7">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","",""],["Mean","Std. dev.","Valid N"],[7.3,7.2,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.16: Estadísticos marginales de P3 (1)
 </p>
 </div>
 <p>No, no tienes por qué ver los nombres de los estadísticos en lengua inglesa. También aquí podemos jugar con la etiqueta (label).</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="tse03.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb22-2"><a href="tse03.html#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-3"><a href="tse03.html#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;media&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-4"><a href="tse03.html#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span> <span class="st">&quot;desviación&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-5"><a href="tse03.html#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_valid_n</span>(<span class="at">label =</span> <span class="st">&quot;casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb22-6"><a href="tse03.html#cb22-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-20"></span>
-<div id="htmlwidget-c8ac57de266f96e49e7a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-c8ac57de266f96e49e7a">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","",""],["media","desviación","casos"],[7.3,7.2,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tse03.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb25-2"><a href="tse03.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-3"><a href="tse03.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;media&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-4"><a href="tse03.html#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span> <span class="st">&quot;desviación&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-5"><a href="tse03.html#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_valid_n</span>(<span class="at">label =</span> <span class="st">&quot;casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb25-6"><a href="tse03.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-20"></span>
+<div id="htmlwidget-8bf0b3bef367e6640fa4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8bf0b3bef367e6640fa4">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","",""],["media","desviación","casos"],[7.3,7.2,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.17: Estadísticos marginales de P3 (2)
 </p>
 </div>
 <p>Hagamos una nueva tabla con una pequeña variación, ahora vamos a poner los estadísticos en columnas.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="tse03.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data<span class="sc">%&gt;%</span></span>
-<span id="cb23-2"><a href="tse03.html#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
-<span id="cb23-3"><a href="tse03.html#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;media&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb23-4"><a href="tse03.html#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span> <span class="st">&quot;desviación&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb23-5"><a href="tse03.html#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_valid_n</span>(<span class="at">label =</span> <span class="st">&quot;casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb23-6"><a href="tse03.html#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-21"></span>
-<div id="htmlwidget-870b9d11fa7747ac2501" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-870b9d11fa7747ac2501">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español"],[7.3],[7.2],[2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        media\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        desviación\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="tse03.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data<span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="tse03.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-3"><a href="tse03.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;media&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-4"><a href="tse03.html#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span> <span class="st">&quot;desviación&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-5"><a href="tse03.html#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_valid_n</span>(<span class="at">label =</span> <span class="st">&quot;casos&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb26-6"><a href="tse03.html#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_columns&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-21"></span>
+<div id="htmlwidget-4000bbb598cb9dcd936d" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4000bbb598cb9dcd936d">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español"],[7.3],[7.2],[2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        media\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        desviación\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        casos\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[1]; $(this.api().cell(row, 1).node()).css({'text-align':'right'});\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.18: Estadísticos marginales de P3 (3)
 </p>
 </div>
 <p><code>expss</code> tiene además la posibilidad de obtener estos tres cálculos, bastante habituales por cierto, con un solo comando: <code>tab_stat_mean_sd_n()</code> pudiendo añadir además etiquetas separadas.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="tse03.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb24-2"><a href="tse03.html#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-3"><a href="tse03.html#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean_sd_n</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;media&quot;</span>, <span class="st">&quot;desviación&quot;</span>, <span class="st">&quot;casos&quot;</span>)) <span class="sc">%&gt;%</span> </span>
-<span id="cb24-4"><a href="tse03.html#cb24-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-22"></span>
-<div id="htmlwidget-a9fa5c09f3d40824760a" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-a9fa5c09f3d40824760a">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","",""],["media","desviación","casos"],[7.3,7.2,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tse03.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb27-2"><a href="tse03.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-3"><a href="tse03.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean_sd_n</span>(<span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;media&quot;</span>, <span class="st">&quot;desviación&quot;</span>, <span class="st">&quot;casos&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb27-4"><a href="tse03.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-22"></span>
+<div id="htmlwidget-a93cf714859cb5b60e50" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-a93cf714859cb5b60e50">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","",""],["media","desviación","casos"],[7.3,7.2,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.19: Estadísticos marginales de P3 (4)
 </p>
@@ -774,58 +1310,58 @@ Figura 3.19: Estadísticos marginales de P3 (4)
 <div id="otros-estadísticos" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Otros estadísticos</h3>
 <p>Además de los estadísticos más básicos, otros que podemos añadir son el máximo, el mínimo, la mediana, el error estándar y la suma. Los unimos todos.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="tse03.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb25-2"><a href="tse03.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-3"><a href="tse03.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;Media&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-4"><a href="tse03.html#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span>  <span class="st">&quot;Desviación&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb25-5"><a href="tse03.html#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_max</span>(<span class="at">label =</span> <span class="st">&quot;Máximo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb25-6"><a href="tse03.html#cb25-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_min</span>(<span class="at">label =</span> <span class="st">&quot;Mínimo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb25-7"><a href="tse03.html#cb25-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_median</span>(<span class="at">label =</span> <span class="st">&quot;Mediana&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb25-8"><a href="tse03.html#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_se</span>(<span class="at">label =</span> <span class="st">&quot;Error estándar&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb25-9"><a href="tse03.html#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sum</span>(<span class="at">label =</span> <span class="st">&quot;Suma&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb25-10"><a href="tse03.html#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-23"></span>
-<div id="htmlwidget-376ffb7e1dbc6ea2bb41" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-376ffb7e1dbc6ea2bb41">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","","","","","",""],["Media","Desviación","Máximo","Mínimo","Mediana","Error estándar","Suma"],[7.3,7.2,99,1,7,0.1,18789]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="tse03.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb28-2"><a href="tse03.html#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-3"><a href="tse03.html#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;Media&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-4"><a href="tse03.html#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span>  <span class="st">&quot;Desviación&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb28-5"><a href="tse03.html#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_max</span>(<span class="at">label =</span> <span class="st">&quot;Máximo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb28-6"><a href="tse03.html#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_min</span>(<span class="at">label =</span> <span class="st">&quot;Mínimo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb28-7"><a href="tse03.html#cb28-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_median</span>(<span class="at">label =</span> <span class="st">&quot;Mediana&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb28-8"><a href="tse03.html#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_se</span>(<span class="at">label =</span> <span class="st">&quot;Error estándar&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb28-9"><a href="tse03.html#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sum</span>(<span class="at">label =</span> <span class="st">&quot;Suma&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb28-10"><a href="tse03.html#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-23"></span>
+<div id="htmlwidget-41b7f341ceb984c1a674" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-41b7f341ceb984c1a674">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","","","","","",""],["Media","Desviación","Máximo","Mínimo","Mediana","Error estándar","Suma"],[7.3,7.2,99,1,7,0.1,18789]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.20: Estadísticos marginales de P3 (5)
 </p>
 </div>
 <p>Nótese que no se han definido ni filas, ni columnas. Es el modificador de la posición de los estadísticos (stat_position) el que habilita la posición en una fila.</p>
 <p>Del mismo modo, estos estadísticos pueden ubicarse en las columnas.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="tse03.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb26-2"><a href="tse03.html#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-3"><a href="tse03.html#cb26-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;Media&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-4"><a href="tse03.html#cb26-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span>  <span class="st">&quot;Desviación&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb26-5"><a href="tse03.html#cb26-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_max</span>(<span class="at">label =</span> <span class="st">&quot;Máximo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb26-6"><a href="tse03.html#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_min</span>(<span class="at">label =</span> <span class="st">&quot;Mínimo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb26-7"><a href="tse03.html#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_median</span>(<span class="at">label =</span> <span class="st">&quot;Mediana&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb26-8"><a href="tse03.html#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_se</span>(<span class="at">label =</span> <span class="st">&quot;Error estándar&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb26-9"><a href="tse03.html#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sum</span>(<span class="at">label =</span> <span class="st">&quot;Suma&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb26-10"><a href="tse03.html#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span> <span class="st">&quot;casos&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb26-11"><a href="tse03.html#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_rows&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-24"></span>
-<div id="htmlwidget-dc5b898b03db632972a7" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-dc5b898b03db632972a7">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","","","","","","","","","","","","","","","","","","",""],["Media","Desviación","Máximo","Mínimo","Mediana","Error estándar","Suma","1 Muy insatisfecho/a","2","3","4","5","6","7","8","9","10 Muy satisfecho/a","N.S.","N.C.","#Total cases"],["","","","","","","","casos","casos","casos","casos","casos","casos","casos","casos","casos","casos","casos","casos","casos"],[7.3,7.2,99,1,7,0.1,18789,40,35,75,111,295,397,584,623,210,172,14,1,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="tse03.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb29-2"><a href="tse03.html#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-3"><a href="tse03.html#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;Media&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-4"><a href="tse03.html#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span>  <span class="st">&quot;Desviación&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb29-5"><a href="tse03.html#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_max</span>(<span class="at">label =</span> <span class="st">&quot;Máximo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb29-6"><a href="tse03.html#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_min</span>(<span class="at">label =</span> <span class="st">&quot;Mínimo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb29-7"><a href="tse03.html#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_median</span>(<span class="at">label =</span> <span class="st">&quot;Mediana&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb29-8"><a href="tse03.html#cb29-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_se</span>(<span class="at">label =</span> <span class="st">&quot;Error estándar&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb29-9"><a href="tse03.html#cb29-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sum</span>(<span class="at">label =</span> <span class="st">&quot;Suma&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb29-10"><a href="tse03.html#cb29-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span> <span class="st">&quot;casos&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb29-11"><a href="tse03.html#cb29-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_rows&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-24"></span>
+<div id="htmlwidget-c6be4a0d873c0e6366f0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c6be4a0d873c0e6366f0">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","","","","","","","","","","","","","","","","","","",""],["Media","Desviación","Máximo","Mínimo","Mediana","Error estándar","Suma","1 Muy insatisfecho/a","2","3","4","5","6","7","8","9","10 Muy satisfecho/a","N.S.","N.C.","#Total cases"],["","","","","","","","casos","casos","casos","casos","casos","casos","casos","casos","casos","casos","casos","casos","casos"],[7.3,7.2,99,1,7,0.1,18789,40,35,75,111,295,397,584,623,210,172,14,1,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.21: Estadísticos marginales de P3 (6)
 </p>
 </div>
 <p>Hagamos finalmente una leve variación. Nótese que al utilizar <code>"|"</code> en la etiqueta del estadístico casos, hemos eliminado la columna intermedia y aparace todo como más compacto. Este será un recurso que utilizaremos en muchas ocasiones.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="tse03.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
-<span id="cb27-2"><a href="tse03.html#cb27-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
-<span id="cb27-3"><a href="tse03.html#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;Media&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb27-4"><a href="tse03.html#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span>  <span class="st">&quot;Desviación&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb27-5"><a href="tse03.html#cb27-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_max</span>(<span class="at">label =</span> <span class="st">&quot;Máximo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb27-6"><a href="tse03.html#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_min</span>(<span class="at">label =</span> <span class="st">&quot;Mínimo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb27-7"><a href="tse03.html#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_median</span>(<span class="at">label =</span> <span class="st">&quot;Mediana&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb27-8"><a href="tse03.html#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_se</span>(<span class="at">label =</span> <span class="st">&quot;Error estándar&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb27-9"><a href="tse03.html#cb27-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sum</span>(<span class="at">label =</span> <span class="st">&quot;Suma&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb27-10"><a href="tse03.html#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span> <span class="st">&quot;|&quot;</span>) <span class="sc">%&gt;%</span>  </span>
-<span id="cb27-11"><a href="tse03.html#cb27-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_rows&quot;</span>))</span></code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-25"></span>
-<div id="htmlwidget-6b506e5da619919398d7" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-6b506e5da619919398d7">{"x":{"filter":"none","class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","","","","","","","","","","","","","","","","","","",""],["Media","Desviación","Máximo","Mínimo","Mediana","Error estándar","Suma","1 Muy insatisfecho/a","2","3","4","5","6","7","8","9","10 Muy satisfecho/a","N.S.","N.C.","#Total cases"],[7.3,7.2,99,1,7,0.1,18789,40,35,75,111,295,397,584,623,210,172,14,1,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="tse03.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span> </span>
+<span id="cb30-2"><a href="tse03.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_cells</span>(P3) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-3"><a href="tse03.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_mean</span>(<span class="at">label =</span> <span class="st">&quot;Media&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-4"><a href="tse03.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sd</span>(<span class="at">label =</span>  <span class="st">&quot;Desviación&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb30-5"><a href="tse03.html#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_max</span>(<span class="at">label =</span> <span class="st">&quot;Máximo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb30-6"><a href="tse03.html#cb30-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_min</span>(<span class="at">label =</span> <span class="st">&quot;Mínimo&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb30-7"><a href="tse03.html#cb30-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_median</span>(<span class="at">label =</span> <span class="st">&quot;Mediana&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb30-8"><a href="tse03.html#cb30-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_se</span>(<span class="at">label =</span> <span class="st">&quot;Error estándar&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb30-9"><a href="tse03.html#cb30-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_sum</span>(<span class="at">label =</span> <span class="st">&quot;Suma&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb30-10"><a href="tse03.html#cb30-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_stat_cases</span>(<span class="at">label =</span> <span class="st">&quot;|&quot;</span>) <span class="sc">%&gt;%</span>  </span>
+<span id="cb30-11"><a href="tse03.html#cb30-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tab_pivot</span>(<span class="at">stat_position =</span> <span class="st">&quot;inside_rows&quot;</span>))</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-25"></span>
+<div id="htmlwidget-d1ffdbd87f8c222a3e9e" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d1ffdbd87f8c222a3e9e">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Escala de satisfacción (1-10) con el funcionamiento del sistema sanitario español","","","","","","","","","","","","","","","","","","",""],["Media","Desviación","Máximo","Mínimo","Mediana","Error estándar","Suma","1 Muy insatisfecho/a","2","3","4","5","6","7","8","9","10 Muy satisfecho/a","N.S.","N.C.","#Total cases"],[7.3,7.2,99,1,7,0.1,18789,40,35,75,111,295,397,584,623,210,172,14,1,2557]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 3.22: Estadísticos marginales de P3 (7)
 </p>
@@ -858,7 +1394,6 @@ Kunst, Joshua. 2020. <em>Highcharter: A Wrapper for the Highcharts Library</em>.
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
-<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
@@ -895,6 +1430,10 @@ gitbook.start({
 "text": null
 },
 "download": null,
+"search": {
+"engine": "fuse",
+"options": null
+},
 "toc": {
 "collapse": "subsection",
 "scroll_highlight": true
@@ -902,7 +1441,6 @@ gitbook.start({
 "toolbar": {
 "position": "fixed"
 },
-"search": true,
 "info": true,
 "bibliography": ["packages.bib", "book.bib"],
 "biblio-style": "apalike",

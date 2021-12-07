@@ -397,7 +397,7 @@
                     ]
                 ]
             },
-            "note": "R package version 0.22",
+            "note": "R package version 0.24",
             "title": "Bookdown: Authoring books and technical documents with r markdown",
             "title-short": "Bookdown",
             "type": "book"
@@ -430,7 +430,7 @@
                     ]
                 ]
             },
-            "note": "R package version 1.0.6",
+            "note": "R package version 1.0.7",
             "title": "Dplyr: A grammar of data manipulation",
             "title-short": "Dplyr",
             "type": "book"
@@ -459,7 +459,7 @@
                     ]
                 ]
             },
-            "note": "R package version 0.18",
+            "note": "R package version 0.20",
             "title": "DT: A wrapper of the JavaScript library DataTables",
             "title-short": "DT",
             "type": "book"
@@ -501,7 +501,7 @@
                     ]
                 ]
             },
-            "note": "R package version 0.6.6",
+            "note": "R package version 0.6.10",
             "title": "Flextable: Functions for tabular reporting",
             "title-short": "Flextable",
             "type": "book"
@@ -522,7 +522,7 @@
                     ]
                 ]
             },
-            "note": "R package version 0.2.1",
+            "note": "R package version 0.2.2.9000",
             "title": "Fontawesome: Easily work with font awesome icons",
             "title-short": "Fontawesome",
             "type": "book"
@@ -606,11 +606,11 @@
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 1.2.6",
+            "note": "R package version 1.2.9",
             "title": "Igraph: Network analysis and visualization",
             "title-short": "Igraph",
             "type": "book"
@@ -652,7 +652,7 @@
                     ]
                 ]
             },
-            "note": "R package version 1.33",
+            "note": "R package version 1.36",
             "title": "Knitr: A general-purpose package for dynamic report generation in r",
             "title-short": "Knitr",
             "type": "book"
@@ -681,7 +681,7 @@
                     ]
                 ]
             },
-            "note": "R package version 1.7.10",
+            "note": "R package version 1.8.0",
             "title": "Lubridate: Make dealing with dates a little easier",
             "title-short": "Lubridate",
             "type": "book"
@@ -726,7 +726,7 @@
                     ]
                 ]
             },
-            "note": "R package version 4.9.3",
+            "note": "R package version 4.10.0",
             "title": "Plotly: Create interactive web graphics via plotly.js",
             "title-short": "Plotly",
             "type": "book"
@@ -766,17 +766,21 @@
                 {
                     "family": "Hester",
                     "given": "Jim"
+                },
+                {
+                    "family": "Bryan",
+                    "given": "Jennifer"
                 }
             ],
             "id": "R-readr",
             "issued": {
                 "date-parts": [
                     [
-                        2020
+                        2021
                     ]
                 ]
             },
-            "note": "R package version 1.4.0",
+            "note": "R package version 2.1.1",
             "title": "Readr: Read rectangular text data",
             "title-short": "Readr",
             "type": "book"
@@ -833,7 +837,7 @@
                     ]
                 ]
             },
-            "note": "R package version 2.8",
+            "note": "R package version 2.11",
             "title": "Rmarkdown: Dynamic documents for r",
             "title-short": "Rmarkdown",
             "type": "book"

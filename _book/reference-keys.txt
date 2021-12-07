@@ -216,7 +216,6 @@ medias-prueba-t
 parámetros-posibles-en-las-pruebas-de-significación
 algunos-ejemplos-de-uso-de-los-parámetros
 conclusión-al-uso-del-paquete-expss
-section
 tse08
 paquete-highcharter-introducción
 función-principal

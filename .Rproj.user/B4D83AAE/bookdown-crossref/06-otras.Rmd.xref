@@ -22,7 +22,7 @@ fig:6140 Uso de top y bottom
 fig:6150 Uso de top y bottom arriba
 fig:6160 Uso de top y bottom abajo
 fig:6170 Uso de top y bottom sin los valores agrupados
-h3:gráficos-base Gráficos base
+h2:gráficos-base Gráficos base
 fig:6180 Uso de gráfico highcharter 1
 fig:6190 Uso de gráfico highcharter 2
 fig:6200 Uso de gráfico con plotly

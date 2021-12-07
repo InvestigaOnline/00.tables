@@ -629,7 +629,7 @@ as.datatable_widget(
 
 Así pues en esta última tabla, hemos combinado algunas de las funcionalidades especiales y avanzadas de `expss` de forma conjunta y trabajando en la misma dirección.
 
-### Gráficos base
+## Gráficos base
 
 Dejamos además aquí esta `pildora adictiva` adelantándonos a la sección \@ref(tse08). Vamos a crear el primer gráfico en este libro. Vamos a repetir la tabla anterior, pero la guardamos en un objeto llamado `tab`. Limpiamos además aquello que no nos interesa, lo convertimos y lo publicamos en su formato bruto o estándar, es decir como *dataframe*.
 
