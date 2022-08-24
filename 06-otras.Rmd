@@ -1,6 +1,8 @@
 # Otras utilidades y tablas especiales {#tse06}
 
 ```{r 6000, echo= FALSE}
+library(dplyr)
+library(expss)
 suppressMessages(data <- read_spss("~/R/r-projects/00.tables/data/3192.sav")) #cargamos los datos
 data$CUES <- unvl(data$CUES)
 ```
@@ -668,21 +670,6 @@ highchart() %>%
         hcaes(x = row_labels, y = Mujer),
         name = "mujer"
     )
-```
-
-Alternativamente, si queremos utilizar el paquete `plotly` ...
-
-```{r 6200, fig.cap="Uso de gráfico con plotly", out.width="95%", fig.asp=.95, fig.align="center", echo = TRUE}
-Grupo <- factor(tab$row_labels, levels = tab$row_labels)
-plot_ly(
-    tab,
-    x = ~ Grupo,
-    y = ~ Hombre,
-    type = "bar",
-    name = "Hombre"
-) %>%
-    add_trace(y = ~ Mujer, name = "Mujer") %>%
-    layout(yaxis = list(title = "frecuencia"))
 ```
 
 Y esto es todo en cuanto a tablas básicas. La siguiente sección (\@ref(tse07)), con una carácter más estadístico, se introduce en las pruebas de significación que se usan en las tablas de contingencia. Si no te resultan de interés o si ya estás con ganas de gráficos, puedes saltar a la sección (\@ref(tse08)) y sumergirte en el mundo gráfico.

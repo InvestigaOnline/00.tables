@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 Primeros pasos y términos a conocer | Tablas y graficos con R y R Studio</title>
   <meta name="description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 Primeros pasos y términos a conocer | Tablas y graficos con R y R Studio" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="tse01.html"/>
 <link rel="next" href="tse03.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,66 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
-<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
-<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<script src="libs/proj4js-2.3.15/proj4.js"></script>
-<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
-<script src="libs/highcharts-8.1.2/highcharts.js"></script>
-<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
-<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
-<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
-<script src="libs/highcharts-8.1.2/modules/map.js"></script>
-<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
-<script src="libs/highcharts-8.1.2/modules/data.js"></script>
-<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
-<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
-<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
-<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
-<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
-<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
-<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
-<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
-<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
-<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
-<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
-<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
-<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
-<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
-<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
-<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
-<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
-<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
-<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
-<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
-<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
-<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
-<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
-<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
-<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
-<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
-<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
-<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
-<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
-<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
-<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
-<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
-<script src="libs/jquery-sparkline-2.1.2/jquery.sparkline.js"></script>
-<script src="libs/sparkline-binding-2.0/sparkline.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -221,7 +162,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="tse01.html"><a href="tse01.html#por-qué-este-libro"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué este libro?</a></li>
 <li class="chapter" data-level="1.2" data-path="tse01.html"><a href="tse01.html#para-quién-este-libro"><i class="fa fa-check"></i><b>1.2</b> ¿Para quién este libro?</a></li>
-<li class="chapter" data-level="1.3" data-path="tse01.html"><a href="tse01.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.3</b> Estructura del documento</a></li>
+<li class="chapter" data-level="1.3" data-path="tse01.html"><a href="tse01.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.3</b> Estructura del libro</a></li>
 <li class="chapter" data-level="1.4" data-path="tse01.html"><a href="tse01.html#instalación-de-r-y-r-studio"><i class="fa fa-check"></i><b>1.4</b> Instalación de R y R Studio</a>
 <ul>
 <li class="chapter" data-level="1.4.1" data-path="tse01.html"><a href="tse01.html#instalación-de-r-en-windows"><i class="fa fa-check"></i><b>1.4.1</b> Instalación de R en Windows</a></li>
@@ -421,25 +362,25 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tse02" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Primeros pasos y términos a conocer</h1>
-<div id="desde-dónde-creo-mis-scripts" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> ¿Desde dónde creo mis scripts?</h2>
+<div id="tse02" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> Primeros pasos y términos a conocer<a href="tse02.html#tse02" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="desde-dónde-creo-mis-scripts" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> ¿Desde dónde creo mis scripts?<a href="tse02.html#desde-dónde-creo-mis-scripts" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Dos son las formas de trabajar con R desde R Studio. Te explicamos brevemente esas dos formas de trabajar.</p>
-<div id="scripts-en-consola" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Scripts en consola</h3>
+<div id="scripts-en-consola" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Scripts en consola<a href="tse02.html#scripts-en-consola" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El scripting con consola está pensado para obtener tablas u otros objetos en la consola de la interfaz de trabajo de R Studio. Para ello usaremos archivos de texto con extensión .R que crearemos desde la entrada <em>File &gt; New File &gt; R Script</em>. Estos ficheros darán como resultado salidas a la denominada consola en formato de texto.</p>
 </div>
-<div id="scripting-con-markdown" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Scripting con <em>markdown</em></h3>
+<div id="scripting-con-markdown" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Scripting con <em>markdown</em><a href="tse02.html#scripting-con-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>El scripting con <em>markdown</em> está pensado para generar páginas completas o documentos completos con texto, tablas, gráficos, etc. Se pueden utilizar paquetes como <code>flexdashboard</code> o generar salidas de tipo diapositiva utilizando las opciones de configuración que ofrece el paquete <code>rmarkdown</code>. No aseguramos una compatibilidad al 100%, pues eso sería imposible, pero gran parte de las características estarían funcionales. La idea es generar un documento HTML, de forma totalmente transparente para el usuario, que se guarda en la base de datos y se presenta como resultado del análisis. Ese HTML puede contener texto, gráficos, tablas y cualquier elemento que se te ocurra. El código R se ubica en lo que se denomina <code>chunk</code> -que luego veremos- y se puede incluir también código R <code>inline</code> en el texto. Para esta segunda forma de trabajar usaremos también archivos de texto, pero con extensión .Rmd que crearemos desde la entrada <em>File &gt; New File &gt; R Markdown</em>. Estos ficheros darán como resultado archivos con extensiones .html, .docx, .pdf.</p>
 </div>
 </div>
-<div id="primeros-pasos" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Primeros pasos</h2>
+<div id="primeros-pasos" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Primeros pasos<a href="tse02.html#primeros-pasos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Si ya tienes experiencia con R Studio, da un vistazo, pero es posible que mucho de lo aquí indicado sea irrelevante para ti y todo ello ya sea habitual y conocido por ti. Pasa a la siguiente sección, donde comenzamos a trabajar los scripts.</p>
-<div id="carga-de-datos" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Carga de datos</h3>
+<div id="carga-de-datos" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Carga de datos<a href="tse02.html#carga-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Vamos a trabajar con ello y verás que sencillo. Para comenzar, en <a href="https://drive.google.com/uc?export=download&amp;id=1JjevbQjzGc1NMyR7qf7bbvtbMyK8Pvhr">este enlace</a> tienes un archivo de datos con el que haremos todos nuestros ejemplos. Esta fuente de datos está en formato SPSS (*.sav) y se corresponde con la tercera oleada de un estudio del CIS (Centro de Investigaciones Sociológics de España) de 2017, el barómetro sanitario.
 La fuente de datos tiene 2557 registros y tiene 190 campos. Si deseas ver el cuestionario que originalmente se utilizó para recoger los datos, <a href="https://drive.google.com/uc?export=download&amp;id=1AUUI-1isOmKB1ovR4MRoqMj2Fp7Re2f2">lo puedes descargar aquí</a>. En él puedes ver todo lo referente a como se ha realizado la entrevista.</p>
 <p>Si has seguido las instrucciones de instalación, se habrá creado una carpeta denominada R dentro de Mis Documentos (que R Studio denomina Home como podás observar en el panel de la ventana 4, opción FILES)</p>
@@ -452,8 +393,8 @@ La fuente de datos tiene 2557 registros y tiene 190 campos. Si deseas ver el cue
 <p><img src="data/RS06.png" /></p>
 <p>Ahora podrías guardar tu script <em>File &gt; Save as</em> , y ya tendríamos cerrado el primer paso del camino. El archivo puede abrirse, ser editado y volver a ejecutarse tantas veces quieras.</p>
 </div>
-<div id="instalación-de-paquetes" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Instalación de paquetes</h3>
+<div id="instalación-de-paquetes" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Instalación de paquetes<a href="tse02.html#instalación-de-paquetes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Uno de los elementos fundamentales que caracteriza a R, es que se trabaja con <strong>paquetes</strong> que la comunidad de desarrollo aporta para los análisis más variados. Los paquetes son la aportación de los desarrolladores que de alguna forma comparten su conocimiento con la comunidad global. Nosotros vamos a trabajar con algunos que no están en la instalación base, asi que procederemos a hacer el ciclo completo de instalación (sólo una vez) y carga (tantas veces como queramos usar el paquete en una sesión). Aunque existe opción de instalar paquetes por comandos <code>install.packages()</code>, ilustramos el camino para hacerlo desde el menú. <strong><em>Tools &gt; Install packages</em></strong>.</p>
 <p><img src="data/install_packages.png" /></p>
 <p>Utiliza la opción arriba indicada y siguiendo las indicaciones descritas escribiríamos:</p>
@@ -461,8 +402,8 @@ La fuente de datos tiene 2557 registros y tiene 190 campos. Si deseas ver el cue
 <p>Cuando hagas clic en <em>Install</em>, comenzarán a instalarse esos paquetes (su descarga e instalación). R Studio te informa cuando ha finalizado. Puede verse en la consola.</p>
 </div>
 </div>
-<div id="crear-un-fichero-r-markdown" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Crear un fichero R Markdown</h2>
+<div id="crear-un-fichero-r-markdown" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> Crear un fichero R Markdown<a href="tse02.html#crear-un-fichero-r-markdown" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Vamos a crear un nuevo script, pero ahora ya lo vamos a hacer del modo que seguiremos trabajando durante todo el manual.</p>
 <p>Desde el menú de R Studio <strong><em>Files &gt; New File &gt; R Markdown</em></strong>. Elige entre las opciones proporcionadas, la creación de un <em>documento HTML</em>. Dale nombre y ponte como autor. Verás lo que escribas reflejado en el archivo.</p>
 <p><img src="data/RS07.png" /></p>
@@ -482,547 +423,8 @@ Este es un fichero de ejemplo, borra desde donde pone ## R Markdown hasta abajo 
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tse02.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">setwd</span>(<span class="st">&quot;~/R/r-projects/00.tables&quot;</span>)) <span class="co">#esta es la carpeta donde almacené el archivo (en una subcarpeta llamada data)</span></span>
 <span id="cb1-2"><a href="tse02.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(<span class="fu">library</span>(expss)) <span class="co">#cargamos el paquete</span></span>
-<span id="cb1-3"><a href="tse02.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;data/3192.sav&quot;</span>)) <span class="co">#cargamos los datos</span></span></code></pre></div>
-<pre><code>## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tse02.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>PESO, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<span id="cb1-3"><a href="tse02.html#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>(data <span class="ot">&lt;-</span> <span class="fu">read_spss</span>(<span class="st">&quot;data/3192.sav&quot;</span>)) <span class="co">#cargamos los datos</span></span>
+<span id="cb1-4"><a href="tse02.html#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data<span class="sc">$</span>PESO, <span class="at">na.rm=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9999273</code></pre>
 <p>Quedará así:</p>
 <p><img src="data/RS10.png" /></p>
@@ -1033,13 +435,13 @@ Este es un fichero de ejemplo, borra desde donde pone ## R Markdown hasta abajo 
 <p>Fíjate que se ha publicado el código R de programación eso lo podemos evitar si cambiamos el <code>echo = TRUE</code> por <code>echo = FALSE</code>. Prueba a hacer el cambio y haz de nuevo <em><code>knitr</code></em>.</p>
 <p><img src="data/RS13.png" /></p>
 <p>Terminamos con el primer script de análisis. Este script aparece ahora en el listado de fichero como SCRIPT_001.Rmd (Rmd es la extensión de los archivos R Markdown, mientras que R es la de los scripts de consola). Del mismo modo, podrás ver ahora un archivo denominado SCRIPT_001.html que contiene tu resultado y que podrías copiar o enviar a cualquiera porque contiene todo lo necesario para que se muestre como a ti. Una de las grandes ventajas.</p>
-<div id="conclusión" class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> Conclusión</h3>
+<div id="conclusión" class="section level3 hasAnchor" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Conclusión<a href="tse02.html#conclusión" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Así, hemos finalizado con nuestro primer <em>scripting</em>. No volveremos a ser tan explicativos en este documento acerca de como crear y editar los scripts. En la siguiente sección comenzamos con las tablas más básicas.</p>
 </div>
 </div>
-<div id="básicos-de-r-yo-proceso-de-datos" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Básicos de R y/o proceso de datos</h2>
+<div id="básicos-de-r-yo-proceso-de-datos" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Básicos de R y/o proceso de datos<a href="tse02.html#básicos-de-r-yo-proceso-de-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>En el presente epígrafe, mostramos un conjunto de términos que serán habitualmente utilizados en las sucesivas secciones que se presentan en este documento. Estos son los más relevantes y los hemos separado en dos grupos. Un grupo hace referencia a términos básicos de R y otro grupo a términos básicos del manejo de tablas o del proceso de tabulación. Cada término tiene une breve reseña, y posteriormente algunos de ellos serán más tratados en sus respectivas funcionalidades.</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>R</strong> es un entorno y lenguaje de programación con un enfoque al análisis estadístico. Nació como una implementación de software libre del lenguaje S, adicionado con soporte para alcance estático. Se trata de uno de los lenguajes de programación más utilizados en investigación científica, siendo además muy popular en los campos de aprendizaje automático o <em>machine learning</em>, minería de datos, investigación biomédica, bioinformática y matemáticas financieras. A esto contribuye la posibilidad de cargar diferentes bibliotecas o paquetes con funcionalidades de cálculo y graficación. R es parte del sistema GNU y se distribuye bajo la licencia GNU GPL. Está disponible para los sistemas operativos Windows, Macintosh, Unix y GNU/Linux.</p></li>
@@ -1056,8 +458,8 @@ Este es un fichero de ejemplo, borra desde donde pone ## R Markdown hasta abajo 
 <li><p><strong>chunk</strong>, conjunto de comandos que se escriben entre los símbolos <code>{r} y</code> y que se ejecutan mostrando los resultados.</p></li>
 </ol>
 </div>
-<div id="básicos-de-tabulación" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Básicos de tabulación</h2>
+<div id="básicos-de-tabulación" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Básicos de tabulación<a href="tse02.html#básicos-de-tabulación" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Antes de comenzar, el término más importante y objeto de nuestro trabajo.</p>
 <blockquote>
 <p>Tabla</p>
@@ -1084,7 +486,7 @@ Este es un fichero de ejemplo, borra desde donde pone ## R Markdown hasta abajo 
 
 </div>
 </div>
-<h3>Bibliografía</h3>
+<h3>Bibliografía<a href="bibliografía.html#bibliografía" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-sanchez1989analisis" class="csl-entry">
 Sánchez Carrión, Juan Javier. 1989. <em>An<span>á</span>lisis de Tablas de Contingencia</em>. <em>Centro de Investigaciones Sociol<span>ó</span>gicas, Madrid</em>.

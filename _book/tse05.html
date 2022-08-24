@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Tablas especiales | Tablas y graficos con R y R Studio</title>
   <meta name="description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Tablas especiales | Tablas y graficos con R y R Studio" />
   <meta property="og:type" content="book" />
-  
   
   <meta property="og:description" content="Guía para la realización de tablas de contingencia, reproduciendo tablas del tipo SPSS o BarbWin usando el paquete expss y visualizaciones de resultados con el paquete highcharter. Introducción al uso de scripts con R en el entorno de R Studio." />
   
@@ -32,7 +31,6 @@
   
 <link rel="prev" href="tse04.html"/>
 <link rel="next" href="tse06.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,66 +48,17 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
 <link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
-<script src="libs/datatables-binding-0.20/datatables.js"></script>
+<script src="libs/datatables-binding-0.24/datatables.js"></script>
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
 <link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
 <script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
-<script src="libs/proj4js-2.3.15/proj4.js"></script>
-<link href="libs/highcharts-8.1.2/css/motion.css" rel="stylesheet" />
-<script src="libs/highcharts-8.1.2/highcharts.js"></script>
-<script src="libs/highcharts-8.1.2/highcharts-3d.js"></script>
-<script src="libs/highcharts-8.1.2/highcharts-more.js"></script>
-<script src="libs/highcharts-8.1.2/modules/stock.js"></script>
-<script src="libs/highcharts-8.1.2/modules/map.js"></script>
-<script src="libs/highcharts-8.1.2/modules/annotations.js"></script>
-<script src="libs/highcharts-8.1.2/modules/data.js"></script>
-<script src="libs/highcharts-8.1.2/modules/drilldown.js"></script>
-<script src="libs/highcharts-8.1.2/modules/item-series.js"></script>
-<script src="libs/highcharts-8.1.2/modules/offline-exporting.js"></script>
-<script src="libs/highcharts-8.1.2/modules/overlapping-datalabels.js"></script>
-<script src="libs/highcharts-8.1.2/modules/exporting.js"></script>
-<script src="libs/highcharts-8.1.2/modules/export-data.js"></script>
-<script src="libs/highcharts-8.1.2/modules/funnel.js"></script>
-<script src="libs/highcharts-8.1.2/modules/heatmap.js"></script>
-<script src="libs/highcharts-8.1.2/modules/treemap.js"></script>
-<script src="libs/highcharts-8.1.2/modules/sankey.js"></script>
-<script src="libs/highcharts-8.1.2/modules/dependency-wheel.js"></script>
-<script src="libs/highcharts-8.1.2/modules/organization.js"></script>
-<script src="libs/highcharts-8.1.2/modules/solid-gauge.js"></script>
-<script src="libs/highcharts-8.1.2/modules/streamgraph.js"></script>
-<script src="libs/highcharts-8.1.2/modules/sunburst.js"></script>
-<script src="libs/highcharts-8.1.2/modules/vector.js"></script>
-<script src="libs/highcharts-8.1.2/modules/wordcloud.js"></script>
-<script src="libs/highcharts-8.1.2/modules/xrange.js"></script>
-<script src="libs/highcharts-8.1.2/modules/tilemap.js"></script>
-<script src="libs/highcharts-8.1.2/modules/venn.js"></script>
-<script src="libs/highcharts-8.1.2/modules/gantt.js"></script>
-<script src="libs/highcharts-8.1.2/modules/timeline.js"></script>
-<script src="libs/highcharts-8.1.2/modules/parallel-coordinates.js"></script>
-<script src="libs/highcharts-8.1.2/modules/bullet.js"></script>
-<script src="libs/highcharts-8.1.2/modules/coloraxis.js"></script>
-<script src="libs/highcharts-8.1.2/modules/dumbbell.js"></script>
-<script src="libs/highcharts-8.1.2/modules/lollipop.js"></script>
-<script src="libs/highcharts-8.1.2/modules/series-label.js"></script>
-<script src="libs/highcharts-8.1.2/plugins/motion.js"></script>
-<script src="libs/highcharts-8.1.2/custom/reset.js"></script>
-<script src="libs/highcharts-8.1.2/modules/boost.js"></script>
-<script src="libs/highchart-binding-0.8.2/highchart.js"></script>
-<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
-<script src="libs/kePrint-0.0.1/kePrint.js"></script>
-<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/jquery-sparkline-2.1.2/jquery.sparkline.css" rel="stylesheet" />
-<script src="libs/jquery-sparkline-2.1.2/jquery.sparkline.js"></script>
-<script src="libs/sparkline-binding-2.0/sparkline.js"></script>
 
 
 <style type="text/css">
@@ -177,28 +126,6 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -221,7 +148,7 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="1.1" data-path="tse01.html"><a href="tse01.html#por-qué-este-libro"><i class="fa fa-check"></i><b>1.1</b> ¿Por qué este libro?</a></li>
 <li class="chapter" data-level="1.2" data-path="tse01.html"><a href="tse01.html#para-quién-este-libro"><i class="fa fa-check"></i><b>1.2</b> ¿Para quién este libro?</a></li>
-<li class="chapter" data-level="1.3" data-path="tse01.html"><a href="tse01.html#estructura-del-documento"><i class="fa fa-check"></i><b>1.3</b> Estructura del documento</a></li>
+<li class="chapter" data-level="1.3" data-path="tse01.html"><a href="tse01.html#estructura-del-libro"><i class="fa fa-check"></i><b>1.3</b> Estructura del libro</a></li>
 <li class="chapter" data-level="1.4" data-path="tse01.html"><a href="tse01.html#instalación-de-r-y-r-studio"><i class="fa fa-check"></i><b>1.4</b> Instalación de R y R Studio</a>
 <ul>
 <li class="chapter" data-level="1.4.1" data-path="tse01.html"><a href="tse01.html#instalación-de-r-en-windows"><i class="fa fa-check"></i><b>1.4.1</b> Instalación de R en Windows</a></li>
@@ -421,547 +348,8 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="tse05" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Tablas especiales</h1>
-<pre><code>## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE
-
-## Warning in type.convert.default(val_labs, numerals = &quot;no.loss&quot;): &#39;as.is&#39; should
-## be specified by the caller; using TRUE</code></pre>
+<div id="tse05" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">5</span> Tablas especiales<a href="tse05.html#tse05" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>En esta sección nos introducimos en algunas de las características que hacen muy especial a este paquete <code>expss</code>. Iremos introduciendo cada uno de los conceptos en el punto donde corresponda, dando la explicación de caso de uso, más que su explicación técnica. El usuario que quiera conocer más sobre ello, puede acudir a la guía de referencia de <a href="https://rdrr.io/cran/expss/man/">todas las opciones de este paquete</a>.</p>
 <p>Aprenderemos a usar:</p>
 <ul>
@@ -976,32 +364,32 @@ div.csl-indent {
 <li>uso de <code>na_if</code>, para eliminar valores de niveles que no se desean computar en el cálculo de estadísticos;</li>
 <li>uso de criterios, para establecer sencillos mecanismos de filtro como complemento a otras funciones.</li>
 </ul>
-<div id="subgrupos-filtros-en-la-tabla" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Subgrupos (filtros en la tabla)</h2>
+<div id="subgrupos-filtros-en-la-tabla" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Subgrupos (filtros en la tabla)<a href="tse05.html#subgrupos-filtros-en-la-tabla" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Una de las primeras cuestiones que nos surge en muchas ocasiones es trabajar con subgrupos de la información original, bien porque deseamos una tabla de sólo un parte de la muestra o bien porque buscamos comparar determinados elementos en una misma tabla. Veamos las posibilidades y las situaciones de uso.</p>
 <p>En la siguiente tabla, filtramos el banco de datos para aquellos entrevistados que han declarado tener hijos <code>(P34  == 1)</code> por un lado y los que no por otro <code>(P34 == 2)</code>. Para ello usamos la instrucción <a href="https://rdrr.io/cran/expss/man/tables.html"><code>tab_subgroup()</code></a> e introducimos también la instrucción <a href="https://rdrr.io/cran/expss/man/tables.html"><code>tab_row_label()</code></a> donde escribimos una fila con texto libre. Puedes consultar en la sección <a href="tse10.html#tse10">10</a> como se escriben las condiciones y cuáles son los operadores que puede utilizar <code>expss</code>, que su vez, tiene algunos operadores propios que en esta misma sección incluiremos.</p>
-<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="tse05.html#cb84-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
-<span id="cb84-2"><a href="tse05.html#cb84-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb84-3"><a href="tse05.html#cb84-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_row_label</span>(<span class="st">&quot;Entrevistado con hijos&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb84-4"><a href="tse05.html#cb84-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
-<span id="cb84-5"><a href="tse05.html#cb84-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
-<span id="cb84-6"><a href="tse05.html#cb84-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb84-7"><a href="tse05.html#cb84-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb84-8"><a href="tse05.html#cb84-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_row_label</span>(<span class="st">&quot;Entrevistado sin hijos&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb84-9"><a href="tse05.html#cb84-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
-<span id="cb84-10"><a href="tse05.html#cb84-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
-<span id="cb84-11"><a href="tse05.html#cb84-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb84-12"><a href="tse05.html#cb84-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-66"></span>
-<div id="htmlwidget-bd2c4671cb6c1b2aa90e" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bd2c4671cb6c1b2aa90e">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Entrevistado con hijos","Estado de salud en general","","","","","","","","Entrevistado sin hijos","Estado de salud en general","","","","","","",""],["","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","#Total cases","","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","#Total cases"],[null,175,484,125,14,3,null,null,801,null,273,930,442,72,19,2,2,1740],[null,85,230,53,8,2,null,null,378,null,151,490,191,32,6,null,1,871],[null,90,254,72,6,1,null,null,423,null,122,440,251,40,13,2,1,869]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="tse05.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="tse05.html#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-3"><a href="tse05.html#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_row_label</span>(<span class="st">&quot;Entrevistado con hijos&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-4"><a href="tse05.html#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
+<span id="cb1-5"><a href="tse05.html#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
+<span id="cb1-6"><a href="tse05.html#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="tse05.html#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-8"><a href="tse05.html#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_row_label</span>(<span class="st">&quot;Entrevistado sin hijos&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-9"><a href="tse05.html#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
+<span id="cb1-10"><a href="tse05.html#cb1-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="tse05.html#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb1-12"><a href="tse05.html#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-2"></span>
+<div id="htmlwidget-0ac3c6177b24d9f4c6b1" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0ac3c6177b24d9f4c6b1">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Entrevistado con hijos","Estado de salud en general","","","","","","","","Entrevistado sin hijos","Estado de salud en general","","","","","","",""],["","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","#Total cases","","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","#Total cases"],[null,175,484,125,14,3,null,null,801,null,273,930,442,72,19,2,2,1740],[null,85,230,53,8,2,null,null,378,null,151,490,191,32,6,null,1,871],[null,90,254,72,6,1,null,null,423,null,122,440,251,40,13,2,1,869]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[2]; $(this.api().cell(row, 2).node()).css({'text-align':'right'});\nvar value=data[3]; $(this.api().cell(row, 3).node()).css({'text-align':'right'});\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 5.1: Tabla con subgrupos
 </p>
 </div>
 </div>
-<div id="bases-yo-con-anidación" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Bases y/o con anidación</h2>
+<div id="bases-yo-con-anidación" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Bases y/o con anidación<a href="tse05.html#bases-yo-con-anidación" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>El concepto de base, no está contemplado como tal en <code>expss</code>, pero podemos utilizar las diferentes combinaciones de instrucciones para poder obtener el resultado deseado. Por ejemplo, si queremos trabajar con bases de la variable <code>P34</code> (entrevistado tiene hijos o no tiene hijos), y obtener réplica de la tabla para ambas categorías, lo podíamos hacer de la forma anterior, pero hay otra posibilidad y es utilizar la opción de añadir variables anidadas en filas o utilizar de forma simultánea las instrucciones <code>tab_rows()</code> y <code>tab_cells()</code>.</p>
 <p>En esta tabla hay algunas cosas a reseñar.</p>
 <ul>
@@ -1010,63 +398,63 @@ Figura 5.1: Tabla con subgrupos
 <li>Por último, los códigos de <code>P34</code>, redefinidos al principio del script, se muestran como en una primera columna, diferenciados claramente del resto. La variable en <code>tab_cells()</code> de la que se calcula el estadístico (número de casos) se muestra como en una segunda columna, aunque realmente en el <em>dataframe</em> es sólo una. Hemos dejado fuera la opción de No Contesta aunque ya anticipamos que no tenía ningún caso.</li>
 </ul>
 <p>La función <a href="https://rdrr.io/cran/expss/man/var_lab.html"><code>var_lab()</code></a> permite asignar a una variable (<code>data$P34</code>) una lista (expresa con la función base de R denominada vector <code>c()</code> vector) de etiquetas donde el texto de la etiqueta va entrecomillado y el valor va igualado a la etiqueta. Es una forma muy simple, a la par que práctica, de etiquetar los valores de una variable.</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="tse05.html#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)  <span class="co"># los valores de P34 son etiquetados como ...</span></span>
-<span id="cb85-2"><a href="tse05.html#cb85-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
-<span id="cb85-3"><a href="tse05.html#cb85-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb85-4"><a href="tse05.html#cb85-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
-<span id="cb85-5"><a href="tse05.html#cb85-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P34) <span class="sc">%&gt;%</span></span>
-<span id="cb85-6"><a href="tse05.html#cb85-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
-<span id="cb85-7"><a href="tse05.html#cb85-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb85-8"><a href="tse05.html#cb85-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-67"></span>
-<div id="htmlwidget-19b81fbcd5a061291c89" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-19b81fbcd5a061291c89">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Tenencia de hijos menores de 18 años","","","","","","","","","","","","","","",""],["No","","","","","","","","Sí","","","","","","",""],["Estado de salud en general","","","","","","","","Estado de salud en general","","","","","","",""],["Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","#Total cases","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","#Total cases"],[273,930,442,72,19,2,2,1740,175,484,125,14,3,null,null,801],[151,490,191,32,6,null,1,871,85,230,53,8,2,null,null,378],[122,440,251,40,13,2,1,869,90,254,72,6,1,null,null,423]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="tse05.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)  <span class="co"># los valores de P34 son etiquetados como ...</span></span>
+<span id="cb2-2"><a href="tse05.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="tse05.html#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb2-4"><a href="tse05.html#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
+<span id="cb2-5"><a href="tse05.html#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P34) <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="tse05.html#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href="tse05.html#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href="tse05.html#cb2-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-3"></span>
+<div id="htmlwidget-42bdb9d6f73a20b0084c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-42bdb9d6f73a20b0084c">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Tenencia de hijos menores de 18 años","","","","","","","","","","","","","","",""],["No","","","","","","","","Sí","","","","","","",""],["Estado de salud en general","","","","","","","","Estado de salud en general","","","","","","",""],["Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","#Total cases","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","#Total cases"],[273,930,442,72,19,2,2,1740,175,484,125,14,3,null,null,801],[151,490,191,32,6,null,1,871,85,230,53,8,2,null,null,378],[122,440,251,40,13,2,1,869,90,254,72,6,1,null,null,423]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[4]; $(this.api().cell(row, 4).node()).css({'text-align':'right'});\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 5.2: Tabla con bases 1
 </p>
 </div>
 <p>Si nos gusta esta opción, se le puede añadir un modificador llamado <code>%nest%</code> que nos va a permitir anidar esas bases de cálculo. El modificador <code>%nest%</code> nos permite anidar los niveles o categorías de las variables. Cualquiera de las tablas anteriores puede ser anidada en tantos niveles como se desee con la opción <code>%nest%</code>. Para que la tabla no se alargue horizontalmente, reasignamos el texto extra de la variable denominada <code>P3bis</code>. Usamos también el <code>recode()</code>para dejar tan sólo tres niveles en la variable P3. Más adelante en la sección <a href="tse06.html#recode">6.2</a> una mayor profundidad con el <code>recode()</code>.</p>
-<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="tse05.html#cb86-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>P3bis <span class="ot">&lt;-</span> <span class="fu">recode</span>(data<span class="sc">$</span>P3, <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span><span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span><span class="dv">2</span>)</span>
-<span id="cb86-2"><a href="tse05.html#cb86-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="st">&quot;Satisfacción&quot;</span></span>
-<span id="cb86-3"><a href="tse05.html#cb86-3" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Negativa&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.Positiva&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
-<span id="cb86-4"><a href="tse05.html#cb86-4" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
-<span id="cb86-5"><a href="tse05.html#cb86-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
-<span id="cb86-6"><a href="tse05.html#cb86-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb86-7"><a href="tse05.html#cb86-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
-<span id="cb86-8"><a href="tse05.html#cb86-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P3bis <span class="sc">%nest%</span> P34) <span class="sc">%&gt;%</span></span>
-<span id="cb86-9"><a href="tse05.html#cb86-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
-<span id="cb86-10"><a href="tse05.html#cb86-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb86-11"><a href="tse05.html#cb86-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()) </span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-68"></span>
-<div id="htmlwidget-0b134969af8824956e98" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0b134969af8824956e98">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Satisfacción","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],["1.Negativa","","","","","","","","","","","","","","","","","","","","","2.Positiva","","","","","","","","","","","","","","","","","","","",""],["Tenencia de hijos menores de 18 años","","","","","","","","","","","","","","","","","","","","","Tenencia de hijos menores de 18 años","","","","","","","","","","","","","","","","","","","",""],["1.Sí","","","","","","","2.No","","","","","","","9","","","","","","","1.Sí","","","","","","","2.No","","","","","","","9","","","","","",""],["Estado de salud en general","","","","","","","Estado de salud en general","","","","","","","Estado de salud en general","","","","","","","Estado de salud en general","","","","","","","Estado de salud en general","","","","","","","Estado de salud en general","","","","","",""],["Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C."],[35,117,47,5,2,null,null,42,180,106,16,4,null,null,null,null,null,null,null,null,null,139,365,78,9,1,null,null,227,746,334,55,15,2,2,null,null,null,null,null,null,null],[22,58,16,3,2,null,null,23,85,41,6,2,null,null,null,null,null,null,null,null,null,63,170,37,5,null,null,null,126,404,150,25,4,null,1,null,null,null,null,null,null,null],[13,59,31,2,null,null,null,19,95,65,10,2,null,null,null,null,null,null,null,null,null,76,195,41,4,1,null,null,101,342,184,30,11,2,1,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"6\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="tse05.html#cb3-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>P3bis <span class="ot">&lt;-</span> <span class="fu">recode</span>(data<span class="sc">$</span>P3, <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span><span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span><span class="dv">2</span>)</span>
+<span id="cb3-2"><a href="tse05.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="st">&quot;Satisfacción&quot;</span></span>
+<span id="cb3-3"><a href="tse05.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Negativa&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.Positiva&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb3-4"><a href="tse05.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb3-5"><a href="tse05.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
+<span id="cb3-6"><a href="tse05.html#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-7"><a href="tse05.html#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
+<span id="cb3-8"><a href="tse05.html#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P3bis <span class="sc">%nest%</span> P34) <span class="sc">%&gt;%</span></span>
+<span id="cb3-9"><a href="tse05.html#cb3-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
+<span id="cb3-10"><a href="tse05.html#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-11"><a href="tse05.html#cb3-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>()) </span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-4"></span>
+<div id="htmlwidget-3172460b61327653fb1b" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3172460b61327653fb1b">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Satisfacción","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],["1.Negativa","","","","","","","","","","","","","","","","","","","","","2.Positiva","","","","","","","","","","","","","","","","","","","",""],["Tenencia de hijos menores de 18 años","","","","","","","","","","","","","","","","","","","","","Tenencia de hijos menores de 18 años","","","","","","","","","","","","","","","","","","","",""],["1.Sí","","","","","","","2.No","","","","","","","9","","","","","","","1.Sí","","","","","","","2.No","","","","","","","9","","","","","",""],["Estado de salud en general","","","","","","","Estado de salud en general","","","","","","","Estado de salud en general","","","","","","","Estado de salud en general","","","","","","","Estado de salud en general","","","","","","","Estado de salud en general","","","","","",""],["Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C.","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C."],[35,117,47,5,2,null,null,42,180,106,16,4,null,null,null,null,null,null,null,null,null,139,365,78,9,1,null,null,227,746,334,55,15,2,2,null,null,null,null,null,null,null],[22,58,16,3,2,null,null,23,85,41,6,2,null,null,null,null,null,null,null,null,null,63,170,37,5,null,null,null,126,404,150,25,4,null,1,null,null,null,null,null,null,null],[13,59,31,2,null,null,null,19,95,65,10,2,null,null,null,null,null,null,null,null,null,76,195,41,4,1,null,null,101,342,184,30,11,2,1,null,null,null,null,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"6\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 5.3: Tabla con bases 2
 </p>
 </div>
 <p>Algo más, si añadimos la instrucción <code>drop_rc()</code>, nótese la diferencia, pues desaparecen las filas y columnas sin información.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="tse05.html#cb87-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>P3bis <span class="ot">&lt;-</span> <span class="fu">recode</span>(data<span class="sc">$</span>P3, <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span><span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span><span class="dv">2</span>)</span>
-<span id="cb87-2"><a href="tse05.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="st">&quot;Satisfacción&quot;</span></span>
-<span id="cb87-3"><a href="tse05.html#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Negativa&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.Positiva&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
-<span id="cb87-4"><a href="tse05.html#cb87-4" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
-<span id="cb87-5"><a href="tse05.html#cb87-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
-<span id="cb87-6"><a href="tse05.html#cb87-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb87-7"><a href="tse05.html#cb87-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
-<span id="cb87-8"><a href="tse05.html#cb87-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P3bis <span class="sc">%nest%</span> P34) <span class="sc">%&gt;%</span></span>
-<span id="cb87-9"><a href="tse05.html#cb87-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
-<span id="cb87-10"><a href="tse05.html#cb87-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb87-11"><a href="tse05.html#cb87-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>() <span class="sc">%&gt;%</span> </span>
-<span id="cb87-12"><a href="tse05.html#cb87-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_rc</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-69"></span>
-<div id="htmlwidget-5e390b6fc5bc55f4c3aa" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-5e390b6fc5bc55f4c3aa">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Satisfacción","","","","","","","","","","","","","","","","","","","","",""],["1.Negativa","","","","","","","","","","2.Positiva","","","","","","","","","","",""],["Tenencia de hijos menores de 18 años","","","","","","","","","","Tenencia de hijos menores de 18 años","","","","","","","","","","",""],["1.Sí","","","","","2.No","","","","","1.Sí","","","","","2.No","","","","","",""],["Estado de salud en general","","","","","Estado de salud en general","","","","","Estado de salud en general","","","","","Estado de salud en general","","","","","",""],["Muy bueno","Bueno","Regular","Malo","Muy malo","Muy bueno","Bueno","Regular","Malo","Muy malo","Muy bueno","Bueno","Regular","Malo","Muy malo","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C."],[35,117,47,5,2,42,180,106,16,4,139,365,78,9,1,227,746,334,55,15,2,2],[22,58,16,3,2,23,85,41,6,2,63,170,37,5,null,126,404,150,25,4,null,1],[13,59,31,2,null,19,95,65,10,2,76,195,41,4,1,101,342,184,30,11,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"6\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="tse05.html#cb4-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>P3bis <span class="ot">&lt;-</span> <span class="fu">recode</span>(data<span class="sc">$</span>P3, <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span><span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span><span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="tse05.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="st">&quot;Satisfacción&quot;</span></span>
+<span id="cb4-3"><a href="tse05.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Negativa&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.Positiva&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb4-4"><a href="tse05.html#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb4-5"><a href="tse05.html#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
+<span id="cb4-6"><a href="tse05.html#cb4-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-7"><a href="tse05.html#cb4-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="tse05.html#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P3bis <span class="sc">%nest%</span> P34) <span class="sc">%&gt;%</span></span>
+<span id="cb4-9"><a href="tse05.html#cb4-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(P36) <span class="sc">%&gt;%</span></span>
+<span id="cb4-10"><a href="tse05.html#cb4-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position =</span> <span class="st">&quot;none&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-11"><a href="tse05.html#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>() <span class="sc">%&gt;%</span> </span>
+<span id="cb4-12"><a href="tse05.html#cb4-12" aria-hidden="true" tabindex="-1"></a>    <span class="fu">drop_rc</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-5"></span>
+<div id="htmlwidget-5d433685749734bf47f3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-5d433685749734bf47f3">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Satisfacción","","","","","","","","","","","","","","","","","","","","",""],["1.Negativa","","","","","","","","","","2.Positiva","","","","","","","","","","",""],["Tenencia de hijos menores de 18 años","","","","","","","","","","Tenencia de hijos menores de 18 años","","","","","","","","","","",""],["1.Sí","","","","","2.No","","","","","1.Sí","","","","","2.No","","","","","",""],["Estado de salud en general","","","","","Estado de salud en general","","","","","Estado de salud en general","","","","","Estado de salud en general","","","","","",""],["Muy bueno","Bueno","Regular","Malo","Muy malo","Muy bueno","Bueno","Regular","Malo","Muy malo","Muy bueno","Bueno","Regular","Malo","Muy malo","Muy bueno","Bueno","Regular","Malo","Muy malo","N.S.","N.C."],[35,117,47,5,2,42,180,106,16,4,139,365,78,9,1,227,746,334,55,15,2,2],[22,58,16,3,2,23,85,41,6,2,63,170,37,5,null,126,404,150,25,4,null,1],[13,59,31,2,null,19,95,65,10,2,76,195,41,4,1,101,342,184,30,11,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"6\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 5.4: Borrando filas y columnas vacías
 </p>
 </div>
 </div>
-<div id="características-avanzadas" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Características avanzadas</h2>
+<div id="características-avanzadas" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Características avanzadas<a href="tse05.html#características-avanzadas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Hagamos ahora lo mismo, pero combinando con un cálculo estadístico, por ejemplo nuevamente la media de P6C (atención recibida en consultas). Fijémonos en la nueva aportación realizada. En el <code>tab_cells()</code>, se le está indicando que se trabaje con la variable P6C, pero que considere NA (valores nulos) todos aquello que sean mayores que 5. ¿Por qué? porque los valores 8 y 9, han sido asignados al no sabe y no contesta respectivamente, y no queremos que entren en la media. Esto lo hacemos usando la función <code>na_if()</code>.</p>
 <p>Los criterios más básicos son:</p>
 <ul>
@@ -1078,51 +466,51 @@ Figura 5.4: Borrando filas y columnas vacías
 <li>menor o igual que -&gt; <code>less_or_equal</code>, <code>lte</code>, <code>le</code></li>
 </ul>
 <p>Puede usarse la expresión larga o también cualquiera de las cortas. Por tanto, <code>na_if(P6C, gt(5))</code> significa trabaja con la variable <code>P6C</code> considerando <code>NA</code> los valores mayores que 5.</p>
-<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="tse05.html#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(data<span class="sc">$</span>P6C) <span class="ot">&lt;-</span> <span class="st">&quot;Valoración de la atención recibida&quot;</span></span>
-<span id="cb88-2"><a href="tse05.html#cb88-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>P3bis <span class="ot">&lt;-</span> <span class="fu">recode</span>(data<span class="sc">$</span>P3, <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span><span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span><span class="dv">2</span>)</span>
-<span id="cb88-3"><a href="tse05.html#cb88-3" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Negativa&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;Positiva&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
-<span id="cb88-4"><a href="tse05.html#cb88-4" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
-<span id="cb88-5"><a href="tse05.html#cb88-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
-<span id="cb88-6"><a href="tse05.html#cb88-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb88-7"><a href="tse05.html#cb88-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
-<span id="cb88-8"><a href="tse05.html#cb88-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P3bis <span class="sc">%nest%</span> P34) <span class="sc">%&gt;%</span></span>
-<span id="cb88-9"><a href="tse05.html#cb88-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P6C=</span> <span class="fu">na_if</span>(P6C, <span class="fu">gt</span>(<span class="dv">5</span>))) <span class="sc">%&gt;%</span></span>
-<span id="cb88-10"><a href="tse05.html#cb88-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb88-11"><a href="tse05.html#cb88-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-70"></span>
-<div id="htmlwidget-368688d04704e5c920a2" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-368688d04704e5c920a2">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Negativa","","","Positiva","",""],["Tenencia de hijos menores de 18 años","","","Tenencia de hijos menores de 18 años","",""],["Sí","No","9","Sí","No","9"],["Valoración de la atención recibida","Valoración de la atención recibida","Valoración de la atención recibida","Valoración de la atención recibida","Valoración de la atención recibida","Valoración de la atención recibida"],["Mean","Mean","Mean","Mean","Mean","Mean"],[1.2,1.3,null,1.1,1.2,null],[1.1,1.3,null,1,1.2,null],[1.4,1.4,null,1.3,1.2,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"5\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="tse05.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(data<span class="sc">$</span>P6C) <span class="ot">&lt;-</span> <span class="st">&quot;Valoración de la atención recibida&quot;</span></span>
+<span id="cb5-2"><a href="tse05.html#cb5-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>P3bis <span class="ot">&lt;-</span> <span class="fu">recode</span>(data<span class="sc">$</span>P3, <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span><span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span><span class="dv">2</span>)</span>
+<span id="cb5-3"><a href="tse05.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Negativa&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;Positiva&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb5-4"><a href="tse05.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb5-5"><a href="tse05.html#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="tse05.html#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_subgroup</span>(P34 <span class="sc">==</span> <span class="dv">1</span> <span class="sc">|</span> P34 <span class="sc">==</span> <span class="dv">2</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb5-7"><a href="tse05.html#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(<span class="fu">total</span>(), P31) <span class="sc">%&gt;%</span></span>
+<span id="cb5-8"><a href="tse05.html#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P3bis <span class="sc">%nest%</span> P34) <span class="sc">%&gt;%</span></span>
+<span id="cb5-9"><a href="tse05.html#cb5-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cells</span>(<span class="at">P6C=</span> <span class="fu">na_if</span>(P6C, <span class="fu">gt</span>(<span class="dv">5</span>))) <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="tse05.html#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_mean</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-11"><a href="tse05.html#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<div id="htmlwidget-feee219420eb59374efb" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-feee219420eb59374efb">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Negativa","","","Positiva","",""],["Tenencia de hijos menores de 18 años","","","Tenencia de hijos menores de 18 años","",""],["Sí","No","9","Sí","No","9"],["Valoración de la atención recibida","Valoración de la atención recibida","Valoración de la atención recibida","Valoración de la atención recibida","Valoración de la atención recibida","Valoración de la atención recibida"],["Mean","Mean","Mean","Mean","Mean","Mean"],[1.2,1.3,null,1.1,1.2,null],[1.1,1.3,null,1,1.2,null],[1.4,1.4,null,1.3,1.2,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"2\" colspan=\"5\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"2\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 5.5: Usando criterios
 </p>
 </div>
 <p>Se puede anidar también en filas y columnas. Vamos a reducir a dos el nivel de anidación para que se lea bien la tabla.</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="tse05.html#cb89-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>P3bis <span class="ot">&lt;-</span> <span class="fu">recode</span>(data<span class="sc">$</span>P3, <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span><span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span><span class="dv">2</span>)</span>
-<span id="cb89-2"><a href="tse05.html#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="st">&quot;Satisfacción&quot;</span></span>
-<span id="cb89-3"><a href="tse05.html#cb89-3" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Negativa&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.Positiva&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
-<span id="cb89-4"><a href="tse05.html#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
-<span id="cb89-5"><a href="tse05.html#cb89-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
-<span id="cb89-6"><a href="tse05.html#cb89-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(P31 <span class="sc">%nest%</span> P34) <span class="sc">%&gt;%</span> </span>
-<span id="cb89-7"><a href="tse05.html#cb89-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P3bis <span class="sc">%nest%</span> P33) <span class="sc">%&gt;%</span></span>
-<span id="cb89-8"><a href="tse05.html#cb89-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position=</span><span class="st">&quot;none&quot;</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb89-9"><a href="tse05.html#cb89-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-71"></span>
-<div id="htmlwidget-ebbaf4f83bbb7abe7927" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-ebbaf4f83bbb7abe7927">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Satisfacción","","","","","","","","","","",""],["1.Negativa","","","","","","2.Positiva","","","","",""],["Estado civil de la persona entrevistada","","","","","","Estado civil de la persona entrevistada","","","","",""],["Casado/a","Soltero/a","Viudo/a","Separado/a","Divorciado/a","N.C.","Casado/a","Soltero/a","Viudo/a","Separado/a","Divorciado/a","N.C."],["#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total"],[70,20,1,5,5,null,204,45,3,4,18,1],[73,63,9,5,6,1,322,324,28,10,25,1],[1,null,null,null,null,null,3,2,null,null,null,1],[70,26,1,2,6,null,236,54,5,10,12,null],[87,74,19,4,6,1,311,203,120,17,18,2],[1,null,null,null,null,null,3,1,3,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"4\" colspan=\"5\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"6\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Tenencia de hijos menores de 18 años\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Tenencia de hijos menores de 18 años\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        1.Sí\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        2.No\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        9\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        1.Sí\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        2.No\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        9\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'text-align':'right'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="tse05.html#cb6-1" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>P3bis <span class="ot">&lt;-</span> <span class="fu">recode</span>(data<span class="sc">$</span>P3, <span class="dv">0</span><span class="sc">:</span><span class="dv">5</span> <span class="sc">~</span><span class="dv">1</span>, <span class="dv">6</span><span class="sc">:</span><span class="dv">10</span> <span class="sc">~</span><span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="tse05.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">var_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="st">&quot;Satisfacción&quot;</span></span>
+<span id="cb6-3"><a href="tse05.html#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P3bis) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Negativa&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.Positiva&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb6-4"><a href="tse05.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">val_lab</span>(data<span class="sc">$</span>P34) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;1.Sí&quot;</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">&quot;2.No&quot;</span> <span class="ot">=</span> <span class="dv">2</span>)</span>
+<span id="cb6-5"><a href="tse05.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
+<span id="cb6-6"><a href="tse05.html#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(P31 <span class="sc">%nest%</span> P34) <span class="sc">%&gt;%</span> </span>
+<span id="cb6-7"><a href="tse05.html#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P3bis <span class="sc">%nest%</span> P33) <span class="sc">%&gt;%</span></span>
+<span id="cb6-8"><a href="tse05.html#cb6-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>(<span class="at">total_row_position=</span><span class="st">&quot;none&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb6-9"><a href="tse05.html#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<div id="htmlwidget-27ec539277728d6fbe07" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-27ec539277728d6fbe07">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Satisfacción","","","","","","","","","","",""],["1.Negativa","","","","","","2.Positiva","","","","",""],["Estado civil de la persona entrevistada","","","","","","Estado civil de la persona entrevistada","","","","",""],["Casado/a","Soltero/a","Viudo/a","Separado/a","Divorciado/a","N.C.","Casado/a","Soltero/a","Viudo/a","Separado/a","Divorciado/a","N.C."],["#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total","#Total"],[70,20,1,5,5,null,204,45,3,4,18,1],[73,63,9,5,6,1,322,324,28,10,25,1],[1,null,null,null,null,null,3,2,null,null,null,1],[70,26,1,2,6,null,236,54,5,10,12,null],[87,74,19,4,6,1,311,203,120,17,18,2],[1,null,null,null,null,null,3,1,3,null,null,null]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"4\" colspan=\"5\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"6\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Tenencia de hijos menores de 18 años\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Tenencia de hijos menores de 18 años\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        1.Sí\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        2.No\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        9\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        1.Sí\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        2.No\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        9\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8,9,10]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'text-align':'right'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 5.6: Anidando filas y columnas
 </p>
 </div>
 <p>Como caso particular en muchos casos se requieren los subtotales de los niveles de anidación. Fíjate esta tabla y trata de ver las diferencias con la anterior.</p>
-<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="tse05.html#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
-<span id="cb90-2"><a href="tse05.html#cb90-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(P31 <span class="sc">%nest%</span>  <span class="fu">list</span>(<span class="fu">total</span>(),P34)) <span class="sc">%&gt;%</span> </span>
-<span id="cb90-3"><a href="tse05.html#cb90-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P36 <span class="sc">%nest%</span> P33) <span class="sc">%&gt;%</span></span>
-<span id="cb90-4"><a href="tse05.html#cb90-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb90-5"><a href="tse05.html#cb90-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_sort_desc</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb90-6"><a href="tse05.html#cb90-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
-<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-72"></span>
-<div id="htmlwidget-8153283be18c356f86cf" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-8153283be18c356f86cf">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Estado de salud en general","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],["Bueno","","","","","","","","","","","","Malo","","","","","","","","","","","","Muy bueno","","","","","","","","","","","","Muy malo","","","","","","","","","","","","N.C.","","","","","","","","","","","","N.S.","","","","","","","","","","","","Regular","","","","","","","","","","",""],["Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","",""],["Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a",""],["#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases"],[410,410,25,25,3,3,13,13,254,254,19,19,20,20,7,7,null,null,3,3,8,8,2,2,91,91,9,9,1,1,5,5,131,131,1,1,3,3,2,2,null,null,null,null,3,3,1,1,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,153,153,12,12,null,null,3,3,58,58,18,18],[171,171,10,10,1,1,6,6,39,39,3,3,5,5,1,1,null,null,null,null,2,2,null,null,57,57,6,6,null,null,3,3,19,19,null,null,null,null,2,2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,43,43,4,4,null,null,null,null,5,5,1,1],[236,236,15,15,2,2,7,7,214,214,16,16,15,15,6,6,null,null,3,3,6,6,2,2,33,33,3,3,null,null,2,2,112,112,1,1,3,3,null,null,null,null,null,null,2,2,1,1,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,110,110,8,8,null,null,3,3,53,53,17,17],[3,3,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,1,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[386,386,18,18,4,4,14,14,215,215,60,60,28,28,3,3,null,null,1,1,4,4,10,10,109,109,8,8,null,null,5,5,83,83,8,8,7,7,3,3,null,null,1,1,null,null,4,4,1,1,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,1,1,null,null,179,179,10,10,null,null,12,12,59,59,67,67],[191,191,7,7,null,null,8,8,44,44,4,4,3,3,1,1,null,null,null,null,2,2,null,null,67,67,4,4,null,null,null,null,19,19,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,46,46,6,6,null,null,3,3,15,15,2,2],[195,195,11,11,3,3,6,6,170,170,55,55,25,25,2,2,null,null,1,1,2,2,10,10,41,41,4,4,null,null,5,5,64,64,8,8,7,7,3,3,null,null,null,null,null,null,3,3,1,1,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,1,1,null,null,130,130,4,4,null,null,9,9,44,44,64,64],[null,null,null,null,1,1,null,null,1,1,1,1,null,null,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,3,3,null,null,null,null,null,null,null,null,1,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"4\" colspan=\"5\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"8\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Tenencia de hijos menores de 18 años\n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Tenencia de hijos menores de 18 años\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        1.Sí\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        2.No\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        9\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        1.Sí\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        2.No\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        9\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8,9,10,11,12]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'text-align':'right'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'text-align':'right'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'text-align':'right'});\nvar value=data[12]; $(this.api().cell(row, 12).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="tse05.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.datatable_widget</span>(data <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="tse05.html#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_cols</span>(P31 <span class="sc">%nest%</span>  <span class="fu">list</span>(<span class="fu">total</span>(),P34)) <span class="sc">%&gt;%</span> </span>
+<span id="cb7-3"><a href="tse05.html#cb7-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_rows</span>(P36 <span class="sc">%nest%</span> P33) <span class="sc">%&gt;%</span></span>
+<span id="cb7-4"><a href="tse05.html#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_stat_cases</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-5"><a href="tse05.html#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_sort_desc</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb7-6"><a href="tse05.html#cb7-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tab_pivot</span>())</span></code></pre></div>
+<div class="figure" style="text-align: center"><span style="display:block;" id="fig:unnamed-chunk-8"></span>
+<div id="htmlwidget-efe25050f07351299f44" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-efe25050f07351299f44">{"x":{"filter":"none","vertical":false,"class":"stripe hover cell-border row-border order-column compact","data":[["Estado de salud en general","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""],["Bueno","","","","","","","","","","","","Malo","","","","","","","","","","","","Muy bueno","","","","","","","","","","","","Muy malo","","","","","","","","","","","","N.C.","","","","","","","","","","","","N.S.","","","","","","","","","","","","Regular","","","","","","","","","","",""],["Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","","","Estado civil de la persona entrevistada","","","","","","","","","","",""],["Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a","","Casado/a","","Divorciado/a","","N.C.","","Separado/a","","Soltero/a","","Viudo/a",""],["#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases","#Total","#Total cases"],[410,410,25,25,3,3,13,13,254,254,19,19,20,20,7,7,null,null,3,3,8,8,2,2,91,91,9,9,1,1,5,5,131,131,1,1,3,3,2,2,null,null,null,null,3,3,1,1,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,153,153,12,12,null,null,3,3,58,58,18,18],[171,171,10,10,1,1,6,6,39,39,3,3,5,5,1,1,null,null,null,null,2,2,null,null,57,57,6,6,null,null,3,3,19,19,null,null,null,null,2,2,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,43,43,4,4,null,null,null,null,5,5,1,1],[236,236,15,15,2,2,7,7,214,214,16,16,15,15,6,6,null,null,3,3,6,6,2,2,33,33,3,3,null,null,2,2,112,112,1,1,3,3,null,null,null,null,null,null,2,2,1,1,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,110,110,8,8,null,null,3,3,53,53,17,17],[3,3,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,1,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[386,386,18,18,4,4,14,14,215,215,60,60,28,28,3,3,null,null,1,1,4,4,10,10,109,109,8,8,null,null,5,5,83,83,8,8,7,7,3,3,null,null,1,1,null,null,4,4,1,1,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,1,1,null,null,179,179,10,10,null,null,12,12,59,59,67,67],[191,191,7,7,null,null,8,8,44,44,4,4,3,3,1,1,null,null,null,null,2,2,null,null,67,67,4,4,null,null,null,null,19,19,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,46,46,6,6,null,null,3,3,15,15,2,2],[195,195,11,11,3,3,6,6,170,170,55,55,25,25,2,2,null,null,1,1,2,2,10,10,41,41,4,4,null,null,5,5,64,64,8,8,7,7,3,3,null,null,null,null,null,null,3,3,1,1,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,1,1,null,null,130,130,4,4,null,null,9,9,44,44,64,64],[null,null,null,null,1,1,null,null,1,1,1,1,null,null,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,1,1,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,null,3,3,null,null,null,null,null,null,null,null,1,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th rowspan=\"4\" colspan=\"5\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        \n      <\/th>\n      <th rowspan=\"1\" colspan=\"8\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Sexo de la persona entrevistada\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Hombre\n      <\/th>\n      <th rowspan=\"1\" colspan=\"4\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Mujer\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Tenencia de hijos menores de 18 años\n      <\/th>\n      <th rowspan=\"2\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        #Total\n      <\/th>\n      <th rowspan=\"1\" colspan=\"3\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        Tenencia de hijos menores de 18 años\n      <\/th>\n    <\/tr>\n    <tr>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        1.Sí\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        2.No\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        9\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        1.Sí\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        2.No\n      <\/th>\n      <th rowspan=\"1\" colspan=\"1\">\n        <style type=\"text/css\">th { text-align: center; } <\/style>\n        <style type=\"text/css\">th {border: 1px solid #DDD}<\/style>\n        9\n      <\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"sorting":false,"ordering":false,"bFilter":false,"bInfo":false,"columnDefs":[{"className":"dt-head-left","targets":[0,1,2,3,4,5,6,7,8,9,10,11,12]}],"order":[],"autoWidth":false,"orderClasses":false,"rowCallback":"function(row, data, displayNum, displayIndex, dataIndex) {\nvar value=data[5]; $(this.api().cell(row, 5).node()).css({'text-align':'right'});\nvar value=data[6]; $(this.api().cell(row, 6).node()).css({'text-align':'right'});\nvar value=data[7]; $(this.api().cell(row, 7).node()).css({'text-align':'right'});\nvar value=data[8]; $(this.api().cell(row, 8).node()).css({'text-align':'right'});\nvar value=data[9]; $(this.api().cell(row, 9).node()).css({'text-align':'right'});\nvar value=data[10]; $(this.api().cell(row, 10).node()).css({'text-align':'right'});\nvar value=data[11]; $(this.api().cell(row, 11).node()).css({'text-align':'right'});\nvar value=data[12]; $(this.api().cell(row, 12).node()).css({'text-align':'right'});\n}"}},"evals":["options.rowCallback"],"jsHooks":[]}</script>
 <p class="caption">
 Figura 5.7: Anidando con subtotales
 </p>

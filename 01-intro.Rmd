@@ -27,7 +27,7 @@ El presente documento enfoca e introduce al usuario de investigación (fundament
 
 Este manual ha sido redactado pensando en los usuarios que trabajan de forma conjunta con R Studio y R. Por tanto, se asume que el usuario estará familiarizado con el uso de ambas aplicaciones y se le supone conocimiento básico de cómo funcionar con ellas. No obstante, al inicio de la sección 3, el usuario puede encontrar unos sencillos rudimentos de como trabajar para iniciarse con el trabajo de R Studio y por extensión de R.
 
-## Estructura del documento
+## Estructura del libro
 
 En investigación de mercado, las tablas de contingencia o cruzadas probablemente sean el análisis de datos más predominante de todos los utilizados, complementado por una potente visualización en forma de gráfico de esos datos. Se pretende dotar al usuario de de las herramientas básicas que le permitan reproducir cualquier tipo de cuadro o tabla, de tipo marginal o cruzada, con medidas estadísticas básicas, combinando estadísticos y frecuencias o porcentajes, o realizar pruebas de significación estándar, así como la reproducción de los gráficos que se adaptarían a esas tablas. La estructura del manual se adapta por tanto a este objetivo, organizándose de la siguiente forma:
 
@@ -112,7 +112,7 @@ Los pasos son los siguientes:
 
 Vamos ahora a proceder con R Studio.
 
-1.  Abre el siguiente enlace <https://R> Studio.com/products/R Studio/download/\#download
+1.  Abre el siguiente enlace <https://R> Studio.com/products/R Studio/download/#download
 
 2.  En esta página, se indica lo siguiente:
 
